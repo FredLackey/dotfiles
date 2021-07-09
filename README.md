@@ -17,8 +17,8 @@ To set up the dotfiles run the appropriate snippet in the terminal:
 
 | OS | Snippet |
 |:---|:---|
-| macOS | `bash -c "$(curl -LsS https://raw.github.com/FredLackey/dotfiles/main/src/os/setup.sh)"` |
-| Ubuntu | `bash -c "$(wget -qO - https://raw.github.com/FredLackey/dotfiles/main/src/os/setup.sh)"` |
+| macOS | `bash -c "$(curl -LsS https://raw.github.com/FredLackey/dotfiles/master/src/os/setup.sh)"` |
+| Ubuntu | `bash -c "$(wget -qO - https://raw.github.com/FredLackey/dotfiles/master/src/os/setup.sh)"` |
 
 That's it! ✨
 
@@ -185,7 +185,7 @@ The code is available under the [MIT license][license].
 [preferences ubuntu]: src/os/preferences/ubuntu
 [repo]: https://github.com/FredLackey
 [setup macos]: https://cloud.githubusercontent.com/assets/1223565/19314446/cd89a592-90a2-11e6-948d-9d75247088ba.gif
-[setup script]: https://github.com/FredLackey/dotfiles/blob/main/src/os/setup.sh#L3
+[setup script]: https://github.com/FredLackey/dotfiles/blob/master/src/os/setup.sh#L3
 [setup ubuntu]: https://user-images.githubusercontent.com/1223565/101978032-d0791a80-3c06-11eb-8870-661d0eb3f543.gif
 [setup]: src/os/setup.sh
 [shell]: src/shell
