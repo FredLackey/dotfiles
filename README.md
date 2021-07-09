@@ -19,6 +19,7 @@ To set up the dotfiles run the appropriate snippet in the terminal:
 |:---|:---|
 | macOS | `bash -c "$(curl -LsS https://raw.github.com/FredLackey/dotfiles/master/src/os/setup.sh)"` |
 | Ubuntu | `bash -c "$(wget -qO - https://raw.github.com/FredLackey/dotfiles/master/src/os/setup.sh)"` |
+| Ubuntu | `bash -c "$(wget -qO - https://raw.githubusercontent.com/FredLackey/dotfiles/master/src/os/setup.sh)"` |
 
 That's it! ✨
 
