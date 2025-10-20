@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Lock screen.
+
+alias afk="gnome-screensaver-command --lock"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Shorter commands for the `Advanced Packaging Tool`
+
+alias apti="sudo apt-get install"
+alias aptr="sudo apt-get remove"
+alias apts="sudo apt-cache search"
+alias aptu="sudo apt-get update \
+                && sudo apt-get upgrade"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Empty trash.
+
+alias empty-trash="rm -rf ~/.local/share/Trash/files/*"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Hide/Show desktop icons.
+
+# alias hide-desktop-icons="gsettings set org.gnome.desktop.background show-desktop-icons false"
+# alias show-desktop-icons="gsettings set org.gnome.desktop.background show-desktop-icons true"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Open from the terminal.
+
+# alias o="xdg-open"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Update applications and CLTs.
+
+alias u="sudo apt-get update \
+            && sudo apt-get upgrade"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Customizations
+
+alias count-files="find . -maxdepth 1 -type f | wc -l"
+alias count-folders="find . -mindepth 1 -maxdepth 1 -type d | wc -l"
+alias count='echo "Files  : $(find . -maxdepth 1 -type f | wc -l)" && echo "Folders: $(find . -mindepth 1 -maxdepth 1 -type d | wc -l)"'
+alias rm='rm_safe'
+alias packages="find ./ -type f -name \"package.json\" -exec stat --format=\"%Y %n\" {} + | grep -v \"node_modules\" sort -n | awk '{print strftime("%Y-%m-%d %H:%M:%S", $1), $2}'"
+alias local-ip='hostname -I | awk '\''{print $1}'\''

@@ -1,0 +1,27 @@
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Make vim the default editor.
+export EDITOR="vim"
+
+# Don't clear the screen after quitting a manual page.
+export MANPAGER="less -X"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Set default options.
+export BROWSER="lynx"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Raspberry Pi specific exports
+export IS_RASPBERRY_PI=true
+export PI_HOME="/home/pi"
+
+# Server-specific exports
+export DEBIAN_FRONTEND=noninteractive
+export TERM=xterm-256color
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Add custom bin directory to PATH
+export PATH="$HOME/.local/bin:$PATH"

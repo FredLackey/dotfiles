@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Clear the screen for security's sake.
+
+clear_console -q
+
