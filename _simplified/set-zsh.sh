@@ -33,6 +33,9 @@ main() {
     exec zsh
   fi
 
+  # Install the Powerline fonts
+  pip install --user powerline-status
+
   # Is Oh My Zsh installed?
   if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Oh My Zsh is not installed.  Installing..."
