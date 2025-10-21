@@ -16,7 +16,7 @@ main() {
 
     # Browsers
     brew install --cask google-chrome
-    # brew install --cask google-chrome@canary
+    brew install --cask google-chrome@canary
     # brew install --cask safari-technology-preview
 
     # Development tools
@@ -52,6 +52,9 @@ main() {
     brew install --cask vlc
     brew install jq
     brew install yq
+    brew install --cask logitune
+    brew install --cask moom
+    brew install --cask iterm2
 
     # Applications
     brew install --cask adobe-creative-cloud
@@ -67,8 +70,6 @@ main() {
     brew install --cask docker
     brew install --cask drawio
     brew install --cask elmedia-player
-    brew install --cask google-chrome
-    brew install --cask google-chrome@canary
     # brew install --cask keyboard-maestro
     # brew install --cask messenger
     brew install --cask microsoft-office
@@ -76,6 +77,7 @@ main() {
     # brew install --cask mysqlworkbench
     # brew install --cask nordpass
     # brew install postman
+    
     # brew install --cask skype
     brew install --cask slack
     brew install --cask snagit
