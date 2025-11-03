@@ -19,6 +19,10 @@ if ! package_is_installed "tailscale"; then
 fi
 install_package "Tree" "tree"
 
+install_package "Pandoc" "pandoc"
+
+install_package "LaTeX" "texlive-latex-recommended"
+
 # install_package "xclip" "xclip"
 
 if [ -d "$HOME/.nvm" ]; then

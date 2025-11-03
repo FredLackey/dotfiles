@@ -52,6 +52,8 @@ main() {
     brew install --cask vlc
     brew install jq
     brew install yq
+    brew install pandoc
+    brew install --cask basictex
     brew install --cask logitune
     brew install --cask moom
     brew install --cask iterm2

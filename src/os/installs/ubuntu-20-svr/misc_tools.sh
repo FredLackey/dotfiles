@@ -10,6 +10,8 @@ print_in_purple "\n   Miscellaneous Tools\n\n"
 
 install_package "cURL" "curl"
 install_package "ShellCheck" "shellcheck"
+install_package "Pandoc" "pandoc"
+install_package "LaTeX" "texlive-latex-recommended"
 # install_package "xclip" "xclip"
 
 if [ -d "$HOME/.nvm" ]; then
