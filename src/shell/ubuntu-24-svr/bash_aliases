@@ -46,9 +46,6 @@ alias u="sudo apt-get update \
 
 # Customizations
 
-alias count-files="find . -maxdepth 1 -type f | wc -l"
-alias count-folders="find . -mindepth 1 -maxdepth 1 -type d | wc -l"
-alias count='echo "Files  : $(find . -maxdepth 1 -type f | wc -l)" && echo "Folders: $(find . -mindepth 1 -maxdepth 1 -type d | wc -l)"'
-alias rm='rm_safe'
 alias packages="find ./ -type f -name \"package.json\" -exec stat --format=\"%Y %n\" {} + | grep -v \"node_modules\" sort -n | awk '{print strftime("%Y-%m-%d %H:%M:%S", $1), $2}'"
 alias local-ip='hostname -I | awk '\''{print $1}'\''
+alias myip='curl -s https://ipinfo.io/ip'
