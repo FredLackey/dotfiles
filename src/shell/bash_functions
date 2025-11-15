@@ -60,6 +60,18 @@ clone() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Create a new directory and enter it.
+#
+# Usage example:
+#
+#   mkd my-project
+
+mkd() {
+    mkdir -p "$@" && cd "$@"
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Create data URI from a file.
 #
 # Usage example:
