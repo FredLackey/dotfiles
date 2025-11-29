@@ -14,6 +14,9 @@ execute "defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool
 execute "defaults write com.apple.menuextra.battery ShowPercent -string 'NO'" \
     "Hide battery percentage from the menu bar"
 
+execute "defaults write com.apple.controlcenter 'NSStatusItem Visible FocusModes' -bool false" \
+    "Hide Focus icon from the menu bar"
+
 # execute "sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true" \
 #     "Show language menu in the top right corner of the boot screen"
 
