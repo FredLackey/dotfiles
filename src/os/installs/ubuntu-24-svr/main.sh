@@ -22,5 +22,6 @@ upgrade
 ./../npm.sh
 ./tmux.sh
 ./../vim.sh
+./claude-code.sh
 
 ./cleanup.sh
