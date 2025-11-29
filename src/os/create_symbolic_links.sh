@@ -24,25 +24,31 @@ backup_bash_files() {
 create_symlinks() {
 
     local os_name="$(get_os_name)"
-    local shell_path="shell"
+    local baseDir="$(cd .. && pwd)"
 
-    # Use OS-specific shell files if they exist
-    if [ -d "../shell/$os_name" ]; then
-        shell_path="shell/$os_name"
-    fi
+    # Helper function to get the correct source path for shell files.
+    # Uses OS-specific file if it exists, otherwise falls back to base shell/.
+    get_shell_source() {
+        local filename="$1"
+        if [ -f "$baseDir/shell/$os_name/$filename" ]; then
+            printf "%s" "shell/$os_name/$filename"
+        else
+            printf "%s" "shell/$filename"
+        fi
+    }
 
     declare -a FILES_TO_SYMLINK=(
 
-        "$shell_path/bash_aliases"
-        "$shell_path/bash_autocompletion"
-        "$shell_path/bash_exports"
-        "$shell_path/bash_functions"
-        "$shell_path/bash_init"
-        "$shell_path/bash_logout"
-        "$shell_path/bash_options"
-        "$shell_path/bash_profile"
-        "$shell_path/bash_prompt"
-        "$shell_path/bashrc"
+        "$(get_shell_source 'bash_aliases')"
+        "$(get_shell_source 'bash_autocompletion')"
+        "$(get_shell_source 'bash_exports')"
+        "$(get_shell_source 'bash_functions')"
+        "$(get_shell_source 'bash_init')"
+        "$(get_shell_source 'bash_logout')"
+        "$(get_shell_source 'bash_options')"
+        "$(get_shell_source 'bash_profile')"
+        "$(get_shell_source 'bash_prompt')"
+        "$(get_shell_source 'bashrc')"
         "shell/curlrc"
         "shell/inputrc"
 
@@ -71,7 +77,7 @@ create_symlinks() {
 
     for i in "${FILES_TO_SYMLINK[@]}"; do
 
-        sourceFile="$(cd .. && pwd)/$i"
+        sourceFile="$baseDir/$i"
         targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
         if [ ! -e "$targetFile" ] || $skipQuestions; then
