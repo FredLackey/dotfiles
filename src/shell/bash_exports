@@ -5,6 +5,12 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Add ~/.local/bin to PATH (used by pipx, Claude Code, etc.)
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Stop the macOS Terminal from showing a warning
 # message when Zsh is not the default shell.
 #
