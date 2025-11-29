@@ -8,7 +8,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 install_npm_package() {
 
     execute \
-        ". $HOME/.bash.local \
+        "export NVM_DIR=\"$HOME/.nvm\" \
+            && [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\" \
             && npm install --global --silent $2" \
         "$1"
 
