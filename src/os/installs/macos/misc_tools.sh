@@ -53,7 +53,6 @@ brew_install "Messenger" "messenger" "--cask"
 brew_install "Microsoft Office 365" "microsoft-office" "--cask"
 brew_install "Microsoft Teams" "microsoft-teams" "--cask"
 # brew_install "MySQL" "mysql"
-brew_install "MySQL Workbench" "mysqlworkbench" "--cask"
 
 # brew_install "ngrok" "ngrok" "--cask"
 brew_install "Nord Pass" "nordpass" "--cask"
