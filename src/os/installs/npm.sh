@@ -22,6 +22,7 @@ main() {
     print_in_purple "\n   npm\n\n"
 
     install_npm_package "Update npm" "npm"
+    install_npm_package "Gemini CLI" "@google/gemini-cli"
 
 }
 

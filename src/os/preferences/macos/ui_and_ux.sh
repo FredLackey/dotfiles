@@ -32,6 +32,9 @@ execute "defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool
 execute "defaults write com.apple.screencapture disable-shadow -bool true" \
     "Disable shadow in screenshots"
 
+execute "mkdir -p $HOME/Screenshots" \
+    "Create Screenshots folder"
+
 execute "defaults write com.apple.screencapture location -string '$HOME/Screenshots'" \
     "Save screenshots to the Screenshots folder"
 
