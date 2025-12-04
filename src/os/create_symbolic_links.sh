@@ -28,8 +28,26 @@ create_symlinks() {
 
     # Helper function to get the correct source path for shell files.
     # Uses OS-specific file if it exists, otherwise falls back to base shell/.
+    # Exception: Files that internally source their OS-specific variants
+    # (via `. "$OS/filename"`) must always use the base file.
     get_shell_source() {
         local filename="$1"
+
+        # These files source OS-specific variants internally via `. "$OS/filename"`
+        # and must always symlink to the base file to avoid bypassing common config.
+        local -a self_sourcing_files=(
+            "bash_aliases"
+            "bash_autocompletion"
+            "bash_init"
+        )
+
+        for f in "${self_sourcing_files[@]}"; do
+            if [ "$filename" = "$f" ]; then
+                printf "%s" "shell/$filename"
+                return
+            fi
+        done
+
         if [ -f "$baseDir/shell/$os_name/$filename" ]; then
             printf "%s" "shell/$os_name/$filename"
         else
