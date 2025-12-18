@@ -114,8 +114,6 @@ export PATH
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Set local aliases.
-
-alias g="git"
 ```
 
 #### `~/.gitconfig.local`

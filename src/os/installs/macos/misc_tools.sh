@@ -80,11 +80,6 @@ brew_install "Termius" "termius" "--cask"
 brew_install "Terraform (tfenv)" "tfenv"
 brew_install "Tidal" "tidal" "--cask"
 # brew_install "Thunderbird" "thunderbird" "--cask"
-# brew_install "Twilio" "twilio/brew/twilio"
-
-# execute \
-#     "twilio autocomplete bash" \
-#     "Twilio Autocomplete"
 
 #WhatsApp
 # open "macappstores://itunes.apple.com/en/app/xcode/id1147396723"

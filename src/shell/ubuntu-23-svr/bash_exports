@@ -5,6 +5,18 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Add Go bin directory to PATH (used by gitego and other Go tools)
+
+export PATH="$HOME/go/bin:$PATH"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Set GPG_TTY for GPG signing operations (required by gitego and git commit signing)
+
+export GPG_TTY=$(tty)
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Stop the macOS Terminal from showing a warning
 # message when Zsh is not the default shell.
 #
@@ -107,6 +119,4 @@ fi
 export PYTHONIOENCODING="UTF-8"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-twilio autocomplete:script bash
 

@@ -7,17 +7,27 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 install_plugin() {
-    execute "code --install-extension $2" "$1 plugin"
+    # Suppress CLI crashes - VS Code's Electron/Node can fail on some systems
+    # Extensions can be installed manually via VS Code UI if this fails
+    execute "code --install-extension $2 2>/dev/null || true" "$1 plugin"
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-print_in_purple "\n   Visual Studio Code\n\n"                                :
+print_in_purple "\n   Visual Studio Code\n\n"
 
 # Install VSCode
 brew_install "Visual Studio Code" "visual-studio-code" "--cask"
 
 printf "\n"
+
+# Check if VS Code CLI is functional before attempting extension installs
+if ! code --version &>/dev/null; then
+    print_warning "VS Code CLI is not working - skipping extension installs"
+    print_warning "Fix: Open VS Code → Cmd+Shift+P → 'Shell Command: Install code command in PATH'"
+    print_warning "Then install extensions manually via VS Code UI"
+    exit 0
+fi
 
 # Install the VSCode plugins
 # install_plugin "AWS Toolkit" "amazonwebservices.aws-toolkit-vscode"
