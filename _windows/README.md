@@ -34,63 +34,13 @@ For each identity defined in the configuration:
 ## Requirements
 
 - Windows 10 (build 19041+) or Windows 11
-- Administrator privileges
+- PowerShell running as Administrator
 - Internet connection
 
 ## Usage
 
 ```powershell
-# Run as Administrator
-powershell -ExecutionPolicy Bypass -File setup.ps1
-
-# Non-interactive mode
-.\setup.ps1 -SkipConfirmation
-```
-
-## Configuration
-
-Edit the `$IdentityConfig` section at the top of `setup.ps1`:
-
-```powershell
-$IdentityConfig = @{
-    Name = "Your Name"
-    ProjectsRoot = "C:\_"              # Root for project directories
-    DefaultProfile = "personal"
-
-    Identities = @(
-        @{
-            Profile      = "personal"
-            Email        = "you@example.com"
-            Username     = "YourGitHubUsername"
-            SshKeyName   = "id_personal"
-            Directory    = "YourName"          # Creates C:\_\YourName
-            GpgSign      = $true
-            SshHosts     = @(
-                @{ Alias = "github.com"; HostName = "github.com"; Port = 22 }
-            )
-        }
-        # Add more identities by copying the block above
-    )
-}
-```
-
-### Adding a New Identity
-
-Copy an identity block and modify:
-
-```powershell
-@{
-    Profile      = "work"
-    Email        = "you@company.com"
-    Username     = "WorkUsername"
-    SshKeyName   = "id_work"
-    Directory    = "CompanyName"
-    GpgSign      = $true
-    SshHosts     = @(
-        @{ Alias = "github-work"; HostName = "github.com"; Port = 22 }
-        @{ Alias = "gitlab.company.com"; HostName = "gitlab.company.com"; Port = 22 }
-    )
-}
+irm https://raw.github.com/fredlackey/dotfiles/main/_windows/setup.ps1 | iex
 ```
 
 ## Post-Installation
@@ -124,6 +74,92 @@ After the script completes:
    ```powershell
    tailscale up
    ```
+
+### Adding a New Client/Company
+
+To add a new identity after initial setup (example: ABC, Inc.):
+
+1. Copy the variables block below into PowerShell
+2. Modify the values for your client
+3. Press Enter to set the variables
+4. Copy/paste each subsequent step directly into PowerShell (no modifications needed)
+
+**Step 1: Set variables** (modify these values, then paste into PowerShell)
+
+```powershell
+$CLIENT_NAME    = "abcinc"
+$CLIENT_DIR     = "ABCInc"
+$CLIENT_EMAIL   = "you@abcinc.com"
+$CLIENT_USER    = "YourABCUsername"
+$CLIENT_HOST    = "github-abcinc"      # SSH host alias
+$CLIENT_HOSTNAME = "github.com"        # Actual hostname
+$FULL_NAME      = "Your Name"
+```
+
+**Step 2: Generate SSH key** (copy/paste as-is)
+
+```powershell
+ssh-keygen -t ed25519 -C $CLIENT_EMAIL -f "$env:USERPROFILE\.ssh\id_$CLIENT_NAME" -N '""' -q
+ssh-add "$env:USERPROFILE\.ssh\id_$CLIENT_NAME"
+```
+
+**Step 3: Update SSH config** (copy/paste as-is)
+
+```powershell
+@"
+
+# $CLIENT_DIR
+Host $CLIENT_HOST
+    HostName $CLIENT_HOSTNAME
+    Port 22
+    User git
+    IdentityFile ~/.ssh/id_$CLIENT_NAME
+    IdentitiesOnly yes
+"@ | Add-Content "$env:USERPROFILE\.ssh\config"
+```
+
+**Step 4: Generate GPG key** (copy/paste as-is)
+
+```powershell
+gpg --batch --passphrase "" --quick-generate-key "$FULL_NAME <$CLIENT_EMAIL>" ed25519 sign 1y
+$GPG_KEY_ID = (gpg --list-secret-keys --keyid-format=long $CLIENT_EMAIL | Select-String "(ed25519|rsa\d+)/([A-F0-9]+)").Matches.Groups[2].Value
+Write-Host "GPG Key ID: $GPG_KEY_ID"
+```
+
+**Step 5: Create project directory** (copy/paste as-is)
+
+```powershell
+New-Item -ItemType Directory -Force -Path "C:\_\$CLIENT_DIR"
+```
+
+**Step 6: Create gitego profile and auto-switch** (copy/paste as-is)
+
+```powershell
+gitego add $CLIENT_NAME `
+    --name $FULL_NAME `
+    --email $CLIENT_EMAIL `
+    --username $CLIENT_USER `
+    --ssh-key "$env:USERPROFILE\.ssh\id_$CLIENT_NAME" `
+    --signing-key $GPG_KEY_ID
+
+gitego auto "C:\_\$CLIENT_DIR\" $CLIENT_NAME
+```
+
+**Step 7: Display public keys for registration** (copy/paste as-is)
+
+```powershell
+Write-Host "`n--- SSH Public Key ---"
+Get-Content "$env:USERPROFILE\.ssh\id_$CLIENT_NAME.pub"
+Write-Host "`n--- GPG Public Key ---"
+gpg --armor --export $GPG_KEY_ID
+```
+
+**Step 8: Register and test**
+
+1. Add SSH public key to client's Git provider
+2. Add GPG public key to client's Git provider
+3. Test SSH: `ssh -T git@$CLIENT_HOST`
+4. Verify gitego: `cd C:\_\$CLIENT_DIR && gitego status`
 
 ## Directory Structure
 
