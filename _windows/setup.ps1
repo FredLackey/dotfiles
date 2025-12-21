@@ -20,7 +20,7 @@ $ChocolateyPackages = @(
     @{ Name = "jq"; Package = "jq" },
     @{ Name = "yq"; Package = "yq" },
     @{ Name = "Visual Studio Build Tools"; Package = "visualstudio2022buildtools" },
-    @{ Name = "Google Chrome"; Package = "googlechrome" },
+    @{ Name = "Google Chrome"; Package = "googlechrome"; IgnoreChecksum = $true },
     @{ Name = "Windows Terminal"; Package = "microsoft-windows-terminal" },
     @{ Name = "Gpg4win"; Package = "gpg4win" },
     @{ Name = "Tailscale"; Package = "tailscale" }
@@ -69,8 +69,34 @@ function Test-ChocolateyPackageInstalled {
     return $result -match $Package
 }
 
-function Refresh-EnvironmentPath {
+function Refresh-Environment {
+    # Refresh PATH
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+
+    # Refresh NVM environment variables
+    $nvmHome = [System.Environment]::GetEnvironmentVariable("NVM_HOME", "User")
+    $nvmSymlink = [System.Environment]::GetEnvironmentVariable("NVM_SYMLINK", "User")
+
+    if ($nvmHome) {
+        $env:NVM_HOME = $nvmHome
+        # Add NVM_HOME to path if not already there
+        if ($env:Path -notlike "*$nvmHome*") {
+            $env:Path = "$nvmHome;$env:Path"
+        }
+    }
+    if ($nvmSymlink) {
+        $env:NVM_SYMLINK = $nvmSymlink
+        # Add NVM_SYMLINK to path if not already there
+        if ($env:Path -notlike "*$nvmSymlink*") {
+            $env:Path = "$nvmSymlink;$env:Path"
+        }
+    }
+
+    # Refresh GOPATH
+    $goPath = [System.Environment]::GetEnvironmentVariable("GOPATH", "User")
+    if ($goPath) {
+        $env:GOPATH = $goPath
+    }
 }
 
 function Add-ToUserPath {
@@ -132,7 +158,7 @@ function Install-Chocolatey {
         Set-ExecutionPolicy Bypass -Scope Process -Force
         [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
         Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-        Refresh-EnvironmentPath
+        Refresh-Environment
         Write-Success "Chocolatey installed"
         return $true
     }
@@ -145,7 +171,8 @@ function Install-Chocolatey {
 function Install-ChocolateyPackage {
     param(
         [string]$Name,
-        [string]$Package
+        [string]$Package,
+        [bool]$IgnoreChecksum = $false
     )
 
     if (Test-ChocolateyPackageInstalled $Package) {
@@ -154,7 +181,13 @@ function Install-ChocolateyPackage {
     }
 
     try {
-        $output = choco install $Package -y --no-progress 2>&1
+        $chocoArgs = @("install", $Package, "-y", "--no-progress")
+        if ($IgnoreChecksum) {
+            $chocoArgs += "--ignore-checksums"
+            Write-Info "$Name: using --ignore-checksums (downloads from official source)"
+        }
+
+        $output = & choco @chocoArgs 2>&1
         if ($LASTEXITCODE -eq 0) {
             Write-Success "$Name installed"
             return $true
@@ -176,44 +209,72 @@ function Install-ChocolateyPackages {
 
     $results = @()
     foreach ($pkg in $ChocolateyPackages) {
-        $success = Install-ChocolateyPackage -Name $pkg.Name -Package $pkg.Package
+        $ignoreChecksum = if ($pkg.IgnoreChecksum) { $true } else { $false }
+        $success = Install-ChocolateyPackage -Name $pkg.Name -Package $pkg.Package -IgnoreChecksum $ignoreChecksum
         $results += @{ Name = $pkg.Name; Success = $success }
     }
 
-    Refresh-EnvironmentPath
+    Refresh-Environment
     return $results
 }
 
 function Install-NodeWithNvm {
     Write-Step "Installing Node.js $NodeVersion via nvm"
 
-    Refresh-EnvironmentPath
+    Refresh-Environment
 
-    # Check if nvm is available
-    $nvmPath = "$env:USERPROFILE\AppData\Roaming\nvm\nvm.exe"
-    if (-not (Test-Path $nvmPath)) {
-        # Try to find nvm in PATH
-        if (-not (Test-CommandExists "nvm")) {
-            Write-Failure "nvm not found. Please restart PowerShell and run this script again."
-            return $false
+    # Find nvm.exe - check multiple possible locations
+    $nvmPath = $null
+    $possiblePaths = @(
+        "$env:NVM_HOME\nvm.exe",
+        "$env:USERPROFILE\AppData\Roaming\nvm\nvm.exe",
+        "$env:ProgramFiles\nvm\nvm.exe",
+        "C:\ProgramData\nvm\nvm.exe"
+    )
+
+    foreach ($path in $possiblePaths) {
+        if ($path -and (Test-Path $path)) {
+            $nvmPath = $path
+            Write-Info "Found nvm at: $nvmPath"
+            break
         }
+    }
+
+    # Also try finding nvm in PATH
+    if (-not $nvmPath) {
+        $nvmCmd = Get-Command "nvm" -ErrorAction SilentlyContinue
+        if ($nvmCmd) {
+            $nvmPath = $nvmCmd.Source
+            Write-Info "Found nvm in PATH: $nvmPath"
+        }
+    }
+
+    if (-not $nvmPath) {
+        Write-Failure "nvm not found. Please restart PowerShell and run this script again."
+        Write-Info "Searched locations:"
+        foreach ($path in $possiblePaths) {
+            if ($path) { Write-Info "  - $path" }
+        }
+        return $false
     }
 
     try {
         # Install Node version
+        Write-Info "Running: nvm install $NodeVersion"
         $output = & $nvmPath install $NodeVersion 2>&1
-        Write-Info "nvm install output: $output"
+        Write-Info ($output | Out-String)
 
         # Use the installed version
+        Write-Info "Running: nvm use $NodeVersion"
         $output = & $nvmPath use $NodeVersion 2>&1
-        Write-Info "nvm use output: $output"
+        Write-Info ($output | Out-String)
 
-        Refresh-EnvironmentPath
+        Refresh-Environment
 
         # Verify installation
         if (Test-CommandExists "node") {
-            $nodeVersion = node --version
-            Write-Success "Node.js $nodeVersion installed"
+            $installedVersion = node --version
+            Write-Success "Node.js $installedVersion installed"
             return $true
         }
         else {
@@ -231,15 +292,27 @@ function Install-NodeWithNvm {
 function Install-Yarn {
     Write-Step "Installing Yarn via npm"
 
-    Refresh-EnvironmentPath
+    Refresh-Environment
 
-    if (-not (Test-CommandExists "npm")) {
+    # Find npm - check NVM_SYMLINK first, then PATH
+    $npmPath = $null
+    if ($env:NVM_SYMLINK -and (Test-Path "$env:NVM_SYMLINK\npm.cmd")) {
+        $npmPath = "$env:NVM_SYMLINK\npm.cmd"
+        Write-Info "Found npm at: $npmPath"
+    }
+    elseif (Test-CommandExists "npm") {
+        $npmPath = "npm"
+    }
+
+    if (-not $npmPath) {
         Write-Failure "npm not found. Node.js may not be properly installed."
+        Write-Info "Run 'nvm use $NodeVersion' and try again, or restart PowerShell."
         return $false
     }
 
     try {
-        $output = npm install -g yarn 2>&1
+        Write-Info "Running: npm install -g yarn"
+        $output = & $npmPath install -g yarn 2>&1
         if ($LASTEXITCODE -eq 0) {
             Write-Success "Yarn installed"
             return $true
@@ -259,18 +332,45 @@ function Install-Yarn {
 function Install-Gitego {
     Write-Step "Installing gitego via go install"
 
-    Refresh-EnvironmentPath
+    Refresh-Environment
 
-    if (-not (Test-CommandExists "go")) {
+    # Find go.exe - check common locations
+    $goPath = $null
+    $possiblePaths = @(
+        "C:\Program Files\Go\bin\go.exe",
+        "C:\Go\bin\go.exe",
+        "$env:USERPROFILE\go\bin\go.exe"
+    )
+
+    foreach ($path in $possiblePaths) {
+        if (Test-Path $path) {
+            $goPath = $path
+            Write-Info "Found Go at: $goPath"
+            break
+        }
+    }
+
+    if (-not $goPath -and (Test-CommandExists "go")) {
+        $goPath = "go"
+    }
+
+    if (-not $goPath) {
         Write-Failure "Go not found. Please restart PowerShell and run this script again."
         return $false
     }
 
     try {
-        $env:GOPATH = "$env:USERPROFILE\go"
-        $output = go install $GitegoRepo 2>&1
+        # Set GOPATH if not set
+        if (-not $env:GOPATH) {
+            $env:GOPATH = "$env:USERPROFILE\go"
+        }
+
+        Write-Info "GOPATH: $env:GOPATH"
+        Write-Info "Running: go install $GitegoRepo"
+
+        $output = & $goPath install $GitegoRepo 2>&1
         if ($LASTEXITCODE -eq 0) {
-            Write-Success "gitego installed"
+            Write-Success "gitego installed to $env:GOPATH\bin"
             return $true
         }
         else {
