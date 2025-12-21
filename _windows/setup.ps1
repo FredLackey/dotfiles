@@ -184,7 +184,7 @@ function Install-ChocolateyPackage {
         $chocoArgs = @("install", $Package, "-y", "--no-progress")
         if ($IgnoreChecksum) {
             $chocoArgs += "--ignore-checksums"
-            Write-Info "$Name: using --ignore-checksums (downloads from official source)"
+            Write-Info "$($Name): using --ignore-checksums (downloads from official source)"
         }
 
         $output = & choco @chocoArgs 2>&1
