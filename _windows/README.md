@@ -75,9 +75,29 @@ After the script completes:
    tailscale up
    ```
 
-### Adding a New Client/Company
+### Adding a New Project Folder (Existing Identity)
 
-To add a new identity after initial setup (example: ABC, Inc.):
+For projects that use an existing identity (e.g., contributing to a client's GitHub repo with your personal account):
+
+1. Copy the commands below into PowerShell
+2. Modify `$PROJECT_DIR` and `$PROFILE_NAME` for your project
+3. Press Enter to run
+
+```powershell
+$PROJECT_DIR  = "BobSmith"      # Folder name under C:\_
+$PROFILE_NAME = "personal"      # Existing gitego profile to use
+
+New-Item -ItemType Directory -Force -Path "C:\_\$PROJECT_DIR"
+gitego auto "C:\_\$PROJECT_DIR\" $PROFILE_NAME
+```
+
+Verify: `cd C:\_\BobSmith && gitego status`
+
+---
+
+### Adding a New Client/Company (New Identity)
+
+For clients requiring separate SSH/GPG keys and a dedicated identity:
 
 1. Copy the variables block below into PowerShell
 2. Modify the values for your client
