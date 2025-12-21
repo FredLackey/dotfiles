@@ -1,244 +1,200 @@
 # Windows Development Environment Setup
 
-Simplified PowerShell script for setting up a Windows development machine with essential tools. This is a standalone approach that does not alter the main dotfiles repository (which focuses on macOS and Linux).
+Automated PowerShell script for setting up a Windows development machine with essential tools and Git identity management. This is a standalone approach separate from the main dotfiles repository (which focuses on macOS and Linux).
 
-## Goals
+## What It Does
 
-- Single PowerShell script for quick Windows dev machine setup
-- Install core development tools via Chocolatey
-- No shell customization (Bash aliases/functions are not applicable)
-- No symlinks or dotfile management
-- Minimal, opinionated, and fast
-- Target: Windows 11+
+The script performs two phases:
 
----
+### Phase 1: Install Development Tools
 
-## Decisions
+- **Package Manager**: Chocolatey
+- **Version Control**: Git for Windows (includes Git Bash)
+- **Node.js**: nvm-windows, Node 22, Yarn
+- **Go**: golang + gitego
+- **Editors**: NeoVim, Visual Studio Code
+- **Utilities**: jq, yq
+- **Build Tools**: Visual Studio Build Tools
+- **Security**: Gpg4win (GPG + pinentry)
+- **Other**: Windows Terminal, Google Chrome, Tailscale
 
-| Decision | Choice |
-|----------|--------|
-| Package Manager | **Chocolatey** |
-| Node Version Manager | **nvm-windows** |
-| Editor (Vim-like) | **NeoVim** |
-| Primary Editor | **VSCode** |
-| Build Tools | **Visual Studio Build Tools** (required) |
-| Browser | **Google Chrome** |
-| Terminal | **Windows Terminal** (if not present) |
-| GPG | **Gpg4win** (GPG + pinentry for commit signing) |
-| Git Identity Management | **gitego** (via `go install`) |
-| VPN | **Tailscale** |
-| Git Configuration | Skip (manual post-install) |
+### Phase 2: Configure Git Identities (Automated)
 
----
+For each identity defined in the configuration:
 
-## Comparison: Main Dotfiles vs Windows
+- **SSH keys**: Generated automatically (ED25519, no passphrase)
+- **GPG keys**: Generated automatically (ED25519, no passphrase, 1-year expiry)
+- **SSH config**: Generated at `~/.ssh/config`
+- **SSH agent**: Windows service enabled and keys added
+- **Git config**: GPG program, credential helper (gitego), commit signing enabled
+- **Project directories**: Created at configured root (e.g., `C:\_\FredLackey`)
+- **gitego profiles**: Created with SSH key and GPG signing key
+- **Auto-switch rules**: Directory-based profile switching
 
-### Package Manager
+## Requirements
 
-| Main Dotfiles | Windows |
-|---------------|---------|
-| Homebrew (macOS) | Chocolatey |
-| APT (Ubuntu) | Chocolatey |
-
-### Core Development Tools
-
-| Tool | Main Dotfiles | Windows | Status |
-|------|---------------|---------|--------|
-| **Git** | `brew install git` / `apt install git` | Git for Windows (includes Git Bash) | INSTALL |
-| **Node.js (via NVM)** | `nvm` (cloned from GitHub) | nvm-windows | INSTALL |
-| **Node 22** | Installed via nvm | Installed via nvm-windows | INSTALL |
-| **Yarn** | APT package | `npm install -g yarn` | INSTALL |
-| **Go** | Not in main dotfiles | Chocolatey | INSTALL |
-| **Docker** | docker-ce via APT | N/A (see note below) | EXCLUDED |
-| **cURL** | APT package | Built into Windows / Git Bash | BUILT-IN |
-| **jq** | Homebrew | Chocolatey | INSTALL |
-| **yq** | Homebrew | Chocolatey | INSTALL |
-
-### Editors & IDEs
-
-| Tool | Main Dotfiles | Windows | Status |
-|------|---------------|---------|--------|
-| **Vim** | `brew install vim` | NeoVim | INSTALL |
-| **VSCode** | Not in main dotfiles | Chocolatey | INSTALL |
-
-### Shell & Terminal
-
-| Tool | Main Dotfiles | Windows | Status |
-|------|---------------|---------|--------|
-| **Bash** | Default shell (configured extensively) | Git Bash (bundled with Git) | INSTALL |
-| **Windows Terminal** | N/A | Chocolatey (if not present) | INSTALL |
-| **tmux** | `brew install tmux` | Not native; WSL required | SKIP |
-| **bash_aliases** | Extensive customization | N/A | N/A |
-| **bash_functions** | Extensive customization | N/A | N/A |
-| **bash_prompt** | Custom prompt | N/A | N/A |
-| **bash_exports** | Environment variables | Set via PowerShell/System | N/A |
-
-### Security & Signing
-
-| Tool | Main Dotfiles | Windows | Status |
-|------|---------------|---------|--------|
-| **GPG** | `brew install gpg` | Gpg4win | INSTALL |
-| **pinentry** | pinentry-mac | Included in Gpg4win | INSTALL |
-| **gitego** | Git identity management | `go install` | INSTALL |
-
-### Build Tools
-
-| Tool | Main Dotfiles | Windows | Status |
-|------|---------------|---------|--------|
-| **build-essential** | gcc, make, etc. | Visual Studio Build Tools | INSTALL |
-| **debian-archive-keyring** | APT signing | N/A | N/A |
-
-### Browser
-
-| Tool | Main Dotfiles | Windows | Status |
-|------|---------------|---------|--------|
-| **Google Chrome** | Homebrew cask | Chocolatey | INSTALL |
-
-### Utilities
-
-| Tool | Main Dotfiles | Windows | Status |
-|------|---------------|---------|--------|
-| **tree** | APT package | Built into Windows | BUILT-IN |
-| **Tailscale** | VPN | Chocolatey | INSTALL |
-| **ShellCheck** | Linting for shell scripts | Chocolatey | OPTIONAL |
-| **Pandoc** | Document conversion | Chocolatey | OPTIONAL |
-| **LaTeX** | texlive | MiKTeX or TeX Live | OPTIONAL |
-
-### Graphics/Media Tools (Excluded)
-
-| Tool | Main Dotfiles | Windows | Status |
-|------|---------------|---------|--------|
-| VLC | Homebrew cask | N/A | EXCLUDED |
-| Image tools | Various | N/A | EXCLUDED |
-| Video tools | Various | N/A | EXCLUDED |
-| Web font tools | Various | N/A | EXCLUDED |
-
----
-
-## Installation Plan
-
-### Package Manager: Chocolatey
-
-Chocolatey will be installed first if not already present. All subsequent installs use `choco install`.
-
-### Installation Order
-
-1. **Chocolatey** (if not installed)
-2. **Windows Terminal** (if not present)
-3. **Git for Windows** (includes Git Bash)
-4. **nvm-windows** (Node Version Manager)
-5. **Node.js 22** (via nvm)
-6. **Yarn** (via npm)
-7. **Go**
-8. **gitego** (via `go install`, requires Go)
-9. **NeoVim**
-10. **VSCode**
-11. **jq / yq** (JSON/YAML processors)
-12. **Visual Studio Build Tools**
-13. **Google Chrome**
-14. **Gpg4win** (GPG + pinentry)
-15. **Tailscale** (VPN)
-
-### Script Structure
-
-```powershell
-# setup.ps1 - Windows Development Environment Setup
-# Run as Administrator: powershell -ExecutionPolicy Bypass -File setup.ps1
-
-# 1. Check prerequisites (admin rights, Windows version)
-# 2. Install Chocolatey (if not present)
-# 3. Install Windows Terminal (if not present)
-# 4. Install Git for Windows
-# 5. Install nvm-windows
-# 6. Install Node.js 22 via nvm
-# 7. Install global npm packages (yarn)
-# 8. Install Go
-# 9. Install gitego (go install github.com/bgreenwell/gitego@main)
-# 10. Install NeoVim
-# 11. Install VSCode
-# 12. Install jq, yq
-# 13. Install Visual Studio Build Tools
-# 14. Install Google Chrome
-# 15. Install Gpg4win
-# 16. Install Tailscale
-# 17. Add Go bin to PATH (%USERPROFILE%\go\bin)
-# 18. Display post-installation summary
-```
-
----
-
-## What We WILL Install
-
-| Category | Tools |
-|----------|-------|
-| **Package Manager** | Chocolatey |
-| **Terminal** | Windows Terminal |
-| **Version Control** | Git for Windows (with Git Bash) |
-| **Node.js** | nvm-windows, Node 22, Yarn |
-| **Go** | Go (system-level) |
-| **Editors** | NeoVim, Visual Studio Code |
-| **Utilities** | jq, yq |
-| **Build Tools** | Visual Studio Build Tools |
-| **Security** | Gpg4win (GPG + pinentry for commit signing) |
-| **Git Identity** | gitego (manage multiple Git identities) |
-| **VPN** | Tailscale |
-| **Browser** | Google Chrome |
-
-## What We WILL NOT Install
-
-| Category | Reason |
-|----------|--------|
-| **Docker / Containers** | Requires WSL2 or Hyper-V, which need nested virtualization in a Proxmox VM. Run containers on a separate Linux VM instead. |
-| **Bash configuration** | Git Bash provides Bash, but extensive customization isn't practical |
-| **tmux** | Requires WSL; not native to Windows |
-| **Custom prompt** | PowerShell/Git Bash prompts are separate ecosystems |
-| **Shell aliases/functions** | Would require porting to PowerShell; out of scope |
-| **Graphics/media tools** | Excluded per requirements |
-| **Symbolic links to dotfiles** | Not applicable; this is standalone |
-
-## Prerequisites / Notes
-
-- **Visual Studio Build Tools** is a large download (~2GB)
-- Script must be run as Administrator
-- Target environment: Windows 11 VM in Proxmox (no nested virtualization)
-- **Go bin path** (`%USERPROFILE%\go\bin`) must be added to PATH for gitego
-
----
+- Windows 10 (build 19041+) or Windows 11
+- Administrator privileges
+- Internet connection
 
 ## Usage
 
 ```powershell
-# Download and run
-irm https://raw.github.com/fredlackey/dotfiles/main/_windows/setup.ps1 | iex
+# Run as Administrator
+powershell -ExecutionPolicy Bypass -File setup.ps1
 
-# Or clone and run locally
-git clone https://github.com/fredlackey/dotfiles.git
-cd dotfiles\_windows
-.\setup.ps1
-
-# Non-interactive mode (skip confirmation prompt)
+# Non-interactive mode
 .\setup.ps1 -SkipConfirmation
+```
+
+## Configuration
+
+Edit the `$IdentityConfig` section at the top of `setup.ps1`:
+
+```powershell
+$IdentityConfig = @{
+    Name = "Your Name"
+    ProjectsRoot = "C:\_"              # Root for project directories
+    DefaultProfile = "personal"
+
+    Identities = @(
+        @{
+            Profile      = "personal"
+            Email        = "you@example.com"
+            Username     = "YourGitHubUsername"
+            SshKeyName   = "id_personal"
+            Directory    = "YourName"          # Creates C:\_\YourName
+            GpgSign      = $true
+            SshHosts     = @(
+                @{ Alias = "github.com"; HostName = "github.com"; Port = 22 }
+            )
+        }
+        # Add more identities by copying the block above
+    )
+}
+```
+
+### Adding a New Identity
+
+Copy an identity block and modify:
+
+```powershell
+@{
+    Profile      = "work"
+    Email        = "you@company.com"
+    Username     = "WorkUsername"
+    SshKeyName   = "id_work"
+    Directory    = "CompanyName"
+    GpgSign      = $true
+    SshHosts     = @(
+        @{ Alias = "github-work"; HostName = "github.com"; Port = 22 }
+        @{ Alias = "gitlab.company.com"; HostName = "gitlab.company.com"; Port = 22 }
+    )
+}
 ```
 
 ## Post-Installation
 
-1. Restart PowerShell (or your terminal)
-2. Run `nvm use 22` to activate Node.js
-3. Configure Git identity:
+After the script completes:
+
+1. **Restart PowerShell** (or your terminal)
+
+2. **Activate Node.js**:
    ```powershell
-   git config --global user.name "Your Name"
-   git config --global user.email "you@email.com"
+   nvm use 22
    ```
-4. Configure gitego profiles (see `gitego --help`)
-5. Import GPG keys and configure commit signing if needed
-6. Log in to Tailscale: `tailscale up`
 
----
+3. **Register public keys** with Git providers (displayed at end of script):
+   - GitHub: https://github.com/settings/keys
+   - GitLab: https://gitlab.com/-/profile/keys
+   - Bitbucket: https://bitbucket.org/account/settings/ssh-keys/
 
-## Chocolatey Package Names Reference
+4. **Test SSH connections**:
+   ```powershell
+   ssh -T git@github.com
+   ```
 
-| Tool | Chocolatey Package |
-|------|-------------------|
+5. **Verify gitego**:
+   ```powershell
+   gitego list
+   gitego status
+   ```
+
+6. **Log in to Tailscale** (if needed):
+   ```powershell
+   tailscale up
+   ```
+
+## Directory Structure
+
+After setup:
+
+```
+C:\_                                    # ProjectsRoot
+├── YourName\                           # Personal projects (auto-switches to "personal")
+├── CompanyA\                           # Work projects (auto-switches to "work")
+└── ...
+
+%USERPROFILE%\.ssh\
+├── config                              # Generated SSH config
+├── id_personal                         # SSH private key
+├── id_personal.pub                     # SSH public key (register with providers)
+├── id_work
+└── id_work.pub
+```
+
+## What Gets Configured
+
+### Git Global Config
+
+```
+gpg.program = C:\Program Files (x86)\GnuPG\bin\gpg.exe
+credential.helper = !gitego credential
+commit.gpgsign = true
+user.useConfigOnly = true
+init.defaultBranch = main
+```
+
+### SSH Config (Generated)
+
+```
+Host github.com
+    HostName github.com
+    Port 22
+    User git
+    IdentityFile ~/.ssh/id_personal
+    IdentitiesOnly yes
+```
+
+### gitego
+
+- Profiles created with name, email, username, SSH key, GPG signing key
+- Auto-switch rules map project directories to profiles
+- Credential helper configured for Git authentication
+
+## Idempotent
+
+The script can be run multiple times safely:
+
+- Existing SSH keys are skipped
+- Existing GPG keys are skipped
+- Existing Chocolatey packages are skipped
+- Existing gitego profiles are skipped
+- SSH config is regenerated (overwritten)
+
+## What Is NOT Installed
+
+| Category | Reason |
+|----------|--------|
+| Docker | Requires WSL2/Hyper-V (nested virtualization) |
+| Bash configuration | Git Bash provides Bash, but shell customization is out of scope |
+| tmux | Requires WSL; not native to Windows |
+| Shell aliases/functions | Would require porting to PowerShell |
+
+## Chocolatey Packages
+
+| Tool | Package |
+|------|---------|
 | Git for Windows | `git` |
 | nvm-windows | `nvm` |
 | Go | `golang` |
@@ -246,7 +202,7 @@ cd dotfiles\_windows
 | VSCode | `vscode` |
 | jq | `jq` |
 | yq | `yq` |
-| Visual Studio Build Tools | `visualstudio2022buildtools` |
+| VS Build Tools | `visualstudio2022buildtools` |
 | Google Chrome | `googlechrome` |
 | Windows Terminal | `microsoft-windows-terminal` |
 | Gpg4win | `gpg4win` |
@@ -254,8 +210,8 @@ cd dotfiles\_windows
 
 ## Non-Chocolatey Installs
 
-| Tool | Install Command |
-|------|-----------------|
-| Node.js 22 | `nvm install 22` (via nvm-windows) |
+| Tool | Method |
+|------|--------|
+| Node.js 22 | `nvm install 22` |
 | Yarn | `npm install -g yarn` |
 | gitego | `go install github.com/bgreenwell/gitego@main` |
