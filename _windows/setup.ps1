@@ -298,17 +298,17 @@ function New-SshConfig {
 # ------------------------------------------------------------------------------
 
 "@
-        foreach ($host in $identity.SshHosts) {
+        foreach ($sshHost in $identity.SshHosts) {
             # Skip if we've already processed this alias
-            if ($processedHosts.ContainsKey($host.Alias)) {
+            if ($processedHosts.ContainsKey($sshHost.Alias)) {
                 continue
             }
-            $processedHosts[$host.Alias] = $true
+            $processedHosts[$sshHost.Alias] = $true
 
             $configContent += @"
-Host $($host.Alias)
-    HostName $($host.HostName)
-    Port $($host.Port)
+Host $($sshHost.Alias)
+    HostName $($sshHost.HostName)
+    Port $($sshHost.Port)
     User git
     IdentityFile $keyPath
     IdentitiesOnly yes
