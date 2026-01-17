@@ -15,12 +15,18 @@ This repository contains my personal configuration files (dotfiles) for setting 
 To install, simply open your terminal and run the following command. This script will download the repository to `~/.dotfiles`, setup the environment, and execute the appropriate configuration scripts for your OS.
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/FredLackey/dotfiles/main/setup.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/FredLackey/dotfiles/main/src/setup.sh)"
+```
+
+Alternatively, if you have cloned the repository, you can run the setup script directly:
+
+```bash
+./src/setup.sh
 ```
 
 ### Windows (PowerShell)
 
-*Setup instructions coming soon.* This will utilize a `setup.ps1` script to perform a similar initialization for Windows environments.
+*Setup instructions coming soon.* This will utilize a `src/setup.ps1` script to perform a similar initialization for Windows environments.
 
 ## Critical Development Rules
 
@@ -32,3 +38,12 @@ These guidelines are absolute and must be followed for all scripts and documenta
     -   **Verify**: Confirm that the step was completed successfully after execution.
 
 2.  **Accessibility**: All scripts and documentation must be written clearly and simply, ensuring that a junior developer can understand and implement the plan without ambiguity.
+
+## Feature Planning
+
+The `features/` directory accounts for requirements and plans related to upcoming features or major changes.
+
+- Each feature resides in its own dedicated subfolder (e.g., `features/new-feature-name/`).
+- **requirements.md**: This file captures the specific requirements and goals for the feature.
+- **plan.md**: Created after requirements are finalized, this file details the implementation steps.
+

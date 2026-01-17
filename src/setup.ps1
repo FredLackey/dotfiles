@@ -11,7 +11,12 @@ if (-Not (Test-Path $TargetDir)) {
     Remove-Item $TempFile
 }
 
-$ScriptToRun = "$TargetDir\src\setup_windows.ps1"
+$ScriptDir = $PSScriptRoot
+if (-Not (Test-Path "$ScriptDir\setup\windows\setup.ps1")) {
+    $ScriptDir = "$TargetDir\src"
+}
+
+$ScriptToRun = "$ScriptDir\setup\windows\setup.ps1"
 if (Test-Path $ScriptToRun) {
     & $ScriptToRun
 } else {
