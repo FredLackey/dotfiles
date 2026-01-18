@@ -27,6 +27,24 @@ install_applications() {
     # 1. Critical System Tools (Order matters)
     run_installer "xcode-command-line-tools.sh"
     run_installer "homebrew.sh"
+    
+    # Reload Path for Homebrew (required for subsequent steps)
+    if ! command -v brew >/dev/null; then
+        echo "Loading Homebrew environment..."
+        if [ -x "/opt/homebrew/bin/brew" ]; then
+            eval "$(/opt/homebrew/bin/brew shellenv)"
+        elif [ -x "/usr/local/bin/brew" ]; then
+            eval "$(/usr/local/bin/brew shellenv)"
+        fi
+        
+        # Verify load
+        if command -v brew >/dev/null; then
+            echo "Homebrew loaded into memory."
+        else
+            echo "Warning: Failed to load Homebrew into memory. Subsequent installs may fail."
+        fi
+    fi
+
     run_installer "git.sh"
     run_installer "zsh.sh"
     run_installer "bash-completion.sh"
