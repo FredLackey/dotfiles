@@ -82,7 +82,6 @@ install_applications() {
     run_installer "docker.sh"
     run_installer "postman.sh"
     run_installer "dbeaver.sh"
-    run_installer "dbschema.sh"
     run_installer "studio-3t.sh"
     run_installer "drawio.sh"
     run_installer "slack.sh"
