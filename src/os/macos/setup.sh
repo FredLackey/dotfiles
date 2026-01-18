@@ -45,6 +45,9 @@ install_applications() {
         fi
     fi
 
+    # Install Sudo-required apps early (prevents timeout)
+    run_installer "safari-technology-preview.sh"
+
     run_installer "git.sh"
     run_installer "zsh.sh"
     run_installer "bash-completion.sh"
@@ -73,12 +76,10 @@ install_applications() {
     run_installer "aws-cli.sh"
     
     # 4. Applications & GUI Tools
-    run_installer "google-chrome.sh"
-    run_installer "brave-browser.sh"
-    run_installer "chrome-canary.sh"
-    run_installer "safari-technology-preview.sh"
     
     run_installer "vscode.sh"
+    run_installer "cursor.sh"
+    run_installer "sublime-texte.sh"
     run_installer "cursor.sh"
     run_installer "sublime-text.sh"
     run_installer "xcode.sh"
