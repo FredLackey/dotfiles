@@ -11,28 +11,28 @@
 
 Create the following directory structure inside the `src/` folder. This will house all the environment-specific setup scripts.
 
-- `src/setup/`
+- `src/os/`
     - `macos/`
     - `ubuntu-desktop/`
     - `ubuntu-server/`
     - `windows/`
-    - `windows-wsl/`
+    - `ubuntu-wsl/`
 
-**Action**: Run `mkdir -p src/setup/{macos,ubuntu-desktop,ubuntu-server,windows,windows-wsl}`
+**Action**: Run `mkdir -p src/os/{macos,ubuntu-desktop,ubuntu-server,windows,ubuntu-wsl}`
 
 ---
 
 ## Step 2: Relocate and Rename Environment Scripts
 
-Move the existing environment scripts from `src/` to their new locations in `src/setup/`. Rename each script to a standard entry point filename (`setup.sh` for Unix-like, `setup.ps1` for Windows).
+Move the existing environment scripts from `src/` to their new locations in `src/os/`. Rename each script to a standard entry point filename (`setup.sh` for Unix-like, `setup.ps1` for Windows).
 
 | Source File | Destination |
 | :--- | :--- |
-| `src/setup_macos.sh` | `src/setup/macos/setup.sh` |
-| `src/setup_ubuntu-desktop.sh` | `src/setup/ubuntu-desktop/setup.sh` |
-| `src/setup_ubuntu-server.sh` | `src/setup/ubuntu-server/setup.sh` |
-| `src/setup_ubuntu-wsl.sh` | `src/setup/windows-wsl/setup.sh` |
-| `src/setup_windows.ps1` | `src/setup/windows/setup.ps1` |
+| `src/setup_macos.sh` | `src/os/macos/setup.sh` |
+| `src/setup_ubuntu-desktop.sh` | `src/os/ubuntu-desktop/setup.sh` |
+| `src/setup_ubuntu-server.sh` | `src/os/ubuntu-server/setup.sh` |
+| `src/setup_ubuntu-wsl.sh` | `src/os/ubuntu-wsl/setup.sh` |
+| `src/setup_windows.ps1` | `src/os/windows/setup.ps1` |
 
 **Action**: Use `git mv` or standard move commands to relocate these files.
 
@@ -59,7 +59,7 @@ The entry scripts (`src/setup.sh` and `src/setup.ps1`) currently might contain l
 Modify `src/setup.sh` to:
 1.  Detect the operating system (macOS vs. Linux).
 2.  If Linux, attempt to distinguish between WSL, Desktop, or Server (if possible, or default to a safe choice/ask user).
-3.  Source or execute the corresponding script in `src/setup/<environment>/setup.sh`.
+3.  Source or execute the corresponding script in `src/os/<environment>/setup.sh`.
 
 **Logic Stub**:
 ```bash
@@ -68,10 +68,10 @@ Modify `src/setup.sh` to:
 # Detect OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
     echo "Detected macOS..."
-    source "$(dirname "$0")/setup/macos/setup.sh"
+    source "$(dirname "$0")/os/macos/setup.sh"
 elif grep -q Microsoft /proc/version; then
     echo "Detected Windows WSL..."
-    source "$(dirname "$0")/setup/windows-wsl/setup.sh"
+    source "$(dirname "$0")/os/ubuntu-wsl/setup.sh"
 # Add logic for Ubuntu Desktop/Server detection here
 else
     echo "Unsupported or unknown environment."
@@ -82,7 +82,7 @@ fi
 ### 4.2 Update `src/setup.ps1`
 Modify `src/setup.ps1` to:
 1.  Verify execution on Windows.
-2.  Invoke `src/setup/windows/setup.ps1`.
+2.  Invoke `src/os/windows/setup.ps1`.
 
 ---
 

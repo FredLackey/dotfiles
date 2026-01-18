@@ -33,21 +33,21 @@ SCRIPT_TO_RUN=""
 # Determine source directory
 # Logic: use local directory if script is running from file, otherwise (curl) use downloaded TARGET_DIR
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
-if [ ! -d "$SCRIPT_DIR/setup" ]; then
+if [ ! -d "$SCRIPT_DIR/os" ]; then
     SCRIPT_DIR="$TARGET_DIR/src"
 fi
 
 if [ "$OS" = "Darwin" ]; then
-    SCRIPT_TO_RUN="$SCRIPT_DIR/setup/macos/setup.sh"
+    SCRIPT_TO_RUN="$SCRIPT_DIR/os/macos/setup.sh"
 elif [ "$OS" = "Linux" ]; then
     # Check WSL
     if grep -qEi "(Microsoft|WSL)" /proc/version || [ -n "$WSL_DISTRO_NAME" ]; then
-        SCRIPT_TO_RUN="$SCRIPT_DIR/setup/ubuntu-wsl/setup.sh"
+        SCRIPT_TO_RUN="$SCRIPT_DIR/os/ubuntu-wsl/setup.sh"
     # Check Desktop
     elif [ -n "$XDG_CURRENT_DESKTOP" ]; then
-         SCRIPT_TO_RUN="$SCRIPT_DIR/setup/ubuntu-desktop/setup.sh"
+         SCRIPT_TO_RUN="$SCRIPT_DIR/os/ubuntu-desktop/setup.sh"
     else
-         SCRIPT_TO_RUN="$SCRIPT_DIR/setup/ubuntu-server/setup.sh"
+         SCRIPT_TO_RUN="$SCRIPT_DIR/os/ubuntu-server/setup.sh"
     fi
 fi
 

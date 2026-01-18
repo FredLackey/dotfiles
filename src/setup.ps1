@@ -12,11 +12,11 @@ if (-Not (Test-Path $TargetDir)) {
 }
 
 $ScriptDir = $PSScriptRoot
-if (-Not (Test-Path "$ScriptDir\setup\windows\setup.ps1")) {
+if (-Not (Test-Path "$ScriptDir\os\windows\setup.ps1")) {
     $ScriptDir = "$TargetDir\src"
 }
 
-$ScriptToRun = "$ScriptDir\setup\windows\setup.ps1"
+$ScriptToRun = "$ScriptDir\os\windows\setup.ps1"
 if (Test-Path $ScriptToRun) {
     & $ScriptToRun
 } else {

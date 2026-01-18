@@ -47,3 +47,12 @@ The `features/` directory accounts for requirements and plans related to upcomin
 - **requirements.md**: This file captures the specific requirements and goals for the feature.
 - **plan.md**: Created after requirements are finalized, this file details the implementation steps.
 
+## Research & experimentation
+
+The `_research/` directory is a designated area for placing assets used by AI for research on privately known topics.
+
+- **Purpose**: A workspace for AI analysis, experiment artifacts, and temporary context.
+- **Untrusted**: Content in this folder is **not** to be trusted, copied from, or used purely as-is. It may contain invalid code, failed experiments, or raw data.
+- **Validation Required**: We must conduct our own independent research and verification. Any insights gained from this folder must be validated before being implemented in the main codebase.
+
+
