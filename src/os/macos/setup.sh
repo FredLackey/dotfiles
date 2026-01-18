@@ -46,10 +46,8 @@ install_applications() {
     fi
 
     # Install Sudo-required apps early (prevents timeout)
-    run_installer "safari-technology-preview.sh"
 
     run_installer "git.sh"
-    run_installer "zsh.sh"
     run_installer "bash-completion.sh"
     run_installer "wget.sh"
     run_installer "gpg.sh"
