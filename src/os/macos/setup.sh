@@ -77,10 +77,7 @@ install_applications() {
     
     run_installer "vscode.sh"
     run_installer "cursor.sh"
-    run_installer "sublime-texte.sh"
-    run_installer "cursor.sh"
     run_installer "sublime-text.sh"
-    run_installer "xcode.sh"
 
     run_installer "docker.sh"
     run_installer "postman.sh"
