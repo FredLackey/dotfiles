@@ -41,5 +41,8 @@ run_preference "clock.sh"
 run_preference "screenshots.sh"
 run_preference "textedit.sh"
 
+# 6. Terminal appearance
+run_preference "terminal-theme.sh"
+
 echo "--------------------------------------------------"
 echo "macOS system preferences configuration complete."

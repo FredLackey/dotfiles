@@ -1,0 +1,28 @@
+# Readline library configuration
+# Installed by dotfiles: https://github.com/FredLackey/dotfiles
+
+# If there are multiple matches for completion,
+# make TAB cycle through them.
+TAB: menu-complete
+
+# Searching history via partial match.
+# Up arrow
+"\e[A":history-search-backward
+# Down arrow
+"\e[B":history-search-forward
+
+# Disable beeping and window flashing.
+set bell-style none
+
+# Use the `vi` set of key bindings (default is `emacs`).
+set editing-mode vi
+
+# Use case-insensitive TAB autocompletion.
+set completion-ignore-case on
+
+# Perform partial completion on the first Tab press, and
+# only start cycling full results on the second Tab press.
+set menu-complete-display-prefix on
+
+# Display a list of the matching files.
+set show-all-if-ambiguous on

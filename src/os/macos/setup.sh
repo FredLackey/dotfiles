@@ -78,6 +78,7 @@ install_applications() {
     run_installer "starship.sh"
     run_installer "starship-config.sh"
     run_installer "shell-config.sh"
+    run_installer "shell-cosmetics.sh"
 
     # 3. Core CLI Tools
     run_installer "git.sh"
@@ -109,7 +110,8 @@ install_applications() {
     run_installer "aws-cli.sh"
     
     # 6. Applications & GUI Tools
-    
+
+    run_installer "iterm2.sh"
     run_installer "vscode.sh"
     run_installer "cursor.sh"
     run_installer "sublime-text.sh"
