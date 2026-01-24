@@ -40,7 +40,7 @@ xattr -d com.apple.quarantine "$APPLESCRIPT" 2>/dev/null || true
 
 # 4. Run the AppleScript to import and set the theme
 echo "Importing '$THEME_NAME' theme into Terminal.app..."
-osascript "$APPLESCRIPT"
+osascript "$APPLESCRIPT" "$THEMES_DIR/$THEME_NAME.terminal"
 
 # 5. Verify
 CURRENT_DEFAULT=$(/usr/libexec/PlistBuddy -c "Print 'Default Window Settings'" "$PLIST" 2>/dev/null || echo "")
