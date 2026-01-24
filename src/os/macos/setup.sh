@@ -56,10 +56,11 @@ install_applications() {
     run_installer "nvm.sh"
     run_installer "node.sh"
     run_installer "yarn.sh"
+    run_installer "npm-check-updates.sh"
     run_installer "go.sh"
     run_installer "tfenv.sh"
     run_installer "terraform.sh"
-    
+
     # 3. CLI Tools
     run_installer "jq.sh"
     run_installer "yq.sh"
@@ -67,6 +68,9 @@ install_applications() {
     run_installer "shellcheck.sh"
     run_installer "pandoc.sh"
     run_installer "ffmpeg.sh"
+    run_installer "yt-dlp.sh"
+    run_installer "imagemagick.sh"
+    run_installer "nmap.sh"
     run_installer "tmux.sh"
     run_installer "vim.sh"
     run_installer "gemini-cli.sh"
