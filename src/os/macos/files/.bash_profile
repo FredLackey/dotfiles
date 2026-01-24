@@ -94,9 +94,7 @@ alias l='ls -CF'
 # Prompt (Starship)
 # ------------------------------------------------------------------------------
 
-if command -v starship >/dev/null 2>&1; then
-    eval "$(starship init bash)"
-fi
+eval "$(starship init bash)"
 
 # ------------------------------------------------------------------------------
 # Custom Configuration

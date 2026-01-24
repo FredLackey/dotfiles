@@ -73,9 +73,7 @@ alias l='ls -CF'
 # Prompt (Starship)
 # ------------------------------------------------------------------------------
 
-if command -v starship >/dev/null 2>&1; then
-    eval "$(starship init zsh)"
-fi
+eval "$(starship init zsh)"
 
 # ------------------------------------------------------------------------------
 # Custom Configuration

@@ -7,6 +7,9 @@ PREFERENCES_DIR="$SCRIPT_DIR/preferences"
 
 echo "Running macOS setup..."
 
+# Suppress automatic cleanup after each brew install (runs once at the end instead)
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+
 # Function to run an installer script
 run_installer() {
     local script_name="$1"
@@ -125,6 +128,12 @@ install_applications() {
     run_installer "superwhisper.sh"
     run_installer "keyboard-maestro.sh"
     
+    # Final cleanup (runs once instead of after every install)
+    if command -v brew >/dev/null; then
+        echo "Running brew cleanup..."
+        brew cleanup --quiet
+    fi
+
     echo "Application installation complete."
 }
 
