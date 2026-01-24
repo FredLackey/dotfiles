@@ -12,10 +12,10 @@ if [ "$current" != "1" ]; then
     defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1
 fi
 
-# Hide Focus icon from menu bar (2=Don't Show, 8=When Active, 18=Always)
-current=$(defaults -currentHost read com.apple.controlcenter FocusModes 2>/dev/null || echo "__UNSET__")
-if [ "$current" != "2" ]; then
-    defaults -currentHost write com.apple.controlcenter FocusModes -int 2
+# Hide Focus icon from menu bar
+current=$(defaults read com.apple.controlcenter "NSStatusItem VisibleCC FocusModes" 2>/dev/null || echo "__UNSET__")
+if [ "$current" != "0" ]; then
+    defaults write com.apple.controlcenter "NSStatusItem VisibleCC FocusModes" -bool false
     NEEDS_RESTART=true
 fi
 
