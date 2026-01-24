@@ -8,13 +8,13 @@ if command -v yarn >/dev/null; then
     exit 0
 fi
 
-if ! command -v brew >/dev/null; then
-    echo "Error: Homebrew is required to install $APP_NAME."
+if ! command -v npm >/dev/null; then
+    echo "Error: npm is required to install $APP_NAME."
     exit 1
 fi
 
 echo "Installing $APP_NAME..."
-brew install --quiet yarn
+npm install -g yarn
 
 if command -v yarn >/dev/null; then
     echo "$APP_NAME installed successfully."
