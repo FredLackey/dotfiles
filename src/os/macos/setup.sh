@@ -55,6 +55,28 @@ install_applications() {
     # 2. Languages & Runtimes
     run_installer "nvm.sh"
     run_installer "node.sh"
+
+    # Reload NVM environment (required for npm-dependent installers)
+    if ! command -v npm >/dev/null; then
+        echo "Loading NVM environment..."
+        export NVM_DIR="$HOME/.nvm"
+        if command -v brew >/dev/null; then
+            BREW_PREFIX=$(brew --prefix)
+            if [ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ]; then
+                . "$BREW_PREFIX/opt/nvm/nvm.sh"
+            fi
+        fi
+        if [ -s "$NVM_DIR/nvm.sh" ]; then
+            . "$NVM_DIR/nvm.sh"
+        fi
+
+        if command -v npm >/dev/null; then
+            echo "NVM loaded into memory."
+        else
+            echo "Warning: Failed to load NVM into memory. npm-dependent installs may fail."
+        fi
+    fi
+
     run_installer "yarn.sh"
     run_installer "npm-check-updates.sh"
     run_installer "go.sh"
