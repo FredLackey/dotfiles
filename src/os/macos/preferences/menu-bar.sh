@@ -12,11 +12,21 @@ if [ "$current" != "1" ]; then
     defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1
 fi
 
-# Hide Focus icon from menu bar
-current=$(defaults read com.apple.controlcenter "NSStatusItem VisibleCC FocusModes" 2>/dev/null || echo "__UNSET__")
-if [ "$current" != "0" ]; then
-    defaults write com.apple.controlcenter "NSStatusItem VisibleCC FocusModes" -bool false
+# Hide Focus icon from menu bar (24=Don't Show, 18=Always Show)
+current=$(defaults -currentHost read com.apple.controlcenter FocusModes 2>/dev/null || echo "__UNSET__")
+if [ "$current" != "24" ]; then
+    defaults -currentHost write com.apple.controlcenter FocusModes -int 24
     NEEDS_RESTART=true
+fi
+
+# macOS Tahoe stores Control Center prefs in GroupContainers
+GROUP_PLIST="$HOME/Library/GroupContainers/group.com.apple.controlcenter/Library/Preferences/group.com.apple.controlcenter"
+if [ -d "$HOME/Library/GroupContainers/group.com.apple.controlcenter" ]; then
+    current=$(defaults read "$GROUP_PLIST" FocusModes 2>/dev/null || echo "__UNSET__")
+    if [ "$current" != "24" ]; then
+        defaults write "$GROUP_PLIST" FocusModes -int 24
+        NEEDS_RESTART=true
+    fi
 fi
 
 # Restart ControlCenter if any changes were made
