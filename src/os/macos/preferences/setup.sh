@@ -33,9 +33,12 @@ run_preference "finder.sh"
 # 3. Input devices
 run_preference "trackpad.sh"
 
-# 4. Utilities and apps
-run_preference "screenshots.sh"
+# 4. Menu bar
+run_preference "menu-bar.sh"
 run_preference "clock.sh"
+
+# 5. Utilities and apps
+run_preference "screenshots.sh"
 run_preference "textedit.sh"
 
 echo "--------------------------------------------------"
