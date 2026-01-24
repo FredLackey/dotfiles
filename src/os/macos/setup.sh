@@ -3,6 +3,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 INSTALLERS_DIR="$SCRIPT_DIR/installers"
+PREFERENCES_DIR="$SCRIPT_DIR/preferences"
 
 echo "Running macOS setup..."
 
@@ -122,5 +123,19 @@ install_applications() {
     echo "Application installation complete."
 }
 
+apply_preferences() {
+    local prefs_script="$PREFERENCES_DIR/setup.sh"
+
+    if [ -f "$prefs_script" ]; then
+        bash "$prefs_script"
+    else
+        echo "Error: Preferences setup script not found: $prefs_script"
+        exit 1
+    fi
+}
+
 # Execute installation
 install_applications
+
+# Apply system preferences
+apply_preferences

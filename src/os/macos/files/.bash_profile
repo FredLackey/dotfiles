@@ -78,11 +78,8 @@ shopt -s histappend         # Append to history, don't overwrite
 
 # Directory navigation
 shopt -s cdspell            # Correct minor spelling errors in cd
-shopt -s dirspell           # Correct spelling errors during tab-completion
-shopt -s autocd 2>/dev/null # cd by typing directory name (bash 4+)
 
 # Globbing
-shopt -s globstar 2>/dev/null  # ** matches recursively (bash 4+)
 shopt -s nocaseglob            # Case-insensitive globbing
 
 # ------------------------------------------------------------------------------
