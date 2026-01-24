@@ -38,8 +38,8 @@ fi
 echo "Installing Solarized themes..."
 
 # Download theme files
-curl -fsSL -o /tmp/SolarizedDark.itermcolors "$THEME_URL_BASE/Solarized%20Dark.itermcolors"
-curl -fsSL -o /tmp/SolarizedLight.itermcolors "$THEME_URL_BASE/Solarized%20Light.itermcolors"
+curl -fsSL -o /tmp/SolarizedDark.itermcolors "$THEME_URL_BASE/iTerm2%20Solarized%20Dark.itermcolors"
+curl -fsSL -o /tmp/SolarizedLight.itermcolors "$THEME_URL_BASE/iTerm2%20Solarized%20Light.itermcolors"
 
 # Initialize iTerm2 plist if it does not exist
 if [ ! -f "$ITERM2_PLIST" ]; then
