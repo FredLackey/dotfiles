@@ -77,6 +77,7 @@ install_applications() {
     run_installer "nerd-fonts.sh"
     run_installer "starship.sh"
     run_installer "starship-config.sh"
+    run_installer "shell-config.sh"
 
     # 3. Core CLI Tools
     run_installer "git.sh"
