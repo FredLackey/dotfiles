@@ -45,14 +45,6 @@ install_applications() {
         fi
     fi
 
-    # Install Sudo-required apps early (prevents timeout)
-
-    run_installer "git.sh"
-    run_installer "bash-completion.sh"
-    run_installer "wget.sh"
-    run_installer "gpg.sh"
-    
-    # 2. Languages & Runtimes
     run_installer "nvm.sh"
     run_installer "node.sh"
 
@@ -77,6 +69,13 @@ install_applications() {
         fi
     fi
 
+    # 2. Core CLI Tools
+    run_installer "git.sh"
+    run_installer "bash-completion.sh"
+    run_installer "wget.sh"
+    run_installer "gpg.sh"
+
+    # 3. Languages & Runtimes
     run_installer "yarn.sh"
     run_installer "npm-check-updates.sh"
     run_installer "go.sh"
