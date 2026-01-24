@@ -152,3 +152,6 @@ install_applications
 
 # Apply system preferences
 apply_preferences
+
+echo ""
+echo "Setup complete. Open a new terminal window to activate the new shell configuration."
