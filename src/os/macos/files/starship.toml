@@ -1,0 +1,50 @@
+# Starship Configuration
+# Installed by dotfiles: https://github.com/FredLackey/dotfiles
+# Uses Nerd Font Symbols for module icons
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_commit\
+$nodejs\
+$package\
+$docker_context\
+$cmd_duration\
+$line_break\
+$character"""
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[directory]
+truncation_length = 4
+truncate_to_repo = true
+style = "bold cyan"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+
+[git_commit]
+tag_symbol = "  "
+
+[nodejs]
+symbol = " "
+style = "bold green"
+
+[package]
+symbol = "󰏗 "
+style = "bold 208"
+
+[docker_context]
+symbol = " "
+style = "bold blue"
+
+[cmd_duration]
+min_time = 2_000
+style = "bold yellow"

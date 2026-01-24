@@ -91,16 +91,12 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # ------------------------------------------------------------------------------
-# Prompt
+# Prompt (Starship)
 # ------------------------------------------------------------------------------
 
-# Function to get git branch
-__git_branch() {
-    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# Prompt with directory and git branch
-export PS1='\[\033[36m\]\w\[\033[33m\]$(__git_branch)\[\033[00m\] \$ '
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init bash)"
+fi
 
 # ------------------------------------------------------------------------------
 # Custom Configuration

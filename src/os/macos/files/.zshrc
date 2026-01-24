@@ -70,15 +70,12 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # ------------------------------------------------------------------------------
-# Prompt
+# Prompt (Starship)
 # ------------------------------------------------------------------------------
 
-# Simple prompt with directory and git branch
-autoload -Uz vcs_info
-precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats ' (%b)'
-setopt PROMPT_SUBST
-PROMPT='%F{cyan}%~%f%F{yellow}${vcs_info_msg_0_}%f %# '
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+fi
 
 # ------------------------------------------------------------------------------
 # Custom Configuration

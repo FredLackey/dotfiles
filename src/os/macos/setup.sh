@@ -70,20 +70,25 @@ install_applications() {
         fi
     fi
 
-    # 2. Core CLI Tools
+    # 2. Fonts & Prompt
+    run_installer "nerd-fonts.sh"
+    run_installer "starship.sh"
+    run_installer "starship-config.sh"
+
+    # 3. Core CLI Tools
     run_installer "git.sh"
     run_installer "bash-completion.sh"
     run_installer "wget.sh"
     run_installer "gpg.sh"
 
-    # 3. Languages & Runtimes
+    # 4. Languages & Runtimes
     run_installer "yarn.sh"
     run_installer "npm-check-updates.sh"
     run_installer "go.sh"
     run_installer "tfenv.sh"
     run_installer "terraform.sh"
 
-    # 3. CLI Tools
+    # 5. CLI Tools
     run_installer "jq.sh"
     run_installer "yq.sh"
     run_installer "tree.sh"
@@ -99,7 +104,7 @@ install_applications() {
     run_installer "claude-code.sh"
     run_installer "aws-cli.sh"
     
-    # 4. Applications & GUI Tools
+    # 6. Applications & GUI Tools
     
     run_installer "vscode.sh"
     run_installer "cursor.sh"
