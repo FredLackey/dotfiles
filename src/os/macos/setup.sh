@@ -129,10 +129,8 @@ install_applications() {
     run_installer "keyboard-maestro.sh"
     
     # Final cleanup (runs once instead of after every install)
-    if command -v brew >/dev/null; then
-        echo "Running brew cleanup..."
-        brew cleanup --quiet
-    fi
+    echo "Running brew cleanup..."
+    brew cleanup --quiet
 
     echo "Application installation complete."
 }
