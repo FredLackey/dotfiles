@@ -94,6 +94,7 @@ install_applications() {
     run_installer "terraform.sh"
 
     # 5. CLI Tools
+    run_installer "web-font-tools.sh"
     run_installer "jq.sh"
     run_installer "yq.sh"
     run_installer "tree.sh"
