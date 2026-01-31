@@ -32,6 +32,8 @@ install_applications() {
     # 2. Core CLI Tools
     run_installer "git.sh"
     run_installer "curl.sh"
+    run_installer "wget.sh"
+    run_installer "gpg.sh"
 
     # 3. Node.js (NVM + Node)
     run_installer "nvm.sh"
@@ -62,6 +64,7 @@ install_applications() {
 
     # 5. CLI Utilities
     run_installer "jq.sh"
+    run_installer "yq.sh"
     run_installer "tree.sh"
     run_installer "shellcheck.sh"
     run_installer "pandoc.sh"
@@ -71,12 +74,16 @@ install_applications() {
     run_installer "rsync.sh"
     run_installer "nmap.sh"
     run_installer "imagemagick.sh"
+    run_installer "ffmpeg.sh"
+    run_installer "bash-completion.sh"
     run_installer "yt-dlp.sh"
 
     # 6. Infrastructure & DevOps
     run_installer "docker.sh"
     run_installer "tailscale.sh"
     run_installer "aws-cli.sh"
+    run_installer "tfenv.sh"
+    run_installer "terraform.sh"
     run_installer "certbot.sh"
 
     # 7. AI Tools

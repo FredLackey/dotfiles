@@ -5,6 +5,22 @@ REPO_URL="https://github.com/FredLackey/dotfiles/archive/refs/heads/main.zip"
 TARGET_DIR="$HOME/.dotfiles"
 TEMP_DIR="$(mktemp -d)"
 
+# 1. Bootstrap Dependencies (Linux only)
+if [ "$(uname -s)" = "Linux" ]; then
+    MISSING_DEPS=""
+    if ! command -v curl >/dev/null 2>&1; then
+        MISSING_DEPS="curl"
+    fi
+    if ! command -v unzip >/dev/null 2>&1; then
+        MISSING_DEPS="$MISSING_DEPS unzip"
+    fi
+    if [ -n "$MISSING_DEPS" ]; then
+        echo "Installing bootstrap dependencies:$MISSING_DEPS"
+        sudo apt-get update -qq
+        sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq $MISSING_DEPS
+    fi
+fi
+
 # 2. Download & Extract (Idempotent)
 if [ -d "$TARGET_DIR" ]; then
     echo "Files already present in $TARGET_DIR. Skipping download."
