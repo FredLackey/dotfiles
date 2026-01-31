@@ -14,7 +14,7 @@ echo "Installing $APP_NAME..."
 
 # Ensure snapd is installed
 if ! command -v snap >/dev/null 2>&1; then
-    sudo apt-get install -y -qq snapd
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq snapd
 fi
 
 # Install certbot via snap

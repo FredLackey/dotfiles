@@ -11,7 +11,7 @@ fi
 
 # 2. Install
 echo "Installing $APP_NAME..."
-sudo apt-get install -y -qq rsync
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq rsync
 
 # 3. Verify
 if command -v rsync >/dev/null 2>&1; then

@@ -11,12 +11,12 @@ fi
 
 # 2. Install
 echo "Installing $APP_NAME..."
-sudo apt-get install -y -qq golang-go
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq golang-go
 
 # Also install pinentry-tty for GPG signing in terminal
 if ! dpkg -l | grep -q "^ii  pinentry-tty "; then
     echo "Installing pinentry-tty for GPG signing..."
-    sudo apt-get install -y -qq pinentry-tty
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq pinentry-tty
 fi
 
 # 3. Verify

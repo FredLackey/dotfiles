@@ -11,7 +11,7 @@ fi
 
 # 2. Install prerequisites
 echo "Installing $APP_NAME prerequisites..."
-sudo apt-get install -y -qq ca-certificates curl software-properties-common gnupg
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ca-certificates curl software-properties-common gnupg
 
 # 3. Remove old Docker packages if present
 for pkg in docker.io docker-compose containerd runc; do
@@ -37,7 +37,7 @@ fi
 
 # 6. Install Docker Engine
 echo "Installing $APP_NAME..."
-sudo apt-get install -y -qq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # 7. Add user to docker group
 echo "Adding user to docker group..."

@@ -11,7 +11,7 @@ fi
 
 # 2. Install
 echo "Installing $APP_NAME..."
-sudo apt-get install -y -qq htop
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq htop
 
 # 3. Verify
 if command -v htop >/dev/null 2>&1; then

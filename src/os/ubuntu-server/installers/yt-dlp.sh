@@ -23,7 +23,7 @@ sudo chmod a+rx /usr/local/bin/yt-dlp
 # Install ffmpeg for audio extraction support
 if ! command -v ffmpeg >/dev/null 2>&1; then
     echo "Installing ffmpeg for audio extraction support..."
-    sudo apt-get install -y -qq ffmpeg
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
 fi
 
 # 4. Verify

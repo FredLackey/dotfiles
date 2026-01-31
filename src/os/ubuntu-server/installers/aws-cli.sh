@@ -17,7 +17,7 @@ fi
 
 if ! command -v unzip >/dev/null 2>&1; then
     echo "Installing unzip..."
-    sudo apt-get install -y -qq unzip
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq unzip
 fi
 
 # 3. Install (using official AWS installer for latest version)

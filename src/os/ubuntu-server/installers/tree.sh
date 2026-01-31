@@ -11,7 +11,7 @@ fi
 
 # 2. Install
 echo "Installing $APP_NAME..."
-sudo apt-get install -y -qq tree
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq tree
 
 # 3. Verify
 if command -v tree >/dev/null 2>&1; then

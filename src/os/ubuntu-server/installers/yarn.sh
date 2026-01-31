@@ -31,7 +31,7 @@ if [ ! -f /etc/apt/sources.list.d/yarn.list ]; then
 fi
 
 # Install without recommends (since we use NVM for Node)
-sudo apt-get install -y -qq --no-install-recommends yarn
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends yarn
 
 # 4. Verify
 if command -v yarn >/dev/null 2>&1; then

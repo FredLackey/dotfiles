@@ -11,12 +11,12 @@ fi
 
 # 2. Install
 echo "Installing $APP_NAME..."
-sudo apt-get install -y -qq pandoc
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq pandoc
 
 # Also install LaTeX for PDF generation
 if ! dpkg -l | grep -q "^ii  texlive-latex-recommended "; then
     echo "Installing LaTeX support..."
-    sudo apt-get install -y -qq texlive-latex-recommended
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq texlive-latex-recommended
 fi
 
 # 3. Verify
