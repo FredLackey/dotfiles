@@ -20,7 +20,8 @@ echo "Installing $APP_NAME..."
 curl -fsSL https://claude.ai/install.sh | bash
 
 # 4. Verify
-if command -v claude >/dev/null 2>&1; then
+# Check file existence since PATH may not be updated in current session
+if [ -f "$HOME/.local/bin/claude" ] || command -v claude >/dev/null 2>&1; then
     echo "$APP_NAME installed successfully."
 else
     echo "Error: $APP_NAME installation failed."
