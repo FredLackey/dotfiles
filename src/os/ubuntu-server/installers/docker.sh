@@ -39,14 +39,23 @@ fi
 echo "Installing $APP_NAME..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# 7. Add user to docker group
-echo "Adding user to docker group..."
-sudo usermod -aG docker "$USER"
+# 7. Add user to docker group (skip if root or user unknown)
+CURRENT_USER="${USER:-$(whoami)}"
+if [ -n "$CURRENT_USER" ] && [ "$CURRENT_USER" != "root" ]; then
+    echo "Adding user '$CURRENT_USER' to docker group..."
+    sudo usermod -aG docker "$CURRENT_USER"
+else
+    echo "Skipping docker group assignment (running as root or user unknown)."
+fi
 
-# 8. Enable and start Docker service
-echo "Enabling Docker service..."
-sudo systemctl enable docker
-sudo systemctl start docker
+# 8. Enable and start Docker service (if systemd is available)
+if command -v systemctl >/dev/null 2>&1 && systemctl is-system-running >/dev/null 2>&1; then
+    echo "Enabling Docker service..."
+    sudo systemctl enable docker 2>/dev/null || true
+    sudo systemctl start docker 2>/dev/null || true
+else
+    echo "Skipping Docker service management (systemd not available)."
+fi
 
 # 9. Verify
 if command -v docker >/dev/null 2>&1; then
