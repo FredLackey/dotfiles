@@ -32,7 +32,7 @@ SCRIPT_TO_RUN=""
 
 # Determine source directory
 # Logic: use local directory if script is running from file, otherwise (curl) use downloaded TARGET_DIR
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 if [ ! -d "$SCRIPT_DIR/os" ]; then
     SCRIPT_DIR="$TARGET_DIR/src"
 fi

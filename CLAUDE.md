@@ -10,6 +10,8 @@ Personal dotfiles repository for bootstrapping development environments across m
 
 **NEVER test locally.** Always push to GitHub and test in a pristine virtual machine.
 
+**OS folders are intentionally isolated.** Each folder under `src/os/` must be completely self-contained. Duplication between OS folders is expected and acceptable. You may reference other OS folders for patterns or logic to adapt, and folder structures should remain consistent across platforms, but never create shared utilities or imports between OS folders. Do not attempt to reduce duplication across OS boundaries.
+
 **All scripts MUST be idempotent.** Every step must:
 1. **Check** - Verify if the action is needed before proceeding
 2. **Execute** - Perform the action only if necessary
