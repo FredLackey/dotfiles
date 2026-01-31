@@ -1,48 +1,33 @@
 #!/bin/bash
 set -e
 
-REPO_URL="https://github.com/FredLackey/dotfiles/archive/refs/heads/main.zip"
+REPO_URL="https://github.com/FredLackey/dotfiles/tarball/main"
 TARGET_DIR="$HOME/.dotfiles"
-TEMP_DIR="$(mktemp -d)"
+TEMP_FILE="$(mktemp)"
 
-# 1. Bootstrap Dependencies (Linux only)
-if [ "$(uname -s)" = "Linux" ]; then
-    MISSING_DEPS=""
-    if ! command -v curl >/dev/null 2>&1; then
-        MISSING_DEPS="curl"
-    fi
-    if ! command -v unzip >/dev/null 2>&1; then
-        MISSING_DEPS="$MISSING_DEPS unzip"
-    fi
-    if [ -n "$MISSING_DEPS" ]; then
-        echo "Installing bootstrap dependencies:$MISSING_DEPS"
-        sudo apt-get update -qq
-        sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq $MISSING_DEPS
-    fi
-fi
-
-# 2. Download & Extract (Idempotent)
+# 1. Download & Extract (Idempotent)
 if [ -d "$TARGET_DIR" ]; then
     echo "Files already present in $TARGET_DIR. Skipping download."
 else
     echo "Downloading dotfiles..."
-    # Ensure curl and unzip exist
+    # Ensure curl and tar exist (both are standard on macOS and Linux)
     if ! command -v curl >/dev/null 2>&1; then
         echo "Error: curl is required."
         exit 1
     fi
-    if ! command -v unzip >/dev/null 2>&1; then
-        echo "Error: unzip is required."
+    if ! command -v tar >/dev/null 2>&1; then
+        echo "Error: tar is required."
         exit 1
     fi
 
-    curl -fsSL "$REPO_URL" -o "$TEMP_DIR/dotfiles.zip"
-    unzip -q "$TEMP_DIR/dotfiles.zip" -d "$TEMP_DIR"
-    mv "$TEMP_DIR/dotfiles-main" "$TARGET_DIR"
-    rm -rf "$TEMP_DIR"
+    # Download tarball and extract
+    mkdir -p "$TARGET_DIR"
+    curl -fsSL "$REPO_URL" -o "$TEMP_FILE"
+    tar -xzf "$TEMP_FILE" -C "$TARGET_DIR" --strip-components=1
+    rm -f "$TEMP_FILE"
 fi
 
-# 3. OS/Environment Detection
+# 2. OS/Environment Detection
 OS="$(uname -s)"
 SCRIPT_TO_RUN=""
 
@@ -67,7 +52,7 @@ elif [ "$OS" = "Linux" ]; then
     fi
 fi
 
-# 4. Execution
+# 3. Execution
 if [ -n "$SCRIPT_TO_RUN" ] && [ -f "$SCRIPT_TO_RUN" ]; then
     chmod +x "$SCRIPT_TO_RUN"
     "$SCRIPT_TO_RUN"
