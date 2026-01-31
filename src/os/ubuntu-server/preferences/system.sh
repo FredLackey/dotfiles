@@ -41,8 +41,11 @@ DESIRED_LOCALE="en_US.UTF-8"
 # Check if locale is already generated
 if ! locale -a 2>/dev/null | grep -q "^en_US.utf8$"; then
     echo "Generating locale $DESIRED_LOCALE..."
-    sudo locale-gen "$DESIRED_LOCALE" >/dev/null 2>&1
-    CHANGES_MADE=true
+    if sudo locale-gen "$DESIRED_LOCALE" >/dev/null 2>&1; then
+        CHANGES_MADE=true
+    else
+        echo "Note: Failed to generate locale (may not be needed in container environment)."
+    fi
 fi
 
 # Check current default locale (requires systemd)
@@ -51,8 +54,11 @@ if [ "$SYSTEMD_AVAILABLE" = true ]; then
 
     if [ "$current_locale" != "$DESIRED_LOCALE" ]; then
         echo "Setting system locale to $DESIRED_LOCALE..."
-        sudo update-locale LANG="$DESIRED_LOCALE" LC_ALL="$DESIRED_LOCALE"
-        CHANGES_MADE=true
+        if sudo update-locale LANG="$DESIRED_LOCALE" LC_ALL="$DESIRED_LOCALE" 2>/dev/null; then
+            CHANGES_MADE=true
+        else
+            echo "Note: Failed to update default locale (may not be supported in this environment)."
+        fi
     fi
 fi
 
