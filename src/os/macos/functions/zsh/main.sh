@@ -5,41 +5,82 @@
 
 SCRIPT_DIR="${0:A:h}"
 
-source "$SCRIPT_DIR/backup-all.sh"
-source "$SCRIPT_DIR/backup-source.sh"
-source "$SCRIPT_DIR/ccurl.sh"
-source "$SCRIPT_DIR/claude-danger.sh"
-source "$SCRIPT_DIR/clean-dev.sh"
-source "$SCRIPT_DIR/clone.sh"
-source "$SCRIPT_DIR/datauri.sh"
-source "$SCRIPT_DIR/delete-files.sh"
-source "$SCRIPT_DIR/docker-clean.sh"
-source "$SCRIPT_DIR/dp.sh"
-source "$SCRIPT_DIR/evm.sh"
-source "$SCRIPT_DIR/fetch-github-repos.sh"
-source "$SCRIPT_DIR/get-channel.sh"
-source "$SCRIPT_DIR/get-course.sh"
-source "$SCRIPT_DIR/get-dependencies.sh"
-source "$SCRIPT_DIR/get-folder.sh"
-source "$SCRIPT_DIR/get-tunes.sh"
-source "$SCRIPT_DIR/get-video.sh"
-source "$SCRIPT_DIR/git-backup.sh"
-source "$SCRIPT_DIR/git-clone.sh"
-source "$SCRIPT_DIR/git-pup.sh"
-source "$SCRIPT_DIR/git-push.sh"
-source "$SCRIPT_DIR/h.sh"
-source "$SCRIPT_DIR/install-dependencies-from.sh"
-source "$SCRIPT_DIR/ips.sh"
-source "$SCRIPT_DIR/killni.sh"
-source "$SCRIPT_DIR/mkd.sh"
-source "$SCRIPT_DIR/ncu-update-all.sh"
-source "$SCRIPT_DIR/npmi.sh"
-source "$SCRIPT_DIR/org-by-date.sh"
-source "$SCRIPT_DIR/refresh-files.sh"
-source "$SCRIPT_DIR/remove-smaller-files.sh"
-source "$SCRIPT_DIR/rename-files-with-date-in-name.sh"
-source "$SCRIPT_DIR/resize-image.sh"
-source "$SCRIPT_DIR/rm-safe.sh"
-source "$SCRIPT_DIR/s.sh"
-source "$SCRIPT_DIR/set-git-public.sh"
-source "$SCRIPT_DIR/vpush.sh"
+# Check if a category is excluded via DOTFILES_EXCLUDE environment variable
+# Usage: _dotfiles_is_excluded "AI" returns 0 (true) if excluded, 1 (false) if not
+_dotfiles_is_excluded() {
+    local category="$1"
+    if [[ -z "$DOTFILES_EXCLUDE" ]]; then
+        return 1
+    fi
+    # Convert both to uppercase for case-insensitive comparison
+    local exclude_upper="${DOTFILES_EXCLUDE:u}"
+    local category_upper="${category:u}"
+    # Check if category appears in comma-separated list
+    if [[ ",$exclude_upper," == *",$category_upper,"* ]]; then
+        return 0
+    fi
+    return 1
+}
+
+# Conditionally source a function file based on category
+# Usage: _dotfiles_source "filename.sh" "CATEGORY"
+_dotfiles_source() {
+    local file="$1"
+    local category="$2"
+    if [[ -n "$category" ]] && _dotfiles_is_excluded "$category"; then
+        return 0
+    fi
+    if [[ -f "$SCRIPT_DIR/$file" ]]; then
+        source "$SCRIPT_DIR/$file"
+    fi
+}
+
+# Categories: UTILS, AI, DEV, DEVOPS, MEDIA
+
+# Utilities
+_dotfiles_source "backup-all.sh" "UTILS"
+_dotfiles_source "backup-source.sh" "UTILS"
+_dotfiles_source "ccurl.sh" "UTILS"
+_dotfiles_source "datauri.sh" "UTILS"
+_dotfiles_source "delete-files.sh" "UTILS"
+_dotfiles_source "dp.sh" "UTILS"
+_dotfiles_source "get-folder.sh" "UTILS"
+_dotfiles_source "h.sh" "UTILS"
+_dotfiles_source "ips.sh" "UTILS"
+_dotfiles_source "mkd.sh" "UTILS"
+_dotfiles_source "org-by-date.sh" "UTILS"
+_dotfiles_source "refresh-files.sh" "UTILS"
+_dotfiles_source "remove-smaller-files.sh" "UTILS"
+_dotfiles_source "rename-files-with-date-in-name.sh" "UTILS"
+_dotfiles_source "rm-safe.sh" "UTILS"
+_dotfiles_source "s.sh" "UTILS"
+
+# AI Tools
+_dotfiles_source "claude-danger.sh" "AI"
+
+# Development
+_dotfiles_source "clean-dev.sh" "DEV"
+_dotfiles_source "clone.sh" "DEV"
+_dotfiles_source "evm.sh" "DEV"
+_dotfiles_source "fetch-github-repos.sh" "DEV"
+_dotfiles_source "get-dependencies.sh" "DEV"
+_dotfiles_source "git-backup.sh" "DEV"
+_dotfiles_source "git-clone.sh" "DEV"
+_dotfiles_source "git-pup.sh" "DEV"
+_dotfiles_source "git-push.sh" "DEV"
+_dotfiles_source "install-dependencies-from.sh" "DEV"
+_dotfiles_source "killni.sh" "DEV"
+_dotfiles_source "ncu-update-all.sh" "DEV"
+_dotfiles_source "npmi.sh" "DEV"
+_dotfiles_source "set-git-public.sh" "DEV"
+_dotfiles_source "vpush.sh" "DEV"
+
+# DevOps
+_dotfiles_source "docker-clean.sh" "DEVOPS"
+
+# Media
+_dotfiles_source "get-channel.sh" "MEDIA"
+_dotfiles_source "get-course.sh" "MEDIA"
+_dotfiles_source "get-tunes.sh" "MEDIA"
+_dotfiles_source "get-video.sh" "MEDIA"
+_dotfiles_source "resize-image.sh" "MEDIA"

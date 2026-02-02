@@ -7,10 +7,38 @@ PREFERENCES_DIR="$SCRIPT_DIR/preferences"
 
 echo "Running Ubuntu Server setup..."
 
+# Check if a category is excluded via DOTFILES_EXCLUDE environment variable
+# Usage: is_excluded "AI" returns 0 (true) if excluded, 1 (false) if not
+is_excluded() {
+    local category="$1"
+    if [ -z "$DOTFILES_EXCLUDE" ]; then
+        return 1
+    fi
+    # Convert both to uppercase for case-insensitive comparison
+    local exclude_upper
+    exclude_upper=$(echo "$DOTFILES_EXCLUDE" | tr '[:lower:]' '[:upper:]')
+    local category_upper
+    category_upper=$(echo "$category" | tr '[:lower:]' '[:upper:]')
+    # Check if category appears in comma-separated list
+    if echo ",$exclude_upper," | grep -q ",$category_upper,"; then
+        return 0
+    fi
+    return 1
+}
+
 # Function to run an installer script
+# Usage: run_installer "script.sh" "CATEGORY"
 run_installer() {
     local script_name="$1"
+    local category="$2"
     local script_path="$INSTALLERS_DIR/$script_name"
+
+    # Skip if category is excluded
+    if [ -n "$category" ] && is_excluded "$category"; then
+        echo "--------------------------------------------------"
+        echo "Skipping installer (excluded category $category): $script_name"
+        return 0
+    fi
 
     if [ -f "$script_path" ]; then
         echo "--------------------------------------------------"
@@ -25,18 +53,20 @@ run_installer() {
 install_applications() {
     echo "Starting application installation..."
 
+    # Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS
+
     # 1. System Prerequisites
-    run_installer "apt-update.sh"
-    run_installer "build-essential.sh"
+    run_installer "apt-update.sh" "SYSTEM"
+    run_installer "build-essential.sh" "SYSTEM"
 
     # 2. Core CLI Tools
-    run_installer "git.sh"
-    run_installer "curl.sh"
-    run_installer "wget.sh"
-    run_installer "gpg.sh"
+    run_installer "git.sh" "DEV"
+    run_installer "curl.sh" "UTILS"
+    run_installer "wget.sh" "UTILS"
+    run_installer "gpg.sh" "UTILS"
 
     # 3. Node.js (NVM + Node)
-    run_installer "nvm.sh"
+    run_installer "nvm.sh" "LANGUAGES"
 
     # Reload NVM environment (required for npm-dependent installers)
     if ! command -v npm >/dev/null; then
@@ -53,48 +83,43 @@ install_applications() {
         fi
     fi
 
-    run_installer "node.sh"
-    run_installer "yarn.sh"
-    run_installer "npm-packages.sh"
+    run_installer "node.sh" "LANGUAGES"
+    run_installer "yarn.sh" "LANGUAGES"
+    run_installer "npm-packages.sh" "LANGUAGES"
 
     # 4. Languages & Runtimes
-    run_installer "go.sh"
-    run_installer "gitego.sh"
-    run_installer "python.sh"
+    run_installer "go.sh" "LANGUAGES"
+    run_installer "gitego.sh" "DEV"
+    run_installer "python.sh" "LANGUAGES"
 
     # 5. CLI Utilities
-    run_installer "jq.sh"
-    run_installer "yq.sh"
-    run_installer "tree.sh"
-    run_installer "shellcheck.sh"
-    run_installer "pandoc.sh"
-    run_installer "tmux.sh"
-    run_installer "vim.sh"
-    run_installer "htop.sh"
-    run_installer "rsync.sh"
-    run_installer "nmap.sh"
-    run_installer "imagemagick.sh"
-    run_installer "ffmpeg.sh"
-    run_installer "bash-completion.sh"
-    run_installer "yt-dlp.sh"
+    run_installer "jq.sh" "UTILS"
+    run_installer "yq.sh" "UTILS"
+    run_installer "tree.sh" "UTILS"
+    run_installer "shellcheck.sh" "DEV"
+    run_installer "pandoc.sh" "UTILS"
+    run_installer "tmux.sh" "TERMINAL"
+    run_installer "vim.sh" "DEV"
+    run_installer "htop.sh" "UTILS"
+    run_installer "rsync.sh" "UTILS"
+    run_installer "nmap.sh" "SECURITY"
+    run_installer "imagemagick.sh" "MEDIA"
+    run_installer "ffmpeg.sh" "MEDIA"
+    run_installer "bash-completion.sh" "TERMINAL"
+    run_installer "yt-dlp.sh" "MEDIA"
 
     # 6. Infrastructure & DevOps
-    run_installer "docker.sh"
-    run_installer "tailscale.sh"
-    run_installer "aws-cli.sh"
-    run_installer "tfenv.sh"
-    run_installer "terraform.sh"
-    run_installer "certbot.sh"
+    run_installer "docker.sh" "DEVOPS"
+    run_installer "tailscale.sh" "DEVOPS"
+    run_installer "aws-cli.sh" "DEVOPS"
+    run_installer "tfenv.sh" "DEVOPS"
+    run_installer "terraform.sh" "DEVOPS"
 
-    # 7. AI Tools
-    run_installer "gemini-cli.sh"
-    run_installer "claude-code.sh"
+    # 7. Shell Configuration
+    run_installer "shell-config.sh" "TERMINAL"
 
-    # 8. Shell Configuration
-    run_installer "shell-config.sh"
-
-    # 9. Cleanup
-    run_installer "apt-cleanup.sh"
+    # 8. Cleanup
+    run_installer "apt-cleanup.sh" "SYSTEM"
 
     echo "Application installation complete."
 }

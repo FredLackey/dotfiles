@@ -10,10 +10,38 @@ echo "Running macOS setup..."
 # Suppress automatic cleanup after each brew install (runs once at the end instead)
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
+# Check if a category is excluded via DOTFILES_EXCLUDE environment variable
+# Usage: is_excluded "AI" returns 0 (true) if excluded, 1 (false) if not
+is_excluded() {
+    local category="$1"
+    if [ -z "$DOTFILES_EXCLUDE" ]; then
+        return 1
+    fi
+    # Convert both to uppercase for case-insensitive comparison
+    local exclude_upper
+    exclude_upper=$(echo "$DOTFILES_EXCLUDE" | tr '[:lower:]' '[:upper:]')
+    local category_upper
+    category_upper=$(echo "$category" | tr '[:lower:]' '[:upper:]')
+    # Check if category appears in comma-separated list
+    if echo ",$exclude_upper," | grep -q ",$category_upper,"; then
+        return 0
+    fi
+    return 1
+}
+
 # Function to run an installer script
+# Usage: run_installer "script.sh" "CATEGORY"
 run_installer() {
     local script_name="$1"
+    local category="$2"
     local script_path="$INSTALLERS_DIR/$script_name"
+
+    # Skip if category is excluded
+    if [ -n "$category" ] && is_excluded "$category"; then
+        echo "--------------------------------------------------"
+        echo "Skipping installer (excluded category $category): $script_name"
+        return 0
+    fi
 
     if [ -f "$script_path" ]; then
         echo "--------------------------------------------------"
@@ -28,10 +56,12 @@ run_installer() {
 install_applications() {
     echo "Starting application installation..."
 
+    # Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS
+
     # 1. Critical System Tools (Order matters)
-    run_installer "xcode-command-line-tools.sh"
-    run_installer "homebrew.sh"
-    
+    run_installer "xcode-command-line-tools.sh" "SYSTEM"
+    run_installer "homebrew.sh" "SYSTEM"
+
     # Reload Path for Homebrew (required for subsequent steps)
     if ! command -v brew >/dev/null; then
         echo "Loading Homebrew environment..."
@@ -40,7 +70,7 @@ install_applications() {
         elif [ -x "/usr/local/bin/brew" ]; then
             eval "$(/usr/local/bin/brew shellenv)"
         fi
-        
+
         # Verify load
         if command -v brew >/dev/null; then
             echo "Homebrew loaded into memory."
@@ -49,8 +79,8 @@ install_applications() {
         fi
     fi
 
-    run_installer "nvm.sh"
-    run_installer "node.sh"
+    run_installer "nvm.sh" "LANGUAGES"
+    run_installer "node.sh" "LANGUAGES"
 
     # Reload NVM environment (required for npm-dependent installers)
     if ! command -v npm >/dev/null; then
@@ -74,64 +104,63 @@ install_applications() {
     fi
 
     # 2. Fonts & Prompt
-    run_installer "nerd-fonts.sh"
-    run_installer "starship.sh"
-    run_installer "starship-config.sh"
-    run_installer "shell-config.sh"
-    run_installer "shell-cosmetics.sh"
+    run_installer "nerd-fonts.sh" "TERMINAL"
+    run_installer "starship.sh" "TERMINAL"
+    run_installer "starship-config.sh" "TERMINAL"
+    run_installer "shell-config.sh" "TERMINAL"
+    run_installer "shell-cosmetics.sh" "TERMINAL"
 
     # 3. Core CLI Tools
-    run_installer "git.sh"
-    run_installer "bash-completion.sh"
-    run_installer "wget.sh"
-    run_installer "gpg.sh"
+    run_installer "git.sh" "DEV"
+    run_installer "bash-completion.sh" "TERMINAL"
+    run_installer "wget.sh" "UTILS"
+    run_installer "gpg.sh" "UTILS"
 
     # 4. Languages & Runtimes
-    run_installer "yarn.sh"
-    run_installer "npm-check-updates.sh"
-    run_installer "go.sh"
-    run_installer "tfenv.sh"
-    run_installer "terraform.sh"
+    run_installer "yarn.sh" "LANGUAGES"
+    run_installer "npm-check-updates.sh" "LANGUAGES"
+    run_installer "go.sh" "LANGUAGES"
+    run_installer "tfenv.sh" "DEVOPS"
+    run_installer "terraform.sh" "DEVOPS"
 
     # 5. CLI Tools
-    run_installer "web-font-tools.sh"
-    run_installer "jq.sh"
-    run_installer "yq.sh"
-    run_installer "tree.sh"
-    run_installer "shellcheck.sh"
-    run_installer "pandoc.sh"
-    run_installer "ffmpeg.sh"
-    run_installer "yt-dlp.sh"
-    run_installer "imagemagick.sh"
-    run_installer "nmap.sh"
-    run_installer "tmux.sh"
-    run_installer "vim.sh"
-    run_installer "gemini-cli.sh"
-    run_installer "claude-code.sh"
-    run_installer "aws-cli.sh"
-    
+    run_installer "web-font-tools.sh" "DEV"
+    run_installer "jq.sh" "UTILS"
+    run_installer "yq.sh" "UTILS"
+    run_installer "tree.sh" "UTILS"
+    run_installer "shellcheck.sh" "DEV"
+    run_installer "pandoc.sh" "UTILS"
+    run_installer "ffmpeg.sh" "MEDIA"
+    run_installer "yt-dlp.sh" "MEDIA"
+    run_installer "imagemagick.sh" "MEDIA"
+    run_installer "nmap.sh" "SECURITY"
+    run_installer "tmux.sh" "TERMINAL"
+    run_installer "vim.sh" "DEV"
+    run_installer "gemini-cli.sh" "AI"
+    run_installer "claude-code.sh" "AI"
+    run_installer "aws-cli.sh" "DEVOPS"
+
     # 6. Applications & GUI Tools
+    run_installer "iterm2.sh" "TERMINAL"
+    run_installer "vscode.sh" "DEV"
+    run_installer "cursor.sh" "AI"
+    run_installer "sublime-text.sh" "DEV"
 
-    run_installer "iterm2.sh"
-    run_installer "vscode.sh"
-    run_installer "cursor.sh"
-    run_installer "sublime-text.sh"
+    run_installer "docker.sh" "DEVOPS"
+    run_installer "postman.sh" "DEV"
+    run_installer "dbeaver.sh" "DEV"
+    run_installer "studio-3t.sh" "DEV"
+    run_installer "drawio.sh" "DEV"
+    run_installer "slack.sh" "APPS"
+    run_installer "termius.sh" "APPS"
+    run_installer "appcleaner.sh" "APPS"
+    run_installer "caffeine.sh" "APPS"
+    run_installer "moom.sh" "APPS"
+    run_installer "balena-etcher.sh" "APPS"
+    run_installer "beyond-compare.sh" "DEV"
+    run_installer "superwhisper.sh" "AI"
+    run_installer "keyboard-maestro.sh" "APPS"
 
-    run_installer "docker.sh"
-    run_installer "postman.sh"
-    run_installer "dbeaver.sh"
-    run_installer "studio-3t.sh"
-    run_installer "drawio.sh"
-    run_installer "slack.sh"
-    run_installer "termius.sh"
-    run_installer "appcleaner.sh"
-    run_installer "caffeine.sh"
-    run_installer "moom.sh"
-    run_installer "balena-etcher.sh"
-    run_installer "beyond-compare.sh"
-    run_installer "superwhisper.sh"
-    run_installer "keyboard-maestro.sh"
-    
     # Final cleanup (runs once instead of after every install)
     echo "Running brew cleanup..."
     brew cleanup --quiet

@@ -18,6 +18,14 @@ To install, simply open your terminal and run the following command. This script
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/FredLackey/dotfiles/main/src/setup.sh)"
 ```
 
+To exclude specific categories (e.g., AI tools and terminal customizations):
+
+```bash
+DOTFILES_EXCLUDE="AI,TERMINAL" sh -c "$(curl -fsSL https://raw.githubusercontent.com/FredLackey/dotfiles/main/src/setup.sh)"
+```
+
+Available categories: `SYSTEM`, `LANGUAGES`, `TERMINAL`, `DEV`, `DEVOPS`, `UTILS`, `MEDIA`, `SECURITY`, `AI`, `APPS`, `DESKTOP`
+
 Alternatively, if you have cloned the repository, you can run the setup script directly:
 
 ```bash
