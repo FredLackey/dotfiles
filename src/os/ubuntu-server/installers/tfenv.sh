@@ -5,7 +5,7 @@ APP_NAME="TFEnv"
 TFENV_ROOT="$HOME/.tfenv"
 
 # 1. Check if already installed
-if command -v tfenv >/dev/null 2>&1; then
+if command -v tfenv >/dev/null 2>&1 || [ -d "$TFENV_ROOT" ]; then
     echo "$APP_NAME is already installed."
     exit 0
 fi
