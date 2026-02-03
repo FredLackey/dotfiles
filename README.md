@@ -26,10 +26,16 @@ DOTFILES_EXCLUDE="AI,TERMINAL" sh -c "$(curl -fsSL https://raw.githubusercontent
 
 Available categories: `SYSTEM`, `LANGUAGES`, `TERMINAL`, `DEV`, `DEVOPS`, `UTILS`, `MEDIA`, `SECURITY`, `AI`, `APPS`, `DESKTOP`
 
-Alternatively, if you have cloned the repository, you can run the setup script directly:
+Alternatively, if you have already installed (or cloned) the repository, you can re-run the setup script locally:
 
 ```bash
-./src/setup.sh
+~/.dotfiles/src/setup.sh
+```
+
+To re-run locally with exclusions:
+
+```bash
+DOTFILES_EXCLUDE="AI,TERMINAL" ~/.dotfiles/src/setup.sh
 ```
 
 ### Windows (PowerShell)
