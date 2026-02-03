@@ -22,12 +22,7 @@ echo "Installing $APP_NAME..."
 # Clone tfenv repository
 git clone --depth 1 https://github.com/tfutils/tfenv.git "$TFENV_ROOT"
 
-# Add to PATH in .bashrc if not already present
-if ! grep -q 'tfenv/bin' "$HOME/.bashrc" 2>/dev/null; then
-    echo '' >> "$HOME/.bashrc"
-    echo '# TFEnv' >> "$HOME/.bashrc"
-    echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> "$HOME/.bashrc"
-fi
+# Note: PATH is configured in .bash_profile (deployed by shell-config.sh)
 
 # Add to PATH for current session
 export PATH="$TFENV_ROOT/bin:$PATH"

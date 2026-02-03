@@ -65,7 +65,10 @@ install_applications() {
     run_installer "wget.sh" "UTILS"
     run_installer "gpg.sh" "UTILS"
 
-    # 3. Node.js (NVM + Node)
+    # 3. Shell Configuration (core - deploy early so PATH is set)
+    run_installer "shell-config.sh" "SYSTEM"
+
+    # 4. Node.js (NVM + Node)
     run_installer "nvm.sh" "LANGUAGES"
 
     # Reload NVM environment (required for npm-dependent installers)
@@ -87,12 +90,12 @@ install_applications() {
     run_installer "yarn.sh" "LANGUAGES"
     run_installer "npm-packages.sh" "LANGUAGES"
 
-    # 4. Languages & Runtimes
+    # 5. Languages & Runtimes
     run_installer "go.sh" "LANGUAGES"
     run_installer "gitego.sh" "DEV"
     run_installer "python.sh" "LANGUAGES"
 
-    # 5. CLI Utilities
+    # 6. CLI Utilities
     run_installer "jq.sh" "UTILS"
     run_installer "yq.sh" "UTILS"
     run_installer "tree.sh" "UTILS"
@@ -108,15 +111,12 @@ install_applications() {
     run_installer "bash-completion.sh" "UTILS"
     run_installer "yt-dlp.sh" "MEDIA"
 
-    # 6. Infrastructure & DevOps
+    # 7. Infrastructure & DevOps
     run_installer "docker.sh" "DEVOPS"
     run_installer "tailscale.sh" "DEVOPS"
     run_installer "aws-cli.sh" "DEVOPS"
     run_installer "tfenv.sh" "DEVOPS"
     run_installer "terraform.sh" "DEVOPS"
-
-    # 7. Shell Configuration (core - always install)
-    run_installer "shell-config.sh" "SYSTEM"
 
     # 8. Cleanup
     run_installer "apt-cleanup.sh" "SYSTEM"
