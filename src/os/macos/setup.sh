@@ -103,16 +103,18 @@ install_applications() {
         fi
     fi
 
-    # 2. Fonts & Prompt
+    # 2. Shell Configuration (core - always install)
+    run_installer "shell-config.sh" "SYSTEM"
+
+    # 3. Fonts & Prompt (cosmetic enhancements)
     run_installer "nerd-fonts.sh" "TERMINAL"
     run_installer "starship.sh" "TERMINAL"
     run_installer "starship-config.sh" "TERMINAL"
-    run_installer "shell-config.sh" "TERMINAL"
     run_installer "shell-cosmetics.sh" "TERMINAL"
 
-    # 3. Core CLI Tools
+    # 4. Core CLI Tools
     run_installer "git.sh" "DEV"
-    run_installer "bash-completion.sh" "TERMINAL"
+    run_installer "bash-completion.sh" "UTILS"
     run_installer "wget.sh" "UTILS"
     run_installer "gpg.sh" "UTILS"
 
@@ -134,14 +136,14 @@ install_applications() {
     run_installer "yt-dlp.sh" "MEDIA"
     run_installer "imagemagick.sh" "MEDIA"
     run_installer "nmap.sh" "SECURITY"
-    run_installer "tmux.sh" "TERMINAL"
+    run_installer "tmux.sh" "UTILS"
     run_installer "vim.sh" "DEV"
     run_installer "gemini-cli.sh" "AI"
     run_installer "claude-code.sh" "AI"
     run_installer "aws-cli.sh" "DEVOPS"
 
-    # 6. Applications & GUI Tools
-    run_installer "iterm2.sh" "TERMINAL"
+    # 7. Applications & GUI Tools
+    run_installer "iterm2.sh" "APPS"
     run_installer "vscode.sh" "DEV"
     run_installer "cursor.sh" "AI"
     run_installer "sublime-text.sh" "DEV"

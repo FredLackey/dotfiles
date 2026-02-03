@@ -98,14 +98,14 @@ install_applications() {
     run_installer "tree.sh" "UTILS"
     run_installer "shellcheck.sh" "DEV"
     run_installer "pandoc.sh" "UTILS"
-    run_installer "tmux.sh" "TERMINAL"
+    run_installer "tmux.sh" "UTILS"
     run_installer "vim.sh" "DEV"
     run_installer "htop.sh" "UTILS"
     run_installer "rsync.sh" "UTILS"
     run_installer "nmap.sh" "SECURITY"
     run_installer "imagemagick.sh" "MEDIA"
     run_installer "ffmpeg.sh" "MEDIA"
-    run_installer "bash-completion.sh" "TERMINAL"
+    run_installer "bash-completion.sh" "UTILS"
     run_installer "yt-dlp.sh" "MEDIA"
 
     # 6. Infrastructure & DevOps
@@ -115,8 +115,8 @@ install_applications() {
     run_installer "tfenv.sh" "DEVOPS"
     run_installer "terraform.sh" "DEVOPS"
 
-    # 7. Shell Configuration
-    run_installer "shell-config.sh" "TERMINAL"
+    # 7. Shell Configuration (core - always install)
+    run_installer "shell-config.sh" "SYSTEM"
 
     # 8. Cleanup
     run_installer "apt-cleanup.sh" "SYSTEM"

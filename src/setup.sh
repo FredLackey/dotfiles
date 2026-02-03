@@ -60,3 +60,18 @@ else
     echo "Error: Could not determine setup script or script not found: $SCRIPT_TO_RUN"
     exit 1
 fi
+
+# 4. Initialize Git Repository (enables future "git pull" updates)
+if [ -d "$TARGET_DIR" ] && [ ! -d "$TARGET_DIR/.git" ]; then
+    if command -v git >/dev/null 2>&1; then
+        echo "Initializing git repository for future updates..."
+        cd "$TARGET_DIR"
+        git init -q
+        git remote add origin https://github.com/FredLackey/dotfiles.git
+        git fetch -q origin main
+        git reset --mixed origin/main
+        echo "Git repository initialized. Run 'cd ~/.dotfiles && git pull' to get updates."
+    else
+        echo "Warning: git not available. Cannot initialize repository for updates."
+    fi
+fi
