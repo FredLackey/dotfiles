@@ -166,7 +166,9 @@ alias path='printf "%b\n" "${PATH//:/\\n}"'
 # Prompt (Starship)
 # ------------------------------------------------------------------------------
 
-eval "$(starship init bash)"
+if command -v starship &> /dev/null; then
+    eval "$(starship init bash)"
+fi
 
 # ------------------------------------------------------------------------------
 # Custom Configuration
