@@ -160,7 +160,8 @@ install_applications() {
     run_installer "moom.sh" "APPS"
     run_installer "balena-etcher.sh" "APPS"
     run_installer "beyond-compare.sh" "DEV"
-    run_installer "superwhisper.sh" "AI"
+    run_installer "google-chrome.sh" "APPS"
+    run_installer "superwhisper.sh" "APPS"
     run_installer "keyboard-maestro.sh" "APPS"
 
     # Final cleanup (runs once instead of after every install)
