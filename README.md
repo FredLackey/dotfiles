@@ -41,3 +41,4 @@ DOTFILES_EXCLUDE="AI,TERMINAL" ~/.dotfiles/src/setup.sh
 ### Windows (PowerShell)
 
 *Setup instructions coming soon.* This will utilize a `src/setup.ps1` script to perform a similar initialization for Windows environments.
+
