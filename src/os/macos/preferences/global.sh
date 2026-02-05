@@ -52,12 +52,6 @@ set_default "AppleKeyboardUIMode" "-int" "3"
 # Disable press-and-hold for accent menu (enables key repeat)
 set_default "ApplePressAndHoldEnabled" "-bool" "false"
 
-# Fastest key repeat rate
-set_default "KeyRepeat" "-int" "1"
-
-# Short delay before key repeat begins
-set_default "InitialKeyRepeat" "-int" "10"
-
 # --- Text Correction (All Disabled) ---
 
 # Disable auto-capitalization
