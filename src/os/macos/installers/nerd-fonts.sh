@@ -4,7 +4,7 @@ set -e
 APP_NAME="Nerd Fonts"
 
 # 1. Check if already installed
-if command -v brew >/dev/null && brew list font-fira-code-nerd-font &>/dev/null; then
+if command -v brew >/dev/null && brew list font-meslo-lg-nerd-font &>/dev/null; then
     echo "$APP_NAME are already installed."
     exit 0
 fi
@@ -17,11 +17,12 @@ fi
 
 # 3. Install
 echo "Installing $APP_NAME..."
+brew install --quiet font-meslo-lg-nerd-font
 brew install --quiet font-fira-code-nerd-font
 brew install --quiet font-jetbrains-mono-nerd-font
 
 # 4. Verify
-if brew list font-fira-code-nerd-font &>/dev/null; then
+if brew list font-meslo-lg-nerd-font &>/dev/null; then
     echo "$APP_NAME installed successfully."
 else
     echo "Error: $APP_NAME installation failed."

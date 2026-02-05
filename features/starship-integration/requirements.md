@@ -38,14 +38,21 @@ The configuration should be optimized for a software developer working primarily
 
 ## Font Requirements
 
-### Primary Font: FiraCode Nerd Font
+### Primary Font: MesloLGM Nerd Font Mono
+
+- Widely recommended for terminal use, great readability
+- Popular default for Oh My Zsh and Powerlevel10k
+- Based on Apple's Menlo font with customizable line gap variants (S/M/L)
+- Includes 3,600+ patched glyphs (Devicons, Font Awesome, Octicons, Material Design Icons)
+- Homebrew cask: `font-meslo-lg-nerd-font`
+
+### Secondary Font: FiraCode Nerd Font
 
 - Best ligature support for JS/TS operators (`===`, `!==`, `=>`, `<=`, `>=`)
 - Most widely documented and tested with Starship
-- Includes 3,600+ patched glyphs (Devicons, Font Awesome, Octicons, Material Design Icons)
 - Homebrew cask: `font-fira-code-nerd-font`
 
-### Secondary Font: JetBrains Mono Nerd Font
+### Tertiary Font: JetBrains Mono Nerd Font
 
 - Excellent character differentiation (`0` vs `O`, `1` vs `l`, `I` vs `l`)
 - Designed by JetBrains specifically for source code readability
@@ -81,7 +88,7 @@ This replaces emoji-based symbols with Nerd Font glyphs for a cleaner, more cons
 
 - **Do NOT rely on Terminal.app** — it has poor Nerd Font glyph rendering
 - Target iTerm2 or Alacritty for best results
-- Install fonts via Homebrew: `brew install font-fira-code-nerd-font`
+- Install fonts via Homebrew: `brew install font-meslo-lg-nerd-font`
 
 ### Windows / WSL
 

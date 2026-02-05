@@ -15,19 +15,20 @@
 
 **File to create:** `src/os/macos/installers/nerd-fonts.sh`
 
-This script installs both FiraCode Nerd Font and JetBrains Mono Nerd Font via Homebrew.
+This script installs MesloLG Nerd Font (primary), FiraCode Nerd Font, and JetBrains Mono Nerd Font via Homebrew.
 
 **What to do:**
 
 1. Create the file at `src/os/macos/installers/nerd-fonts.sh`
 2. Add the shebang (`#!/bin/bash`) and `set -e`
 3. Set `APP_NAME="Nerd Fonts"`
-4. **Check step:** Use `brew list font-fira-code-nerd-font` to see if the primary font is already installed. If it is, print "Nerd Fonts are already installed." and `exit 0`.
+4. **Check step:** Use `brew list font-meslo-lg-nerd-font` to see if the primary font is already installed. If it is, print "Nerd Fonts are already installed." and `exit 0`.
 5. **Dependency step:** Verify Homebrew is installed (`command -v brew`). If not, print an error and `exit 1`.
 6. **Install step:** Run:
+   - `brew install --quiet font-meslo-lg-nerd-font`
    - `brew install --quiet font-fira-code-nerd-font`
    - `brew install --quiet font-jetbrains-mono-nerd-font`
-7. **Verify step:** Run `brew list font-fira-code-nerd-font` again. If it succeeds, print success. If it fails, print an error and `exit 1`.
+7. **Verify step:** Run `brew list font-meslo-lg-nerd-font` again. If it succeeds, print success. If it fails, print an error and `exit 1`.
 
 ---
 
@@ -231,7 +232,7 @@ run_installer "starship-config.sh"
 4. Navigate to a Git repository and confirm the branch name shows with the  icon
 5. Navigate to a Node.js project and confirm the Node version shows with the  icon
 6. Run a command that takes more than 2 seconds (e.g., `sleep 3`) and confirm the duration shows
-7. Switch the terminal font to FiraCode Nerd Font and confirm all glyphs render correctly
+7. Switch the terminal font to MesloLGM Nerd Font Mono and confirm all glyphs render correctly
 8. Open a new Bash shell (`bash`) and confirm Starship also works there
 
 ---
@@ -251,16 +252,17 @@ Ubuntu does not use Homebrew for fonts. Fonts are installed manually to `~/.loca
 3. Add the shebang (`#!/bin/bash`) and `set -e`
 4. Set `APP_NAME="Nerd Fonts"`
 5. Define `FONT_DIR="$HOME/.local/share/fonts"`
-6. **Check step:** Look for existing FiraCode Nerd Font files in the font directory. If `ls "$FONT_DIR"/FiraCode*.ttf` succeeds, print "Nerd Fonts are already installed." and `exit 0`.
+6. **Check step:** Look for existing MesloLG Nerd Font files in the font directory. If `ls "$FONT_DIR"/MesloLGM*.ttf` succeeds, print "Nerd Fonts are already installed." and `exit 0`.
 7. **Dependency step:** Verify `curl` and `unzip` are available. If not, print an error and `exit 1`.
 8. **Install step:**
    - `mkdir -p "$FONT_DIR"`
+   - Download Meslo: `curl -fsSL -o /tmp/Meslo.zip "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip"`
    - Download FiraCode: `curl -fsSL -o /tmp/FiraCode.zip "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip"`
    - Download JetBrainsMono: `curl -fsSL -o /tmp/JetBrainsMono.zip "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"`
-   - Unzip both to `$FONT_DIR`: `unzip -o /tmp/FiraCode.zip -d "$FONT_DIR"` (same for JetBrainsMono)
+   - Unzip all to `$FONT_DIR`: `unzip -o /tmp/Meslo.zip -d "$FONT_DIR"` (same for FiraCode, JetBrainsMono)
    - Rebuild font cache: `fc-cache -fv`
-   - Clean up: `rm -f /tmp/FiraCode.zip /tmp/JetBrainsMono.zip`
-9. **Verify step:** Check that `fc-list | grep -i "FiraCode Nerd"` returns results. If it does, print success. If not, print an error and `exit 1`.
+   - Clean up: `rm -f /tmp/Meslo.zip /tmp/FiraCode.zip /tmp/JetBrainsMono.zip`
+9. **Verify step:** Check that `fc-list | grep -i "MesloLGM Nerd"` returns results. If it does, print success. If not, print an error and `exit 1`.
 
 ---
 
@@ -394,10 +396,10 @@ On Windows, install Starship via `winget` (preferred) or the official installer.
 **What to do:**
 
 1. Create the file at `src/os/windows/installers/nerd-fonts.ps1`
-2. **Check step:** Look for FiraCode Nerd Font in the Windows fonts directory (`C:\Windows\Fonts\` or the user fonts directory)
+2. **Check step:** Look for MesloLG Nerd Font in the Windows fonts directory (`C:\Windows\Fonts\` or the user fonts directory)
 3. **Install step:** Download the font zip from the Nerd Fonts GitHub releases, extract, and install using the Shell.Application COM object or `Add-Font` if available. Alternatively, use `winget` or `choco` if a package exists:
    - `winget` does not have Nerd Fonts, so use direct download
-   - Download `https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip`
+   - Download `https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip`
    - Extract to a temp directory
    - Copy `.ttf` files to `$env:LOCALAPPDATA\Microsoft\Windows\Fonts\`
    - Register them via registry or `Add-Type`
@@ -461,7 +463,7 @@ Push to GitHub and test on a pristine Windows VM.
 1. Run the full setup from a fresh PowerShell session
 2. Close and reopen PowerShell (or Windows Terminal)
 3. Confirm Starship prompt appears
-4. Set the terminal font to FiraCode Nerd Font in Windows Terminal settings
+4. Set the terminal font to MesloLGM Nerd Font Mono in Windows Terminal settings
 5. Test the same scenarios as previous phases
 
 ---
