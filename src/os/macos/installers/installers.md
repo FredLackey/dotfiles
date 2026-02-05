@@ -26,6 +26,7 @@ This list contains software packages identified for software development purpose
 | :--- | :--- | :--- |
 | **AWS CLI** | Terminal | Command line interface for AWS services. |
 | **Balena Etcher** | GUI | Flash OS images to SD cards & USB drives. |
+| **BasicTeX** | Terminal | Minimal TeX distribution for PDF generation (e.g., with Pandoc). |
 | **Bash Completion** | Terminal | Programmable completion for the bash shell. |
 | **Beyond Compare** | GUI | Directory and file compare utility. |
 | **Brave Browser** | GUI | Privacy-focused web browser. |

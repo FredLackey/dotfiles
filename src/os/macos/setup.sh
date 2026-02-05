@@ -133,6 +133,7 @@ install_applications() {
     run_installer "tree.sh" "UTILS"
     run_installer "shellcheck.sh" "DEV"
     run_installer "pandoc.sh" "UTILS"
+    run_installer "basictex.sh" "UTILS"
     run_installer "ffmpeg.sh" "MEDIA"
     run_installer "yt-dlp.sh" "MEDIA"
     run_installer "imagemagick.sh" "MEDIA"
