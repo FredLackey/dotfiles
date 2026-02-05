@@ -70,6 +70,7 @@ if [ -d "$TARGET_DIR" ] && [ ! -d "$TARGET_DIR/.git" ]; then
         git remote add origin https://github.com/FredLackey/dotfiles.git
         git fetch -q origin main
         git reset --mixed origin/main
+        git branch --set-upstream-to=origin/main main
         echo "Git repository initialized. Run 'cd ~/.dotfiles && git pull' to get updates."
     else
         echo "Warning: git not available. Cannot initialize repository for updates."
