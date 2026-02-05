@@ -61,6 +61,7 @@ install_applications() {
 
     # 2. Core CLI Tools
     run_installer "git.sh" "DEV"
+    run_installer "github-cli.sh" "DEV"
     run_installer "curl.sh" "UTILS"
     run_installer "wget.sh" "UTILS"
     run_installer "gpg.sh" "UTILS"

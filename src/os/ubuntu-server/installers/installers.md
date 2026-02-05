@@ -15,6 +15,7 @@ This document lists all available installer scripts for Ubuntu Server.
 | Script | Description |
 |--------|-------------|
 | `git.sh` | Git version control |
+| `github-cli.sh` | GitHub CLI (gh) |
 | `curl.sh` | Command-line HTTP client |
 
 ## Node.js & JavaScript

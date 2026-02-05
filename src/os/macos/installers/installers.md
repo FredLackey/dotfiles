@@ -39,6 +39,7 @@ This list contains software packages identified for software development purpose
 | **FFmpeg** | Terminal | Suite for handling audio, video, and other multimedia files. |
 | **Gemini CLI** | Terminal | Command line interface for Google Gemini AI. |
 | **Git** | Terminal | Distributed version control system. |
+| **GitHub CLI** | Terminal | Command line interface for GitHub. |
 | **Go** | Terminal | Programming language. |
 | **Google Chrome** | GUI | Web browser. |
 | **GPG** | Terminal | GnuPG encryption and signing tool. |

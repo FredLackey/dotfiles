@@ -114,6 +114,7 @@ install_applications() {
 
     # 4. Core CLI Tools
     run_installer "git.sh" "DEV"
+    run_installer "github-cli.sh" "DEV"
     run_installer "bash-completion.sh" "UTILS"
     run_installer "wget.sh" "UTILS"
     run_installer "gpg.sh" "UTILS"
