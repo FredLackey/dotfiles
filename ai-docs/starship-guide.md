@@ -178,12 +178,12 @@ If you want these features, you can still use Oh My Zsh (without P10k) + Starshi
 
 **A Nerd Font is required.** Without it, you'll see □ squares instead of icons.
 
-Recommended font: **FiraCode Nerd Font** or **MesloLGS NF**
+Recommended font: **MesloLGM Nerd Font Mono** (primary), **FiraCode Nerd Font**, or **JetBrains Mono Nerd Font**
 
 Download from [Nerd Fonts](https://www.nerdfonts.com/font-downloads) or install via Homebrew:
 
 ```bash
-brew install --cask font-fira-code-nerd-font
+brew install --cask font-meslo-lg-nerd-font
 ```
 
 ### Step 1: Install Starship
@@ -227,9 +227,9 @@ choco install starship
 
 Set your terminal to use a Nerd Font:
 
-- **iTerm2**: Preferences → Profiles → Text → Font → FiraCode Nerd Font
-- **Terminal.app**: Preferences → Profiles → Font → FiraCode Nerd Font
-- **VS Code**: Settings → Terminal › Integrated: Font Family → `FiraCode Nerd Font`
+- **iTerm2**: Preferences → Profiles → Text → Font → MesloLGM Nerd Font Mono
+- **Terminal.app**: Preferences → Profiles → Font → MesloLGM Nerd Font Mono
+- **VS Code**: Settings → Terminal › Integrated: Font Family → `MesloLGM Nerd Font Mono`
 - **Windows Terminal**: Settings → Profiles → Defaults → Appearance → Font face
 
 ---

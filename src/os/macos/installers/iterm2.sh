@@ -63,11 +63,11 @@ fi
 /usr/libexec/PlistBuddy -c "Add :'New Bookmarks':0:Name string Default" "$ITERM2_PLIST" 2>/dev/null || true
 /usr/libexec/PlistBuddy -c "Merge /tmp/SolarizedDark.itermcolors :'New Bookmarks':0" "$ITERM2_PLIST"
 
-# Set font to FiraCode Nerd Font at size 14
-/usr/libexec/PlistBuddy -c "Add :'New Bookmarks':0:'Normal Font' string 'FiraCodeNFM-Reg 14'" "$ITERM2_PLIST" 2>/dev/null || \
-/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Normal Font' 'FiraCodeNFM-Reg 14'" "$ITERM2_PLIST"
-/usr/libexec/PlistBuddy -c "Add :'New Bookmarks':0:'Non Ascii Font' string 'FiraCodeNFM-Reg 14'" "$ITERM2_PLIST" 2>/dev/null || \
-/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Non Ascii Font' 'FiraCodeNFM-Reg 14'" "$ITERM2_PLIST"
+# Set font to MesloLGM Nerd Font Mono at size 14
+/usr/libexec/PlistBuddy -c "Add :'New Bookmarks':0:'Normal Font' string 'MesloLGMNFM-Regular 14'" "$ITERM2_PLIST" 2>/dev/null || \
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Normal Font' 'MesloLGMNFM-Regular 14'" "$ITERM2_PLIST"
+/usr/libexec/PlistBuddy -c "Add :'New Bookmarks':0:'Non Ascii Font' string 'MesloLGMNFM-Regular 14'" "$ITERM2_PLIST" 2>/dev/null || \
+/usr/libexec/PlistBuddy -c "Set :'New Bookmarks':0:'Non Ascii Font' 'MesloLGMNFM-Regular 14'" "$ITERM2_PLIST"
 
 # Clean up downloaded files
 rm -f /tmp/SolarizedDark.itermcolors /tmp/SolarizedLight.itermcolors
