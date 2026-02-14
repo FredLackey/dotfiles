@@ -142,6 +142,8 @@ install_applications() {
     run_installer "vim.sh" "DEV"
     run_installer "gemini-cli.sh" "AI"
     run_installer "claude-code.sh" "AI"
+    run_installer "kiro.sh" "AI"
+    run_installer "antigravity.sh" "AI"
     run_installer "aws-cli.sh" "DEVOPS"
 
     # 7. Applications & GUI Tools
@@ -165,6 +167,10 @@ install_applications() {
     run_installer "google-chrome.sh" "APPS"
     run_installer "superwhisper.sh" "APPS"
     run_installer "keyboard-maestro.sh" "APPS"
+    run_installer "telegram.sh" "APPS"
+    run_installer "utm.sh" "APPS"
+    run_installer "obsidian.sh" "APPS"
+    run_installer "adobe-acrobat-pro.sh" "APPS"
 
     # 8. Marcus Developer Tools (td must be first — other tools reference it)
     run_installer "td.sh" "APPS"
