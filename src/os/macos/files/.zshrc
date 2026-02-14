@@ -23,6 +23,14 @@ if [[ -f /usr/local/bin/brew ]]; then
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+# Go binaries
+export PATH="$HOME/go/bin:$PATH"
+
+# Betamax (terminal recorder)
+if [[ -d "$HOME/code/betamax" ]]; then
+    export PATH="$HOME/code/betamax:$PATH"
+fi
+
 # ------------------------------------------------------------------------------
 # NVM (Node Version Manager)
 # ------------------------------------------------------------------------------
