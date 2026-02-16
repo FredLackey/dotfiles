@@ -53,3 +53,5 @@ lerna-debug.log*
 *.tfvars
 *.tfplan
 .terraform.lock.hcl
+.todos/
+.sidecar/
