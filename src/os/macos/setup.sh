@@ -81,6 +81,7 @@ install_applications() {
 
     run_installer "nvm.sh" "LANGUAGES"
     run_installer "node.sh" "LANGUAGES"
+    run_installer "bun.sh" "LANGUAGES"
 
     # Reload NVM environment (required for npm-dependent installers)
     if ! command -v npm >/dev/null; then

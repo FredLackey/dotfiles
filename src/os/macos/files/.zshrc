@@ -23,8 +23,15 @@ if [[ -f /usr/local/bin/brew ]]; then
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+# Local binaries
+export PATH="$HOME/.local/bin:$PATH"
+
 # Go binaries
 export PATH="$HOME/go/bin:$PATH"
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Betamax (terminal recorder)
 if [[ -d "$HOME/code/betamax" ]]; then
@@ -85,6 +92,9 @@ setopt PUSHD_IGNORE_DUPS     # Don't push duplicates
 autoload -Uz compinit && compinit
 setopt COMPLETE_IN_WORD      # Complete from cursor position
 setopt ALWAYS_TO_END         # Move cursor to end after completion
+
+# Case-insensitive completion (auto-corrects capitalization on Tab)
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # ------------------------------------------------------------------------------
 # Environment

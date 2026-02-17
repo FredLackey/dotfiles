@@ -6,6 +6,7 @@
 # Usage:
 #   claude-danger
 #   claude-danger "some prompt"
+#   claude-danger 35e26140-96c5-470b-83e2-e00d8bd6a42f
 #
 # Dependencies:
 #   - claude (npm install -g @anthropic-ai/claude-code)
@@ -18,6 +19,12 @@ claude-danger() {
         return 1
     fi
 
-    echo "Launching Claude CLI in dangerous mode (skipping permission checks)..."
-    claude --dangerously-skip-permissions "$@"
+    # If first argument is a session UUID, resume it
+    if [[ "$1" =~ ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ ]]; then
+        echo "Resuming Claude session $1 in dangerous mode..."
+        claude --resume "$1" --dangerously-skip-permissions
+    else
+        echo "Launching Claude CLI in dangerous mode (skipping permission checks)..."
+        claude --dangerously-skip-permissions "$@"
+    fi
 }
