@@ -13,6 +13,8 @@ Personal dotfiles repository for bootstrapping development environments across m
 
 ## Critical Development Rules
 
+**NEVER modify `~/.dotfiles` directly.** The `~/.dotfiles` folder is the *deployed* copy created by the setup scripts. It is NOT the working repository. All changes must be made in the working local repo (e.g. `~/Source/Personal/FredLackey/dotfiles`), committed, and pushed to the SSH remote. To apply changes to the current machine, re-run the setup script. The fact that both folders may exist on the same machine under the same profile is coincidental — treat `~/.dotfiles` as read-only output.
+
 **NEVER test locally.** Always push to GitHub and test in a pristine virtual machine.
 
 **OS folders are intentionally isolated.** Each folder under `src/os/` must be completely self-contained. Duplication between OS folders is expected and acceptable. You may reference other OS folders for patterns or logic to adapt, and folder structures should remain consistent across platforms, but never create shared utilities or imports between OS folders. Do not attempt to reduce duplication across OS boundaries.
