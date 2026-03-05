@@ -144,7 +144,6 @@ install_applications() {
     run_installer "gemini-cli.sh" "AI"
     run_installer "claude-code.sh" "AI"
     run_installer "kiro.sh" "AI"
-    run_installer "antigravity.sh" "AI"
     run_installer "aws-cli.sh" "DEVOPS"
 
     # 7. Applications & GUI Tools
