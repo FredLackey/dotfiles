@@ -33,10 +33,6 @@ export PATH="$HOME/go/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Betamax (terminal recorder)
-if [[ -d "$HOME/code/betamax" ]]; then
-    export PATH="$HOME/code/betamax:$PATH"
-fi
 
 # ------------------------------------------------------------------------------
 # NVM (Node Version Manager)

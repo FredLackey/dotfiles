@@ -176,7 +176,7 @@ install_applications() {
     run_installer "td.sh" "APPS"
     run_installer "sidecar.sh" "APPS"
     run_installer "nightshift.sh" "APPS"
-    run_installer "betamax.sh" "APPS"
+
 
     # Final cleanup (runs once instead of after every install)
     echo "Running brew cleanup..."

@@ -35,13 +35,6 @@ fi
 
 export PATH="$HOME/go/bin:$PATH"
 
-# ------------------------------------------------------------------------------
-# Betamax (Terminal Recorder)
-# ------------------------------------------------------------------------------
-
-if [[ -d "$HOME/code/betamax" ]]; then
-    export PATH="$HOME/code/betamax:$PATH"
-fi
 
 # ------------------------------------------------------------------------------
 # TFEnv (Terraform Version Manager)
