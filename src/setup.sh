@@ -6,8 +6,11 @@ TARGET_DIR="$HOME/.dotfiles"
 TEMP_FILE="$(mktemp)"
 
 # 1. Download & Extract (Idempotent)
-if [ -d "$TARGET_DIR" ]; then
-    echo "Files already present in $TARGET_DIR. Skipping download."
+if [ -d "$TARGET_DIR" ] && [ -d "$TARGET_DIR/.git" ]; then
+    echo "Dotfiles already installed. Pulling latest updates..."
+    git -C "$TARGET_DIR" pull --ff-only || echo "Warning: git pull failed. Continuing with existing files."
+elif [ -d "$TARGET_DIR" ]; then
+    echo "Files already present in $TARGET_DIR (no git repo). Skipping download."
 else
     echo "Downloading dotfiles..."
     # Ensure curl and tar exist (both are standard on macOS and Linux)
