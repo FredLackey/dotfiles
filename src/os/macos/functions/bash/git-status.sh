@@ -6,25 +6,30 @@
 #   git-status /path        # Repo at path, or all repos found under path
 #   git-status -d           # Only show repos with changes (dirty)
 #   git-status -d /path     # Dirty repos under path
+#   git-status -m 3 /path   # Limit search depth to 3 levels
 #
 # Flags:
-#   -d    Dirty only — hide clean repos
+#   -d        Dirty only — hide clean repos
+#   -m N      Max directory depth for repo discovery (default: unlimited)
 #
 # Dependencies:
 #   - git (brew install git)
 
 git-status() {
-    local usage="git-status [-d] [path]"
+    local usage="git-status [-d] [-m depth] [path]"
     local dirty_only=false
+    local max_depth=""
     local target_path=""
 
     # Parse flags
     local args=()
-    for arg in "$@"; do
-        case "$arg" in
+    while [ $# -gt 0 ]; do
+        case "$1" in
             -d) dirty_only=true ;;
-            *)  args+=("$arg") ;;
+            -m) shift; max_depth="$1" ;;
+            *)  args+=("$1") ;;
         esac
+        shift
     done
     target_path="${args[0]:-}"
 
@@ -57,10 +62,13 @@ git-status() {
     if [ -d "$target_path/.git" ]; then
         repos=("$target_path")
     else
+        local find_cmd="find \"$target_path\""
+        [ -n "$max_depth" ] && find_cmd="$find_cmd -maxdepth $max_depth"
+        find_cmd="$find_cmd -name .git -type d"
         while IFS= read -r gitdir; do
             [ -z "$gitdir" ] && continue
             repos+=("${gitdir%/.git}")
-        done < <(find "$target_path" -maxdepth 5 -name .git -type d 2>/dev/null | sort)
+        done < <(eval "$find_cmd" 2>/dev/null | sort)
     fi
 
     if [ ${#repos[@]} -eq 0 ]; then
