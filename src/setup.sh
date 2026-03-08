@@ -8,6 +8,23 @@ TARGET_DIR="$HOME/.dotfiles"
 # 1. Download & Extract (Idempotent)
 if [ -d "$TARGET_DIR" ] && [ -d "$TARGET_DIR/.git" ]; then
     echo "Dotfiles already installed. Pulling latest updates..."
+
+    # Ensure remote origin exists and points to the correct URL
+    CURRENT_REMOTE="$(git -C "$TARGET_DIR" remote get-url origin 2>/dev/null || true)"
+    if [ -z "$CURRENT_REMOTE" ]; then
+        git -C "$TARGET_DIR" remote add origin "$REPO_URL"
+    elif [ "$CURRENT_REMOTE" != "$REPO_URL" ]; then
+        git -C "$TARGET_DIR" remote set-url origin "$REPO_URL"
+    fi
+
+    # Ensure local branch is main and tracks origin/main
+    LOCAL_BRANCH="$(git -C "$TARGET_DIR" branch --show-current 2>/dev/null || true)"
+    if [ "$LOCAL_BRANCH" != "main" ] && [ -n "$LOCAL_BRANCH" ]; then
+        git -C "$TARGET_DIR" branch -m "$LOCAL_BRANCH" main
+    fi
+    git -C "$TARGET_DIR" fetch origin main
+    git -C "$TARGET_DIR" branch --set-upstream-to=origin/main main 2>/dev/null || true
+
     git -C "$TARGET_DIR" pull --ff-only origin main || echo "Warning: git pull failed. Continuing with existing files."
 elif [ -d "$TARGET_DIR" ]; then
     echo "Files already present in $TARGET_DIR (no git repo). Skipping download."
