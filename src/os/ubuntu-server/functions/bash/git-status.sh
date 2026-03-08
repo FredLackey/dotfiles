@@ -4,13 +4,29 @@
 # Usage:
 #   git-status              # Current repo (or repos under current dir if not in one)
 #   git-status /path        # Repo at path, or all repos found under path
+#   git-status -d           # Only show repos with changes (dirty)
+#   git-status -d /path     # Dirty repos under path
+#
+# Flags:
+#   -d    Dirty only — hide clean repos
 #
 # Dependencies:
 #   - git (apt install git)
 
 git-status() {
-    local usage="git-status [path]"
-    local target_path="$1"
+    local usage="git-status [-d] [path]"
+    local dirty_only=false
+    local target_path=""
+
+    # Parse flags
+    local args=()
+    for arg in "$@"; do
+        case "$arg" in
+            -d) dirty_only=true ;;
+            *)  args+=("$arg") ;;
+        esac
+    done
+    target_path="${args[0]:-}"
 
     # Check if git is installed
     if ! command -v git &> /dev/null; then
@@ -52,18 +68,14 @@ git-status() {
         return 0
     fi
 
-    # Print header
-    printf "\n"
-    printf "  %-50s  %5s  %6s  %5s  %5s  %6s\n" "REPOSITORY" "UNSTG" "STAGED" "UNTRK" "AHEAD" "BEHIND"
-    printf "  %-50s  %5s  %6s  %5s  %5s  %6s\n" \
-        "──────────────────────────────────────────────────" "─────" "──────" "─────" "─────" "──────"
-
+    local header_printed=false
     local total_repos=${#repos[@]}
     local clean_repos=0
+    local shown_repos=0
 
     for repo in "${repos[@]}"; do
         # Build display path relative to target
-        local rel_path
+        local rel_path=""
         if [ "$repo" = "$target_path" ]; then
             rel_path="$(basename "$repo")"
         else
@@ -77,7 +89,7 @@ git-status() {
 
         # Parse porcelain status for counts
         local unstaged=0 staged=0 untracked=0
-        local status_output
+        local status_output=""
         status_output=$(git -C "$repo" status --porcelain 2>/dev/null)
 
         if [ -n "$status_output" ]; then
@@ -101,24 +113,39 @@ git-status() {
             behind=$(git -C "$repo" rev-list --count 'HEAD..@{u}' 2>/dev/null || echo "0")
         fi
 
-        # Pick color based on state
+        # Determine if repo is clean or dirty
         local c_reset="\033[0m"
         local c=""
-        local has_local_changes=false
-        if [ "$unstaged" -gt 0 ] || [ "$staged" -gt 0 ] || [ "$untracked" -gt 0 ]; then
-            has_local_changes=true
-        fi
+        local is_clean=true
 
-        if [ "$has_local_changes" = true ]; then
+        if [ "$unstaged" -gt 0 ] || [ "$staged" -gt 0 ] || [ "$untracked" -gt 0 ]; then
             c="\033[33m"  # Yellow: local changes
+            is_clean=false
         elif [ "$ahead" != "-" ] && [ "$ahead" -gt 0 ]; then
             c="\033[36m"  # Cyan: needs push
+            is_clean=false
         elif [ "$behind" != "-" ] && [ "$behind" -gt 0 ]; then
             c="\033[35m"  # Magenta: needs pull
+            is_clean=false
         else
             c="\033[32m"  # Green: clean
             ((clean_repos++))
         fi
+
+        # Skip clean repos in dirty-only mode
+        if [ "$dirty_only" = true ] && [ "$is_clean" = true ]; then
+            continue
+        fi
+
+        # Print header on first shown repo
+        if [ "$header_printed" = false ]; then
+            printf "\n"
+            printf "  %-50s  %5s  %6s  %5s  %5s  %6s\n" "REPOSITORY" "UNSTG" "STAGED" "UNTRK" "AHEAD" "BEHIND"
+            printf "  %-50s  %5s  %6s  %5s  %5s  %6s\n" \
+                "──────────────────────────────────────────────────" "─────" "──────" "─────" "─────" "──────"
+            header_printed=true
+        fi
+        ((shown_repos++))
 
         # Format numeric zeros as dots for readability
         local d_unstaged="." d_staged="." d_untracked="." d_ahead="." d_behind="."
@@ -136,7 +163,11 @@ git-status() {
 
     # Summary and legend
     printf "\n"
-    printf "  %d repos scanned, %d clean\n" "$total_repos" "$clean_repos"
+    if [ "$dirty_only" = true ]; then
+        printf "  %d repos scanned, %d dirty, %d clean (hidden)\n" "$total_repos" "$shown_repos" "$clean_repos"
+    else
+        printf "  %d repos scanned, %d clean\n" "$total_repos" "$clean_repos"
+    fi
     printf "  \033[32m*\033[0m Clean  \033[33m*\033[0m Local changes  \033[36m*\033[0m Needs push  \033[35m*\033[0m Needs pull  \033[0m-\033[0m No remote\n"
     printf "\n"
 }
