@@ -25,6 +25,31 @@ git-status() {
     local args=()
     while [ $# -gt 0 ]; do
         case "$1" in
+            -h|--help)
+                echo "git-status — Show status summary for one or more git repositories"
+                echo ""
+                echo "Usage:"
+                echo "  git-status              Scan current repo (or all repos under current dir)"
+                echo "  git-status /path        Scan repo at path, or all repos found under path"
+                echo "  git-status -d           Only show repos with changes (dirty)"
+                echo "  git-status -d /path     Dirty repos under path"
+                echo "  git-status -m 3 /path   Limit search depth to 3 levels"
+                echo ""
+                echo "Flags:"
+                echo "  -d          Dirty only — hide clean repos"
+                echo "  -m N        Max directory depth for repo discovery (default: unlimited)"
+                echo "  -h, --help  Show this help message"
+                echo ""
+                echo "Legend:"
+                echo "  UNSTG   Unstaged modifications"
+                echo "  STAGED  Staged changes ready to commit"
+                echo "  UNTRK   Untracked files"
+                echo "  AHEAD   Commits ahead of remote (needs push)"
+                echo "  BEHIND  Commits behind remote (needs pull)"
+                echo "  -       No remote tracking branch"
+                echo "  .       Zero (clean)"
+                return 0
+                ;;
             -d) dirty_only=true ;;
             -m) shift; max_depth="$1" ;;
             *)  args+=("$1") ;;
