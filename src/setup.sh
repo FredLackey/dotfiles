@@ -8,7 +8,7 @@ TEMP_FILE="$(mktemp)"
 # 1. Download & Extract (Idempotent)
 if [ -d "$TARGET_DIR" ] && [ -d "$TARGET_DIR/.git" ]; then
     echo "Dotfiles already installed. Pulling latest updates..."
-    git -C "$TARGET_DIR" pull --ff-only || echo "Warning: git pull failed. Continuing with existing files."
+    git -C "$TARGET_DIR" pull --ff-only origin main || echo "Warning: git pull failed. Continuing with existing files."
 elif [ -d "$TARGET_DIR" ]; then
     echo "Files already present in $TARGET_DIR (no git repo). Skipping download."
 else
@@ -69,7 +69,7 @@ if [ -d "$TARGET_DIR" ] && [ ! -d "$TARGET_DIR/.git" ]; then
     if command -v git >/dev/null 2>&1; then
         echo "Initializing git repository for future updates..."
         cd "$TARGET_DIR"
-        git init -q
+        git init -q -b main
         git remote add origin https://github.com/FredLackey/dotfiles.git
         git fetch -q origin main
         git reset --mixed origin/main
