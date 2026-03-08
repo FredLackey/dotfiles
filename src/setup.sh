@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-REPO_URL="https://github.com/FredLackey/dotfiles/tarball/main"
+REPO_URL="https://github.com/FredLackey/dotfiles.git"
+TARBALL_URL="https://github.com/FredLackey/dotfiles/tarball/main"
 TARGET_DIR="$HOME/.dotfiles"
-TEMP_FILE="$(mktemp)"
 
 # 1. Download & Extract (Idempotent)
 if [ -d "$TARGET_DIR" ] && [ -d "$TARGET_DIR/.git" ]; then
@@ -12,22 +12,25 @@ if [ -d "$TARGET_DIR" ] && [ -d "$TARGET_DIR/.git" ]; then
 elif [ -d "$TARGET_DIR" ]; then
     echo "Files already present in $TARGET_DIR (no git repo). Skipping download."
 else
-    echo "Downloading dotfiles..."
-    # Ensure curl and tar exist (both are standard on macOS and Linux)
-    if ! command -v curl >/dev/null 2>&1; then
-        echo "Error: curl is required."
-        exit 1
+    if command -v git >/dev/null 2>&1; then
+        echo "Cloning dotfiles..."
+        git clone "$REPO_URL" "$TARGET_DIR"
+    else
+        echo "Git not available. Downloading dotfiles tarball..."
+        if ! command -v curl >/dev/null 2>&1; then
+            echo "Error: curl is required."
+            exit 1
+        fi
+        if ! command -v tar >/dev/null 2>&1; then
+            echo "Error: tar is required."
+            exit 1
+        fi
+        TEMP_FILE="$(mktemp)"
+        mkdir -p "$TARGET_DIR"
+        curl -fsSL "$TARBALL_URL" -o "$TEMP_FILE"
+        tar -xzf "$TEMP_FILE" -C "$TARGET_DIR" --strip-components=1
+        rm -f "$TEMP_FILE"
     fi
-    if ! command -v tar >/dev/null 2>&1; then
-        echo "Error: tar is required."
-        exit 1
-    fi
-
-    # Download tarball and extract
-    mkdir -p "$TARGET_DIR"
-    curl -fsSL "$REPO_URL" -o "$TEMP_FILE"
-    tar -xzf "$TEMP_FILE" -C "$TARGET_DIR" --strip-components=1
-    rm -f "$TEMP_FILE"
 fi
 
 # 2. OS/Environment Detection
@@ -62,20 +65,4 @@ if [ -n "$SCRIPT_TO_RUN" ] && [ -f "$SCRIPT_TO_RUN" ]; then
 else
     echo "Error: Could not determine setup script or script not found: $SCRIPT_TO_RUN"
     exit 1
-fi
-
-# 4. Initialize Git Repository (enables future "git pull" updates)
-if [ -d "$TARGET_DIR" ] && [ ! -d "$TARGET_DIR/.git" ]; then
-    if command -v git >/dev/null 2>&1; then
-        echo "Initializing git repository for future updates..."
-        cd "$TARGET_DIR"
-        git init -q -b main
-        git remote add origin https://github.com/FredLackey/dotfiles.git
-        git fetch -q origin main
-        git reset --mixed origin/main
-        git branch --set-upstream-to=origin/main main
-        echo "Git repository initialized. Run 'cd ~/.dotfiles && git pull' to get updates."
-    else
-        echo "Warning: git not available. Cannot initialize repository for updates."
-    fi
 fi
