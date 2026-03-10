@@ -9,13 +9,13 @@
 #   claude-danger 35e26140-96c5-470b-83e2-e00d8bd6a42f
 #
 # Dependencies:
-#   - claude (npm install -g @anthropic-ai/claude-code)
+#   - claude (curl -fsSL https://claude.ai/install.sh | bash)
 
 claude-danger() {
     # Check if claude command is available
     if ! command -v claude &> /dev/null; then
         echo "Claude is not currently installed."
-        echo "Install with: npm install -g @anthropic-ai/claude-code"
+        echo "Install with: curl -fsSL https://claude.ai/install.sh | bash"
         return 1
     fi
 

@@ -119,12 +119,15 @@ install_applications() {
     run_installer "tfenv.sh" "DEVOPS"
     run_installer "terraform.sh" "DEVOPS"
 
-    # 8. Marcus Developer Tools (td must be first — other tools reference it)
+    # 8. AI Tools
+    run_installer "claude-code.sh" "AI"
+
+    # 9. Marcus Developer Tools (td must be first — other tools reference it)
     run_installer "td.sh" "APPS"
     run_installer "sidecar.sh" "APPS"
     run_installer "nightshift.sh" "APPS"
 
-    # 9. Cleanup
+    # 10. Cleanup
     run_installer "apt-cleanup.sh" "SYSTEM"
 
     echo "Application installation complete."
