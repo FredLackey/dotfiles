@@ -1,5 +1,9 @@
 $ErrorActionPreference = "Stop"
 
+# Allow script execution for this process only (no admin required, does not persist).
+# Required because the default Windows execution policy blocks loading .ps1 files from disk.
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+
 $ZipUrl    = "https://github.com/FredLackey/dotfiles/archive/refs/heads/main.zip"
 $RepoUrl   = "https://github.com/FredLackey/dotfiles.git"
 $TargetDir = "$HOME\.dotfiles"
@@ -31,7 +35,25 @@ if ((Test-Path $TargetDir) -and (Test-Path "$TargetDir\.git")) {
     }
 
 } elseif (Test-Path $TargetDir) {
-    Write-Host "Files already present in $TargetDir (no git repo). Skipping download."
+    # Folder exists but has no .git — re-download to ensure files are current.
+    Write-Host "Dotfiles folder exists without git repo. Re-downloading to ensure current version..."
+    Remove-Item $TargetDir -Recurse -Force
+
+    $TempZip     = "$env:TEMP\dotfiles.zip"
+    $TempExtract = "$env:TEMP\dotfiles-extract"
+
+    Invoke-WebRequest -Uri $ZipUrl -OutFile $TempZip -UseBasicParsing
+
+    if (Test-Path $TempExtract) { Remove-Item $TempExtract -Recurse -Force }
+    Expand-Archive -Path $TempZip -DestinationPath $TempExtract -Force
+
+    $extracted = Get-ChildItem $TempExtract | Select-Object -First 1
+    Move-Item -Path $extracted.FullName -Destination $TargetDir
+
+    Remove-Item $TempZip -Force
+    Remove-Item $TempExtract -Recurse -Force -ErrorAction SilentlyContinue
+
+    Write-Host "Dotfiles re-downloaded to $TargetDir"
 
 } else {
     Write-Host "Downloading dotfiles..."
@@ -62,11 +84,9 @@ if (-not $ScriptDir -or -not (Test-Path "$ScriptDir\os\windows\setup.ps1")) {
 }
 
 # 3. Run Windows setup
-# Use iex + Get-Content to bypass execution policy restrictions on script loading.
-# This mirrors how the entry point itself is invoked via `iex (iwr ...).Content`.
 $ScriptToRun = "$ScriptDir\os\windows\setup.ps1"
 if (Test-Path $ScriptToRun) {
-    iex (Get-Content $ScriptToRun -Raw)
+    & $ScriptToRun
 } else {
     Write-Error "Could not find setup script: $ScriptToRun"
     exit 1
