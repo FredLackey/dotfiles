@@ -23,6 +23,16 @@ if (-not (Test-Path $ProfileSrc)) {
 
 # 3. INSTALL
 Write-Host "Installing $APP_NAME..."
+
+# Set execution policy to RemoteSigned for the current user so local scripts
+# (including the PowerShell profile) can run without elevation.
+# RemoteSigned = local scripts run freely; downloaded scripts must be signed.
+$currentPolicy = Get-ExecutionPolicy -Scope CurrentUser
+if ($currentPolicy -notin @("RemoteSigned", "Unrestricted", "Bypass")) {
+    Write-Host "  Setting execution policy to RemoteSigned for CurrentUser..."
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+}
+
 $ProfileDir = Split-Path -Parent $ProfileTarget
 if (-not (Test-Path $ProfileDir)) {
     New-Item -ItemType Directory -Path $ProfileDir -Force | Out-Null
