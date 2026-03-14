@@ -46,6 +46,7 @@ function Run-Preference {
 # Categories: SYSTEM, DESKTOP, APPS
 
 Run-Preference "browser.ps1" "APPS"
+Run-Preference "taskbar.ps1" "DESKTOP"
 
 Write-Host "--------------------------------------------------"
 Write-Host "Windows system preferences configuration complete."
