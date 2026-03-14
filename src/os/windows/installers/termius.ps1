@@ -1,7 +1,6 @@
 $ErrorActionPreference = "Stop"
 
 $APP_NAME  = "Termius"
-$WINGET_ID = "Termius.Termius"
 $APP_PATH  = "$env:LOCALAPPDATA\Programs\Termius\Termius.exe"
 
 # 1. CHECK - Skip if already installed
@@ -10,15 +9,22 @@ if (Test-Path $APP_PATH) {
     exit 0
 }
 
-# 2. DEPENDENCIES
-if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
-    Write-Error "winget is required to install $APP_NAME."
-    exit 1
-}
+# 2. DEPENDENCIES - None; direct download requires only PowerShell built-ins
 
 # 3. INSTALL
+# winget uses Termius's rolling autoupdate URL; the manifest hash goes stale
+# on each release and cannot be bypassed when running as admin. Download
+# directly from the same official URL winget would use.
 Write-Host "Installing $APP_NAME..."
-winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
+
+$installerUrl  = "https://autoupdate.termius.com/windows/Install%20Termius.exe"
+$installerPath = "$env:TEMP\termius_installer.exe"
+Write-Host "  Downloading from $installerUrl..."
+Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath -UseBasicParsing
+
+Write-Host "  Running installer..."
+Start-Process -FilePath $installerPath -ArgumentList "/S" -Wait
+Remove-Item $installerPath -Force -ErrorAction SilentlyContinue
 
 # 4. VERIFY
 if (Test-Path $APP_PATH) {
