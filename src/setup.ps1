@@ -62,9 +62,11 @@ if (-not $ScriptDir -or -not (Test-Path "$ScriptDir\os\windows\setup.ps1")) {
 }
 
 # 3. Run Windows setup
+# Use iex + Get-Content to bypass execution policy restrictions on script loading.
+# This mirrors how the entry point itself is invoked via `iex (iwr ...).Content`.
 $ScriptToRun = "$ScriptDir\os\windows\setup.ps1"
 if (Test-Path $ScriptToRun) {
-    & $ScriptToRun
+    iex (Get-Content $ScriptToRun -Raw)
 } else {
     Write-Error "Could not find setup script: $ScriptToRun"
     exit 1

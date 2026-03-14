@@ -35,7 +35,7 @@ function Run-Installer {
     if (Test-Path $ScriptPath) {
         Write-Host "--------------------------------------------------"
         Write-Host "Running installer: $ScriptName"
-        & $ScriptPath
+        iex (Get-Content $ScriptPath -Raw)
     } else {
         Write-Error "Installer script not found: $ScriptName"
         exit 1
@@ -45,7 +45,7 @@ function Run-Installer {
 function Apply-Preferences {
     $PrefsScript = "$PreferencesDir\setup.ps1"
     if (Test-Path $PrefsScript) {
-        & $PrefsScript
+        iex (Get-Content $PrefsScript -Raw)
     } else {
         Write-Host "No preferences script found, skipping."
     }
