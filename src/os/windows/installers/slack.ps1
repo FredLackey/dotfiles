@@ -6,7 +6,7 @@ $APP_DIR   = "$env:LOCALAPPDATA\slack"
 
 # 1. CHECK - Skip if already installed
 # Slack (Squirrel-based) installs into a versioned subfolder under LOCALAPPDATA\slack,
-# e.g. app-4.48.0\slack.exe — there is no slack.exe at the root level.
+# e.g. app-4.48.0\slack.exe - there is no slack.exe at the root level.
 if (Test-Path $APP_DIR) {
     Write-Host "$APP_NAME is already installed."
     exit 0
@@ -22,7 +22,7 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 Write-Host "Installing $APP_NAME..."
 winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
 
-# Squirrel installers run asynchronously after winget exits — wait for the
+# Squirrel installers run asynchronously after winget exits - wait for the
 # background process to finish placing files before verifying.
 Start-Sleep -Seconds 5
 

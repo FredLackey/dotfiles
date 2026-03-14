@@ -4,7 +4,7 @@ $APP_NAME  = "Beyond Compare"
 $WINGET_ID = "ScooterSoftware.BeyondCompare.5"
 
 # Beyond Compare's NSIS installer places BCompare.exe in different locations
-# depending on architecture — check all known paths.
+# depending on architecture - check all known paths.
 $APP_PATHS = @(
     "$env:ProgramFiles\Beyond Compare 5\BCompare.exe",
     "${env:ProgramFiles(x86)}\Beyond Compare 5\BCompare.exe"

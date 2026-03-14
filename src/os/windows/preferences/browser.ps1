@@ -49,7 +49,7 @@ if (Test-Path $chromePath) {
     $CHANGES_MADE = $true
     Write-Host "  If a Default Apps window opened, click Chrome to confirm."
 } else {
-    Write-Host "  Chrome not found — skipping default browser switch."
+    Write-Host "  Chrome not found - skipping default browser switch."
     Write-Host "  Run google-chrome.ps1 first, then re-run preferences."
 }
 

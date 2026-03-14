@@ -6,7 +6,7 @@ $APP_DIR   = "$env:LOCALAPPDATA\Postman"
 
 # 1. CHECK - Skip if already installed
 # Postman (Squirrel-based) installs into a versioned subfolder under
-# LOCALAPPDATA\Postman, e.g. app-12.1.4\Postman.exe — no exe at the root.
+# LOCALAPPDATA\Postman, e.g. app-12.1.4\Postman.exe - no exe at the root.
 # Checking for the directory is the reliable detection method.
 if (Test-Path $APP_DIR) {
     Write-Host "$APP_NAME is already installed."
@@ -23,7 +23,7 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 Write-Host "Installing $APP_NAME..."
 winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
 
-# Squirrel installers run asynchronously after winget exits — wait for the
+# Squirrel installers run asynchronously after winget exits - wait for the
 # background process to finish placing files before verifying.
 Start-Sleep -Seconds 5
 

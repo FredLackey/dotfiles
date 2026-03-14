@@ -6,7 +6,7 @@ $CHANGES_MADE = $false
 Write-Host "Configuring $PREF_NAME..."
 
 # Map Caps Lock -> Left Ctrl via the Windows Scancode Map registry value.
-# This is exactly what SharpKeys writes — we set it directly so no manual
+# This is exactly what SharpKeys writes - we set it directly so no manual
 # UI interaction is needed after setup.
 #
 # Scancode Map binary format:

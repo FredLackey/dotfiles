@@ -38,6 +38,6 @@ winget install --id $WINGET_ID --exact --silent --accept-package-agreements --ac
 if (Find-DrawIo) {
     Write-Host "$APP_NAME installed successfully."
 } else {
-    Write-Error "$APP_NAME installation failed — executable not found in any expected location."
+    Write-Error "$APP_NAME installation failed - executable not found in any expected location."
     exit 1
 }

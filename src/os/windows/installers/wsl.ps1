@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $APP_NAME = "WSL2 (Windows Subsystem for Linux)"
 
-# Detect WSL state safely — wsl --status throws on machines where the
+# Detect WSL state safely - wsl --status throws on machines where the
 # feature has never been enabled, so wrap it in a try/catch.
 $wslInstalled    = $false
 $ubuntuInstalled = $false

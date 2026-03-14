@@ -65,6 +65,6 @@ Remove-Item $TempDir -Recurse -Force -ErrorAction SilentlyContinue
 if (Test-Path $MarkerFile) {
     Write-Host "$APP_NAME installed successfully."
 } else {
-    Write-Error "$APP_NAME installation failed — marker file not found: $MarkerFile"
+    Write-Error "$APP_NAME installation failed - marker file not found: $MarkerFile"
     exit 1
 }
