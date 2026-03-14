@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
 $APP_NAME  = "DBeaver"
-$WINGET_ID = "dbeaver.dbeaver"
+$WINGET_ID = "DBeaver.DBeaver.Community"
 $APP_PATH  = "$env:ProgramFiles\DBeaver\dbeaver.exe"
 
 # 1. CHECK - Skip if already installed
