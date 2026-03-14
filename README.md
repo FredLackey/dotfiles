@@ -40,5 +40,27 @@ DOTFILES_EXCLUDE="AI,TERMINAL" ~/.dotfiles/src/setup.sh
 
 ### Windows (PowerShell)
 
-*Setup instructions coming soon.* This will utilize a `src/setup.ps1` script to perform a similar initialization for Windows environments.
+Open PowerShell as Administrator and run:
+
+```powershell
+iex (iwr -useb "https://raw.githubusercontent.com/FredLackey/dotfiles/main/src/setup.ps1").Content
+```
+
+This downloads the repository to `~\.dotfiles`, detects Windows, and runs the Windows-specific setup using **winget** as the package manager.
+
+To exclude specific categories (e.g., AI tools and terminal customizations):
+
+```powershell
+$env:DOTFILES_EXCLUDE="AI,TERMINAL"; iex (iwr -useb "https://raw.githubusercontent.com/FredLackey/dotfiles/main/src/setup.ps1").Content
+```
+
+Available categories: `SYSTEM`, `LANGUAGES`, `TERMINAL`, `DEV`, `DEVOPS`, `UTILS`, `MEDIA`, `SECURITY`, `AI`, `APPS`, `DESKTOP`
+
+Alternatively, if you have already installed the repository, you can re-run locally:
+
+```powershell
+~\.dotfiles\src\setup.ps1
+```
+
+> **Note:** winget ships with Windows 10 1809+ and Windows 11. If it is not present, install **App Installer** from the Microsoft Store before running setup.
 
