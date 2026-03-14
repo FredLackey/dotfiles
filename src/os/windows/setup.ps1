@@ -74,6 +74,11 @@ function Refresh-Path {
                 [System.Environment]::GetEnvironmentVariable("Path", "User")
 }
 
+# Pre-flight: accept all winget source agreements (including msstore) up front
+# so individual installers never hit the interactive agreement prompt.
+Write-Host "Accepting winget source agreements..."
+winget source update --accept-source-agreements 2>&1 | Out-Null
+
 Write-Host "Starting application installation..."
 
 # Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS, DESKTOP
