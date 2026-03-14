@@ -2,10 +2,24 @@ $ErrorActionPreference = "Stop"
 
 $APP_NAME  = "draw.io"
 $WINGET_ID = "JGraph.Draw"
-$APP_PATH  = "$env:ProgramFiles\draw.io\draw.io.exe"
+
+# draw.io's NSIS installer places the exe in different locations depending on
+# architecture and whether it runs elevated. Check all known paths.
+$APP_PATHS = @(
+    "$env:ProgramFiles\draw.io\draw.io.exe",
+    "${env:ProgramFiles(x86)}\draw.io\draw.io.exe",
+    "$env:LOCALAPPDATA\Programs\draw.io\draw.io.exe"
+)
+
+function Find-DrawIo {
+    foreach ($p in $APP_PATHS) {
+        if (Test-Path $p) { return $p }
+    }
+    return $null
+}
 
 # 1. CHECK - Skip if already installed
-if (Test-Path $APP_PATH) {
+if (Find-DrawIo) {
     Write-Host "$APP_NAME is already installed."
     exit 0
 }
@@ -21,9 +35,9 @@ Write-Host "Installing $APP_NAME..."
 winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
 
 # 4. VERIFY
-if (Test-Path $APP_PATH) {
+if (Find-DrawIo) {
     Write-Host "$APP_NAME installed successfully."
 } else {
-    Write-Error "$APP_NAME installation failed."
+    Write-Error "$APP_NAME installation failed — executable not found in any expected location."
     exit 1
 }
