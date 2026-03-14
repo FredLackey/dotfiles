@@ -86,6 +86,7 @@ Write-Host "Starting application installation..."
 # Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS, DESKTOP
 
 # 1. Critical System Tools
+Run-Installer "wsl.ps1"          "SYSTEM"
 Run-Installer "git.ps1"          "SYSTEM"
 Run-Installer "github-cli.ps1"   "DEV"
 
