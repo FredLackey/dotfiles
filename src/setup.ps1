@@ -6,6 +6,8 @@ $env:DOTFILES_LOG = "$env:USERPROFILE\Desktop\dotfiles-setup-$(Get-Date -Format 
 Start-Transcript -Path $env:DOTFILES_LOG -Append | Out-Null
 Write-Host "Logging to: $env:DOTFILES_LOG"
 
+try {
+
 $ZipUrl    = "https://github.com/FredLackey/dotfiles/archive/refs/heads/main.zip"
 $RepoUrl   = "https://github.com/FredLackey/dotfiles.git"
 $TargetDir = "$HOME\.dotfiles"
@@ -89,11 +91,27 @@ if (-not $ScriptDir -or -not (Test-Path "$ScriptDir\os\windows\setup.ps1")) {
 # Spawn a new PowerShell process with -ExecutionPolicy Bypass so all child
 # scripts can be loaded from disk without hitting the default Restricted policy.
 # $env:DOTFILES_EXCLUDE is an environment variable and is inherited automatically.
-$ScriptToRun = "$ScriptDir\os\windows\setup.ps1"
-if (Test-Path $ScriptToRun) {
-    powershell.exe -ExecutionPolicy Bypass -File $ScriptToRun
-    exit $LASTEXITCODE
-} else {
-    Write-Error "Could not find setup script: $ScriptToRun"
-    exit 1
+    $ScriptToRun = "$ScriptDir\os\windows\setup.ps1"
+    if (Test-Path $ScriptToRun) {
+        powershell.exe -ExecutionPolicy Bypass -File $ScriptToRun
+        $exitCode = $LASTEXITCODE
+    } else {
+        Write-Host "ERROR: Could not find setup script: $ScriptToRun"
+        $exitCode = 1
+    }
+
+} catch {
+    Write-Host ""
+    Write-Host "ERROR: Setup failed with an unexpected error:"
+    Write-Host "  $($_.Exception.Message)"
+    Write-Host "  At: $($_.InvocationInfo.PositionMessage)"
+    $exitCode = 1
+} finally {
+    Stop-Transcript -ErrorAction SilentlyContinue
+    Write-Host ""
+    Write-Host "Log saved to: $env:DOTFILES_LOG"
+    Write-Host ""
+    Read-Host "Press Enter to close this window"
 }
+
+exit $exitCode

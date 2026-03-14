@@ -6,6 +6,17 @@ if ($env:DOTFILES_LOG) {
     Start-Transcript -Path $env:DOTFILES_LOG -Append | Out-Null
 }
 
+trap {
+    Write-Host ""
+    Write-Host "ERROR: Setup crashed with an unexpected error:"
+    Write-Host "  $($_.Exception.Message)"
+    Write-Host "  At: $($_.InvocationInfo.PositionMessage)"
+    Stop-Transcript -ErrorAction SilentlyContinue
+    Write-Host ""
+    Read-Host "Press Enter to close this window"
+    exit 1
+}
+
 $ScriptDir      = Split-Path -Parent $MyInvocation.MyCommand.Path
 $InstallersDir  = "$ScriptDir\installers"
 $PreferencesDir = "$ScriptDir\preferences"
@@ -162,7 +173,9 @@ if ($FailedInstallers.Count -gt 0) {
     foreach ($name in $FailedInstallers) {
         Write-Host "  - $name"
     }
-    Write-Host "Open a new PowerShell window and re-run setup to retry failed installers."
+    Write-Host "Re-run setup to retry failed installers."
 } else {
     Write-Host "Setup complete. Open a new PowerShell window to activate the new shell configuration."
 }
+
+Stop-Transcript -ErrorAction SilentlyContinue
