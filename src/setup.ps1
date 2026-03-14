@@ -1,9 +1,10 @@
 $ErrorActionPreference = "Stop"
 
-# Start logging to a timestamped file on the Desktop so the full run is
-# preserved even if the PowerShell window closes unexpectedly.
+# Create a timestamped log file on the Desktop. Start-Transcript does not
+# work inside iex (no script host context), so we write the header manually
+# and let the child process (run via -File) own the real transcript.
 $env:DOTFILES_LOG = "$env:USERPROFILE\Desktop\dotfiles-setup-$(Get-Date -Format 'yyyy-MM-dd_HH-mm-ss').log"
-Start-Transcript -Path $env:DOTFILES_LOG -Append | Out-Null
+"=== dotfiles setup started $(Get-Date) ===" | Set-Content -Path $env:DOTFILES_LOG -Encoding UTF8
 Write-Host "Logging to: $env:DOTFILES_LOG"
 
 try {
@@ -107,7 +108,6 @@ if (-not $ScriptDir -or -not (Test-Path "$ScriptDir\os\windows\setup.ps1")) {
     Write-Host "  At: $($_.InvocationInfo.PositionMessage)"
     $exitCode = 1
 } finally {
-    Stop-Transcript -ErrorAction SilentlyContinue
     Write-Host ""
     Write-Host "Log saved to: $env:DOTFILES_LOG"
     Write-Host ""
