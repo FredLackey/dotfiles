@@ -45,8 +45,9 @@ function Run-Preference {
 
 # Categories: SYSTEM, DESKTOP, APPS
 
-Run-Preference "browser.ps1" "APPS"
-Run-Preference "taskbar.ps1" "DESKTOP"
+Run-Preference "browser.ps1"  "APPS"
+Run-Preference "taskbar.ps1"  "DESKTOP"
+Run-Preference "onedrive.ps1" "SYSTEM"
 
 Write-Host "--------------------------------------------------"
 Write-Host "Windows system preferences configuration complete."
