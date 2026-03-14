@@ -20,8 +20,17 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 Write-Host "Installing $APP_NAME..."
 winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
 
-# 4. VERIFY
-if (Test-Path $APP_PATH) {
+# 4. VERIFY - Electron/Squirrel installers run asynchronously after winget exits; retry for up to 60 seconds.
+$verified = $false
+for ($i = 0; $i -lt 12; $i++) {
+    Start-Sleep -Seconds 5
+    if (Test-Path $APP_PATH) {
+        $verified = $true
+        break
+    }
+}
+
+if ($verified) {
     Write-Host "$APP_NAME installed successfully."
 } else {
     Write-Error "$APP_NAME installation failed."

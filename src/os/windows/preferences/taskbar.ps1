@@ -15,8 +15,12 @@ function Set-RegDWord {
     }
     $current = (Get-ItemProperty -Path $Path -Name $Name -ErrorAction SilentlyContinue).$Name
     if ($null -ne $current -and $current -eq $Value) { return }
-    Set-ItemProperty -Path $Path -Name $Name -Value $Value -Type DWord
-    $script:CHANGES_MADE = $true
+    try {
+        Set-ItemProperty -Path $Path -Name $Name -Value $Value -Type DWord
+        $script:CHANGES_MADE = $true
+    } catch {
+        Write-Host "  Note: Could not set $Name at $Path (access denied, skipping)."
+    }
 }
 
 # --- Hide Copilot button (Windows 11) ---

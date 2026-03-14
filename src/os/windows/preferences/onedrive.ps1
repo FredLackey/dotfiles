@@ -10,7 +10,7 @@ $setupExe = "$env:SystemRoot\System32\OneDriveSetup.exe"
 $oneDriveExe = "$env:LOCALAPPDATA\Microsoft\OneDrive\OneDrive.exe"
 
 if (-not (Test-Path $setupExe) -and -not (Test-Path $oneDriveExe)) {
-    Write-Host "$PREF_NAME: OneDrive is not installed, nothing to do."
+    Write-Host "${PREF_NAME}: OneDrive is not installed, nothing to do."
     # Still apply the policy to prevent future reinstallation
 } else {
 

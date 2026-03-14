@@ -34,8 +34,17 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 Write-Host "Installing $APP_NAME..."
 winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
 
-# 4. VERIFY
-if (Find-BeyondCompare) {
+# 4. VERIFY - NSIS installers can run asynchronously after winget exits; retry for up to 60 seconds.
+$verified = $false
+for ($i = 0; $i -lt 12; $i++) {
+    if (Find-BeyondCompare) {
+        $verified = $true
+        break
+    }
+    Start-Sleep -Seconds 5
+}
+
+if ($verified) {
     Write-Host "$APP_NAME installed successfully."
 } else {
     Write-Error "$APP_NAME installation failed."
