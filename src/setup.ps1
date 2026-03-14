@@ -1,5 +1,10 @@
 $ErrorActionPreference = "Stop"
 
+# Set execution policy immediately so local scripts (including PowerShell
+# profiles surfaced via Parallels' C:\Mac\Home share) load without errors
+# in any new shell opened during or after setup.
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
 # Create a timestamped log file on the Desktop. Start-Transcript does not
 # work inside iex (no script host context), so we write the header manually
 # and let the child process (run via -File) own the real transcript.
