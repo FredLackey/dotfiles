@@ -1,6 +1,7 @@
 $ErrorActionPreference = "Stop"
 
-$APP_NAME = "Claude Code"
+$APP_NAME  = "Claude Code"
+$WINGET_ID = "Anthropic.ClaudeCode"
 
 # 1. CHECK - Skip if already installed
 if (Get-Command claude -ErrorAction SilentlyContinue) {
@@ -9,14 +10,16 @@ if (Get-Command claude -ErrorAction SilentlyContinue) {
 }
 
 # 2. DEPENDENCIES
-if (-not (Get-Command npm -ErrorAction SilentlyContinue)) {
-    Write-Error "npm is required to install $APP_NAME."
+if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+    Write-Error "winget is required to install $APP_NAME."
     exit 1
 }
 
 # 3. INSTALL
+# npm installation is deprecated per Anthropic docs. Use winget (official, auto-updates).
+# Native installer alternative: iex (iwr -useb 'https://claude.ai/install.ps1').Content
 Write-Host "Installing $APP_NAME..."
-npm install -g @anthropic-ai/claude-code
+winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
 
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" +
             [System.Environment]::GetEnvironmentVariable("Path", "User")
