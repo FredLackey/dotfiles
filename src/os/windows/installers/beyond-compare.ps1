@@ -1,8 +1,8 @@
 $ErrorActionPreference = "Stop"
 
 $APP_NAME  = "Beyond Compare"
-$WINGET_ID = "ScooterSoftware.BeyondCompare4"
-$APP_PATH  = "$env:ProgramFiles\Beyond Compare 4\BCompare.exe"
+$WINGET_ID = "ScooterSoftware.BeyondCompare.5"
+$APP_PATH  = "$env:ProgramFiles\Beyond Compare 5\BCompare.exe"
 
 # 1. CHECK - Skip if already installed
 if ((Test-Path $APP_PATH) -or (Get-Command bcompare -ErrorAction SilentlyContinue)) {
