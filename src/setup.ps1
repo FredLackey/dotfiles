@@ -1,5 +1,11 @@
 $ErrorActionPreference = "Stop"
 
+# Start logging to a timestamped file on the Desktop so the full run is
+# preserved even if the PowerShell window closes unexpectedly.
+$env:DOTFILES_LOG = "$env:USERPROFILE\Desktop\dotfiles-setup-$(Get-Date -Format 'yyyy-MM-dd_HH-mm-ss').log"
+Start-Transcript -Path $env:DOTFILES_LOG -Append | Out-Null
+Write-Host "Logging to: $env:DOTFILES_LOG"
+
 $ZipUrl    = "https://github.com/FredLackey/dotfiles/archive/refs/heads/main.zip"
 $RepoUrl   = "https://github.com/FredLackey/dotfiles.git"
 $TargetDir = "$HOME\.dotfiles"

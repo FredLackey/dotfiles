@@ -1,5 +1,11 @@
 $ErrorActionPreference = "Stop"
 
+# Append installer output to the same log file started by src/setup.ps1.
+# DOTFILES_LOG is set by the parent and inherited by this child process.
+if ($env:DOTFILES_LOG) {
+    Start-Transcript -Path $env:DOTFILES_LOG -Append | Out-Null
+}
+
 $ScriptDir      = Split-Path -Parent $MyInvocation.MyCommand.Path
 $InstallersDir  = "$ScriptDir\installers"
 $PreferencesDir = "$ScriptDir\preferences"
