@@ -1,8 +1,11 @@
 $ErrorActionPreference = "Stop"
 
-$ScriptDir     = Split-Path -Parent $MyInvocation.MyCommand.Path
-$InstallersDir = "$ScriptDir\installers"
+$ScriptDir      = Split-Path -Parent $MyInvocation.MyCommand.Path
+$InstallersDir  = "$ScriptDir\installers"
 $PreferencesDir = "$ScriptDir\preferences"
+
+# Collect names of any installers that fail so we can report them at the end.
+$FailedInstallers = @()
 
 Write-Host "Running Windows setup..."
 
@@ -19,6 +22,7 @@ function Is-Excluded {
 
 # Run an installer script
 # Usage: Run-Installer "git.ps1" "DEV"
+# Failures are caught and recorded; they do NOT abort the overall setup.
 function Run-Installer {
     param(
         [string]$ScriptName,
@@ -32,20 +36,34 @@ function Run-Installer {
     }
 
     $ScriptPath = "$InstallersDir\$ScriptName"
-    if (Test-Path $ScriptPath) {
-        Write-Host "--------------------------------------------------"
-        Write-Host "Running installer: $ScriptName"
+    if (-not (Test-Path $ScriptPath)) {
+        Write-Host "WARNING: Installer script not found: $ScriptName"
+        $script:FailedInstallers += $ScriptName
+        return
+    }
+
+    Write-Host "--------------------------------------------------"
+    Write-Host "Running installer: $ScriptName"
+    try {
         & $ScriptPath
-    } else {
-        Write-Error "Installer script not found: $ScriptName"
-        exit 1
+        if ($LASTEXITCODE -and $LASTEXITCODE -ne 0) {
+            Write-Host "WARNING: $ScriptName exited with code $LASTEXITCODE"
+            $script:FailedInstallers += $ScriptName
+        }
+    } catch {
+        Write-Host "WARNING: $ScriptName failed: $_"
+        $script:FailedInstallers += $ScriptName
     }
 }
 
 function Apply-Preferences {
     $PrefsScript = "$PreferencesDir\setup.ps1"
     if (Test-Path $PrefsScript) {
-        & $PrefsScript
+        try {
+            & $PrefsScript
+        } catch {
+            Write-Host "WARNING: preferences/setup.ps1 failed: $_"
+        }
     } else {
         Write-Host "No preferences script found, skipping."
     }
@@ -124,4 +142,12 @@ Run-Installer "balena-etcher.ps1"  "APPS"
 Apply-Preferences
 
 Write-Host ""
-Write-Host "Setup complete. Open a new PowerShell window to activate the new shell configuration."
+if ($FailedInstallers.Count -gt 0) {
+    Write-Host "Setup complete with $($FailedInstallers.Count) failure(s):"
+    foreach ($name in $FailedInstallers) {
+        Write-Host "  - $name"
+    }
+    Write-Host "Open a new PowerShell window and re-run setup to retry failed installers."
+} else {
+    Write-Host "Setup complete. Open a new PowerShell window to activate the new shell configuration."
+}
