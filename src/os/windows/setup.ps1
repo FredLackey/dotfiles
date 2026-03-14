@@ -76,8 +76,10 @@ function Refresh-Path {
 
 # Pre-flight: accept all winget source agreements (including msstore) up front
 # so individual installers never hit the interactive agreement prompt.
+# winget source update alone doesn't trigger msstore acceptance; winget list
+# actually queries every source, which is what records the agreement.
 Write-Host "Accepting winget source agreements..."
-winget source update --accept-source-agreements 2>&1 | Out-Null
+winget list --accept-source-agreements 2>&1 | Out-Null
 
 Write-Host "Starting application installation..."
 
