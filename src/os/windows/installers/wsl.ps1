@@ -2,9 +2,28 @@ $ErrorActionPreference = "Stop"
 
 $APP_NAME = "WSL2 (Windows Subsystem for Linux)"
 
-# Detect current state
-$wslInstalled   = (Get-Command wsl -ErrorAction SilentlyContinue) -and ((wsl --status 2>&1 | Out-String) -match "Default Version")
-$ubuntuInstalled = $wslInstalled -and ((wsl --list --quiet 2>&1 | Out-String) -match "Ubuntu")
+# Detect WSL state safely — wsl --status throws on machines where the
+# feature has never been enabled, so wrap it in a try/catch.
+$wslInstalled    = $false
+$ubuntuInstalled = $false
+
+try {
+    $wslStatus = wsl --status 2>&1 | Out-String
+    if ($LASTEXITCODE -eq 0 -or $wslStatus -match "Default Version") {
+        $wslInstalled = $true
+    }
+} catch {
+    $wslInstalled = $false
+}
+
+if ($wslInstalled) {
+    try {
+        $distros = wsl --list --quiet 2>&1 | Out-String
+        $ubuntuInstalled = $distros -match "Ubuntu"
+    } catch {
+        $ubuntuInstalled = $false
+    }
+}
 
 # --- FULLY DONE: both WSL2 and Ubuntu are present ---
 if ($wslInstalled -and $ubuntuInstalled) {
@@ -20,9 +39,6 @@ if (-not $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Adm
 }
 
 # --- STAGE 1: WSL2 not yet installed ---
-# Install WSL2 and the kernel only. No distribution yet — avoids the
-# interactive Ubuntu user-creation prompt during the initial setup run.
-# After this completes, reboot and re-run setup to proceed to Stage 2.
 if (-not $wslInstalled) {
     Write-Host "Installing $APP_NAME (Stage 1 of 2)..."
     wsl --install --no-distribution
@@ -36,10 +52,7 @@ if (-not $wslInstalled) {
     exit 0
 }
 
-# --- STAGE 2: WSL2 is installed but Ubuntu is not yet present ---
-# Download and register the Ubuntu distribution. The first time Ubuntu is
-# launched interactively the user will be prompted to create a Linux user —
-# that happens outside of this script.
+# --- STAGE 2: WSL2 installed, Ubuntu not yet present ---
 Write-Host "Installing Ubuntu on WSL2 (Stage 2 of 2)..."
 wsl --install --distribution Ubuntu
 if ($LASTEXITCODE -ne 0) {
