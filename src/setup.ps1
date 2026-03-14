@@ -1,9 +1,5 @@
 $ErrorActionPreference = "Stop"
 
-# Allow script execution for this process only (no admin required, does not persist).
-# Required because the default Windows execution policy blocks loading .ps1 files from disk.
-Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
-
 $ZipUrl    = "https://github.com/FredLackey/dotfiles/archive/refs/heads/main.zip"
 $RepoUrl   = "https://github.com/FredLackey/dotfiles.git"
 $TargetDir = "$HOME\.dotfiles"
@@ -84,9 +80,13 @@ if (-not $ScriptDir -or -not (Test-Path "$ScriptDir\os\windows\setup.ps1")) {
 }
 
 # 3. Run Windows setup
+# Spawn a new PowerShell process with -ExecutionPolicy Bypass so all child
+# scripts can be loaded from disk without hitting the default Restricted policy.
+# $env:DOTFILES_EXCLUDE is an environment variable and is inherited automatically.
 $ScriptToRun = "$ScriptDir\os\windows\setup.ps1"
 if (Test-Path $ScriptToRun) {
-    & $ScriptToRun
+    powershell.exe -ExecutionPolicy Bypass -File $ScriptToRun
+    exit $LASTEXITCODE
 } else {
     Write-Error "Could not find setup script: $ScriptToRun"
     exit 1
