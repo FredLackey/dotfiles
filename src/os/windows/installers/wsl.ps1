@@ -54,11 +54,30 @@ if (-not $wslInstalled) {
 
 # --- STAGE 2: WSL2 installed, Ubuntu not yet present ---
 Write-Host "Installing Ubuntu on WSL2 (Stage 2 of 2)..."
-wsl --install --distribution Ubuntu
+wsl --install --distribution Ubuntu --no-launch
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Ubuntu installation failed (exit code $LASTEXITCODE)."
     exit 1
 }
+
+# Provision the default user non-interactively using the current Windows username.
+# Running as root avoids the interactive "Create a default Unix user account" prompt.
+$linuxUser = $env:USERNAME.ToLower()
+Write-Host "  Provisioning Linux user '$linuxUser'..."
+
+wsl --distribution Ubuntu --user root -- useradd -m -s /bin/bash $linuxUser
+wsl --distribution Ubuntu --user root -- usermod -aG sudo $linuxUser
+# Passwordless sudo — standard for a dev machine; the user can tighten this later.
+wsl --distribution Ubuntu --user root -- bash -c "echo '${linuxUser} ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/${linuxUser} && chmod 0440 /etc/sudoers.d/${linuxUser}"
+
+# Set the default user so future `wsl` invocations drop straight into the user shell.
+$ubuntuExe = "$env:LOCALAPPDATA\Microsoft\WindowsApps\ubuntu.exe"
+if (Test-Path $ubuntuExe) {
+    & $ubuntuExe config --default-user $linuxUser
+} else {
+    wsl --distribution Ubuntu --user root -- bash -c "printf '[user]\ndefault=$linuxUser\n' > /etc/wsl.conf"
+}
+
 Write-Host "Ubuntu installed successfully."
-Write-Host "Launch Ubuntu from the Start Menu to complete initial user setup,"
-Write-Host "then run the ubuntu-wsl dotfiles setup inside it."
+Write-Host "  User '$linuxUser' created with passwordless sudo."
+Write-Host "  Run the ubuntu-wsl dotfiles setup inside Ubuntu when ready."
