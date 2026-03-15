@@ -26,17 +26,35 @@ if ($ttfValues -notcontains $FONT_NAME) {
 }
 
 # --- Legacy console host (conhost.exe) ---
-# Font settings for powershell.exe are stored under a key named after the exe path
-# with backslashes replaced by underscores.
-$consolePath = "HKCU:\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe"
-if (-not (Test-Path $consolePath)) {
-    New-Item -Path $consolePath -Force | Out-Null
+# Font settings for all console windows fall back to HKCU:\Console (the root key).
+# Elevated PowerShell in particular ignores the exe-specific subkey and reads the root.
+# Setting both ensures normal and elevated windows use the correct font.
+
+function Set-ConsoleFontKey {
+    param([string]$Path)
+    if (-not (Test-Path $Path)) {
+        New-Item -Path $Path -Force | Out-Null
+    }
+    $currentFace = (Get-ItemProperty -Path $Path -Name "FaceName" -ErrorAction SilentlyContinue).FaceName
+    if ($currentFace -ne $FONT_NAME) {
+        Set-ItemProperty -Path $Path -Name "FaceName"   -Value $FONT_NAME -Type String
+        Set-ItemProperty -Path $Path -Name "FontFamily" -Value 54         -Type DWord  # TrueType monospace
+        Set-ItemProperty -Path $Path -Name "FontWeight" -Value 400        -Type DWord  # Normal weight
+        return $true
+    }
+    return $false
 }
-$currentFace = (Get-ItemProperty -Path $consolePath -Name "FaceName" -ErrorAction SilentlyContinue).FaceName
-if ($currentFace -ne $FONT_NAME) {
-    Set-ItemProperty -Path $consolePath -Name "FaceName"   -Value $FONT_NAME -Type String
-    Set-ItemProperty -Path $consolePath -Name "FontFamily" -Value 54         -Type DWord  # TrueType monospace
-    Set-ItemProperty -Path $consolePath -Name "FontWeight" -Value 400        -Type DWord  # Normal weight
+
+# Default for all console windows (covers elevated PowerShell)
+if (Set-ConsoleFontKey "HKCU:\Console") {
+    $CHANGES_MADE = $true
+    Write-Host "  Set default console font to $FONT_NAME."
+} else {
+    Write-Host "  Default console font already set to $FONT_NAME."
+}
+
+# Specific key for non-elevated powershell.exe
+if (Set-ConsoleFontKey "HKCU:\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe") {
     $CHANGES_MADE = $true
     Write-Host "  Set PowerShell console font to $FONT_NAME."
 } else {
