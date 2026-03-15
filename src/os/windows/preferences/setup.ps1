@@ -46,6 +46,7 @@ function Run-Preference {
 # Categories: SYSTEM, DESKTOP, APPS
 
 Run-Preference "browser.ps1"  "APPS"
+Run-Preference "console.ps1"  "DESKTOP"
 Run-Preference "taskbar.ps1"  "DESKTOP"
 Run-Preference "keyboard.ps1" "SYSTEM"
 Run-Preference "onedrive.ps1" "SYSTEM"
