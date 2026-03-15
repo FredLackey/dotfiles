@@ -5,3 +5,10 @@
 if (Get-Command starship -ErrorAction SilentlyContinue) {
     Invoke-Expression (&starship init powershell)
 }
+
+# Custom functions
+$_functionsMain = "$HOME\.dotfiles\src\os\windows\functions\main.ps1"
+if (Test-Path $_functionsMain) {
+    . $_functionsMain
+}
+Remove-Variable _functionsMain -ErrorAction SilentlyContinue
