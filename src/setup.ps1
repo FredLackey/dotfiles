@@ -45,30 +45,21 @@ if ((Test-Path $TargetDir) -and (Test-Path "$TargetDir\.git")) {
     }
 
 } elseif (Test-Path $TargetDir) {
-    # Folder exists but has no .git — re-download to ensure files are current.
-    Write-Host "Dotfiles folder exists without git repo. Re-downloading to ensure current version..."
-    Remove-Item $TargetDir -Recurse -Force
-
-    $TempZip     = "$env:TEMP\dotfiles.zip"
-    $TempExtract = "$env:TEMP\dotfiles-extract"
-
-    Invoke-WebRequest -Uri $ZipUrl -OutFile $TempZip -UseBasicParsing
-
-    if (Test-Path $TempExtract) { Remove-Item $TempExtract -Recurse -Force }
-    Expand-Archive -Path $TempZip -DestinationPath $TempExtract -Force
-
-    $extracted = Get-ChildItem $TempExtract | Select-Object -First 1
-    Move-Item -Path $extracted.FullName -Destination $TargetDir
-
-    Remove-Item $TempZip -Force
-    Remove-Item $TempExtract -Recurse -Force -ErrorAction SilentlyContinue
-
-    Write-Host "Dotfiles re-downloaded to $TargetDir"
+    # Folder exists but has no .git — initialize a repo and wire up the remote
+    # so this and all future runs can use git pull instead of re-downloading.
+    Write-Host "Dotfiles folder exists without git repo. Initializing git and setting remote..."
+    git -C $TargetDir init
+    git -C $TargetDir remote add origin $RepoUrl
+    git -C $TargetDir fetch origin main
+    git -C $TargetDir branch -m main 2>$null
+    git -C $TargetDir branch --set-upstream-to=origin/main main
+    git -C $TargetDir reset --hard origin/main
+    Write-Host "Dotfiles git repo initialized at $TargetDir"
 
 } else {
-    Write-Host "Downloading dotfiles..."
+    Write-Host "Downloading dotfiles (git not available, using zip)..."
 
-    $TempZip    = "$env:TEMP\dotfiles.zip"
+    $TempZip     = "$env:TEMP\dotfiles.zip"
     $TempExtract = "$env:TEMP\dotfiles-extract"
 
     Invoke-WebRequest -Uri $ZipUrl -OutFile $TempZip -UseBasicParsing
