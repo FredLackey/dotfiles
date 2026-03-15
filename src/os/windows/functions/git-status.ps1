@@ -119,7 +119,7 @@ function git-status {
         if (-not $headerPrinted) {
             Write-Host ""
             Write-Host ("  {0,-50}  {1,5}  {2,6}  {3,5}  {4,5}  {5,6}" -f "REPOSITORY","UNSTG","STAGED","UNTRK","AHEAD","BEHIND")
-            Write-Host ("  {0,-50}  {1,5}  {2,6}  {3,5}  {4,5}  {5,6}" -f ("─" * 50),("─" * 5),("─" * 6),("─" * 5),("─" * 5),("─" * 6))
+            Write-Host ("  {0,-50}  {1,5}  {2,6}  {3,5}  {4,5}  {5,6}" -f ("-" * 50),("-" * 5),("-" * 6),("-" * 5),("-" * 5),("-" * 6))
             $headerPrinted = $true
         }
         $shownRepos++

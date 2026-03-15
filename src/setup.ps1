@@ -51,9 +51,7 @@ if ((Test-Path $TargetDir) -and (Test-Path "$TargetDir\.git")) {
     git -C $TargetDir init
     git -C $TargetDir remote add origin $RepoUrl
     git -C $TargetDir fetch origin main
-    git -C $TargetDir branch -m main 2>$null
-    git -C $TargetDir branch --set-upstream-to=origin/main main
-    git -C $TargetDir reset --hard origin/main
+    git -C $TargetDir checkout -B main origin/main
     Write-Host "Dotfiles git repo initialized at $TargetDir"
 
 } else {
