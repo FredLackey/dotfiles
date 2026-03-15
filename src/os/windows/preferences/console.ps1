@@ -6,6 +6,25 @@ $FONT_NAME    = "MesloLGS NF"
 
 Write-Host "Configuring $PREF_NAME..."
 
+# --- Register font with the Windows console ---
+# The console font picker only lists fonts registered under HKCU:\Console\TrueTypeFont.
+# Entries are named "0", "00", "000", etc. — add one for MesloLGS NF if not present.
+$ttfKey = "HKCU:\Console\TrueTypeFont"
+if (-not (Test-Path $ttfKey)) {
+    New-Item -Path $ttfKey -Force | Out-Null
+}
+$ttfProps   = Get-ItemProperty -Path $ttfKey -ErrorAction SilentlyContinue
+$ttfValues  = $ttfProps.PSObject.Properties | Where-Object { $_.Name -match '^0+$' } | Select-Object -ExpandProperty Value
+if ($ttfValues -notcontains $FONT_NAME) {
+    $existingKeys = $ttfProps.PSObject.Properties | Where-Object { $_.Name -match '^0+$' } | Select-Object -ExpandProperty Name
+    $nextKey = "0" * ($existingKeys.Count + 1)
+    Set-ItemProperty -Path $ttfKey -Name $nextKey -Value $FONT_NAME -Type String
+    $CHANGES_MADE = $true
+    Write-Host "  Registered $FONT_NAME with Windows console font picker."
+} else {
+    Write-Host "  $FONT_NAME already registered with console font picker."
+}
+
 # --- Legacy console host (conhost.exe) ---
 # Font settings for powershell.exe are stored under a key named after the exe path
 # with backslashes replaced by underscores.
