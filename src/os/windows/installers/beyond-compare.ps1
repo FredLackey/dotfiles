@@ -44,6 +44,15 @@ for ($i = 0; $i -lt 12; $i++) {
     Start-Sleep -Seconds 5
 }
 
+# Fallback: exe path may vary by architecture or install mode; ask winget directly.
+if (-not $verified) {
+    $wingetCheck = winget list --id $WINGET_ID --exact --accept-source-agreements 2>&1 | Out-String
+    if ($wingetCheck -match [regex]::Escape($WINGET_ID)) {
+        $verified = $true
+        Write-Host "  Note: $APP_NAME installed (verified via winget; exe not at expected paths)."
+    }
+}
+
 if ($verified) {
     Write-Host "$APP_NAME installed successfully."
 } else {

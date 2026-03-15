@@ -42,8 +42,14 @@ Set-RegDWord "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
 # On Windows 10 (pre-2024), this sets Chrome silently.
 # On Windows 10 v1511+ / Windows 11, Microsoft requires a single manual click
 # in Default Apps (Settings will open automatically if needed).
-$chromePath = "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe"
-if (Test-Path $chromePath) {
+# Enterprise MSI installs to Program Files; user installer uses LOCALAPPDATA. Check both.
+$chromeCandidates = @(
+    "$env:ProgramFiles\Google\Chrome\Application\chrome.exe",
+    "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe",
+    "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe"
+)
+$chromePath = $chromeCandidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+if ($chromePath) {
     Write-Host "  Requesting Chrome as default browser..."
     Start-Process -FilePath $chromePath -ArgumentList "--make-default-browser" -Wait
     $CHANGES_MADE = $true

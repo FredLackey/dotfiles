@@ -33,6 +33,15 @@ for ($i = 0; $i -lt 12; $i++) {
     }
 }
 
+# Fallback: install dir or exe path may vary; ask winget directly.
+if (-not $verified) {
+    $wingetCheck = winget list --id $WINGET_ID --exact --accept-source-agreements 2>&1 | Out-String
+    if ($wingetCheck -match [regex]::Escape($WINGET_ID)) {
+        $verified = $true
+        Write-Host "  Note: $APP_NAME installed (verified via winget; exe not at expected path)."
+    }
+}
+
 if ($verified) {
     Write-Host "$APP_NAME installed successfully."
 } else {
