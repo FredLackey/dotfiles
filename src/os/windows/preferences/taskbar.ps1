@@ -78,8 +78,13 @@ Set-RegDWord "HKCU:\Software\Policies\Microsoft\Windows\WindowsCopilot" "TurnOff
 # Primary: TaskbarDa in Explorer\Advanced (may be policy-locked on some machines).
 Set-RegDWord $AdvancedPath "TaskbarDa" 0
 # Fallback 1: reg.exe uses a different code path and can bypass PowerShell ACL restrictions.
-$regResult = reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarDa /t REG_DWORD /d 0 /f 2>&1
-if ($LASTEXITCODE -eq 0) { $CHANGES_MADE = $true }
+# Wrap in try/catch — reg.exe writes "Access is denied." to stderr which $ErrorActionPreference=Stop treats as a terminating error.
+try {
+    $regResult = reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarDa /t REG_DWORD /d 0 /f 2>&1
+    if ($LASTEXITCODE -eq 0) { $CHANGES_MADE = $true }
+} catch {
+    # Access denied via reg.exe as well; ShellFeedsTaskbarViewMode fallback below will handle it.
+}
 # Fallback 2: ShellFeedsTaskbarViewMode in the Feeds key — an alternate path that hides
 # the Widgets panel and is typically not subject to the same policy restrictions.
 Set-RegDWord "HKCU:\Software\Microsoft\Windows\CurrentVersion\Feeds" "ShellFeedsTaskbarViewMode" 2
