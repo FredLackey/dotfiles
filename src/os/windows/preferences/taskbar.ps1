@@ -13,14 +13,26 @@ function Unlock-RegKey {
     try {
         $acl  = Get-Acl -Path $Path -ErrorAction Stop
         $user = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
-        $rule = New-Object System.Security.AccessControl.RegistryAccessRule(
+
+        # Remove any explicit Deny ACEs for the current user — Deny always wins over Allow,
+        # so they must be stripped before adding the Allow rule.
+        $denyRules = $acl.Access | Where-Object {
+            $_.IdentityReference.Value -eq $user -and
+            $_.AccessControlType -eq [System.Security.AccessControl.AccessControlType]::Deny
+        }
+        foreach ($deny in $denyRules) {
+            $acl.RemoveAccessRule($deny) | Out-Null
+        }
+
+        # Grant the current user SetValue rights.
+        $allow = New-Object System.Security.AccessControl.RegistryAccessRule(
             $user,
             [System.Security.AccessControl.RegistryRights]::SetValue,
             [System.Security.AccessControl.InheritanceFlags]::None,
             [System.Security.AccessControl.PropagationFlags]::None,
             [System.Security.AccessControl.AccessControlType]::Allow
         )
-        $acl.SetAccessRule($rule)
+        $acl.SetAccessRule($allow)
         Set-Acl -Path $Path -AclObject $acl -ErrorAction Stop
         return $true
     } catch {
