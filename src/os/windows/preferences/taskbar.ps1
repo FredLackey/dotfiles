@@ -7,7 +7,29 @@ Write-Host "Configuring $PREF_NAME..."
 
 $AdvancedPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
 
+# Helper: grant the current user SetValue rights on a registry key to unblock locked keys.
+function Unlock-RegKey {
+    param([string]$Path)
+    try {
+        $acl  = Get-Acl -Path $Path -ErrorAction Stop
+        $user = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+        $rule = New-Object System.Security.AccessControl.RegistryAccessRule(
+            $user,
+            [System.Security.AccessControl.RegistryRights]::SetValue,
+            [System.Security.AccessControl.InheritanceFlags]::None,
+            [System.Security.AccessControl.PropagationFlags]::None,
+            [System.Security.AccessControl.AccessControlType]::Allow
+        )
+        $acl.SetAccessRule($rule)
+        Set-Acl -Path $Path -AclObject $acl -ErrorAction Stop
+        return $true
+    } catch {
+        return $false
+    }
+}
+
 # Helper: set a registry DWORD only if the value differs.
+# On access-denied, attempts to unlock the key ACL and retries once.
 function Set-RegDWord {
     param([string]$Path, [string]$Name, [int]$Value)
     if (-not (Test-Path $Path)) {
@@ -19,7 +41,16 @@ function Set-RegDWord {
         Set-ItemProperty -Path $Path -Name $Name -Value $Value -Type DWord
         $script:CHANGES_MADE = $true
     } catch {
-        Write-Host "  Note: Could not set $Name at $Path (access denied, skipping)."
+        if (Unlock-RegKey $Path) {
+            try {
+                Set-ItemProperty -Path $Path -Name $Name -Value $Value -Type DWord
+                $script:CHANGES_MADE = $true
+            } catch {
+                Write-Host "  Note: Could not set $Name at $Path (access denied even after unlock, skipping)."
+            }
+        } else {
+            Write-Host "  Note: Could not set $Name at $Path (access denied, skipping)."
+        }
     }
 }
 
