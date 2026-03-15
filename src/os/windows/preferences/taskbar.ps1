@@ -14,8 +14,11 @@ function Unlock-RegKey {
         $acl  = Get-Acl -Path $Path -ErrorAction Stop
         $user = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 
-        # Remove any explicit Deny ACEs for the current user — Deny always wins over Allow,
-        # so they must be stripped before adding the Allow rule.
+        # Break inheritance and copy inherited ACEs as explicit entries so that
+        # inherited Deny rules (which also override Allow) can be removed individually.
+        $acl.SetAccessRuleProtection($true, $true)
+
+        # Remove all explicit Deny ACEs for the current user — Deny always wins over Allow.
         $denyRules = $acl.Access | Where-Object {
             $_.IdentityReference.Value -eq $user -and
             $_.AccessControlType -eq [System.Security.AccessControl.AccessControlType]::Deny
@@ -78,13 +81,31 @@ Set-RegDWord $AdvancedPath "TaskbarDa" 0
 Set-RegDWord $AdvancedPath "ShowTaskViewButton" 0
 
 # --- Unpin Microsoft Edge from taskbar ---
-# Taskbar pins are stored as .lnk shortcuts in the User Pinned folder.
+# Two-pronged approach: remove the .lnk file (legacy/Win10) and use the Shell COM
+# unpin verb (Windows 11 stores pins in a registry blob; the verb updates both).
 $taskbarPinsDir = "$env:APPDATA\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar"
 $edgeLnk        = "$taskbarPinsDir\Microsoft Edge.lnk"
 if (Test-Path $edgeLnk) {
     Remove-Item $edgeLnk -Force
     $CHANGES_MADE = $true
-    Write-Host "  Unpinned Microsoft Edge from taskbar."
+    Write-Host "  Removed Edge taskbar pin shortcut."
+}
+try {
+    $edgeExe = "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe"
+    if (-not (Test-Path $edgeExe)) { $edgeExe = "$env:ProgramFiles\Microsoft\Edge\Application\msedge.exe" }
+    if (Test-Path $edgeExe) {
+        $shell  = New-Object -ComObject Shell.Application
+        $dir    = $shell.Namespace([System.IO.Path]::GetDirectoryName($edgeExe))
+        $item   = $dir.ParseName([System.IO.Path]::GetFileName($edgeExe))
+        $unpin  = $item.Verbs() | Where-Object { $_.Name -match "unpin" }
+        if ($unpin) {
+            $unpin | ForEach-Object { $_.DoIt() }
+            $CHANGES_MADE = $true
+            Write-Host "  Unpinned Microsoft Edge from taskbar (COM)."
+        }
+    }
+} catch {
+    # COM unpin not available on this Windows version; .lnk removal above is sufficient.
 }
 
 # Prevent Edge from auto-repinning itself to the taskbar after updates.
@@ -110,6 +131,7 @@ if ($CHANGES_MADE) {
     Start-Sleep -Milliseconds 1000
     Start-Process explorer.exe
     Write-Host "$PREF_NAME preferences applied."
+    Write-Host "  Note: Copilot and Widgets button changes require a full system restart to take effect."
 } else {
     Write-Host "$PREF_NAME already configured."
 }

@@ -26,8 +26,17 @@ Write-Host "  Running installer..."
 Start-Process -FilePath $installerPath -ArgumentList "/S" -Wait
 Remove-Item $installerPath -Force -ErrorAction SilentlyContinue
 
-# 4. VERIFY
-if (Test-Path $APP_PATH) {
+# 4. VERIFY - NSIS /S installers may spawn a child process and return before files are placed; retry for up to 60 seconds.
+$verified = $false
+for ($i = 0; $i -lt 12; $i++) {
+    if (Test-Path $APP_PATH) {
+        $verified = $true
+        break
+    }
+    Start-Sleep -Seconds 5
+}
+
+if ($verified) {
     Write-Host "$APP_NAME installed successfully."
 } else {
     Write-Error "$APP_NAME installation failed."
