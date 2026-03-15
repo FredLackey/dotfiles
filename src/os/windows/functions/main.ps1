@@ -21,6 +21,7 @@ function _dotfiles_load {
 # Categories: UTILS, AI, DEV, DEVOPS, MEDIA
 
 # Utilities
+_dotfiles_load "rmrf.ps1"                           "UTILS"
 _dotfiles_load "ccurl.ps1"                          "UTILS"
 _dotfiles_load "datauri.ps1"                        "UTILS"
 _dotfiles_load "delete-files.ps1"                   "UTILS"
