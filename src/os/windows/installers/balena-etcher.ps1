@@ -4,9 +4,14 @@ $APP_NAME  = "balenaEtcher"
 $WINGET_ID = "Balena.Etcher"
 $APP_PATH  = "$env:LOCALAPPDATA\balenaEtcher\balenaEtcher.exe"
 
-# 1. CHECK - Skip if already installed
+# 1. CHECK - Skip if already installed (path check, then winget for non-standard install locations)
 if (Test-Path $APP_PATH) {
     Write-Host "$APP_NAME is already installed."
+    exit 0
+}
+$wingetList = winget list --id $WINGET_ID --exact --accept-source-agreements 2>&1 | Out-String
+if ($wingetList -match [regex]::Escape($WINGET_ID)) {
+    Write-Host "$APP_NAME is already installed (verified via winget)."
     exit 0
 }
 
@@ -18,7 +23,7 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 
 # 3. INSTALL
 Write-Host "Installing $APP_NAME..."
-winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
+winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
 
 # 4. VERIFY - Electron/Squirrel installers run asynchronously after winget exits; retry for up to 60 seconds.
 $verified = $false

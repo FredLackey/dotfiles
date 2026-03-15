@@ -21,7 +21,7 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 
 # 3. INSTALL
 Write-Host "Installing $APP_NAME..."
-winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
+winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
 
 # Squirrel installers run asynchronously after winget exits - wait for the
 # background process to finish placing files before verifying.

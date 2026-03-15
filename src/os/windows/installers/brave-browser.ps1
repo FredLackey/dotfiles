@@ -18,7 +18,7 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 
 # 3. INSTALL
 Write-Host "Installing $APP_NAME..."
-winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
+winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
 
 # 4. VERIFY
 if (Test-Path $APP_PATH) {

@@ -4,11 +4,16 @@ $APP_NAME  = "Slack"
 $WINGET_ID = "SlackTechnologies.Slack"
 $APP_DIR   = "$env:LOCALAPPDATA\slack"
 
-# 1. CHECK - Skip if already installed
+# 1. CHECK - Skip if already installed (directory check, then winget for non-standard locations)
 # Slack (Squirrel-based) installs into a versioned subfolder under LOCALAPPDATA\slack,
 # e.g. app-4.48.0\slack.exe - there is no slack.exe at the root level.
 if (Test-Path $APP_DIR) {
     Write-Host "$APP_NAME is already installed."
+    exit 0
+}
+$wingetList = winget list --id $WINGET_ID --exact --accept-source-agreements 2>&1 | Out-String
+if ($wingetList -match [regex]::Escape($WINGET_ID)) {
+    Write-Host "$APP_NAME is already installed (verified via winget)."
     exit 0
 }
 
@@ -20,7 +25,7 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 
 # 3. INSTALL
 Write-Host "Installing $APP_NAME..."
-winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements
+winget install --id $WINGET_ID --exact --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
 
 # 4. VERIFY - Squirrel installers run asynchronously after winget exits; retry for up to 60 seconds.
 $verified = $false
