@@ -18,7 +18,13 @@ try {
 
 if ($wslInstalled) {
     try {
+        # wsl --list outputs UTF-16; PowerShell 5.1 defaults to ASCII and reads
+        # each character as two bytes, breaking string matching. Set the console
+        # output encoding to Unicode before capturing the output.
+        $prevEncoding = [Console]::OutputEncoding
+        [Console]::OutputEncoding = [System.Text.Encoding]::Unicode
         $distros = wsl --list --quiet 2>&1 | Out-String
+        [Console]::OutputEncoding = $prevEncoding
         $ubuntuInstalled = $distros -match "Ubuntu"
     } catch {
         $ubuntuInstalled = $false
