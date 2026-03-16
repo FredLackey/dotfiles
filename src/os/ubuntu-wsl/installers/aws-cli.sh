@@ -22,10 +22,21 @@ fi
 
 # 3. Install (using official AWS installer for latest version)
 echo "Installing $APP_NAME..."
+
+ARCH=$(uname -m)
+case "$ARCH" in
+    x86_64)  AWS_ARCH="x86_64" ;;
+    aarch64) AWS_ARCH="aarch64" ;;
+    *)
+        echo "Error: Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
+
 TEMP_DIR=$(mktemp -d)
 cd "$TEMP_DIR"
 
-curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-${AWS_ARCH}.zip" -o "awscliv2.zip"
 unzip -q awscliv2.zip
 sudo ./aws/install
 
@@ -33,7 +44,7 @@ cd - >/dev/null
 rm -rf "$TEMP_DIR"
 
 # 4. Verify
-if command -v aws >/dev/null 2>&1; then
+if command -v aws >/dev/null 2>&1 && aws --version >/dev/null 2>&1; then
     echo "$APP_NAME installed successfully."
 else
     echo "Error: $APP_NAME installation failed."
