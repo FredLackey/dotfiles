@@ -102,6 +102,7 @@ install_applications() {
 
     # 7. CLI Utilities
     run_installer "jq.sh" "UTILS"
+    run_installer "yq.sh" "UTILS"
     run_installer "tree.sh" "UTILS"
     run_installer "shellcheck.sh" "DEV"
     run_installer "pandoc.sh" "UTILS"
