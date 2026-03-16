@@ -18,7 +18,7 @@ fi
 
 # 3. Install
 echo "Installing $APP_NAME..."
-go install github.com/marcus/td@latest
+go install github.com/marcus/td@latest >/dev/null 2>&1
 
 # 4. Verify
 if command -v td >/dev/null 2>&1 || [ -f "$GOBIN/td" ]; then

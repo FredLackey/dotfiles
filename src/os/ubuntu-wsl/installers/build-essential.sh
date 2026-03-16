@@ -11,11 +11,11 @@ fi
 
 # 2. Install
 echo "Installing $APP_NAME..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq build-essential
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq build-essential >/dev/null
 
 # Also install debian-archive-keyring for secure package verification
 if ! dpkg -l | grep -q "^ii  debian-archive-keyring "; then
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq debian-archive-keyring
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq debian-archive-keyring >/dev/null
 fi
 
 # 3. Verify

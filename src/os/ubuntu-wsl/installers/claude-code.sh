@@ -17,7 +17,7 @@ fi
 
 # 3. INSTALL - Native installer (auto-updates in background)
 echo "Installing $APP_NAME..."
-curl -fsSL https://claude.ai/install.sh | bash
+curl -fsSL https://claude.ai/install.sh | bash >/dev/null 2>&1
 
 # 4. VERIFY - Confirm installation succeeded
 if command -v claude >/dev/null 2>&1 || [ -f "$HOME/.local/bin/claude" ]; then

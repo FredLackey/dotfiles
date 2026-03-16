@@ -6,9 +6,9 @@ APP_NAME="APT Cleanup"
 echo "Running $APP_NAME..."
 
 # Remove packages that are no longer needed
-sudo apt-get autoremove -y -qq
+sudo apt-get autoremove -y -qq >/dev/null
 
 # Clean package cache
-sudo apt-get clean -qq
+sudo apt-get clean -qq >/dev/null
 
 echo "$APP_NAME completed."

@@ -27,11 +27,11 @@ fi
 # Add Yarn repository
 if [ ! -f /etc/apt/sources.list.d/yarn.list ]; then
     echo "deb [signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null
-    sudo apt-get update -qq
+    sudo apt-get update -qq >/dev/null
 fi
 
 # Install without recommends (since we use NVM for Node)
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends yarn
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends yarn >/dev/null
 
 # 4. Verify
 if command -v yarn >/dev/null 2>&1; then
