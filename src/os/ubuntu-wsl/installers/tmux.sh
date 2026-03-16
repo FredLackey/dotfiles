@@ -36,7 +36,7 @@ fi
 # 3. Install
 if [ "$TMUX_INSTALLED" = false ]; then
     echo "Installing $APP_NAME..."
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq tmux >/dev/null
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq tmux
 fi
 
 # 4. Deploy configuration

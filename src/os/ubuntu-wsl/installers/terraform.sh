@@ -18,10 +18,10 @@ export PATH="$TFENV_ROOT/bin:$PATH"
 echo "Installing latest $APP_NAME..."
 
 # Install latest stable version
-tfenv install latest >/dev/null 2>&1
+tfenv install latest
 
 # Set as global default
-tfenv use latest >/dev/null 2>&1
+tfenv use latest
 
 # 3. Verify
 if command -v terraform >/dev/null 2>&1; then

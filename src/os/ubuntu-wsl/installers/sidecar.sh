@@ -18,7 +18,7 @@ fi
 
 # 3. Install
 echo "Installing $APP_NAME..."
-go install github.com/marcus/sidecar/cmd/sidecar@latest >/dev/null 2>&1
+go install github.com/marcus/sidecar/cmd/sidecar@latest
 
 # 4. Verify
 if command -v sidecar >/dev/null 2>&1 || [ -f "$GOBIN/sidecar" ]; then

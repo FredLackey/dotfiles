@@ -64,7 +64,13 @@ run_installer() {
     if [ -f "$script_path" ]; then
         echo "--------------------------------------------------"
         echo "Running installer: $script_name"
-        bash "$script_path"
+        if [ -n "$LOG_FILE" ]; then
+            # Log file active: verbose output goes to log only, console stays clean
+            bash "$script_path" >> "$LOG_FILE" 2>&1
+        else
+            # No log file: suppress output (console stays clean)
+            bash "$script_path" >/dev/null 2>&1
+        fi
     else
         echo "Error: Installer script not found: $script_name"
         exit 1
@@ -159,7 +165,11 @@ apply_preferences() {
     local prefs_script="$PREFERENCES_DIR/setup.sh"
 
     if [ -f "$prefs_script" ]; then
-        bash "$prefs_script"
+        if [ -n "$LOG_FILE" ]; then
+            bash "$prefs_script" >> "$LOG_FILE" 2>&1
+        else
+            bash "$prefs_script" >/dev/null 2>&1
+        fi
     else
         echo "Warning: Preferences setup script not found: $prefs_script"
     fi

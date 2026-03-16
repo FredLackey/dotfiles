@@ -40,11 +40,11 @@ curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-${AWS_ARCH}.zip" -o "a
 unzip -q awscliv2.zip
 sudo ./aws/install
 
-cd - >/dev/null
+cd -
 rm -rf "$TEMP_DIR"
 
 # 4. Verify
-if command -v aws >/dev/null 2>&1 && aws --version >/dev/null 2>&1; then
+if command -v aws >/dev/null 2>&1 && aws --version; then
     echo "$APP_NAME installed successfully."
 else
     echo "Error: $APP_NAME installation failed."

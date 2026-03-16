@@ -24,12 +24,12 @@ fi
 
 # Update npm to latest
 echo "Updating npm..."
-npm install --global --silent npm >/dev/null 2>&1
+npm install --global --silent npm
 
 # Install npm-check-updates
 if ! command -v ncu >/dev/null 2>&1; then
     echo "Installing npm-check-updates..."
-    npm install --global --silent npm-check-updates >/dev/null 2>&1
+    npm install --global --silent npm-check-updates
 fi
 
 echo "$APP_NAME installed successfully."

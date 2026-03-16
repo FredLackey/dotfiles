@@ -24,9 +24,9 @@ export NVM_DIR="$HOME/.nvm"
 . "$NVM_DIR/nvm.sh"
 
 # Install Node LTS
-nvm install --lts >/dev/null 2>&1
-nvm alias default 'lts/*' >/dev/null 2>&1
-nvm use default >/dev/null 2>&1
+nvm install --lts
+nvm alias default 'lts/*'
+nvm use default
 
 # 4. Verify
 if command -v node >/dev/null 2>&1; then
