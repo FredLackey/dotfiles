@@ -5,6 +5,27 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 INSTALLERS_DIR="$SCRIPT_DIR/installers"
 PREFERENCES_DIR="$SCRIPT_DIR/preferences"
 
+# ---------------------------------------------------------------------------
+# Logging — write a timestamped log to the Windows Desktop when running in WSL
+# ---------------------------------------------------------------------------
+TIMESTAMP=$(date '+%Y-%m-%d_%H-%M-%S')
+LOG_FILE=""
+
+if [ -n "$WSL_DISTRO_NAME" ]; then
+    WIN_USERPROFILE=$(cmd.exe /c "echo %USERPROFILE%" 2>/dev/null | tr -d '\r\n')
+    if [ -n "$WIN_USERPROFILE" ]; then
+        WIN_DESKTOP=$(wslpath "$WIN_USERPROFILE\\Desktop" 2>/dev/null || echo "")
+        if [ -n "$WIN_DESKTOP" ] && [ -d "$WIN_DESKTOP" ]; then
+            LOG_FILE="$WIN_DESKTOP/dotfiles-wsl-$TIMESTAMP.log"
+        fi
+    fi
+fi
+
+if [ -n "$LOG_FILE" ]; then
+    echo "Logging to: $LOG_FILE"
+    exec > >(tee -a "$LOG_FILE") 2>&1
+fi
+
 echo "Running Ubuntu WSL setup..."
 
 # Check if a category is excluded via DOTFILES_EXCLUDE environment variable
@@ -152,3 +173,8 @@ apply_preferences
 
 echo ""
 echo "Setup complete. Please log out and back in (or run 'source ~/.bashrc') to activate the new shell configuration."
+
+if [ -n "$LOG_FILE" ]; then
+    echo ""
+    echo "Log saved to: $LOG_FILE"
+fi
