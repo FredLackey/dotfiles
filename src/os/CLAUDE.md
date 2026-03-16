@@ -1,5 +1,21 @@
 # OS Folder and File Structure Rules
 
+## CRITICAL: OS Folder Independence
+
+**Every OS folder under `src/os/` must be completely self-contained and independent.** This is non-negotiable.
+
+- **No cross-references between OS folders.** Scripts in `ubuntu-wsl/` must never reference, import, or depend on files from `ubuntu-server/`, `macos/`, `windows/`, or any other OS folder.
+- **Duplication is correct.** If the same function file exists in both `ubuntu-server/` and `ubuntu-wsl/`, that is intentional and expected. Copy it — do not symlink or import it.
+- **No assumptions about other setups.** Each OS folder must work on a machine where no other dotfiles setup has ever run. For example, `ubuntu-wsl/` must not assume that `src/os/windows/` was run first, even when WSL runs inside Windows.
+- **Self-contained tool checks.** Every installer and preference script must verify its own prerequisites without relying on tools installed by other OS setups.
+
+This rule exists because:
+1. Users may run only one OS setup per machine.
+2. OS folders are tested in isolation in pristine environments.
+3. Cross-folder dependencies create fragile, hard-to-debug failures.
+
+---
+
 This document defines the folder and file structure pattern for all OS-specific setups under `src/os/`. The macOS implementation serves as the reference implementation.
 
 ## Directory Structure
