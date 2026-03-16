@@ -1,7 +1,7 @@
 # Windows functions loader
 # Dot-sourced by $PROFILE — installed by dotfiles: https://github.com/FredLackey/dotfiles
 
-$_FunctionsDir = $PSScriptRoot
+$_FunctionsDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 function _dotfiles_is_excluded {
     param([string]$Category)
