@@ -17,7 +17,7 @@ fi
 
 # 3. INSTALL
 echo "Installing $APP_NAME..."
-curl -fsSL https://starship.rs/install.sh | sh -- --yes
+curl -fsSL https://starship.rs/install.sh | sh -s -- --yes
 
 # 4. VERIFY
 if command -v starship >/dev/null 2>&1; then
