@@ -21,7 +21,7 @@ mkdir -p "$HOME/.local/bin"
 curl -fsSL https://starship.rs/install.sh | sh -s -- --yes --bin-dir "$HOME/.local/bin"
 
 # 4. VERIFY
-if command -v starship >/dev/null 2>&1; then
+if command -v starship >/dev/null 2>&1 || [ -f "$HOME/.local/bin/starship" ]; then
     echo "$APP_NAME installed successfully."
 else
     echo "Error: $APP_NAME installation failed."
