@@ -4,7 +4,8 @@ set -e
 APP_NAME="sidecar"
 
 # 1. Check if already installed
-if command -v sidecar >/dev/null 2>&1; then
+GOBIN="$(go env GOPATH 2>/dev/null || echo "$HOME/go")/bin"
+if command -v sidecar >/dev/null 2>&1 || [ -f "$GOBIN/sidecar" ]; then
     echo "$APP_NAME is already installed."
     exit 0
 fi
@@ -20,7 +21,7 @@ echo "Installing $APP_NAME..."
 go install github.com/marcus/sidecar/cmd/sidecar@latest
 
 # 4. Verify
-if command -v sidecar >/dev/null 2>&1; then
+if command -v sidecar >/dev/null 2>&1 || [ -f "$GOBIN/sidecar" ]; then
     echo "$APP_NAME installed successfully."
 else
     echo "Error: $APP_NAME installation failed."
