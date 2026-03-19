@@ -1,0 +1,2656 @@
+- generic [ref=e2]:
+  - generic:
+    - generic: "Skip to:"
+    - list:
+      - listitem:
+        - link "Top Bar":
+          - /url: "#_R18skj5jal9_"
+      - listitem:
+        - link "Sidebar":
+          - /url: "#_R6p4kj5jal9_"
+      - listitem:
+        - link "Main Content":
+          - /url: "#_R1ckj5jal9_"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - button "Switch sites or apps" [ref=e3830] [cursor=pointer]:
+            - generic [ref=e12]: Switch sites or apps
+          - link "Go to your Jira homepage" [ref=e15] [cursor=pointer]:
+            - /url: /jira
+            - generic [ref=e16]:
+              - img [ref=e19]
+              - generic [ref=e24]: Jira
+        - button "Collapse sidebar" [ref=e26] [cursor=pointer]:
+          - generic [ref=e28]: Collapse sidebar
+      - generic [ref=e29]:
+        - button [ref=e30] [cursor=pointer]:
+          - search [ref=e31]:
+            - combobox "Search, press enter to navigate to advanced search with your text query" [ref=e34]
+        - button "Create" [ref=e37] [cursor=pointer]:
+          - generic [ref=e40]: Create
+      - navigation "Actions" [ref=e41]:
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - button "Rovo Ask Rovo" [ref=e45] [cursor=pointer]:
+              - img "Rovo" [ref=e47]:
+                - img [ref=e48]
+              - generic [ref=e53]: Ask Rovo
+          - listitem [ref=e54]:
+            - generic [ref=e56]:
+              - button "Over 9 Notifications" [ref=e57] [cursor=pointer]:
+                - generic [ref=e60]: Over 9 Notifications
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: 9+
+          - listitem [ref=e63]:
+            - button "Help" [ref=e64] [cursor=pointer]:
+              - generic [ref=e67]: Help
+          - listitem [ref=e69]:
+            - button "Settings" [ref=e70] [cursor=pointer]:
+              - generic [ref=e73]: Settings
+          - listitem [ref=e74]:
+            - button "fred.lackey@consensus.com" [ref=e75] [cursor=pointer]:
+              - img "Account" [ref=e77]
+    - navigation "Sidebar" [ref=e78]:
+      - list [ref=e82]:
+        - listitem [ref=e83]:
+          - link "For you" [ref=e85] [cursor=pointer]:
+            - /url: /jira/for-you
+            - generic [ref=e90]: For you
+        - listitem [ref=e91]:
+          - button "Recent" [ref=e93] [cursor=pointer]:
+            - generic [ref=e97]: Recent
+        - listitem [ref=e98]:
+          - button "Starred" [ref=e100] [cursor=pointer]:
+            - generic [ref=e104]: Starred
+        - listitem [ref=e105]:
+          - generic [ref=e108]:
+            - button "Apps" [ref=e109] [cursor=pointer]:
+              - generic [ref=e113]: Apps
+            - generic:
+              - button "More actions for Apps":
+                - generic [ref=e116] [cursor=pointer]: More actions for Apps
+        - listitem [ref=e117]:
+          - generic [ref=e120]:
+            - button "Plans" [ref=e121] [cursor=pointer]:
+              - generic [ref=e125]: Plans
+            - generic:
+              - button "Create plan" [ref=e126] [cursor=pointer]:
+                - generic [ref=e129]: Create plan
+              - button "More actions for Plans":
+                - generic [ref=e132] [cursor=pointer]: More actions for Plans
+        - listitem [ref=e133]:
+          - generic [ref=e136]:
+            - button "Spaces" [ref=e137] [cursor=pointer]:
+              - generic [ref=e141]: Spaces
+            - generic:
+              - button "More actions for spaces":
+                - generic [ref=e144] [cursor=pointer]: More actions for spaces
+        - listitem [ref=e145]:
+          - generic [ref=e146]:
+            - generic [ref=e148]:
+              - button "Filters" [expanded] [ref=e149] [cursor=pointer]:
+                - generic [ref=e153]: Filters
+              - button "More actions for Filters" [ref=e155] [cursor=pointer]:
+                - generic [ref=e158]: More actions for Filters
+            - list [ref=e159]:
+              - listitem [ref=e160]:
+                - link "Search work items" [ref=e162] [cursor=pointer]:
+                  - /url: /issues/?jql=created%20%3E%3D%20-30d%20order%20by%20created%20DESC
+                  - generic [ref=e167]: Search work items
+              - listitem [ref=e168]:
+                - group "Starred" [ref=e169]:
+                  - paragraph [ref=e170]: Starred
+                  - list [ref=e171]:
+                    - listitem [ref=e173]:
+                      - generic [ref=e174]:
+                        - link "Service Desk - My Tickets" [ref=e175] [cursor=pointer]:
+                          - /url: /issues/?filter=87859
+                          - generic [ref=e180]: Service Desk - My Tickets
+                        - generic:
+                          - button "More actions for Service Desk - My Tickets":
+                            - generic [ref=e183] [cursor=pointer]: More actions for Service Desk - My Tickets
+              - listitem [ref=e184]:
+                - group "Recent" [ref=e185]:
+                  - paragraph [ref=e186]: Recent
+                  - list [ref=e187]:
+                    - listitem [ref=e188]:
+                      - generic [ref=e189]:
+                        - link "Phoenix TPM - Stories" [ref=e190] [cursor=pointer]:
+                          - /url: /issues/?filter=90815
+                          - generic [ref=e195]: Phoenix TPM - Stories
+                        - generic:
+                          - button "More actions for Phoenix TPM - Stories":
+                            - generic [ref=e198] [cursor=pointer]: More actions for Phoenix TPM - Stories
+                    - listitem [ref=e199]:
+                      - generic [ref=e200]:
+                        - link "Phoenix TPM - Bugs to Triage" [ref=e201] [cursor=pointer]:
+                          - /url: /issues/?filter=90952
+                          - generic [ref=e206]: Phoenix TPM - Bugs to Triage
+                        - generic:
+                          - button "More actions for Phoenix TPM - Bugs to Triage":
+                            - generic [ref=e209] [cursor=pointer]: More actions for Phoenix TPM - Bugs to Triage
+                    - listitem [ref=e210]:
+                      - generic [ref=e211]:
+                        - link "Phoenix TPM" [ref=e212] [cursor=pointer]:
+                          - /url: /issues/?filter=90438
+                          - generic [ref=e217]: Phoenix TPM
+                        - generic:
+                          - button "More actions for Phoenix TPM":
+                            - generic [ref=e220] [cursor=pointer]: More actions for Phoenix TPM
+                    - listitem [ref=e221]:
+                      - generic [ref=e222]:
+                        - link "Phoenix TPM - Bugs" [ref=e223] [cursor=pointer]:
+                          - /url: /issues/?filter=90816
+                          - generic [ref=e228]: Phoenix TPM - Bugs
+                        - generic:
+                          - button "More actions for Phoenix TPM - Bugs":
+                            - generic [ref=e231] [cursor=pointer]: More actions for Phoenix TPM - Bugs
+              - listitem [ref=e232]:
+                - generic [ref=e233]:
+                  - button "Default filters" [expanded] [ref=e236] [cursor=pointer]:
+                    - generic [ref=e240]: Default filters
+                  - list [ref=e241]:
+                    - listitem [ref=e242]:
+                      - generic [ref=e243]:
+                        - link "My open work items" [ref=e244] [cursor=pointer]:
+                          - /url: /issues/?filter=-1
+                          - generic [ref=e249]: My open work items
+                        - generic:
+                          - button "More actions for My open work items":
+                            - generic [ref=e252] [cursor=pointer]: More actions for My open work items
+                    - listitem [ref=e253]:
+                      - generic [ref=e254]:
+                        - link "Reported by me" [ref=e255] [cursor=pointer]:
+                          - /url: /issues/?filter=-2
+                          - generic [ref=e260]: Reported by me
+                        - generic:
+                          - button "More actions for Reported by me":
+                            - generic [ref=e263] [cursor=pointer]: More actions for Reported by me
+                    - listitem [ref=e264]:
+                      - generic [ref=e265]:
+                        - link "All work items" [ref=e266] [cursor=pointer]:
+                          - /url: /issues/?filter=-4
+                          - generic [ref=e271]: All work items
+                        - generic:
+                          - button "More actions for All work items":
+                            - generic [ref=e274] [cursor=pointer]: More actions for All work items
+                    - listitem [ref=e275]:
+                      - generic [ref=e276]:
+                        - link "Open work items" [ref=e277] [cursor=pointer]:
+                          - /url: /issues/?filter=-5
+                          - generic [ref=e282]: Open work items
+                        - generic:
+                          - button "More actions for Open work items":
+                            - generic [ref=e285] [cursor=pointer]: More actions for Open work items
+                    - listitem [ref=e286]:
+                      - generic [ref=e287]:
+                        - link "Done work items" [ref=e288] [cursor=pointer]:
+                          - /url: /issues/?filter=-9
+                          - generic [ref=e293]: Done work items
+                        - generic:
+                          - button "More actions for Done work items":
+                            - generic [ref=e296] [cursor=pointer]: More actions for Done work items
+                    - listitem [ref=e297]:
+                      - generic [ref=e298]:
+                        - link "Viewed recently" [ref=e299] [cursor=pointer]:
+                          - /url: /issues/?filter=-3
+                          - generic [ref=e304]: Viewed recently
+                        - generic:
+                          - button "More actions for Viewed recently":
+                            - generic [ref=e307] [cursor=pointer]: More actions for Viewed recently
+                    - listitem [ref=e308]:
+                      - generic [ref=e309]:
+                        - link "Created recently" [ref=e310] [cursor=pointer]:
+                          - /url: /issues/?filter=-6
+                          - generic [ref=e315]: Created recently
+                        - generic:
+                          - button "More actions for Created recently":
+                            - generic [ref=e318] [cursor=pointer]: More actions for Created recently
+                    - listitem [ref=e319]:
+                      - generic [ref=e320]:
+                        - link "Resolved recently" [ref=e321] [cursor=pointer]:
+                          - /url: /issues/?filter=-7
+                          - generic [ref=e326]: Resolved recently
+                        - generic:
+                          - button "More actions for Resolved recently":
+                            - generic [ref=e329] [cursor=pointer]: More actions for Resolved recently
+                    - listitem [ref=e330]:
+                      - generic [ref=e331]:
+                        - link "Updated recently" [ref=e332] [cursor=pointer]:
+                          - /url: /issues/?filter=-8
+                          - generic [ref=e337]: Updated recently
+                        - generic:
+                          - button "More actions for Updated recently":
+                            - generic [ref=e340] [cursor=pointer]: More actions for Updated recently
+              - listitem [ref=e341]:
+                - group [ref=e342]:
+                  - list [ref=e343]:
+                    - listitem [ref=e344]:
+                      - link "View all filters" [ref=e346] [cursor=pointer]:
+                        - /url: /jira/filters
+                        - generic [ref=e351]: View all filters
+        - listitem [ref=e352]:
+          - generic [ref=e355]:
+            - button "Dashboards" [ref=e356] [cursor=pointer]:
+              - generic [ref=e360]: Dashboards
+            - generic:
+              - button "Create dashboard" [ref=e361] [cursor=pointer]:
+                - generic [ref=e364]: Create dashboard
+              - button "More actions for Dashboards":
+                - generic [ref=e367] [cursor=pointer]: More actions for Dashboards
+        - listitem [ref=e368]:
+          - generic [ref=e371]:
+            - button "Operations" [ref=e372] [cursor=pointer]:
+              - generic [ref=e376]: Operations
+            - generic:
+              - button "More actions for Operations":
+                - generic [ref=e379] [cursor=pointer]: More actions for Operations
+        - list [ref=e382]:
+          - listitem [ref=e3832]:
+            - generic [ref=e3833]:
+              - link "Assets , (opens new window)" [ref=e3834] [cursor=pointer]:
+                - /url: https://consensus.atlassian.net/jira/assets?xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2ODQwMDQ5OTYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e3839]: Assets
+                - generic [ref=e3840]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - img "Open external link icon"
+          - listitem [ref=e3842]:
+            - generic [ref=e3843]:
+              - link "Goals , (opens new window)" [ref=e3844] [cursor=pointer]:
+                - /url: https://home.atlassian.com/o/8ca082dc-a111-1932-6k6b-9b82j1k3146b/goals?cloudId=5ec350fe-c444-4610-8b8d-6d50a4b1428d&xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2ODQwMDQ5OTYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e3849]: Goals
+                - generic [ref=e3850]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - img "Open external link icon"
+          - listitem [ref=e3852]:
+            - generic [ref=e3853]:
+              - link "Teams , (opens new window)" [ref=e3854] [cursor=pointer]:
+                - /url: https://home.atlassian.com/o/8ca082dc-a111-1932-6k6b-9b82j1k3146b/people?cloudId=5ec350fe-c444-4610-8b8d-6d50a4b1428d&xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2ODQwMDQ5OTYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e3859]: Teams
+                - generic [ref=e3860]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - button "open menu":
+                  - generic [ref=e3863] [cursor=pointer]: open menu
+              - generic:
+                - img "Open external link icon"
+        - listitem [ref=e405]:
+          - button "Customize sidebar" [ref=e407] [cursor=pointer]:
+            - generic [ref=e411]: Customize sidebar
+    - generic [ref=e413]:
+      - slider "Resize side navigation panel" [ref=e414]: "360"
+      - text: Resize side navigation panel
+    - main [ref=e416]:
+      - generic [ref=e422]:
+        - generic [ref=e424]:
+          - heading "All work" [level=1] [ref=e426]:
+            - generic [ref=e427]: All work
+          - generic [ref=e430]:
+            - button "Apps Open pluggable items dropdown" [ref=e432] [cursor=pointer]:
+              - generic [ref=e433]: Apps
+              - img "Open pluggable items dropdown" [ref=e436]
+            - button "Share" [ref=e438] [cursor=pointer]:
+              - generic [ref=e439]: Share
+            - radiogroup "Select view" [ref=e444]:
+              - radio "List view" [checked] [ref=e445]:
+                - img "List view" [ref=e447]
+              - radio "Detail view" [ref=e448] [cursor=pointer]:
+                - img "Detail view" [ref=e450]
+            - button "More actions" [ref=e452] [cursor=pointer]:
+              - generic [ref=e455]: More actions
+        - generic [ref=e459]:
+          - button "Ask AI" [ref=e461] [cursor=pointer]:
+            - generic [ref=e465]: Ask AI
+          - radiogroup "Select search mode" [ref=e468]:
+            - radio "Basic" [disabled] [ref=e469]
+            - radio "JQL" [checked] [ref=e470]
+          - generic [ref=e3864]:
+            - generic [ref=e3865]:
+              - combobox "JQL query" [ref=e3867]:
+                - paragraph [ref=e3868]: project = PHX AND (assignee in ("Fred Lackey","Alan Haghy","Jean Bucad","Luis DeLaRosa (OSS)","Yurii Luchyshyn (OSS)") OR reporter in ("Fred Lackey","Alan Haghy","Jean Bucad","Luis DeLaRosa (OSS)","Yurii Luchyshyn (OSS)")) ORDER BY updated DESC
+              - generic [ref=e3869]:
+                - button "Editor" [ref=e3870] [cursor=pointer]:
+                  - generic [ref=e3873]: Editor
+                - link "Syntax help" [ref=e3874] [cursor=pointer]:
+                  - /url: https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Advanced+searching
+                  - generic [ref=e3877]: Syntax help
+                - generic [ref=e3878]: Open JQL syntax help in a new tab.
+                - button "Search" [ref=e3880] [cursor=pointer]:
+                  - generic [ref=e3883]: Search
+            - generic [ref=e3885]:
+              - generic [ref=e3886]: Enter to search
+              - generic [ref=e3887]: Shift+Enter to add a new line
+          - generic [ref=e474]:
+            - button "Clear filters" [ref=e476] [cursor=pointer]:
+              - generic [ref=e477]: Clear filters
+            - button "Save filter" [ref=e479] [cursor=pointer]:
+              - generic [ref=e480]: Save filter
+        - generic:
+          - status [ref=e481]
+          - status [ref=e482]
+        - generic [ref=e484]:
+          - table "Work" [ref=e487]:
+            - rowgroup [ref=e488]:
+              - row "Work item checkbox Work Assignee Priority Status Resolution Original estimate Fix versions Linked work items Epic Status Reason Account Configure columns" [ref=e489]:
+                - columnheader "Work item checkbox" [ref=e490]:
+                  - checkbox "Work item checkbox" [ref=e493]
+                - columnheader "Work" [ref=e494]:
+                  - generic [ref=e495]:
+                    - generic [ref=e497]: Work
+                    - generic:
+                      - generic:
+                        - button "More actions for Work":
+                          - generic:
+                            - generic: More actions for Work
+                - columnheader "Assignee" [ref=e498]:
+                  - generic [ref=e499]:
+                    - generic [ref=e501]: Assignee
+                    - generic:
+                      - generic:
+                        - button "Assignee • Sort A to Z":
+                          - generic:
+                            - generic: Assignee • Sort A to Z
+                      - generic:
+                        - button "More actions for Assignee":
+                          - generic:
+                            - generic: More actions for Assignee
+                - columnheader "Priority" [ref=e502]:
+                  - generic [ref=e503]:
+                    - generic [ref=e505]: Priority
+                    - generic:
+                      - generic:
+                        - button "Priority • Sort lowest to highest":
+                          - generic:
+                            - generic: Priority • Sort lowest to highest
+                      - generic:
+                        - button "More actions for Priority":
+                          - generic:
+                            - generic: More actions for Priority
+                - columnheader "Status" [ref=e506]:
+                  - generic [ref=e507]:
+                    - generic [ref=e509]: Status
+                    - generic:
+                      - generic:
+                        - button "Status • Sort in ascending order":
+                          - generic:
+                            - generic: Status • Sort in ascending order
+                      - generic:
+                        - button "More actions for Status":
+                          - generic:
+                            - generic: More actions for Status
+                - columnheader "Resolution" [ref=e510]:
+                  - generic [ref=e511]:
+                    - generic [ref=e513]: Resolution
+                    - generic:
+                      - generic:
+                        - button "Resolution • Sort A to Z":
+                          - generic:
+                            - generic: Resolution • Sort A to Z
+                      - generic:
+                        - button "More actions for Resolution":
+                          - generic:
+                            - generic: More actions for Resolution
+                - columnheader "Original estimate" [ref=e514]:
+                  - generic [ref=e515]:
+                    - generic [ref=e517]: Original estimate
+                    - generic:
+                      - generic:
+                        - button "Original estimate • Sort lowest to highest":
+                          - generic:
+                            - generic: Original estimate • Sort lowest to highest
+                      - generic:
+                        - button "More actions for Original estimate":
+                          - generic:
+                            - generic: More actions for Original estimate
+                - columnheader "Fix versions" [ref=e518]:
+                  - generic [ref=e519]:
+                    - generic [ref=e521]: Fix versions
+                    - generic:
+                      - generic:
+                        - button "Fix versions • Sort lowest to highest":
+                          - generic:
+                            - generic: Fix versions • Sort lowest to highest
+                      - generic:
+                        - button "More actions for Fix versions":
+                          - generic:
+                            - generic: More actions for Fix versions
+                - columnheader "Linked work items" [ref=e522]:
+                  - generic [ref=e523]:
+                    - generic [ref=e525]: Linked work items
+                    - generic:
+                      - generic:
+                        - button "More actions for Linked work items":
+                          - generic:
+                            - generic: More actions for Linked work items
+                - columnheader "Epic Status" [ref=e526]:
+                  - generic [ref=e527]:
+                    - generic [ref=e529]: Epic Status
+                    - generic:
+                      - generic:
+                        - button "Epic Status • Sort in ascending order":
+                          - generic:
+                            - generic: Epic Status • Sort in ascending order
+                      - generic:
+                        - button "More actions for Epic Status":
+                          - generic:
+                            - generic: More actions for Epic Status
+                - columnheader "Reason" [ref=e530]:
+                  - generic [ref=e531]:
+                    - generic [ref=e533]: Reason
+                    - generic:
+                      - generic:
+                        - button "Reason • Sort in ascending order":
+                          - generic:
+                            - generic: Reason • Sort in ascending order
+                      - generic:
+                        - button "More actions for Reason":
+                          - generic:
+                            - generic: More actions for Reason
+                - columnheader "Account" [ref=e534]:
+                  - generic [ref=e535]:
+                    - generic [ref=e537]: Account
+                    - generic:
+                      - generic:
+                        - button "Account • Sort in ascending order":
+                          - generic:
+                            - generic: Account • Sort in ascending order
+                      - generic:
+                        - button "More actions for Account":
+                          - generic:
+                            - generic: More actions for Account
+                - columnheader "Configure columns" [ref=e538]:
+                  - button "Configure columns" [ref=e541] [cursor=pointer]:
+                    - generic [ref=e544]: Configure columns
+            - rowgroup [ref=e545]:
+              - row "Work item checkbox Bug PHX-2051 is not resolved Edit Summary Adding A User > Job Title Should Not Be Required Field Jean Bucad- edit Assignee More information about Jean Bucad Edit Priority Critical In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2051" [ref=e3900]:
+                - cell "Work item checkbox" [ref=e547]:
+                  - checkbox "Work item checkbox" [ref=e550]
+                - cell "Bug PHX-2051 is not resolved Edit Summary Adding A User > Job Title Should Not Be Required Field" [ref=e3901]:
+                  - generic [ref=e552]:
+                    - img "Bug" [ref=e554]
+                    - link "PHX-2051 is not resolved" [ref=e557] [cursor=pointer]:
+                      - /url: /browse/PHX-2051
+                      - text: PHX-2051
+                    - generic [ref=e558]:
+                      - button "Edit Summary" [ref=e3902]
+                      - generic [ref=e560]: Adding A User > Job Title Should Not Be Required Field
+                - cell "Jean Bucad- edit Assignee More information about Jean Bucad" [ref=e3903]:
+                  - button "Jean Bucad- edit Assignee" [ref=e3904]
+                  - button "More information about Jean Bucad" [ref=e564]:
+                    - generic [ref=e567]:
+                      - img "Jean Bucad" [ref=e568]:
+                        - img [ref=e570]
+                      - generic [ref=e571]: Jean Bucad
+                - cell "Edit Priority Critical" [ref=e3905]:
+                  - button "Edit Priority" [ref=e3906]
+                  - generic [ref=e575]: Critical
+                - cell "In Progress - Change status" [ref=e576]:
+                  - button "In Progress - Change status" [ref=e579] [cursor=pointer]:
+                    - generic [ref=e584]:
+                      - text: In Progress
+                      - img [ref=e585]
+                - cell "Unresolved" [ref=e588]:
+                  - generic [ref=e589]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e3907]:
+                  - button "Edit Time tracking" [ref=e3908]
+                  - generic [ref=e595]: 0m
+                - cell "Edit Fix versions None" [ref=e3909]:
+                  - button "Edit Fix versions" [ref=e3910]
+                  - generic [ref=e598]: None
+                - cell [ref=e599]
+                - cell [ref=e600]
+                - cell [ref=e601]
+                - cell "Phoenix Platform" [ref=e602]:
+                  - generic [ref=e603]: Phoenix Platform
+                - cell "More actions for PHX-2051" [ref=e604]:
+                  - button "More actions for PHX-2051" [ref=e606] [cursor=pointer]:
+                    - generic [ref=e609]: More actions for PHX-2051
+              - row "Work item checkbox Bug PHX-2053 is not resolved Edit Summary Users Showing 0/1 on Personal Plan Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2053" [ref=e3911]:
+                - cell "Work item checkbox" [ref=e611]:
+                  - checkbox "Work item checkbox" [ref=e614]
+                - cell "Bug PHX-2053 is not resolved Edit Summary Users Showing 0/1 on Personal Plan" [ref=e3912]:
+                  - generic [ref=e616]:
+                    - img "Bug" [ref=e618]
+                    - link "PHX-2053 is not resolved" [ref=e621] [cursor=pointer]:
+                      - /url: /browse/PHX-2053
+                      - text: PHX-2053
+                    - generic [ref=e622]:
+                      - button "Edit Summary" [ref=e3913]
+                      - generic [ref=e624]: Users Showing 0/1 on Personal Plan
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e3914]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e3915]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e628]:
+                    - generic [ref=e631]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e632]:
+                        - img [ref=e634]
+                      - generic [ref=e635]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e3916]:
+                  - button "Edit Priority" [ref=e3917]
+                  - generic [ref=e639]: Critical
+                - cell "In Progress - Change status" [ref=e640]:
+                  - button "In Progress - Change status" [ref=e643] [cursor=pointer]:
+                    - generic [ref=e648]:
+                      - text: In Progress
+                      - img [ref=e649]
+                - cell "Unresolved" [ref=e652]:
+                  - generic [ref=e653]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e3918]:
+                  - button "Edit Time tracking" [ref=e3919]
+                  - generic [ref=e659]: 0m
+                - cell "Edit Fix versions None" [ref=e3920]:
+                  - button "Edit Fix versions" [ref=e3921]
+                  - generic [ref=e662]: None
+                - cell [ref=e663]
+                - cell [ref=e664]
+                - cell [ref=e665]
+                - cell "Phoenix Platform" [ref=e666]:
+                  - generic [ref=e667]: Phoenix Platform
+                - cell "More actions for PHX-2053" [ref=e668]:
+                  - button "More actions for PHX-2053" [ref=e670] [cursor=pointer]:
+                    - generic [ref=e673]: More actions for PHX-2053
+              - row "Work item checkbox Launch Task PHX-2094 is not resolved Edit Summary portal-shell-0.1.0-test Unassigned- edit Assignee Unassigned Unassigned Edit Priority Medium Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions portal-shell-0.1.0-test Phoenix Platform More actions for PHX-2094" [ref=e3922]:
+                - cell "Work item checkbox" [ref=e675]:
+                  - checkbox "Work item checkbox" [ref=e678]
+                - cell "Launch Task PHX-2094 is not resolved Edit Summary portal-shell-0.1.0-test" [ref=e3923]:
+                  - generic [ref=e680]:
+                    - img "Launch Task" [ref=e682]
+                    - link "PHX-2094 is not resolved" [ref=e685] [cursor=pointer]:
+                      - /url: /browse/PHX-2094
+                      - text: PHX-2094
+                    - generic [ref=e686]:
+                      - button "Edit Summary" [ref=e3924]
+                      - generic [ref=e688]: portal-shell-0.1.0-test
+                - cell "Unassigned- edit Assignee Unassigned Unassigned" [ref=e3925]:
+                  - button "Unassigned- edit Assignee" [ref=e3926]
+                  - generic [ref=e692]:
+                    - img "Unassigned" [ref=e693]
+                    - generic [ref=e697]: Unassigned
+                - cell "Edit Priority Medium" [ref=e3927]:
+                  - button "Edit Priority" [ref=e3928]
+                  - generic [ref=e701]: Medium
+                - cell "Backlog - Change status" [ref=e702]:
+                  - button "Backlog - Change status" [ref=e705] [cursor=pointer]:
+                    - generic [ref=e710]:
+                      - text: Backlog
+                      - img [ref=e711]
+                - cell "Unresolved" [ref=e714]:
+                  - generic [ref=e715]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e3929]:
+                  - button "Edit Time tracking" [ref=e3930]
+                  - generic [ref=e721]: 0m
+                - cell "Edit Fix versions portal-shell-0.1.0-test" [ref=e3931]:
+                  - button "Edit Fix versions" [ref=e3932]
+                  - generic [ref=e729]: portal-shell-0.1.0-test
+                - cell [ref=e730]
+                - cell [ref=e731]
+                - cell [ref=e732]
+                - cell "Phoenix Platform" [ref=e733]:
+                  - generic [ref=e734]: Phoenix Platform
+                - cell "More actions for PHX-2094" [ref=e735]:
+                  - button "More actions for PHX-2094" [ref=e737] [cursor=pointer]:
+                    - generic [ref=e740]: More actions for PHX-2094
+              - row "Work item checkbox Story PHX-1238 is resolved Edit Summary Show a button to add number in the inbox based on entitlements Jean Bucad- edit Assignee More information about Jean Bucad Edit Priority Medium Closed - Change status Done Edit Time tracking 0m Edit Fix versions portal-shell-0.1.0-test Phoenix Platform More actions for PHX-1238" [ref=e3933]:
+                - cell "Work item checkbox" [ref=e742]:
+                  - checkbox "Work item checkbox" [ref=e745]
+                - cell "Story PHX-1238 is resolved Edit Summary Show a button to add number in the inbox based on entitlements" [ref=e3934]:
+                  - generic [ref=e747]:
+                    - img "Story" [ref=e749]
+                    - link "PHX-1238 is resolved" [ref=e752] [cursor=pointer]:
+                      - /url: /browse/PHX-1238
+                      - text: PHX-1238
+                    - generic [ref=e753]:
+                      - button "Edit Summary" [ref=e3935]
+                      - generic [ref=e755]: Show a button to add number in the inbox based on entitlements
+                - cell "Jean Bucad- edit Assignee More information about Jean Bucad" [ref=e3936]:
+                  - button "Jean Bucad- edit Assignee" [ref=e3937]
+                  - button "More information about Jean Bucad" [ref=e759]:
+                    - generic [ref=e762]:
+                      - img "Jean Bucad" [ref=e763]:
+                        - img [ref=e765]
+                      - generic [ref=e766]: Jean Bucad
+                - cell "Edit Priority Medium" [ref=e3938]:
+                  - button "Edit Priority" [ref=e3939]
+                  - generic [ref=e770]: Medium
+                - cell "Closed - Change status" [ref=e771]:
+                  - button "Closed - Change status" [ref=e774] [cursor=pointer]:
+                    - generic [ref=e779]:
+                      - text: Closed
+                      - img [ref=e780]
+                - cell "Done" [ref=e783]:
+                  - generic [ref=e784]: Done
+                - cell "Edit Time tracking 0m" [ref=e3940]:
+                  - button "Edit Time tracking" [ref=e3941]
+                  - generic [ref=e790]: 0m
+                - cell "Edit Fix versions portal-shell-0.1.0-test" [ref=e3942]:
+                  - button "Edit Fix versions" [ref=e3943]
+                  - generic [ref=e798]: portal-shell-0.1.0-test
+                - cell [ref=e799]
+                - cell [ref=e800]
+                - cell [ref=e801]
+                - cell "Phoenix Platform" [ref=e802]:
+                  - generic [ref=e803]: Phoenix Platform
+                - cell "More actions for PHX-1238" [ref=e804]:
+                  - button "More actions for PHX-1238" [ref=e806] [cursor=pointer]:
+                    - generic [ref=e809]: More actions for PHX-1238
+              - row "Work item checkbox Story PHX-1207 is resolved Edit Summary Create paywall screens for mobile-first user view Jean Bucad- edit Assignee More information about Jean Bucad Edit Priority Medium Closed - Change status Done Edit Time tracking 0m Edit Fix versions portal-shell-0.1.0-test Phoenix Platform More actions for PHX-1207" [ref=e3944]:
+                - cell "Work item checkbox" [ref=e811]:
+                  - checkbox "Work item checkbox" [ref=e814]
+                - cell "Story PHX-1207 is resolved Edit Summary Create paywall screens for mobile-first user view" [ref=e3945]:
+                  - generic [ref=e816]:
+                    - img "Story" [ref=e818]
+                    - link "PHX-1207 is resolved" [ref=e821] [cursor=pointer]:
+                      - /url: /browse/PHX-1207
+                      - text: PHX-1207
+                    - generic [ref=e822]:
+                      - button "Edit Summary" [ref=e3946]
+                      - generic [ref=e824]: Create paywall screens for mobile-first user view
+                - cell "Jean Bucad- edit Assignee More information about Jean Bucad" [ref=e3947]:
+                  - button "Jean Bucad- edit Assignee" [ref=e3948]
+                  - button "More information about Jean Bucad" [ref=e828]:
+                    - generic [ref=e831]:
+                      - img "Jean Bucad" [ref=e832]:
+                        - img [ref=e834]
+                      - generic [ref=e835]: Jean Bucad
+                - cell "Edit Priority Medium" [ref=e3949]:
+                  - button "Edit Priority" [ref=e3950]
+                  - generic [ref=e839]: Medium
+                - cell "Closed - Change status" [ref=e840]:
+                  - button "Closed - Change status" [ref=e843] [cursor=pointer]:
+                    - generic [ref=e848]:
+                      - text: Closed
+                      - img [ref=e849]
+                - cell "Done" [ref=e852]:
+                  - generic [ref=e853]: Done
+                - cell "Edit Time tracking 0m" [ref=e3951]:
+                  - button "Edit Time tracking" [ref=e3952]
+                  - generic [ref=e859]: 0m
+                - cell "Edit Fix versions portal-shell-0.1.0-test" [ref=e3953]:
+                  - button "Edit Fix versions" [ref=e3954]
+                  - generic [ref=e867]: portal-shell-0.1.0-test
+                - cell [ref=e868]
+                - cell [ref=e869]
+                - cell [ref=e870]
+                - cell "Phoenix Platform" [ref=e871]:
+                  - generic [ref=e872]: Phoenix Platform
+                - cell "More actions for PHX-1207" [ref=e873]:
+                  - button "More actions for PHX-1207" [ref=e875] [cursor=pointer]:
+                    - generic [ref=e878]: More actions for PHX-1207
+              - row "Work item checkbox Story PHX-1205 is resolved Edit Summary Update FaxViewer to stream from MSTOR endpoint Open work item PHX-1205 Jean Bucad- edit Assignee More information about Jean Bucad Edit Priority Medium Closed - Change status Done Edit Time tracking 0m Edit Fix versions portal-shell-0.1.0-test Phoenix Platform More actions for PHX-1205" [ref=e3955]:
+                - cell "Work item checkbox" [ref=e880]:
+                  - checkbox "Work item checkbox" [ref=e883]
+                - cell "Story PHX-1205 is resolved Edit Summary Update FaxViewer to stream from MSTOR endpoint Open work item PHX-1205" [ref=e3956]:
+                  - generic [ref=e885]:
+                    - img "Story" [ref=e887]
+                    - link "PHX-1205 is resolved" [ref=e890] [cursor=pointer]:
+                      - /url: /browse/PHX-1205
+                      - text: PHX-1205
+                    - generic [ref=e891]:
+                      - button "Edit Summary" [ref=e3957]
+                      - generic [ref=e893]: Update FaxViewer to stream from MSTOR endpoint
+                      - link "Open work item PHX-1205" [ref=e3959] [cursor=pointer]:
+                        - /url: /browse/PHX-1205
+                - cell "Jean Bucad- edit Assignee More information about Jean Bucad" [ref=e3961]:
+                  - button "Jean Bucad- edit Assignee" [ref=e3962]
+                  - button "More information about Jean Bucad" [ref=e897]:
+                    - generic [ref=e900]:
+                      - img "Jean Bucad" [ref=e901]:
+                        - img [ref=e903]
+                      - generic [ref=e904]: Jean Bucad
+                - cell "Edit Priority Medium" [ref=e3963]:
+                  - button "Edit Priority" [ref=e3964]
+                  - generic [ref=e908]: Medium
+                - cell "Closed - Change status" [ref=e909]:
+                  - button "Closed - Change status" [ref=e912] [cursor=pointer]:
+                    - generic [ref=e917]:
+                      - text: Closed
+                      - img [ref=e918]
+                - cell "Done" [ref=e921]:
+                  - generic [ref=e922]: Done
+                - cell "Edit Time tracking 0m" [ref=e3965]:
+                  - button "Edit Time tracking" [ref=e3966]
+                  - generic [ref=e928]: 0m
+                - cell "Edit Fix versions portal-shell-0.1.0-test" [ref=e3967]:
+                  - button "Edit Fix versions" [ref=e3968]
+                  - generic [ref=e936]: portal-shell-0.1.0-test
+                - cell [ref=e937]
+                - cell [ref=e938]
+                - cell [ref=e939]
+                - cell "Phoenix Platform" [ref=e940]:
+                  - generic [ref=e941]: Phoenix Platform
+                - cell "More actions for PHX-1205" [ref=e942]:
+                  - button "More actions for PHX-1205" [ref=e944] [cursor=pointer]:
+                    - generic [ref=e947]: More actions for PHX-1205
+              - row "Work item checkbox Bug PHX-2054 is not resolved Edit Summary Personal Plan Add User Prompt Upgrade Plan Paywall Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Showstopper In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2054" [ref=e3969]:
+                - cell "Work item checkbox" [ref=e949]:
+                  - checkbox "Work item checkbox" [ref=e952]
+                - cell "Bug PHX-2054 is not resolved Edit Summary Personal Plan Add User Prompt Upgrade Plan Paywall" [ref=e3970]:
+                  - generic [ref=e954]:
+                    - img "Bug" [ref=e956]
+                    - link "PHX-2054 is not resolved" [ref=e959] [cursor=pointer]:
+                      - /url: /browse/PHX-2054
+                      - text: PHX-2054
+                    - generic [ref=e960]:
+                      - button "Edit Summary" [ref=e3971]
+                      - generic [ref=e962]: Personal Plan Add User Prompt Upgrade Plan Paywall
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e3972]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e3973]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e966]:
+                    - generic [ref=e969]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e970]:
+                        - img [ref=e972]
+                      - generic [ref=e973]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Showstopper" [ref=e3974]:
+                  - button "Edit Priority" [ref=e3975]
+                  - generic [ref=e977]: Showstopper
+                - cell "In Progress - Change status" [ref=e978]:
+                  - button "In Progress - Change status" [ref=e981] [cursor=pointer]:
+                    - generic [ref=e986]:
+                      - text: In Progress
+                      - img [ref=e987]
+                - cell "Unresolved" [ref=e990]:
+                  - generic [ref=e991]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e3976]:
+                  - button "Edit Time tracking" [ref=e3977]
+                  - generic [ref=e997]: 0m
+                - cell "Edit Fix versions None" [ref=e3978]:
+                  - button "Edit Fix versions" [ref=e3979]
+                  - generic [ref=e1000]: None
+                - cell [ref=e1001]
+                - cell [ref=e1002]
+                - cell [ref=e1003]
+                - cell "Phoenix Platform" [ref=e1004]:
+                  - generic [ref=e1005]: Phoenix Platform
+                - cell "More actions for PHX-2054" [ref=e1006]:
+                  - button "More actions for PHX-2054" [ref=e1008] [cursor=pointer]:
+                    - generic [ref=e1011]: More actions for PHX-2054
+              - row "Work item checkbox Story PHX-1940 is not resolved Edit Summary [Stripe] - Integration Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None PHX-1409 Phoenix Platform More actions for PHX-1940" [ref=e3980]:
+                - cell "Work item checkbox" [ref=e1013]:
+                  - checkbox "Work item checkbox" [ref=e1016]
+                - cell "Story PHX-1940 is not resolved Edit Summary [Stripe] - Integration" [ref=e3981]:
+                  - generic [ref=e1018]:
+                    - img "Story" [ref=e1020]
+                    - link "PHX-1940 is not resolved" [ref=e1023] [cursor=pointer]:
+                      - /url: /browse/PHX-1940
+                      - text: PHX-1940
+                    - generic [ref=e1024]:
+                      - button "Edit Summary" [ref=e3982]
+                      - generic [ref=e1026]: "[Stripe] - Integration"
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e3983]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e3984]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1030]:
+                    - generic [ref=e1033]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1034]:
+                        - img [ref=e1036]
+                      - generic [ref=e1037]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e3985]:
+                  - button "Edit Priority" [ref=e3986]
+                  - generic [ref=e1041]: Medium
+                - cell "Ready to Review - Change status" [ref=e1042]:
+                  - button "Ready to Review - Change status" [ref=e1045] [cursor=pointer]:
+                    - generic [ref=e1050]:
+                      - text: Ready to Review
+                      - img [ref=e1051]
+                - cell "Unresolved" [ref=e1054]:
+                  - generic [ref=e1055]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e3987]:
+                  - button "Edit Time tracking" [ref=e3988]
+                  - generic [ref=e1061]: 0m
+                - cell "Edit Fix versions None" [ref=e3989]:
+                  - button "Edit Fix versions" [ref=e3990]
+                  - generic [ref=e1064]: None
+                - cell "PHX-1409" [ref=e1065]:
+                  - link "PHX-1409" [ref=e1071] [cursor=pointer]:
+                    - /url: https://consensus.atlassian.net/browse/PHX-1409
+                - cell [ref=e1072]
+                - cell [ref=e1073]
+                - cell "Phoenix Platform" [ref=e1074]:
+                  - generic [ref=e1075]: Phoenix Platform
+                - cell "More actions for PHX-1940" [ref=e1076]:
+                  - button "More actions for PHX-1940" [ref=e1078] [cursor=pointer]:
+                    - generic [ref=e1081]: More actions for PHX-1940
+              - row "Work item checkbox Bug PHX-2039 is not resolved Edit Summary Remove Cardholder Name Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2039" [ref=e3991]:
+                - cell "Work item checkbox" [ref=e1083]:
+                  - checkbox "Work item checkbox" [ref=e1086]
+                - cell "Bug PHX-2039 is not resolved Edit Summary Remove Cardholder Name" [ref=e3992]:
+                  - generic [ref=e1088]:
+                    - img "Bug" [ref=e1090]
+                    - link "PHX-2039 is not resolved" [ref=e1093] [cursor=pointer]:
+                      - /url: /browse/PHX-2039
+                      - text: PHX-2039
+                    - generic [ref=e1094]:
+                      - button "Edit Summary" [ref=e3993]
+                      - generic [ref=e1096]: Remove Cardholder Name
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e3994]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e3995]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1100]:
+                    - generic [ref=e1103]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1104]:
+                        - img [ref=e1106]
+                      - generic [ref=e1107]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e3996]:
+                  - button "Edit Priority" [ref=e3997]
+                  - generic [ref=e1111]: Critical
+                - cell "In Progress - Change status" [ref=e1112]:
+                  - button "In Progress - Change status" [ref=e1115] [cursor=pointer]:
+                    - generic [ref=e1120]:
+                      - text: In Progress
+                      - img [ref=e1121]
+                - cell "Unresolved" [ref=e1124]:
+                  - generic [ref=e1125]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e3998]:
+                  - button "Edit Time tracking" [ref=e3999]
+                  - generic [ref=e1131]: 0m
+                - cell "Edit Fix versions None" [ref=e4000]:
+                  - button "Edit Fix versions" [ref=e4001]
+                  - generic [ref=e1134]: None
+                - cell [ref=e1135]
+                - cell [ref=e1136]
+                - cell [ref=e1137]
+                - cell "Phoenix Platform" [ref=e1138]:
+                  - generic [ref=e1139]: Phoenix Platform
+                - cell "More actions for PHX-2039" [ref=e1140]:
+                  - button "More actions for PHX-2039" [ref=e1142] [cursor=pointer]:
+                    - generic [ref=e1145]: More actions for PHX-2039
+              - row "Work item checkbox Bug PHX-2046 is not resolved Edit Summary Remove Storage Tile Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2046" [ref=e4002]:
+                - cell "Work item checkbox" [ref=e1147]:
+                  - checkbox "Work item checkbox" [ref=e1150]
+                - cell "Bug PHX-2046 is not resolved Edit Summary Remove Storage Tile" [ref=e4003]:
+                  - generic [ref=e1152]:
+                    - img "Bug" [ref=e1154]
+                    - link "PHX-2046 is not resolved" [ref=e1157] [cursor=pointer]:
+                      - /url: /browse/PHX-2046
+                      - text: PHX-2046
+                    - generic [ref=e1158]:
+                      - button "Edit Summary" [ref=e4004]
+                      - generic [ref=e1160]: Remove Storage Tile
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4005]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4006]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1164]:
+                    - generic [ref=e1167]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1168]:
+                        - img [ref=e1170]
+                      - generic [ref=e1171]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e4007]:
+                  - button "Edit Priority" [ref=e4008]
+                  - generic [ref=e1175]: Critical
+                - cell "In Progress - Change status" [ref=e1176]:
+                  - button "In Progress - Change status" [ref=e1179] [cursor=pointer]:
+                    - generic [ref=e1184]:
+                      - text: In Progress
+                      - img [ref=e1185]
+                - cell "Unresolved" [ref=e1188]:
+                  - generic [ref=e1189]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4009]:
+                  - button "Edit Time tracking" [ref=e4010]
+                  - generic [ref=e1195]: 0m
+                - cell "Edit Fix versions None" [ref=e4011]:
+                  - button "Edit Fix versions" [ref=e4012]
+                  - generic [ref=e1198]: None
+                - cell [ref=e1199]
+                - cell [ref=e1200]
+                - cell [ref=e1201]
+                - cell "Phoenix Platform" [ref=e1202]:
+                  - generic [ref=e1203]: Phoenix Platform
+                - cell "More actions for PHX-2046" [ref=e1204]:
+                  - button "More actions for PHX-2046" [ref=e1206] [cursor=pointer]:
+                    - generic [ref=e1209]: More actions for PHX-2046
+              - row "Work item checkbox Bug PHX-2050 is not resolved Edit Summary Update the Billing MFE Plan Details Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2050" [ref=e4013]:
+                - cell "Work item checkbox" [ref=e1211]:
+                  - checkbox "Work item checkbox" [ref=e1214]
+                - cell "Bug PHX-2050 is not resolved Edit Summary Update the Billing MFE Plan Details" [ref=e4014]:
+                  - generic [ref=e1216]:
+                    - img "Bug" [ref=e1218]
+                    - link "PHX-2050 is not resolved" [ref=e1221] [cursor=pointer]:
+                      - /url: /browse/PHX-2050
+                      - text: PHX-2050
+                    - generic [ref=e1222]:
+                      - button "Edit Summary" [ref=e4015]
+                      - generic [ref=e1224]: Update the Billing MFE Plan Details
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4016]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4017]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1228]:
+                    - generic [ref=e1231]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1232]:
+                        - img [ref=e1234]
+                      - generic [ref=e1235]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e4018]:
+                  - button "Edit Priority" [ref=e4019]
+                  - generic [ref=e1239]: Critical
+                - cell "In Progress - Change status" [ref=e1240]:
+                  - button "In Progress - Change status" [ref=e1243] [cursor=pointer]:
+                    - generic [ref=e1248]:
+                      - text: In Progress
+                      - img [ref=e1249]
+                - cell "Unresolved" [ref=e1252]:
+                  - generic [ref=e1253]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4020]:
+                  - button "Edit Time tracking" [ref=e4021]
+                  - generic [ref=e1259]: 0m
+                - cell "Edit Fix versions None" [ref=e4022]:
+                  - button "Edit Fix versions" [ref=e4023]
+                  - generic [ref=e1262]: None
+                - cell [ref=e1263]
+                - cell [ref=e1264]
+                - cell [ref=e1265]
+                - cell "Phoenix Platform" [ref=e1266]:
+                  - generic [ref=e1267]: Phoenix Platform
+                - cell "More actions for PHX-2050" [ref=e1268]:
+                  - button "More actions for PHX-2050" [ref=e1270] [cursor=pointer]:
+                    - generic [ref=e1273]: More actions for PHX-2050
+              - row "Work item checkbox Story PHX-1803 is not resolved Edit Summary Update account status to Pending Cancelation in BPS Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1803" [ref=e4024]:
+                - cell "Work item checkbox" [ref=e1275]:
+                  - checkbox "Work item checkbox" [ref=e1278]
+                - cell "Story PHX-1803 is not resolved Edit Summary Update account status to Pending Cancelation in BPS" [ref=e4025]:
+                  - generic [ref=e1280]:
+                    - img "Story" [ref=e1282]
+                    - link "PHX-1803 is not resolved" [ref=e1285] [cursor=pointer]:
+                      - /url: /browse/PHX-1803
+                      - text: PHX-1803
+                    - generic [ref=e1286]:
+                      - button "Edit Summary" [ref=e4026]
+                      - generic [ref=e1288]: Update account status to Pending Cancelation in BPS
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4027]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4028]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1292]:
+                    - generic [ref=e1295]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1296]:
+                        - img [ref=e1298]
+                      - generic [ref=e1299]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4029]:
+                  - button "Edit Priority" [ref=e4030]
+                  - generic [ref=e1303]: Medium
+                - cell "In Progress - Change status" [ref=e1304]:
+                  - button "In Progress - Change status" [ref=e1307] [cursor=pointer]:
+                    - generic [ref=e1312]:
+                      - text: In Progress
+                      - img [ref=e1313]
+                - cell "Unresolved" [ref=e1316]:
+                  - generic [ref=e1317]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4031]:
+                  - button "Edit Time tracking" [ref=e4032]
+                  - generic [ref=e1323]: 0m
+                - cell "Edit Fix versions None" [ref=e4033]:
+                  - button "Edit Fix versions" [ref=e4034]
+                  - generic [ref=e1326]: None
+                - cell [ref=e1327]
+                - cell [ref=e1328]
+                - cell [ref=e1329]
+                - cell "Phoenix Platform" [ref=e1330]:
+                  - generic [ref=e1331]: Phoenix Platform
+                - cell "More actions for PHX-1803" [ref=e1332]:
+                  - button "More actions for PHX-1803" [ref=e1334] [cursor=pointer]:
+                    - generic [ref=e1337]: More actions for PHX-1803
+              - row "Work item checkbox Story PHX-1754 is not resolved Edit Summary Send a fax from the Phoenix portal (As a User) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1754" [ref=e4035]:
+                - cell "Work item checkbox" [ref=e1339]:
+                  - checkbox "Work item checkbox" [ref=e1342]
+                - cell "Story PHX-1754 is not resolved Edit Summary Send a fax from the Phoenix portal (As a User)" [ref=e4036]:
+                  - generic [ref=e1344]:
+                    - img "Story" [ref=e1346]
+                    - link "PHX-1754 is not resolved" [ref=e1349] [cursor=pointer]:
+                      - /url: /browse/PHX-1754
+                      - text: PHX-1754
+                    - generic [ref=e1350]:
+                      - button "Edit Summary" [ref=e4037]
+                      - generic [ref=e1352]: Send a fax from the Phoenix portal (As a User)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4038]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4039]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1356]:
+                    - generic [ref=e1359]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1360]:
+                        - img [ref=e1362]
+                      - generic [ref=e1363]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e4040]:
+                  - button "Edit Priority" [ref=e4041]
+                  - generic [ref=e1367]: Critical
+                - cell "Ready to Review - Change status" [ref=e1368]:
+                  - button "Ready to Review - Change status" [ref=e1371] [cursor=pointer]:
+                    - generic [ref=e1376]:
+                      - text: Ready to Review
+                      - img [ref=e1377]
+                - cell "Unresolved" [ref=e1380]:
+                  - generic [ref=e1381]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4042]:
+                  - button "Edit Time tracking" [ref=e4043]
+                  - generic [ref=e1387]: 0m
+                - cell "Edit Fix versions None" [ref=e4044]:
+                  - button "Edit Fix versions" [ref=e4045]
+                  - generic [ref=e1390]: None
+                - cell [ref=e1391]
+                - cell [ref=e1392]
+                - cell [ref=e1393]
+                - cell "Phoenix Platform" [ref=e1394]:
+                  - generic [ref=e1395]: Phoenix Platform
+                - cell "More actions for PHX-1754" [ref=e1396]:
+                  - button "More actions for PHX-1754" [ref=e1398] [cursor=pointer]:
+                    - generic [ref=e1401]: More actions for PHX-1754
+              - row "Work item checkbox Story PHX-1755 is not resolved Edit Summary Upload documents to include in a fax (As a User) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1755" [ref=e4046]:
+                - cell "Work item checkbox" [ref=e1403]:
+                  - checkbox "Work item checkbox" [ref=e1406]
+                - cell "Story PHX-1755 is not resolved Edit Summary Upload documents to include in a fax (As a User)" [ref=e4047]:
+                  - generic [ref=e1408]:
+                    - img "Story" [ref=e1410]
+                    - link "PHX-1755 is not resolved" [ref=e1413] [cursor=pointer]:
+                      - /url: /browse/PHX-1755
+                      - text: PHX-1755
+                    - generic [ref=e1414]:
+                      - button "Edit Summary" [ref=e4048]
+                      - generic [ref=e1416]: Upload documents to include in a fax (As a User)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4049]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4050]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1420]:
+                    - generic [ref=e1423]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1424]:
+                        - img [ref=e1426]
+                      - generic [ref=e1427]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e4051]:
+                  - button "Edit Priority" [ref=e4052]
+                  - generic [ref=e1431]: Critical
+                - cell "Ready to Review - Change status" [ref=e1432]:
+                  - button "Ready to Review - Change status" [ref=e1435] [cursor=pointer]:
+                    - generic [ref=e1440]:
+                      - text: Ready to Review
+                      - img [ref=e1441]
+                - cell "Unresolved" [ref=e1444]:
+                  - generic [ref=e1445]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4053]:
+                  - button "Edit Time tracking" [ref=e4054]
+                  - generic [ref=e1451]: 0m
+                - cell "Edit Fix versions None" [ref=e4055]:
+                  - button "Edit Fix versions" [ref=e4056]
+                  - generic [ref=e1454]: None
+                - cell [ref=e1455]
+                - cell [ref=e1456]
+                - cell [ref=e1457]
+                - cell "Phoenix Platform" [ref=e1458]:
+                  - generic [ref=e1459]: Phoenix Platform
+                - cell "More actions for PHX-1755" [ref=e1460]:
+                  - button "More actions for PHX-1755" [ref=e1462] [cursor=pointer]:
+                    - generic [ref=e1465]: More actions for PHX-1755
+              - row "Work item checkbox Story PHX-1759 is not resolved Edit Summary Broadcast send to multiple fax recipients (up to 50 recipients) (As a User) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1759" [ref=e4057]:
+                - cell "Work item checkbox" [ref=e1467]:
+                  - checkbox "Work item checkbox" [ref=e1470]
+                - cell "Story PHX-1759 is not resolved Edit Summary Broadcast send to multiple fax recipients (up to 50 recipients) (As a User)" [ref=e4058]:
+                  - generic [ref=e1472]:
+                    - img "Story" [ref=e1474]
+                    - link "PHX-1759 is not resolved" [ref=e1477] [cursor=pointer]:
+                      - /url: /browse/PHX-1759
+                      - text: PHX-1759
+                    - generic [ref=e1478]:
+                      - button "Edit Summary" [ref=e4059]
+                      - generic [ref=e1480]: Broadcast send to multiple fax recipients (up to 50 recipients) (As a User)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4060]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4061]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1484]:
+                    - generic [ref=e1487]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1488]:
+                        - img [ref=e1490]
+                      - generic [ref=e1491]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e4062]:
+                  - button "Edit Priority" [ref=e4063]
+                  - generic [ref=e1495]: Critical
+                - cell "Ready to Review - Change status" [ref=e1496]:
+                  - button "Ready to Review - Change status" [ref=e1499] [cursor=pointer]:
+                    - generic [ref=e1504]:
+                      - text: Ready to Review
+                      - img [ref=e1505]
+                - cell "Unresolved" [ref=e1508]:
+                  - generic [ref=e1509]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4064]:
+                  - button "Edit Time tracking" [ref=e4065]
+                  - generic [ref=e1515]: 0m
+                - cell "Edit Fix versions None" [ref=e4066]:
+                  - button "Edit Fix versions" [ref=e4067]
+                  - generic [ref=e1518]: None
+                - cell [ref=e1519]
+                - cell [ref=e1520]
+                - cell [ref=e1521]
+                - cell "Phoenix Platform" [ref=e1522]:
+                  - generic [ref=e1523]: Phoenix Platform
+                - cell "More actions for PHX-1759" [ref=e1524]:
+                  - button "More actions for PHX-1759" [ref=e1526] [cursor=pointer]:
+                    - generic [ref=e1529]: More actions for PHX-1759
+              - row "Work item checkbox Story PHX-1780 is not resolved Edit Summary View active subscription plan (As an Admin) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1780" [ref=e4068]:
+                - cell "Work item checkbox" [ref=e1531]:
+                  - checkbox "Work item checkbox" [ref=e1534]
+                - cell "Story PHX-1780 is not resolved Edit Summary View active subscription plan (As an Admin)" [ref=e4069]:
+                  - generic [ref=e1536]:
+                    - img "Story" [ref=e1538]
+                    - link "PHX-1780 is not resolved" [ref=e1541] [cursor=pointer]:
+                      - /url: /browse/PHX-1780
+                      - text: PHX-1780
+                    - generic [ref=e1542]:
+                      - button "Edit Summary" [ref=e4070]
+                      - generic [ref=e1544]: View active subscription plan (As an Admin)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4071]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4072]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1548]:
+                    - generic [ref=e1551]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1552]:
+                        - img [ref=e1554]
+                      - generic [ref=e1555]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4073]:
+                  - button "Edit Priority" [ref=e4074]
+                  - generic [ref=e1559]: Medium
+                - cell "Ready to Review - Change status" [ref=e1560]:
+                  - button "Ready to Review - Change status" [ref=e1563] [cursor=pointer]:
+                    - generic [ref=e1568]:
+                      - text: Ready to Review
+                      - img [ref=e1569]
+                - cell "Unresolved" [ref=e1572]:
+                  - generic [ref=e1573]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4075]:
+                  - button "Edit Time tracking" [ref=e4076]
+                  - generic [ref=e1579]: 0m
+                - cell "Edit Fix versions None" [ref=e4077]:
+                  - button "Edit Fix versions" [ref=e4078]
+                  - generic [ref=e1582]: None
+                - cell [ref=e1583]
+                - cell [ref=e1584]
+                - cell [ref=e1585]
+                - cell "Phoenix Platform" [ref=e1586]:
+                  - generic [ref=e1587]: Phoenix Platform
+                - cell "More actions for PHX-1780" [ref=e1588]:
+                  - button "More actions for PHX-1780" [ref=e1590] [cursor=pointer]:
+                    - generic [ref=e1593]: More actions for PHX-1780
+              - row "Work item checkbox Story PHX-1781 is not resolved Edit Summary View billing history and invoices (As an Admin) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1781" [ref=e4079]:
+                - cell "Work item checkbox" [ref=e1595]:
+                  - checkbox "Work item checkbox" [ref=e1598]
+                - cell "Story PHX-1781 is not resolved Edit Summary View billing history and invoices (As an Admin)" [ref=e4080]:
+                  - generic [ref=e1600]:
+                    - img "Story" [ref=e1602]
+                    - link "PHX-1781 is not resolved" [ref=e1605] [cursor=pointer]:
+                      - /url: /browse/PHX-1781
+                      - text: PHX-1781
+                    - generic [ref=e1606]:
+                      - button "Edit Summary" [ref=e4081]
+                      - generic [ref=e1608]: View billing history and invoices (As an Admin)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4082]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4083]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1612]:
+                    - generic [ref=e1615]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1616]:
+                        - img [ref=e1618]
+                      - generic [ref=e1619]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4084]:
+                  - button "Edit Priority" [ref=e4085]
+                  - generic [ref=e1623]: Medium
+                - cell "Ready to Review - Change status" [ref=e1624]:
+                  - button "Ready to Review - Change status" [ref=e1627] [cursor=pointer]:
+                    - generic [ref=e1632]:
+                      - text: Ready to Review
+                      - img [ref=e1633]
+                - cell "Unresolved" [ref=e1636]:
+                  - generic [ref=e1637]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4086]:
+                  - button "Edit Time tracking" [ref=e4087]
+                  - generic [ref=e1643]: 0m
+                - cell "Edit Fix versions None" [ref=e4088]:
+                  - button "Edit Fix versions" [ref=e4089]
+                  - generic [ref=e1646]: None
+                - cell [ref=e1647]
+                - cell [ref=e1648]
+                - cell [ref=e1649]
+                - cell "Phoenix Platform" [ref=e1650]:
+                  - generic [ref=e1651]: Phoenix Platform
+                - cell "More actions for PHX-1781" [ref=e1652]:
+                  - button "More actions for PHX-1781" [ref=e1654] [cursor=pointer]:
+                    - generic [ref=e1657]: More actions for PHX-1781
+              - row "Work item checkbox Story PHX-1782 is not resolved Edit Summary Download invoice receipt (As an Admin) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1782" [ref=e4090]:
+                - cell "Work item checkbox" [ref=e1659]:
+                  - checkbox "Work item checkbox" [ref=e1662]
+                - cell "Story PHX-1782 is not resolved Edit Summary Download invoice receipt (As an Admin)" [ref=e4091]:
+                  - generic [ref=e1664]:
+                    - img "Story" [ref=e1666]
+                    - link "PHX-1782 is not resolved" [ref=e1669] [cursor=pointer]:
+                      - /url: /browse/PHX-1782
+                      - text: PHX-1782
+                    - generic [ref=e1670]:
+                      - button "Edit Summary" [ref=e4092]
+                      - generic [ref=e1672]: Download invoice receipt (As an Admin)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4093]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4094]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1676]:
+                    - generic [ref=e1679]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1680]:
+                        - img [ref=e1682]
+                      - generic [ref=e1683]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4095]:
+                  - button "Edit Priority" [ref=e4096]
+                  - generic [ref=e1687]: Medium
+                - cell "Ready to Review - Change status" [ref=e1688]:
+                  - button "Ready to Review - Change status" [ref=e1691] [cursor=pointer]:
+                    - generic [ref=e1696]:
+                      - text: Ready to Review
+                      - img [ref=e1697]
+                - cell "Unresolved" [ref=e1700]:
+                  - generic [ref=e1701]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4097]:
+                  - button "Edit Time tracking" [ref=e4098]
+                  - generic [ref=e1707]: 0m
+                - cell "Edit Fix versions None" [ref=e4099]:
+                  - button "Edit Fix versions" [ref=e4100]
+                  - generic [ref=e1710]: None
+                - cell [ref=e1711]
+                - cell [ref=e1712]
+                - cell [ref=e1713]
+                - cell "Phoenix Platform" [ref=e1714]:
+                  - generic [ref=e1715]: Phoenix Platform
+                - cell "More actions for PHX-1782" [ref=e1716]:
+                  - button "More actions for PHX-1782" [ref=e1718] [cursor=pointer]:
+                    - generic [ref=e1721]: More actions for PHX-1782
+              - row "Work item checkbox Story PHX-1783 is not resolved Edit Summary Update payment method / credit card (As an Admin) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1783" [ref=e4101]:
+                - cell "Work item checkbox" [ref=e1723]:
+                  - checkbox "Work item checkbox" [ref=e1726]
+                - cell "Story PHX-1783 is not resolved Edit Summary Update payment method / credit card (As an Admin)" [ref=e4102]:
+                  - generic [ref=e1728]:
+                    - img "Story" [ref=e1730]
+                    - link "PHX-1783 is not resolved" [ref=e1733] [cursor=pointer]:
+                      - /url: /browse/PHX-1783
+                      - text: PHX-1783
+                    - generic [ref=e1734]:
+                      - button "Edit Summary" [ref=e4103]
+                      - generic [ref=e1736]: Update payment method / credit card (As an Admin)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4104]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4105]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1740]:
+                    - generic [ref=e1743]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1744]:
+                        - img [ref=e1746]
+                      - generic [ref=e1747]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4106]:
+                  - button "Edit Priority" [ref=e4107]
+                  - generic [ref=e1751]: Medium
+                - cell "Ready to Review - Change status" [ref=e1752]:
+                  - button "Ready to Review - Change status" [ref=e1755] [cursor=pointer]:
+                    - generic [ref=e1760]:
+                      - text: Ready to Review
+                      - img [ref=e1761]
+                - cell "Unresolved" [ref=e1764]:
+                  - generic [ref=e1765]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4108]:
+                  - button "Edit Time tracking" [ref=e4109]
+                  - generic [ref=e1771]: 0m
+                - cell "Edit Fix versions None" [ref=e4110]:
+                  - button "Edit Fix versions" [ref=e4111]
+                  - generic [ref=e1774]: None
+                - cell [ref=e1775]
+                - cell [ref=e1776]
+                - cell [ref=e1777]
+                - cell "Phoenix Platform" [ref=e1778]:
+                  - generic [ref=e1779]: Phoenix Platform
+                - cell "More actions for PHX-1783" [ref=e1780]:
+                  - button "More actions for PHX-1783" [ref=e1782] [cursor=pointer]:
+                    - generic [ref=e1785]: More actions for PHX-1783
+              - row "Work item checkbox Story PHX-1785 is not resolved Edit Summary View visual capacity/usage bar (As an Admin) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1785" [ref=e4112]:
+                - cell "Work item checkbox" [ref=e1787]:
+                  - checkbox "Work item checkbox" [ref=e1790]
+                - cell "Story PHX-1785 is not resolved Edit Summary View visual capacity/usage bar (As an Admin)" [ref=e4113]:
+                  - generic [ref=e1792]:
+                    - img "Story" [ref=e1794]
+                    - link "PHX-1785 is not resolved" [ref=e1797] [cursor=pointer]:
+                      - /url: /browse/PHX-1785
+                      - text: PHX-1785
+                    - generic [ref=e1798]:
+                      - button "Edit Summary" [ref=e4114]
+                      - generic [ref=e1800]: View visual capacity/usage bar (As an Admin)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4115]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4116]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1804]:
+                    - generic [ref=e1807]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1808]:
+                        - img [ref=e1810]
+                      - generic [ref=e1811]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4117]:
+                  - button "Edit Priority" [ref=e4118]
+                  - generic [ref=e1815]: Medium
+                - cell "Ready to Review - Change status" [ref=e1816]:
+                  - button "Ready to Review - Change status" [ref=e1819] [cursor=pointer]:
+                    - generic [ref=e1824]:
+                      - text: Ready to Review
+                      - img [ref=e1825]
+                - cell "Unresolved" [ref=e1828]:
+                  - generic [ref=e1829]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4119]:
+                  - button "Edit Time tracking" [ref=e4120]
+                  - generic [ref=e1835]: 0m
+                - cell "Edit Fix versions None" [ref=e4121]:
+                  - button "Edit Fix versions" [ref=e4122]
+                  - generic [ref=e1838]: None
+                - cell [ref=e1839]
+                - cell [ref=e1840]
+                - cell [ref=e1841]
+                - cell "Phoenix Platform" [ref=e1842]:
+                  - generic [ref=e1843]: Phoenix Platform
+                - cell "More actions for PHX-1785" [ref=e1844]:
+                  - button "More actions for PHX-1785" [ref=e1846] [cursor=pointer]:
+                    - generic [ref=e1849]: More actions for PHX-1785
+              - row "Work item checkbox Story PHX-1801 is not resolved Edit Summary Initiate account cancellation from the Phoenix portal (As an Admin) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Ready to Review - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1801" [ref=e4123]:
+                - cell "Work item checkbox" [ref=e1851]:
+                  - checkbox "Work item checkbox" [ref=e1854]
+                - cell "Story PHX-1801 is not resolved Edit Summary Initiate account cancellation from the Phoenix portal (As an Admin)" [ref=e4124]:
+                  - generic [ref=e1856]:
+                    - img "Story" [ref=e1858]
+                    - link "PHX-1801 is not resolved" [ref=e1861] [cursor=pointer]:
+                      - /url: /browse/PHX-1801
+                      - text: PHX-1801
+                    - generic [ref=e1862]:
+                      - button "Edit Summary" [ref=e4125]
+                      - generic [ref=e1864]: Initiate account cancellation from the Phoenix portal (As an Admin)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4126]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4127]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e1868]:
+                    - generic [ref=e1871]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e1872]:
+                        - img [ref=e1874]
+                      - generic [ref=e1875]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4128]:
+                  - button "Edit Priority" [ref=e4129]
+                  - generic [ref=e1879]: Medium
+                - cell "Ready to Review - Change status" [ref=e1880]:
+                  - button "Ready to Review - Change status" [ref=e1883] [cursor=pointer]:
+                    - generic [ref=e1888]:
+                      - text: Ready to Review
+                      - img [ref=e1889]
+                - cell "Unresolved" [ref=e1892]:
+                  - generic [ref=e1893]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4130]:
+                  - button "Edit Time tracking" [ref=e4131]
+                  - generic [ref=e1899]: 0m
+                - cell "Edit Fix versions None" [ref=e4132]:
+                  - button "Edit Fix versions" [ref=e4133]
+                  - generic [ref=e1902]: None
+                - cell [ref=e1903]
+                - cell [ref=e1904]
+                - cell [ref=e1905]
+                - cell "Phoenix Platform" [ref=e1906]:
+                  - generic [ref=e1907]: Phoenix Platform
+                - cell "More actions for PHX-1801" [ref=e1908]:
+                  - button "More actions for PHX-1801" [ref=e1910] [cursor=pointer]:
+                    - generic [ref=e1913]: More actions for PHX-1801
+              - row "Work item checkbox Bug PHX-1921 is not resolved Edit Summary Compose Fax → Unsupported File Formats Allowed When Uploaded via Drag-and-Drop Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Showstopper Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None PHX-1948 Phoenix Platform More actions for PHX-1921" [ref=e4134]:
+                - cell "Work item checkbox" [ref=e1915]:
+                  - checkbox "Work item checkbox" [ref=e1918]
+                - cell "Bug PHX-1921 is not resolved Edit Summary Compose Fax → Unsupported File Formats Allowed When Uploaded via Drag-and-Drop" [ref=e4135]:
+                  - generic [ref=e1920]:
+                    - img "Bug" [ref=e1922]
+                    - link "PHX-1921 is not resolved" [ref=e1925] [cursor=pointer]:
+                      - /url: /browse/PHX-1921
+                      - text: PHX-1921
+                    - generic [ref=e1926]:
+                      - button "Edit Summary" [ref=e4136]
+                      - generic [ref=e1928]: Compose Fax → Unsupported File Formats Allowed When Uploaded via Drag-and-Drop
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4137]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4138]
+                  - button "More information about Fred Lackey" [ref=e1932]:
+                    - generic [ref=e1935]:
+                      - img "Fred Lackey" [ref=e1936]:
+                        - img [ref=e1938]
+                      - generic [ref=e1939]: Fred Lackey
+                - cell "Edit Priority Showstopper" [ref=e4139]:
+                  - button "Edit Priority" [ref=e4140]
+                  - generic [ref=e1943]: Showstopper
+                - cell "Backlog - Change status" [ref=e1944]:
+                  - button "Backlog - Change status" [ref=e1947] [cursor=pointer]:
+                    - generic [ref=e1952]:
+                      - text: Backlog
+                      - img [ref=e1953]
+                - cell "Unresolved" [ref=e1956]:
+                  - generic [ref=e1957]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4141]:
+                  - button "Edit Time tracking" [ref=e4142]
+                  - generic [ref=e1963]: 0m
+                - cell "Edit Fix versions None" [ref=e4143]:
+                  - button "Edit Fix versions" [ref=e4144]
+                  - generic [ref=e1966]: None
+                - cell "PHX-1948" [ref=e1967]:
+                  - link "PHX-1948" [ref=e1973] [cursor=pointer]:
+                    - /url: https://consensus.atlassian.net/browse/PHX-1948
+                - cell [ref=e1974]
+                - cell [ref=e1975]
+                - cell "Phoenix Platform" [ref=e1976]:
+                  - generic [ref=e1977]: Phoenix Platform
+                - cell "More actions for PHX-1921" [ref=e1978]:
+                  - button "More actions for PHX-1921" [ref=e1980] [cursor=pointer]:
+                    - generic [ref=e1983]: More actions for PHX-1921
+              - row "Work item checkbox Bug PHX-2069 is not resolved Edit Summary Sent Fax not showing up in Sent Folder Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Showstopper To Do - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2069" [ref=e4145]:
+                - cell "Work item checkbox" [ref=e1985]:
+                  - checkbox "Work item checkbox" [ref=e1988]
+                - cell "Bug PHX-2069 is not resolved Edit Summary Sent Fax not showing up in Sent Folder" [ref=e4146]:
+                  - generic [ref=e1990]:
+                    - img "Bug" [ref=e1992]
+                    - link "PHX-2069 is not resolved" [ref=e1995] [cursor=pointer]:
+                      - /url: /browse/PHX-2069
+                      - text: PHX-2069
+                    - generic [ref=e1996]:
+                      - button "Edit Summary" [ref=e4147]
+                      - generic [ref=e1998]: Sent Fax not showing up in Sent Folder
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4148]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4149]
+                  - button "More information about Fred Lackey" [ref=e2002]:
+                    - generic [ref=e2005]:
+                      - img "Fred Lackey" [ref=e2006]:
+                        - img [ref=e2008]
+                      - generic [ref=e2009]: Fred Lackey
+                - cell "Edit Priority Showstopper" [ref=e4150]:
+                  - button "Edit Priority" [ref=e4151]
+                  - generic [ref=e2013]: Showstopper
+                - cell "To Do - Change status" [ref=e2014]:
+                  - button "To Do - Change status" [ref=e2017] [cursor=pointer]:
+                    - generic [ref=e2022]:
+                      - text: To Do
+                      - img [ref=e2023]
+                - cell "Unresolved" [ref=e2026]:
+                  - generic [ref=e2027]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4152]:
+                  - button "Edit Time tracking" [ref=e4153]
+                  - generic [ref=e2033]: 0m
+                - cell "Edit Fix versions None" [ref=e4154]:
+                  - button "Edit Fix versions" [ref=e4155]
+                  - generic [ref=e2036]: None
+                - cell [ref=e2037]
+                - cell [ref=e2038]
+                - cell [ref=e2039]
+                - cell "Phoenix Platform" [ref=e2040]:
+                  - generic [ref=e2041]: Phoenix Platform
+                - cell "More actions for PHX-2069" [ref=e2042]:
+                  - button "More actions for PHX-2069" [ref=e2044] [cursor=pointer]:
+                    - generic [ref=e2047]: More actions for PHX-2069
+              - row "Work item checkbox Bug PHX-1860 is not resolved Edit Summary Your Fax Number drop down does not pull up correct DID's associated with account Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Showstopper To Do - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1860" [ref=e4156]:
+                - cell "Work item checkbox" [ref=e2049]:
+                  - checkbox "Work item checkbox" [ref=e2052]
+                - cell "Bug PHX-1860 is not resolved Edit Summary Your Fax Number drop down does not pull up correct DID's associated with account" [ref=e4157]:
+                  - generic [ref=e2054]:
+                    - img "Bug" [ref=e2056]
+                    - link "PHX-1860 is not resolved" [ref=e2059] [cursor=pointer]:
+                      - /url: /browse/PHX-1860
+                      - text: PHX-1860
+                    - generic [ref=e2060]:
+                      - button "Edit Summary" [ref=e4158]
+                      - generic [ref=e2062]: Your Fax Number drop down does not pull up correct DID's associated with account
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4159]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4160]
+                  - button "More information about Fred Lackey" [ref=e2066]:
+                    - generic [ref=e2069]:
+                      - img "Fred Lackey" [ref=e2070]:
+                        - img [ref=e2072]
+                      - generic [ref=e2073]: Fred Lackey
+                - cell "Edit Priority Showstopper" [ref=e4161]:
+                  - button "Edit Priority" [ref=e4162]
+                  - generic [ref=e2077]: Showstopper
+                - cell "To Do - Change status" [ref=e2078]:
+                  - button "To Do - Change status" [ref=e2081] [cursor=pointer]:
+                    - generic [ref=e2086]:
+                      - text: To Do
+                      - img [ref=e2087]
+                - cell "Unresolved" [ref=e2090]:
+                  - generic [ref=e2091]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4163]:
+                  - button "Edit Time tracking" [ref=e4164]
+                  - generic [ref=e2097]: 0m
+                - cell "Edit Fix versions None" [ref=e4165]:
+                  - button "Edit Fix versions" [ref=e4166]
+                  - generic [ref=e2100]: None
+                - cell [ref=e2101]
+                - cell [ref=e2102]
+                - cell [ref=e2103]
+                - cell "Phoenix Platform" [ref=e2104]:
+                  - generic [ref=e2105]: Phoenix Platform
+                - cell "More actions for PHX-1860" [ref=e2106]:
+                  - button "More actions for PHX-1860" [ref=e2108] [cursor=pointer]:
+                    - generic [ref=e2111]: More actions for PHX-1860
+              - row "Work item checkbox Bug PHX-1867 is not resolved Edit Summary Fax Numbers listed in Inbox drop down filter are not relevant to the Account Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Showstopper To Do - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1867" [ref=e4167]:
+                - cell "Work item checkbox" [ref=e2113]:
+                  - checkbox "Work item checkbox" [ref=e2116]
+                - cell "Bug PHX-1867 is not resolved Edit Summary Fax Numbers listed in Inbox drop down filter are not relevant to the Account" [ref=e4168]:
+                  - generic [ref=e2118]:
+                    - img "Bug" [ref=e2120]
+                    - link "PHX-1867 is not resolved" [ref=e2123] [cursor=pointer]:
+                      - /url: /browse/PHX-1867
+                      - text: PHX-1867
+                    - generic [ref=e2124]:
+                      - button "Edit Summary" [ref=e4169]
+                      - generic [ref=e2126]: Fax Numbers listed in Inbox drop down filter are not relevant to the Account
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4170]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4171]
+                  - button "More information about Fred Lackey" [ref=e2130]:
+                    - generic [ref=e2133]:
+                      - img "Fred Lackey" [ref=e2134]:
+                        - img [ref=e2136]
+                      - generic [ref=e2137]: Fred Lackey
+                - cell "Edit Priority Showstopper" [ref=e4172]:
+                  - button "Edit Priority" [ref=e4173]
+                  - generic [ref=e2141]: Showstopper
+                - cell "To Do - Change status" [ref=e2142]:
+                  - button "To Do - Change status" [ref=e2145] [cursor=pointer]:
+                    - generic [ref=e2150]:
+                      - text: To Do
+                      - img [ref=e2151]
+                - cell "Unresolved" [ref=e2154]:
+                  - generic [ref=e2155]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4174]:
+                  - button "Edit Time tracking" [ref=e4175]
+                  - generic [ref=e2161]: 0m
+                - cell "Edit Fix versions None" [ref=e4176]:
+                  - button "Edit Fix versions" [ref=e4177]
+                  - generic [ref=e2164]: None
+                - cell [ref=e2165]
+                - cell [ref=e2166]
+                - cell [ref=e2167]
+                - cell "Phoenix Platform" [ref=e2168]:
+                  - generic [ref=e2169]: Phoenix Platform
+                - cell "More actions for PHX-1867" [ref=e2170]:
+                  - button "More actions for PHX-1867" [ref=e2172] [cursor=pointer]:
+                    - generic [ref=e2175]: More actions for PHX-1867
+              - row "Work item checkbox Bug PHX-1863 is not resolved Edit Summary Unable to send a fax (CORS issues?) Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Showstopper Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1863" [ref=e4178]:
+                - cell "Work item checkbox" [ref=e2177]:
+                  - checkbox "Work item checkbox" [ref=e2180]
+                - cell "Bug PHX-1863 is not resolved Edit Summary Unable to send a fax (CORS issues?)" [ref=e4179]:
+                  - generic [ref=e2182]:
+                    - img "Bug" [ref=e2184]
+                    - link "PHX-1863 is not resolved" [ref=e2187] [cursor=pointer]:
+                      - /url: /browse/PHX-1863
+                      - text: PHX-1863
+                    - generic [ref=e2188]:
+                      - button "Edit Summary" [ref=e4180]
+                      - generic [ref=e2190]: Unable to send a fax (CORS issues?)
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4181]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4182]
+                  - button "More information about Fred Lackey" [ref=e2194]:
+                    - generic [ref=e2197]:
+                      - img "Fred Lackey" [ref=e2198]:
+                        - img [ref=e2200]
+                      - generic [ref=e2201]: Fred Lackey
+                - cell "Edit Priority Showstopper" [ref=e4183]:
+                  - button "Edit Priority" [ref=e4184]
+                  - generic [ref=e2205]: Showstopper
+                - cell "Backlog - Change status" [ref=e2206]:
+                  - button "Backlog - Change status" [ref=e2209] [cursor=pointer]:
+                    - generic [ref=e2214]:
+                      - text: Backlog
+                      - img [ref=e2215]
+                - cell "Unresolved" [ref=e2218]:
+                  - generic [ref=e2219]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4185]:
+                  - button "Edit Time tracking" [ref=e4186]
+                  - generic [ref=e2225]: 0m
+                - cell "Edit Fix versions None" [ref=e4187]:
+                  - button "Edit Fix versions" [ref=e4188]
+                  - generic [ref=e2228]: None
+                - cell [ref=e2229]
+                - cell [ref=e2230]
+                - cell [ref=e2231]
+                - cell "Phoenix Platform" [ref=e2232]:
+                  - generic [ref=e2233]: Phoenix Platform
+                - cell "More actions for PHX-1863" [ref=e2234]:
+                  - button "More actions for PHX-1863" [ref=e2236] [cursor=pointer]:
+                    - generic [ref=e2239]: More actions for PHX-1863
+              - row "Work item checkbox Story PHX-447 is not resolved Edit Summary [Send Fax MFE] Implementation Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None PHX-460 See more +3 Phoenix Platform More actions for PHX-447" [ref=e4189]:
+                - cell "Work item checkbox" [ref=e2241]:
+                  - checkbox "Work item checkbox" [ref=e2244]
+                - cell "Story PHX-447 is not resolved Edit Summary [Send Fax MFE] Implementation" [ref=e4190]:
+                  - generic [ref=e2246]:
+                    - img "Story" [ref=e2248]
+                    - link "PHX-447 is not resolved" [ref=e2251] [cursor=pointer]:
+                      - /url: /browse/PHX-447
+                      - text: PHX-447
+                    - generic [ref=e2252]:
+                      - button "Edit Summary" [ref=e4191]
+                      - generic [ref=e2254]: "[Send Fax MFE] Implementation"
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4192]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4193]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e2258]:
+                    - generic [ref=e2261]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e2262]:
+                        - img [ref=e2264]
+                      - generic [ref=e2265]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4194]:
+                  - button "Edit Priority" [ref=e4195]
+                  - generic [ref=e2269]: Medium
+                - cell "Backlog - Change status" [ref=e2270]:
+                  - button "Backlog - Change status" [ref=e2273] [cursor=pointer]:
+                    - generic [ref=e2278]:
+                      - text: Backlog
+                      - img [ref=e2279]
+                - cell "Unresolved" [ref=e2282]:
+                  - generic [ref=e2283]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4196]:
+                  - button "Edit Time tracking" [ref=e4197]
+                  - generic [ref=e2289]: 0m
+                - cell "Edit Fix versions None" [ref=e4198]:
+                  - button "Edit Fix versions" [ref=e4199]
+                  - generic [ref=e2292]: None
+                - cell "PHX-460 See more +3" [ref=e2293]:
+                  - generic [ref=e2295]:
+                    - link "PHX-460" [ref=e2299] [cursor=pointer]:
+                      - /url: https://consensus.atlassian.net/browse/PHX-460
+                    - button "See more +3" [ref=e2300] [cursor=pointer]:
+                      - generic [ref=e2302]: "+3"
+                - cell [ref=e2303]
+                - cell [ref=e2304]
+                - cell "Phoenix Platform" [ref=e2305]:
+                  - generic [ref=e2306]: Phoenix Platform
+                - cell "More actions for PHX-447" [ref=e2307]:
+                  - button "More actions for PHX-447" [ref=e2309] [cursor=pointer]:
+                    - generic [ref=e2312]: More actions for PHX-447
+              - row "Work item checkbox Story PHX-1386 is not resolved Edit Summary Onboarding - Alan Haghy Alan Haghy- edit Assignee More information about Alan Haghy Edit Priority Medium Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1386" [ref=e4200]:
+                - cell "Work item checkbox" [ref=e2314]:
+                  - checkbox "Work item checkbox" [ref=e2317]
+                - cell "Story PHX-1386 is not resolved Edit Summary Onboarding - Alan Haghy" [ref=e4201]:
+                  - generic [ref=e2319]:
+                    - img "Story" [ref=e2321]
+                    - link "PHX-1386 is not resolved" [ref=e2324] [cursor=pointer]:
+                      - /url: /browse/PHX-1386
+                      - text: PHX-1386
+                    - generic [ref=e2325]:
+                      - button "Edit Summary" [ref=e4202]
+                      - generic [ref=e2327]: Onboarding - Alan Haghy
+                - cell "Alan Haghy- edit Assignee More information about Alan Haghy" [ref=e4203]:
+                  - button "Alan Haghy- edit Assignee" [ref=e4204]
+                  - button "More information about Alan Haghy" [ref=e2331]:
+                    - generic [ref=e2334]:
+                      - img "Alan Haghy" [ref=e2335]:
+                        - img [ref=e2337]
+                      - generic [ref=e2338]: Alan Haghy
+                - cell "Edit Priority Medium" [ref=e4205]:
+                  - button "Edit Priority" [ref=e4206]
+                  - generic [ref=e2342]: Medium
+                - cell "Backlog - Change status" [ref=e2343]:
+                  - button "Backlog - Change status" [ref=e2346] [cursor=pointer]:
+                    - generic [ref=e2351]:
+                      - text: Backlog
+                      - img [ref=e2352]
+                - cell "Unresolved" [ref=e2355]:
+                  - generic [ref=e2356]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4207]:
+                  - button "Edit Time tracking" [ref=e4208]
+                  - generic [ref=e2362]: 0m
+                - cell "Edit Fix versions None" [ref=e4209]:
+                  - button "Edit Fix versions" [ref=e4210]
+                  - generic [ref=e2365]: None
+                - cell [ref=e2366]
+                - cell [ref=e2367]
+                - cell [ref=e2368]
+                - cell "Phoenix Platform" [ref=e2369]:
+                  - generic [ref=e2370]: Phoenix Platform
+                - cell "More actions for PHX-1386" [ref=e2371]:
+                  - button "More actions for PHX-1386" [ref=e2373] [cursor=pointer]:
+                    - generic [ref=e2376]: More actions for PHX-1386
+              - row "Work item checkbox Story PHX-1348 is not resolved Edit Summary Implement Google scripts in portal Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Medium Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1348" [ref=e4211]:
+                - cell "Work item checkbox" [ref=e2378]:
+                  - checkbox "Work item checkbox" [ref=e2381]
+                - cell "Story PHX-1348 is not resolved Edit Summary Implement Google scripts in portal" [ref=e4212]:
+                  - generic [ref=e2383]:
+                    - img "Story" [ref=e2385]
+                    - link "PHX-1348 is not resolved" [ref=e2388] [cursor=pointer]:
+                      - /url: /browse/PHX-1348
+                      - text: PHX-1348
+                    - generic [ref=e2389]:
+                      - button "Edit Summary" [ref=e4213]
+                      - generic [ref=e2391]: Implement Google scripts in portal
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4214]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4215]
+                  - button "More information about Fred Lackey" [ref=e2395]:
+                    - generic [ref=e2398]:
+                      - img "Fred Lackey" [ref=e2399]:
+                        - img [ref=e2401]
+                      - generic [ref=e2402]: Fred Lackey
+                - cell "Edit Priority Medium" [ref=e4216]:
+                  - button "Edit Priority" [ref=e4217]
+                  - generic [ref=e2406]: Medium
+                - cell "Backlog - Change status" [ref=e2407]:
+                  - button "Backlog - Change status" [ref=e2410] [cursor=pointer]:
+                    - generic [ref=e2415]:
+                      - text: Backlog
+                      - img [ref=e2416]
+                - cell "Unresolved" [ref=e2419]:
+                  - generic [ref=e2420]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4218]:
+                  - button "Edit Time tracking" [ref=e4219]
+                  - generic [ref=e2426]: 0m
+                - cell "Edit Fix versions None" [ref=e4220]:
+                  - button "Edit Fix versions" [ref=e4221]
+                  - generic [ref=e2429]: None
+                - cell [ref=e2430]
+                - cell [ref=e2431]
+                - cell [ref=e2432]
+                - cell "Phoenix Platform" [ref=e2433]:
+                  - generic [ref=e2434]: Phoenix Platform
+                - cell "More actions for PHX-1348" [ref=e2435]:
+                  - button "More actions for PHX-1348" [ref=e2437] [cursor=pointer]:
+                    - generic [ref=e2440]: More actions for PHX-1348
+              - row "Work item checkbox Story PHX-1240 is not resolved Edit Summary Simplify Portal Build Process Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Medium In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1240" [ref=e4222]:
+                - cell "Work item checkbox" [ref=e2442]:
+                  - checkbox "Work item checkbox" [ref=e2445]
+                - cell "Story PHX-1240 is not resolved Edit Summary Simplify Portal Build Process" [ref=e4223]:
+                  - generic [ref=e2447]:
+                    - img "Story" [ref=e2449]
+                    - link "PHX-1240 is not resolved" [ref=e2452] [cursor=pointer]:
+                      - /url: /browse/PHX-1240
+                      - text: PHX-1240
+                    - generic [ref=e2453]:
+                      - button "Edit Summary" [ref=e4224]
+                      - generic [ref=e2455]: Simplify Portal Build Process
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4225]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4226]
+                  - button "More information about Fred Lackey" [ref=e2459]:
+                    - generic [ref=e2462]:
+                      - img "Fred Lackey" [ref=e2463]:
+                        - img [ref=e2465]
+                      - generic [ref=e2466]: Fred Lackey
+                - cell "Edit Priority Medium" [ref=e4227]:
+                  - button "Edit Priority" [ref=e4228]
+                  - generic [ref=e2470]: Medium
+                - cell "In Progress - Change status" [ref=e2471]:
+                  - button "In Progress - Change status" [ref=e2474] [cursor=pointer]:
+                    - generic [ref=e2479]:
+                      - text: In Progress
+                      - img [ref=e2480]
+                - cell "Unresolved" [ref=e2483]:
+                  - generic [ref=e2484]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4229]:
+                  - button "Edit Time tracking" [ref=e4230]
+                  - generic [ref=e2490]: 0m
+                - cell "Edit Fix versions None" [ref=e4231]:
+                  - button "Edit Fix versions" [ref=e4232]
+                  - generic [ref=e2493]: None
+                - cell [ref=e2494]
+                - cell [ref=e2495]
+                - cell [ref=e2496]
+                - cell "Phoenix Platform" [ref=e2497]:
+                  - generic [ref=e2498]: Phoenix Platform
+                - cell "More actions for PHX-1240" [ref=e2499]:
+                  - button "More actions for PHX-1240" [ref=e2501] [cursor=pointer]:
+                    - generic [ref=e2504]: More actions for PHX-1240
+              - row "Work item checkbox Story PHX-285 is not resolved Edit Summary Portal billing functionality Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None PHX-322 See more +1 Phoenix Platform More actions for PHX-285" [ref=e4233]:
+                - cell "Work item checkbox" [ref=e2506]:
+                  - checkbox "Work item checkbox" [ref=e2509]
+                - cell "Story PHX-285 is not resolved Edit Summary Portal billing functionality" [ref=e4234]:
+                  - generic [ref=e2511]:
+                    - img "Story" [ref=e2513]
+                    - link "PHX-285 is not resolved" [ref=e2516] [cursor=pointer]:
+                      - /url: /browse/PHX-285
+                      - text: PHX-285
+                    - generic [ref=e2517]:
+                      - button "Edit Summary" [ref=e4235]
+                      - generic [ref=e2519]: Portal billing functionality
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4236]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4237]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e2523]:
+                    - generic [ref=e2526]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e2527]:
+                        - img [ref=e2529]
+                      - generic [ref=e2530]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4238]:
+                  - button "Edit Priority" [ref=e4239]
+                  - generic [ref=e2534]: Medium
+                - cell "In Progress - Change status" [ref=e2535]:
+                  - button "In Progress - Change status" [ref=e2538] [cursor=pointer]:
+                    - generic [ref=e2543]:
+                      - text: In Progress
+                      - img [ref=e2544]
+                - cell "Unresolved" [ref=e2547]:
+                  - generic [ref=e2548]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4240]:
+                  - button "Edit Time tracking" [ref=e4241]
+                  - generic [ref=e2554]: 0m
+                - cell "Edit Fix versions None" [ref=e4242]:
+                  - button "Edit Fix versions" [ref=e4243]
+                  - generic [ref=e2557]: None
+                - cell "PHX-322 See more +1" [ref=e2558]:
+                  - generic [ref=e2560]:
+                    - link "PHX-322" [ref=e2564] [cursor=pointer]:
+                      - /url: https://consensus.atlassian.net/browse/PHX-322
+                    - button "See more +1" [ref=e2565] [cursor=pointer]:
+                      - generic [ref=e2567]: "+1"
+                - cell [ref=e2568]
+                - cell [ref=e2569]
+                - cell "Phoenix Platform" [ref=e2570]:
+                  - generic [ref=e2571]: Phoenix Platform
+                - cell "More actions for PHX-285" [ref=e2572]:
+                  - button "More actions for PHX-285" [ref=e2574] [cursor=pointer]:
+                    - generic [ref=e2577]: More actions for PHX-285
+              - row "Work item checkbox Story PHX-1328 is not resolved Edit Summary Portal Shell — Auth0 Integration and MFE Login Flow Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Medium Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1328" [ref=e4244]:
+                - cell "Work item checkbox" [ref=e2579]:
+                  - checkbox "Work item checkbox" [ref=e2582]
+                - cell "Story PHX-1328 is not resolved Edit Summary Portal Shell — Auth0 Integration and MFE Login Flow" [ref=e4245]:
+                  - generic [ref=e2584]:
+                    - img "Story" [ref=e2586]
+                    - link "PHX-1328 is not resolved" [ref=e2589] [cursor=pointer]:
+                      - /url: /browse/PHX-1328
+                      - text: PHX-1328
+                    - generic [ref=e2590]:
+                      - button "Edit Summary" [ref=e4246]
+                      - generic [ref=e2592]: Portal Shell — Auth0 Integration and MFE Login Flow
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4247]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4248]
+                  - button "More information about Fred Lackey" [ref=e2596]:
+                    - generic [ref=e2599]:
+                      - img "Fred Lackey" [ref=e2600]:
+                        - img [ref=e2602]
+                      - generic [ref=e2603]: Fred Lackey
+                - cell "Edit Priority Medium" [ref=e4249]:
+                  - button "Edit Priority" [ref=e4250]
+                  - generic [ref=e2607]: Medium
+                - cell "Backlog - Change status" [ref=e2608]:
+                  - button "Backlog - Change status" [ref=e2611] [cursor=pointer]:
+                    - generic [ref=e2616]:
+                      - text: Backlog
+                      - img [ref=e2617]
+                - cell "Unresolved" [ref=e2620]:
+                  - generic [ref=e2621]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4251]:
+                  - button "Edit Time tracking" [ref=e4252]
+                  - generic [ref=e2627]: 0m
+                - cell "Edit Fix versions None" [ref=e4253]:
+                  - button "Edit Fix versions" [ref=e4254]
+                  - generic [ref=e2630]: None
+                - cell [ref=e2631]
+                - cell [ref=e2632]
+                - cell [ref=e2633]
+                - cell "Phoenix Platform" [ref=e2634]:
+                  - generic [ref=e2635]: Phoenix Platform
+                - cell "More actions for PHX-1328" [ref=e2636]:
+                  - button "More actions for PHX-1328" [ref=e2638] [cursor=pointer]:
+                    - generic [ref=e2641]: More actions for PHX-1328
+              - row "Work item checkbox Story PHX-333 is not resolved Edit Summary Deployment of Portal UI via Neo Bahamut Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Medium In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-333" [ref=e4255]:
+                - cell "Work item checkbox" [ref=e2643]:
+                  - checkbox "Work item checkbox" [ref=e2646]
+                - cell "Story PHX-333 is not resolved Edit Summary Deployment of Portal UI via Neo Bahamut" [ref=e4256]:
+                  - generic [ref=e2648]:
+                    - img "Story" [ref=e2650]
+                    - link "PHX-333 is not resolved" [ref=e2653] [cursor=pointer]:
+                      - /url: /browse/PHX-333
+                      - text: PHX-333
+                    - generic [ref=e2654]:
+                      - button "Edit Summary" [ref=e4257]
+                      - generic [ref=e2656]: Deployment of Portal UI via Neo Bahamut
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4258]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4259]
+                  - button "More information about Fred Lackey" [ref=e2660]:
+                    - generic [ref=e2663]:
+                      - img "Fred Lackey" [ref=e2664]:
+                        - img [ref=e2666]
+                      - generic [ref=e2667]: Fred Lackey
+                - cell "Edit Priority Medium" [ref=e4260]:
+                  - button "Edit Priority" [ref=e4261]
+                  - generic [ref=e2671]: Medium
+                - cell "In Progress - Change status" [ref=e2672]:
+                  - button "In Progress - Change status" [ref=e2675] [cursor=pointer]:
+                    - generic [ref=e2680]:
+                      - text: In Progress
+                      - img [ref=e2681]
+                - cell "Unresolved" [ref=e2684]:
+                  - generic [ref=e2685]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4262]:
+                  - button "Edit Time tracking" [ref=e4263]
+                  - generic [ref=e2691]: 0m
+                - cell "Edit Fix versions None" [ref=e4264]:
+                  - button "Edit Fix versions" [ref=e4265]
+                  - generic [ref=e2694]: None
+                - cell [ref=e2695]
+                - cell [ref=e2696]
+                - cell [ref=e2697]
+                - cell "Phoenix Platform" [ref=e2698]:
+                  - generic [ref=e2699]: Phoenix Platform
+                - cell "More actions for PHX-333" [ref=e2700]:
+                  - button "More actions for PHX-333" [ref=e2702] [cursor=pointer]:
+                    - generic [ref=e2705]: More actions for PHX-333
+              - row "Work item checkbox Bug PHX-1992 is not resolved Edit Summary PDF preview not working Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Major Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1992" [ref=e4266]:
+                - cell "Work item checkbox" [ref=e2707]:
+                  - checkbox "Work item checkbox" [ref=e2710]
+                - cell "Bug PHX-1992 is not resolved Edit Summary PDF preview not working" [ref=e4267]:
+                  - generic [ref=e2712]:
+                    - img "Bug" [ref=e2714]
+                    - link "PHX-1992 is not resolved" [ref=e2717] [cursor=pointer]:
+                      - /url: /browse/PHX-1992
+                      - text: PHX-1992
+                    - generic [ref=e2718]:
+                      - button "Edit Summary" [ref=e4268]
+                      - generic [ref=e2720]: PDF preview not working
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4269]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4270]
+                  - button "More information about Fred Lackey" [ref=e2724]:
+                    - generic [ref=e2727]:
+                      - img "Fred Lackey" [ref=e2728]:
+                        - img [ref=e2730]
+                      - generic [ref=e2731]: Fred Lackey
+                - cell "Edit Priority Major" [ref=e4271]:
+                  - button "Edit Priority" [ref=e4272]
+                  - generic [ref=e2735]: Major
+                - cell "Backlog - Change status" [ref=e2736]:
+                  - button "Backlog - Change status" [ref=e2739] [cursor=pointer]:
+                    - generic [ref=e2744]:
+                      - text: Backlog
+                      - img [ref=e2745]
+                - cell "Unresolved" [ref=e2748]:
+                  - generic [ref=e2749]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4273]:
+                  - button "Edit Time tracking" [ref=e4274]
+                  - generic [ref=e2755]: 0m
+                - cell "Edit Fix versions None" [ref=e4275]:
+                  - button "Edit Fix versions" [ref=e4276]
+                  - generic [ref=e2758]: None
+                - cell [ref=e2759]
+                - cell [ref=e2760]
+                - cell [ref=e2761]
+                - cell "Phoenix Platform" [ref=e2762]:
+                  - generic [ref=e2763]: Phoenix Platform
+                - cell "More actions for PHX-1992" [ref=e2764]:
+                  - button "More actions for PHX-1992" [ref=e2766] [cursor=pointer]:
+                    - generic [ref=e2769]: More actions for PHX-1992
+              - row "Work item checkbox Task PHX-164 is not resolved Edit Summary Admin - Yurii Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-164" [ref=e4277]:
+                - cell "Work item checkbox" [ref=e2771]:
+                  - checkbox "Work item checkbox" [ref=e2774]
+                - cell "Task PHX-164 is not resolved Edit Summary Admin - Yurii" [ref=e4278]:
+                  - generic [ref=e2776]:
+                    - img "Task" [ref=e2778]
+                    - link "PHX-164 is not resolved" [ref=e2781] [cursor=pointer]:
+                      - /url: /browse/PHX-164
+                      - text: PHX-164
+                    - generic [ref=e2782]:
+                      - button "Edit Summary" [ref=e4279]
+                      - generic [ref=e2784]: Admin - Yurii
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4280]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4281]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e2788]:
+                    - generic [ref=e2791]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e2792]:
+                        - img [ref=e2794]
+                      - generic [ref=e2795]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4282]:
+                  - button "Edit Priority" [ref=e4283]
+                  - generic [ref=e2799]: Medium
+                - cell "Backlog - Change status" [ref=e2800]:
+                  - button "Backlog - Change status" [ref=e2803] [cursor=pointer]:
+                    - generic [ref=e2808]:
+                      - text: Backlog
+                      - img [ref=e2809]
+                - cell "Unresolved" [ref=e2812]:
+                  - generic [ref=e2813]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4284]:
+                  - button "Edit Time tracking" [ref=e4285]
+                  - generic [ref=e2819]: 0m
+                - cell "Edit Fix versions None" [ref=e4286]:
+                  - button "Edit Fix versions" [ref=e4287]
+                  - generic [ref=e2822]: None
+                - cell [ref=e2823]
+                - cell [ref=e2824]
+                - cell [ref=e2825]
+                - cell "Phoenix Platform" [ref=e2826]:
+                  - generic [ref=e2827]: Phoenix Platform
+                - cell "More actions for PHX-164" [ref=e2828]:
+                  - button "More actions for PHX-164" [ref=e2830] [cursor=pointer]:
+                    - generic [ref=e2833]: More actions for PHX-164
+              - row "Work item checkbox Story PHX-162 is not resolved Edit Summary Create template for mfe-send-fax Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None PHX-93 Phoenix Platform More actions for PHX-162" [ref=e4288]:
+                - cell "Work item checkbox" [ref=e2835]:
+                  - checkbox "Work item checkbox" [ref=e2838]
+                - cell "Story PHX-162 is not resolved Edit Summary Create template for mfe-send-fax" [ref=e4289]:
+                  - generic [ref=e2840]:
+                    - img "Story" [ref=e2842]
+                    - link "PHX-162 is not resolved" [ref=e2845] [cursor=pointer]:
+                      - /url: /browse/PHX-162
+                      - text: PHX-162
+                    - generic [ref=e2846]:
+                      - button "Edit Summary" [ref=e4290]
+                      - generic [ref=e2848]: Create template for mfe-send-fax
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4291]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4292]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e2852]:
+                    - generic [ref=e2855]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e2856]:
+                        - img [ref=e2858]
+                      - generic [ref=e2859]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4293]:
+                  - button "Edit Priority" [ref=e4294]
+                  - generic [ref=e2863]: Medium
+                - cell "In Progress - Change status" [ref=e2864]:
+                  - button "In Progress - Change status" [ref=e2867] [cursor=pointer]:
+                    - generic [ref=e2872]:
+                      - text: In Progress
+                      - img [ref=e2873]
+                - cell "Unresolved" [ref=e2876]:
+                  - generic [ref=e2877]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4295]:
+                  - button "Edit Time tracking" [ref=e4296]
+                  - generic [ref=e2883]: 0m
+                - cell "Edit Fix versions None" [ref=e4297]:
+                  - button "Edit Fix versions" [ref=e4298]
+                  - generic [ref=e2886]: None
+                - cell "PHX-93" [ref=e2887]:
+                  - link "PHX-93" [ref=e2893] [cursor=pointer]:
+                    - /url: https://consensus.atlassian.net/browse/PHX-93
+                - cell [ref=e2894]
+                - cell [ref=e2895]
+                - cell "Phoenix Platform" [ref=e2896]:
+                  - generic [ref=e2897]: Phoenix Platform
+                - cell "More actions for PHX-162" [ref=e2898]:
+                  - button "More actions for PHX-162" [ref=e2900] [cursor=pointer]:
+                    - generic [ref=e2903]: More actions for PHX-162
+              - row "Work item checkbox Bug PHX-2040 is not resolved Edit Summary Remove FriendlyCaptcha Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical To Do - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2040" [ref=e4299]:
+                - cell "Work item checkbox" [ref=e2905]:
+                  - checkbox "Work item checkbox" [ref=e2908]
+                - cell "Bug PHX-2040 is not resolved Edit Summary Remove FriendlyCaptcha" [ref=e4300]:
+                  - generic [ref=e2910]:
+                    - img "Bug" [ref=e2912]
+                    - link "PHX-2040 is not resolved" [ref=e2915] [cursor=pointer]:
+                      - /url: /browse/PHX-2040
+                      - text: PHX-2040
+                    - generic [ref=e2916]:
+                      - button "Edit Summary" [ref=e4301]
+                      - generic [ref=e2918]: Remove FriendlyCaptcha
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4302]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4303]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e2922]:
+                    - generic [ref=e2925]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e2926]:
+                        - img [ref=e2928]
+                      - generic [ref=e2929]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e4304]:
+                  - button "Edit Priority" [ref=e4305]
+                  - generic [ref=e2933]: Critical
+                - cell "To Do - Change status" [ref=e2934]:
+                  - button "To Do - Change status" [ref=e2937] [cursor=pointer]:
+                    - generic [ref=e2942]:
+                      - text: To Do
+                      - img [ref=e2943]
+                - cell "Unresolved" [ref=e2946]:
+                  - generic [ref=e2947]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4306]:
+                  - button "Edit Time tracking" [ref=e4307]
+                  - generic [ref=e2953]: 0m
+                - cell "Edit Fix versions None" [ref=e4308]:
+                  - button "Edit Fix versions" [ref=e4309]
+                  - generic [ref=e2956]: None
+                - cell [ref=e2957]
+                - cell [ref=e2958]
+                - cell [ref=e2959]
+                - cell "Phoenix Platform" [ref=e2960]:
+                  - generic [ref=e2961]: Phoenix Platform
+                - cell "More actions for PHX-2040" [ref=e2962]:
+                  - button "More actions for PHX-2040" [ref=e2964] [cursor=pointer]:
+                    - generic [ref=e2967]: More actions for PHX-2040
+              - row "Work item checkbox Bug PHX-2004 is not resolved Edit Summary Compose Fax → Save Contact Checkbox Does Not Save Recipient to Contacts Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Major Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2004" [ref=e4310]:
+                - cell "Work item checkbox" [ref=e2969]:
+                  - checkbox "Work item checkbox" [ref=e2972]
+                - cell "Bug PHX-2004 is not resolved Edit Summary Compose Fax → Save Contact Checkbox Does Not Save Recipient to Contacts" [ref=e4311]:
+                  - generic [ref=e2974]:
+                    - img "Bug" [ref=e2976]
+                    - link "PHX-2004 is not resolved" [ref=e2979] [cursor=pointer]:
+                      - /url: /browse/PHX-2004
+                      - text: PHX-2004
+                    - generic [ref=e2980]:
+                      - button "Edit Summary" [ref=e4312]
+                      - generic [ref=e2982]: Compose Fax → Save Contact Checkbox Does Not Save Recipient to Contacts
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4313]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4314]
+                  - button "More information about Fred Lackey" [ref=e2986]:
+                    - generic [ref=e2989]:
+                      - img "Fred Lackey" [ref=e2990]:
+                        - img [ref=e2992]
+                      - generic [ref=e2993]: Fred Lackey
+                - cell "Edit Priority Major" [ref=e4315]:
+                  - button "Edit Priority" [ref=e4316]
+                  - generic [ref=e2997]: Major
+                - cell "Backlog - Change status" [ref=e2998]:
+                  - button "Backlog - Change status" [ref=e3001] [cursor=pointer]:
+                    - generic [ref=e3006]:
+                      - text: Backlog
+                      - img [ref=e3007]
+                - cell "Unresolved" [ref=e3010]:
+                  - generic [ref=e3011]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4317]:
+                  - button "Edit Time tracking" [ref=e4318]
+                  - generic [ref=e3017]: 0m
+                - cell "Edit Fix versions None" [ref=e4319]:
+                  - button "Edit Fix versions" [ref=e4320]
+                  - generic [ref=e3020]: None
+                - cell [ref=e3021]
+                - cell [ref=e3022]
+                - cell [ref=e3023]
+                - cell "Phoenix Platform" [ref=e3024]:
+                  - generic [ref=e3025]: Phoenix Platform
+                - cell "More actions for PHX-2004" [ref=e3026]:
+                  - button "More actions for PHX-2004" [ref=e3028] [cursor=pointer]:
+                    - generic [ref=e3031]: More actions for PHX-2004
+              - row "Work item checkbox Story PHX-2033 is not resolved Edit Summary Validate phone number format via UI when sending a fax (As a User) Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Critical Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-2033" [ref=e4321]:
+                - cell "Work item checkbox" [ref=e3033]:
+                  - checkbox "Work item checkbox" [ref=e3036]
+                - cell "Story PHX-2033 is not resolved Edit Summary Validate phone number format via UI when sending a fax (As a User)" [ref=e4322]:
+                  - generic [ref=e3038]:
+                    - img "Story" [ref=e3040]
+                    - link "PHX-2033 is not resolved" [ref=e3043] [cursor=pointer]:
+                      - /url: /browse/PHX-2033
+                      - text: PHX-2033
+                    - generic [ref=e3044]:
+                      - button "Edit Summary" [ref=e4323]
+                      - generic [ref=e3046]: Validate phone number format via UI when sending a fax (As a User)
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4324]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4325]
+                  - button "More information about Fred Lackey" [ref=e3050]:
+                    - generic [ref=e3053]:
+                      - img "Fred Lackey" [ref=e3054]:
+                        - img [ref=e3056]
+                      - generic [ref=e3057]: Fred Lackey
+                - cell "Edit Priority Critical" [ref=e4326]:
+                  - button "Edit Priority" [ref=e4327]
+                  - generic [ref=e3061]: Critical
+                - cell "Backlog - Change status" [ref=e3062]:
+                  - button "Backlog - Change status" [ref=e3065] [cursor=pointer]:
+                    - generic [ref=e3070]:
+                      - text: Backlog
+                      - img [ref=e3071]
+                - cell "Unresolved" [ref=e3074]:
+                  - generic [ref=e3075]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4328]:
+                  - button "Edit Time tracking" [ref=e4329]
+                  - generic [ref=e3081]: 0m
+                - cell "Edit Fix versions None" [ref=e4330]:
+                  - button "Edit Fix versions" [ref=e4331]
+                  - generic [ref=e3084]: None
+                - cell [ref=e3085]
+                - cell [ref=e3086]
+                - cell [ref=e3087]
+                - cell "Phoenix Platform" [ref=e3088]:
+                  - generic [ref=e3089]: Phoenix Platform
+                - cell "More actions for PHX-2033" [ref=e3090]:
+                  - button "More actions for PHX-2033" [ref=e3092] [cursor=pointer]:
+                    - generic [ref=e3095]: More actions for PHX-2033
+              - row "Work item checkbox Story PHX-1757 is resolved Edit Summary Validate phone number format via UI when sending a fax (As a User) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical Closed - Change status Done Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1757" [ref=e4332]:
+                - cell "Work item checkbox" [ref=e3097]:
+                  - checkbox "Work item checkbox" [ref=e3100]
+                - cell "Story PHX-1757 is resolved Edit Summary Validate phone number format via UI when sending a fax (As a User)" [ref=e4333]:
+                  - generic [ref=e3102]:
+                    - img "Story" [ref=e3104]
+                    - link "PHX-1757 is resolved" [ref=e3107] [cursor=pointer]:
+                      - /url: /browse/PHX-1757
+                      - text: PHX-1757
+                    - generic [ref=e3108]:
+                      - button "Edit Summary" [ref=e4334]
+                      - generic [ref=e3110]: Validate phone number format via UI when sending a fax (As a User)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4335]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4336]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e3114]:
+                    - generic [ref=e3117]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e3118]:
+                        - img [ref=e3120]
+                      - generic [ref=e3121]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e4337]:
+                  - button "Edit Priority" [ref=e4338]
+                  - generic [ref=e3125]: Critical
+                - cell "Closed - Change status" [ref=e3126]:
+                  - button "Closed - Change status" [ref=e3129] [cursor=pointer]:
+                    - generic [ref=e3134]:
+                      - text: Closed
+                      - img [ref=e3135]
+                - cell "Done" [ref=e3138]:
+                  - generic [ref=e3139]: Done
+                - cell "Edit Time tracking 0m" [ref=e4339]:
+                  - button "Edit Time tracking" [ref=e4340]
+                  - generic [ref=e3145]: 0m
+                - cell "Edit Fix versions None" [ref=e4341]:
+                  - button "Edit Fix versions" [ref=e4342]
+                  - generic [ref=e3148]: None
+                - cell [ref=e3149]
+                - cell [ref=e3150]
+                - cell [ref=e3151]
+                - cell "Phoenix Platform" [ref=e3152]:
+                  - generic [ref=e3153]: Phoenix Platform
+                - cell "More actions for PHX-1757" [ref=e3154]:
+                  - button "More actions for PHX-1757" [ref=e3156] [cursor=pointer]:
+                    - generic [ref=e3159]: More actions for PHX-1757
+              - row "Work item checkbox Epic PHX-15 is not resolved Edit Summary Creation of a new portal to enable the features planned for the Phoenix project Fred Lackey- edit Assignee More information about Fred Lackey Edit Priority Major In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Edit Epic Status To Do Phoenix Platform More actions for PHX-15" [ref=e4343]:
+                - cell "Work item checkbox" [ref=e3161]:
+                  - checkbox "Work item checkbox" [ref=e3164]
+                - cell "Epic PHX-15 is not resolved Edit Summary Creation of a new portal to enable the features planned for the Phoenix project" [ref=e4344]:
+                  - generic [ref=e3166]:
+                    - img "Epic" [ref=e3168]
+                    - link "PHX-15 is not resolved" [ref=e3171] [cursor=pointer]:
+                      - /url: /browse/PHX-15
+                      - text: PHX-15
+                    - generic [ref=e3172]:
+                      - button "Edit Summary" [ref=e4345]
+                      - generic [ref=e3174]: Creation of a new portal to enable the features planned for the Phoenix project
+                - cell "Fred Lackey- edit Assignee More information about Fred Lackey" [ref=e4346]:
+                  - button "Fred Lackey- edit Assignee" [ref=e4347]
+                  - button "More information about Fred Lackey" [ref=e3178]:
+                    - generic [ref=e3181]:
+                      - img "Fred Lackey" [ref=e3182]:
+                        - img [ref=e3184]
+                      - generic [ref=e3185]: Fred Lackey
+                - cell "Edit Priority Major" [ref=e4348]:
+                  - button "Edit Priority" [ref=e4349]
+                  - generic [ref=e3189]: Major
+                - cell "In Progress - Change status" [ref=e3190]:
+                  - button "In Progress - Change status" [ref=e3193] [cursor=pointer]:
+                    - generic [ref=e3198]:
+                      - text: In Progress
+                      - img [ref=e3199]
+                - cell "Unresolved" [ref=e3202]:
+                  - generic [ref=e3203]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4350]:
+                  - button "Edit Time tracking" [ref=e4351]
+                  - generic [ref=e3209]: 0m
+                - cell "Edit Fix versions None" [ref=e4352]:
+                  - button "Edit Fix versions" [ref=e4353]
+                  - generic [ref=e3212]: None
+                - cell [ref=e3213]
+                - cell "Edit Epic Status To Do" [ref=e4354]:
+                  - button "Edit Epic Status" [ref=e4355]
+                  - generic [ref=e3216]: To Do
+                - cell [ref=e3217]
+                - cell "Phoenix Platform" [ref=e3218]:
+                  - generic [ref=e3219]: Phoenix Platform
+                - cell "More actions for PHX-15" [ref=e3220]:
+                  - button "More actions for PHX-15" [ref=e3222] [cursor=pointer]:
+                    - generic [ref=e3225]: More actions for PHX-15
+              - row "Work item checkbox Story PHX-1346 is resolved Edit Summary Add tabbed filters to inbox and outbox Jean Bucad- edit Assignee More information about Jean Bucad Edit Priority Medium Closed - Change status Done Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1346" [ref=e4356]:
+                - cell "Work item checkbox" [ref=e3227]:
+                  - checkbox "Work item checkbox" [ref=e3230]
+                - cell "Story PHX-1346 is resolved Edit Summary Add tabbed filters to inbox and outbox" [ref=e4357]:
+                  - generic [ref=e3232]:
+                    - img "Story" [ref=e3234]
+                    - link "PHX-1346 is resolved" [ref=e3237] [cursor=pointer]:
+                      - /url: /browse/PHX-1346
+                      - text: PHX-1346
+                    - generic [ref=e3238]:
+                      - button "Edit Summary" [ref=e4358]
+                      - generic [ref=e3240]: Add tabbed filters to inbox and outbox
+                - cell "Jean Bucad- edit Assignee More information about Jean Bucad" [ref=e4359]:
+                  - button "Jean Bucad- edit Assignee" [ref=e4360]
+                  - button "More information about Jean Bucad" [ref=e3244]:
+                    - generic [ref=e3247]:
+                      - img "Jean Bucad" [ref=e3248]:
+                        - img [ref=e3250]
+                      - generic [ref=e3251]: Jean Bucad
+                - cell "Edit Priority Medium" [ref=e4361]:
+                  - button "Edit Priority" [ref=e4362]
+                  - generic [ref=e3255]: Medium
+                - cell "Closed - Change status" [ref=e3256]:
+                  - button "Closed - Change status" [ref=e3259] [cursor=pointer]:
+                    - generic [ref=e3264]:
+                      - text: Closed
+                      - img [ref=e3265]
+                - cell "Done" [ref=e3268]:
+                  - generic [ref=e3269]: Done
+                - cell "Edit Time tracking 0m" [ref=e4363]:
+                  - button "Edit Time tracking" [ref=e4364]
+                  - generic [ref=e3275]: 0m
+                - cell "Edit Fix versions None" [ref=e4365]:
+                  - button "Edit Fix versions" [ref=e4366]
+                  - generic [ref=e3278]: None
+                - cell [ref=e3279]
+                - cell [ref=e3280]
+                - cell [ref=e3281]
+                - cell "Phoenix Platform" [ref=e3282]:
+                  - generic [ref=e3283]: Phoenix Platform
+                - cell "More actions for PHX-1346" [ref=e3284]:
+                  - button "More actions for PHX-1346" [ref=e3286] [cursor=pointer]:
+                    - generic [ref=e3289]: More actions for PHX-1346
+              - row "Work item checkbox Sub-task PHX-1979 is not resolved Edit Summary Map block reason codes to user-friendly messages in Outbox Jean Bucad- edit Assignee More information about Jean Bucad Edit Priority Medium Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1979" [ref=e4367]:
+                - cell "Work item checkbox" [ref=e3291]:
+                  - checkbox "Work item checkbox" [ref=e3294]
+                - cell "Sub-task PHX-1979 is not resolved Edit Summary Map block reason codes to user-friendly messages in Outbox" [ref=e4368]:
+                  - generic [ref=e3296]:
+                    - img "Sub-task" [ref=e3298]
+                    - link "PHX-1979 is not resolved" [ref=e3301] [cursor=pointer]:
+                      - /url: /browse/PHX-1979
+                      - text: PHX-1979
+                    - generic [ref=e3302]:
+                      - button "Edit Summary" [ref=e4369]
+                      - generic [ref=e3304]: Map block reason codes to user-friendly messages in Outbox
+                - cell "Jean Bucad- edit Assignee More information about Jean Bucad" [ref=e4370]:
+                  - button "Jean Bucad- edit Assignee" [ref=e4371]
+                  - button "More information about Jean Bucad" [ref=e3308]:
+                    - generic [ref=e3311]:
+                      - img "Jean Bucad" [ref=e3312]:
+                        - img [ref=e3314]
+                      - generic [ref=e3315]: Jean Bucad
+                - cell "Edit Priority Medium" [ref=e4372]:
+                  - button "Edit Priority" [ref=e4373]
+                  - generic [ref=e3319]: Medium
+                - cell "Backlog - Change status" [ref=e3320]:
+                  - button "Backlog - Change status" [ref=e3323] [cursor=pointer]:
+                    - generic [ref=e3328]:
+                      - text: Backlog
+                      - img [ref=e3329]
+                - cell "Unresolved" [ref=e3332]:
+                  - generic [ref=e3333]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4374]:
+                  - button "Edit Time tracking" [ref=e4375]
+                  - generic [ref=e3339]: 0m
+                - cell "Edit Fix versions None" [ref=e4376]:
+                  - button "Edit Fix versions" [ref=e4377]
+                  - generic [ref=e3342]: None
+                - cell [ref=e3343]
+                - cell [ref=e3344]
+                - cell [ref=e3345]
+                - cell "Phoenix Platform" [ref=e3346]:
+                  - generic [ref=e3347]: Phoenix Platform
+                - cell "More actions for PHX-1979" [ref=e3348]:
+                  - button "More actions for PHX-1979" [ref=e3350] [cursor=pointer]:
+                    - generic [ref=e3353]: More actions for PHX-1979
+              - row "Work item checkbox Story PHX-1738 is not resolved Edit Summary Users Management - Add Users and Assign DIDs to Users Jean Bucad- edit Assignee More information about Jean Bucad Edit Priority Medium In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1738" [ref=e4378]:
+                - cell "Work item checkbox" [ref=e3355]:
+                  - checkbox "Work item checkbox" [ref=e3358]
+                - cell "Story PHX-1738 is not resolved Edit Summary Users Management - Add Users and Assign DIDs to Users" [ref=e4379]:
+                  - generic [ref=e3360]:
+                    - img "Story" [ref=e3362]
+                    - link "PHX-1738 is not resolved" [ref=e3365] [cursor=pointer]:
+                      - /url: /browse/PHX-1738
+                      - text: PHX-1738
+                    - generic [ref=e3366]:
+                      - button "Edit Summary" [ref=e4380]
+                      - generic [ref=e3368]: Users Management - Add Users and Assign DIDs to Users
+                - cell "Jean Bucad- edit Assignee More information about Jean Bucad" [ref=e4381]:
+                  - button "Jean Bucad- edit Assignee" [ref=e4382]
+                  - button "More information about Jean Bucad" [ref=e3372]:
+                    - generic [ref=e3375]:
+                      - img "Jean Bucad" [ref=e3376]:
+                        - img [ref=e3378]
+                      - generic [ref=e3379]: Jean Bucad
+                - cell "Edit Priority Medium" [ref=e4383]:
+                  - button "Edit Priority" [ref=e4384]
+                  - generic [ref=e3383]: Medium
+                - cell "In Progress - Change status" [ref=e3384]:
+                  - button "In Progress - Change status" [ref=e3387] [cursor=pointer]:
+                    - generic [ref=e3392]:
+                      - text: In Progress
+                      - img [ref=e3393]
+                - cell "Unresolved" [ref=e3396]:
+                  - generic [ref=e3397]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4385]:
+                  - button "Edit Time tracking" [ref=e4386]
+                  - generic [ref=e3403]: 0m
+                - cell "Edit Fix versions None" [ref=e4387]:
+                  - button "Edit Fix versions" [ref=e4388]
+                  - generic [ref=e3406]: None
+                - cell [ref=e3407]
+                - cell [ref=e3408]
+                - cell [ref=e3409]
+                - cell "Phoenix Platform" [ref=e3410]:
+                  - generic [ref=e3411]: Phoenix Platform
+                - cell "More actions for PHX-1738" [ref=e3412]:
+                  - button "More actions for PHX-1738" [ref=e3414] [cursor=pointer]:
+                    - generic [ref=e3417]: More actions for PHX-1738
+              - row "Work item checkbox Story PHX-1618 is not resolved Edit Summary Create a URL for the mobile signup (paywall for new account) Jean Bucad- edit Assignee More information about Jean Bucad Edit Priority Medium In Progress - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1618" [ref=e4389]:
+                - cell "Work item checkbox" [ref=e3419]:
+                  - checkbox "Work item checkbox" [ref=e3422]
+                - cell "Story PHX-1618 is not resolved Edit Summary Create a URL for the mobile signup (paywall for new account)" [ref=e4390]:
+                  - generic [ref=e3424]:
+                    - img "Story" [ref=e3426]
+                    - link "PHX-1618 is not resolved" [ref=e3429] [cursor=pointer]:
+                      - /url: /browse/PHX-1618
+                      - text: PHX-1618
+                    - generic [ref=e3430]:
+                      - button "Edit Summary" [ref=e4391]
+                      - generic [ref=e3432]: Create a URL for the mobile signup (paywall for new account)
+                - cell "Jean Bucad- edit Assignee More information about Jean Bucad" [ref=e4392]:
+                  - button "Jean Bucad- edit Assignee" [ref=e4393]
+                  - button "More information about Jean Bucad" [ref=e3436]:
+                    - generic [ref=e3439]:
+                      - img "Jean Bucad" [ref=e3440]:
+                        - img [ref=e3442]
+                      - generic [ref=e3443]: Jean Bucad
+                - cell "Edit Priority Medium" [ref=e4394]:
+                  - button "Edit Priority" [ref=e4395]
+                  - generic [ref=e3447]: Medium
+                - cell "In Progress - Change status" [ref=e3448]:
+                  - button "In Progress - Change status" [ref=e3451] [cursor=pointer]:
+                    - generic [ref=e3456]:
+                      - text: In Progress
+                      - img [ref=e3457]
+                - cell "Unresolved" [ref=e3460]:
+                  - generic [ref=e3461]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4396]:
+                  - button "Edit Time tracking" [ref=e4397]
+                  - generic [ref=e3467]: 0m
+                - cell "Edit Fix versions None" [ref=e4398]:
+                  - button "Edit Fix versions" [ref=e4399]
+                  - generic [ref=e3470]: None
+                - cell [ref=e3471]
+                - cell [ref=e3472]
+                - cell [ref=e3473]
+                - cell "Phoenix Platform" [ref=e3474]:
+                  - generic [ref=e3475]: Phoenix Platform
+                - cell "More actions for PHX-1618" [ref=e3476]:
+                  - button "More actions for PHX-1618" [ref=e3478] [cursor=pointer]:
+                    - generic [ref=e3481]: More actions for PHX-1618
+              - row "Work item checkbox Story PHX-1409 is not resolved Edit Summary [Shell MFE] - Implement Auth Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Medium Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None PHX-460 See more +1 Phoenix Platform More actions for PHX-1409" [ref=e4400]:
+                - cell "Work item checkbox" [ref=e3483]:
+                  - checkbox "Work item checkbox" [ref=e3486]
+                - cell "Story PHX-1409 is not resolved Edit Summary [Shell MFE] - Implement Auth" [ref=e4401]:
+                  - generic [ref=e3488]:
+                    - img "Story" [ref=e3490]
+                    - link "PHX-1409 is not resolved" [ref=e3493] [cursor=pointer]:
+                      - /url: /browse/PHX-1409
+                      - text: PHX-1409
+                    - generic [ref=e3494]:
+                      - button "Edit Summary" [ref=e4402]
+                      - generic [ref=e3496]: "[Shell MFE] - Implement Auth"
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4403]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4404]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e3500]:
+                    - generic [ref=e3503]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e3504]:
+                        - img [ref=e3506]
+                      - generic [ref=e3507]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Medium" [ref=e4405]:
+                  - button "Edit Priority" [ref=e4406]
+                  - generic [ref=e3511]: Medium
+                - cell "Backlog - Change status" [ref=e3512]:
+                  - button "Backlog - Change status" [ref=e3515] [cursor=pointer]:
+                    - generic [ref=e3520]:
+                      - text: Backlog
+                      - img [ref=e3521]
+                - cell "Unresolved" [ref=e3524]:
+                  - generic [ref=e3525]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4407]:
+                  - button "Edit Time tracking" [ref=e4408]
+                  - generic [ref=e3531]: 0m
+                - cell "Edit Fix versions None" [ref=e4409]:
+                  - button "Edit Fix versions" [ref=e4410]
+                  - generic [ref=e3534]: None
+                - cell "PHX-460 See more +1" [ref=e3535]:
+                  - generic [ref=e3537]:
+                    - link "PHX-460" [ref=e3541] [cursor=pointer]:
+                      - /url: https://consensus.atlassian.net/browse/PHX-460
+                    - button "See more +1" [ref=e3542] [cursor=pointer]:
+                      - generic [ref=e3544]: "+1"
+                - cell [ref=e3545]
+                - cell [ref=e3546]
+                - cell "Phoenix Platform" [ref=e3547]:
+                  - generic [ref=e3548]: Phoenix Platform
+                - cell "More actions for PHX-1409" [ref=e3549]:
+                  - button "More actions for PHX-1409" [ref=e3551] [cursor=pointer]:
+                    - generic [ref=e3554]: More actions for PHX-1409
+              - row "Work item checkbox Story PHX-1928 is not resolved Edit Summary Create Contacts MFE for Phoenix Portal Jean Bucad- edit Assignee More information about Jean Bucad Edit Priority Medium Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1928" [ref=e4411]:
+                - cell "Work item checkbox" [ref=e3556]:
+                  - checkbox "Work item checkbox" [ref=e3559]
+                - cell "Story PHX-1928 is not resolved Edit Summary Create Contacts MFE for Phoenix Portal" [ref=e4412]:
+                  - generic [ref=e3561]:
+                    - img "Story" [ref=e3563]
+                    - link "PHX-1928 is not resolved" [ref=e3566] [cursor=pointer]:
+                      - /url: /browse/PHX-1928
+                      - text: PHX-1928
+                    - generic [ref=e3567]:
+                      - button "Edit Summary" [ref=e4413]
+                      - generic [ref=e3569]: Create Contacts MFE for Phoenix Portal
+                - cell "Jean Bucad- edit Assignee More information about Jean Bucad" [ref=e4414]:
+                  - button "Jean Bucad- edit Assignee" [ref=e4415]
+                  - button "More information about Jean Bucad" [ref=e3573]:
+                    - generic [ref=e3576]:
+                      - img "Jean Bucad" [ref=e3577]:
+                        - img [ref=e3579]
+                      - generic [ref=e3580]: Jean Bucad
+                - cell "Edit Priority Medium" [ref=e4416]:
+                  - button "Edit Priority" [ref=e4417]
+                  - generic [ref=e3584]: Medium
+                - cell "Backlog - Change status" [ref=e3585]:
+                  - button "Backlog - Change status" [ref=e3588] [cursor=pointer]:
+                    - generic [ref=e3593]:
+                      - text: Backlog
+                      - img [ref=e3594]
+                - cell "Unresolved" [ref=e3597]:
+                  - generic [ref=e3598]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4418]:
+                  - button "Edit Time tracking" [ref=e4419]
+                  - generic [ref=e3604]: 0m
+                - cell "Edit Fix versions None" [ref=e4420]:
+                  - button "Edit Fix versions" [ref=e4421]
+                  - generic [ref=e3607]: None
+                - cell [ref=e3608]
+                - cell [ref=e3609]
+                - cell [ref=e3610]
+                - cell "Phoenix Platform" [ref=e3611]:
+                  - generic [ref=e3612]: Phoenix Platform
+                - cell "More actions for PHX-1928" [ref=e3613]:
+                  - button "More actions for PHX-1928" [ref=e3615] [cursor=pointer]:
+                    - generic [ref=e3618]: More actions for PHX-1928
+              - 'row "Work item checkbox Bug PHX-1387 is resolved Edit Summary Incomplete API responses from /download/content endpoint Joan Mendoza (OSS)- edit Assignee More information about Joan Mendoza (OSS) Edit Priority Critical Closed - Change status Done Edit Time tracking 0m Edit Fix versions None Phoenix Platform: MSTOR More actions for PHX-1387" [ref=e4422]':
+                - cell "Work item checkbox" [ref=e3620]:
+                  - checkbox "Work item checkbox" [ref=e3623]
+                - cell "Bug PHX-1387 is resolved Edit Summary Incomplete API responses from /download/content endpoint" [ref=e4423]:
+                  - generic [ref=e3625]:
+                    - img "Bug" [ref=e3627]
+                    - link "PHX-1387 is resolved" [ref=e3630] [cursor=pointer]:
+                      - /url: /browse/PHX-1387
+                      - text: PHX-1387
+                    - generic [ref=e3631]:
+                      - button "Edit Summary" [ref=e4424]
+                      - generic [ref=e3633]: Incomplete API responses from /download/content endpoint
+                - cell "Joan Mendoza (OSS)- edit Assignee More information about Joan Mendoza (OSS)" [ref=e4425]:
+                  - button "Joan Mendoza (OSS)- edit Assignee" [ref=e4426]
+                  - button "More information about Joan Mendoza (OSS)" [ref=e3637]:
+                    - generic [ref=e3640]:
+                      - img "Joan Mendoza (OSS)" [ref=e3641]:
+                        - img [ref=e3643]
+                      - generic [ref=e3644]: Joan Mendoza (OSS)
+                - cell "Edit Priority Critical" [ref=e4427]:
+                  - button "Edit Priority" [ref=e4428]
+                  - generic [ref=e3648]: Critical
+                - cell "Closed - Change status" [ref=e3649]:
+                  - button "Closed - Change status" [ref=e3652] [cursor=pointer]:
+                    - generic [ref=e3657]:
+                      - text: Closed
+                      - img [ref=e3658]
+                - cell "Done" [ref=e3661]:
+                  - generic [ref=e3662]: Done
+                - cell "Edit Time tracking 0m" [ref=e4429]:
+                  - button "Edit Time tracking" [ref=e4430]
+                  - generic [ref=e3668]: 0m
+                - cell "Edit Fix versions None" [ref=e4431]:
+                  - button "Edit Fix versions" [ref=e4432]
+                  - generic [ref=e3671]: None
+                - cell [ref=e3672]
+                - cell [ref=e3673]
+                - cell [ref=e3674]
+                - 'cell "Phoenix Platform: MSTOR" [ref=e3675]':
+                  - generic [ref=e3676]: "Phoenix Platform: MSTOR"
+                - cell "More actions for PHX-1387" [ref=e3677]:
+                  - button "More actions for PHX-1387" [ref=e3679] [cursor=pointer]:
+                    - generic [ref=e3682]: More actions for PHX-1387
+              - row "Work item checkbox Story PHX-1758 is not resolved Edit Summary Send a fax to a saved contact/address book (As a User) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Major Backlog - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1758" [ref=e4433]:
+                - cell "Work item checkbox" [ref=e3684]:
+                  - checkbox "Work item checkbox" [ref=e3687]
+                - cell "Story PHX-1758 is not resolved Edit Summary Send a fax to a saved contact/address book (As a User)" [ref=e4434]:
+                  - generic [ref=e3689]:
+                    - img "Story" [ref=e3691]
+                    - link "PHX-1758 is not resolved" [ref=e3694] [cursor=pointer]:
+                      - /url: /browse/PHX-1758
+                      - text: PHX-1758
+                    - generic [ref=e3695]:
+                      - button "Edit Summary" [ref=e4435]
+                      - generic [ref=e3697]: Send a fax to a saved contact/address book (As a User)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4436]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4437]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e3701]:
+                    - generic [ref=e3704]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e3705]:
+                        - img [ref=e3707]
+                      - generic [ref=e3708]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Major" [ref=e4438]:
+                  - button "Edit Priority" [ref=e4439]
+                  - generic [ref=e3712]: Major
+                - cell "Backlog - Change status" [ref=e3713]:
+                  - button "Backlog - Change status" [ref=e3716] [cursor=pointer]:
+                    - generic [ref=e3721]:
+                      - text: Backlog
+                      - img [ref=e3722]
+                - cell "Unresolved" [ref=e3725]:
+                  - generic [ref=e3726]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4440]:
+                  - button "Edit Time tracking" [ref=e4441]
+                  - generic [ref=e3732]: 0m
+                - cell "Edit Fix versions None" [ref=e4442]:
+                  - button "Edit Fix versions" [ref=e4443]
+                  - generic [ref=e3735]: None
+                - cell [ref=e3736]
+                - cell [ref=e3737]
+                - cell [ref=e3738]
+                - cell "Phoenix Platform" [ref=e3739]:
+                  - generic [ref=e3740]: Phoenix Platform
+                - cell "More actions for PHX-1758" [ref=e3741]:
+                  - button "More actions for PHX-1758" [ref=e3743] [cursor=pointer]:
+                    - generic [ref=e3746]: More actions for PHX-1758
+              - row "Work item checkbox Story PHX-1756 is not resolved Edit Summary Track \"In Progress\" fax delivery status (As a User) Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS) Edit Priority Critical To Do - Change status Unresolved Edit Time tracking 0m Edit Fix versions None Phoenix Platform More actions for PHX-1756" [ref=e4444]:
+                - cell "Work item checkbox" [ref=e3748]:
+                  - checkbox "Work item checkbox" [ref=e3751]
+                - cell "Story PHX-1756 is not resolved Edit Summary Track \"In Progress\" fax delivery status (As a User)" [ref=e4445]:
+                  - generic [ref=e3753]:
+                    - img "Story" [ref=e3755]
+                    - link "PHX-1756 is not resolved" [ref=e3758] [cursor=pointer]:
+                      - /url: /browse/PHX-1756
+                      - text: PHX-1756
+                    - generic [ref=e3759]:
+                      - button "Edit Summary" [ref=e4446]
+                      - generic [ref=e3761]: Track "In Progress" fax delivery status (As a User)
+                - cell "Yurii Luchyshyn (OSS)- edit Assignee More information about Yurii Luchyshyn (OSS)" [ref=e4447]:
+                  - button "Yurii Luchyshyn (OSS)- edit Assignee" [ref=e4448]
+                  - button "More information about Yurii Luchyshyn (OSS)" [ref=e3765]:
+                    - generic [ref=e3768]:
+                      - img "Yurii Luchyshyn (OSS)" [ref=e3769]:
+                        - img [ref=e3771]
+                      - generic [ref=e3772]: Yurii Luchyshyn (OSS)
+                - cell "Edit Priority Critical" [ref=e4449]:
+                  - button "Edit Priority" [ref=e4450]
+                  - generic [ref=e3776]: Critical
+                - cell "To Do - Change status" [ref=e3777]:
+                  - button "To Do - Change status" [ref=e3780] [cursor=pointer]:
+                    - generic [ref=e3785]:
+                      - text: To Do
+                      - img [ref=e3786]
+                - cell "Unresolved" [ref=e3789]:
+                  - generic [ref=e3790]: Unresolved
+                - cell "Edit Time tracking 0m" [ref=e4451]:
+                  - button "Edit Time tracking" [ref=e4452]
+                  - generic [ref=e3796]: 0m
+                - cell "Edit Fix versions None" [ref=e4453]:
+                  - button "Edit Fix versions" [ref=e4454]
+                  - generic [ref=e3799]: None
+                - cell [ref=e3800]
+                - cell [ref=e3801]
+                - cell [ref=e3802]
+                - cell "Phoenix Platform" [ref=e3803]:
+                  - generic [ref=e3804]: Phoenix Platform
+                - cell "More actions for PHX-1756" [ref=e3805]:
+                  - button "More actions for PHX-1756" [ref=e3807] [cursor=pointer]:
+                    - generic [ref=e3810]: More actions for PHX-1756
+          - generic [ref=e3814]:
+            - generic [ref=e3815]: 50 of 153
+            - button "Refresh" [ref=e3816] [cursor=pointer]:
+              - generic [ref=e3819]: Refresh
+  - button "Rovo Button" [ref=e3825] [cursor=pointer]:
+    - generic [ref=e3826]: Rovo Button
+    - img [ref=e3827]

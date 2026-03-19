@@ -1,0 +1,703 @@
+- generic [ref=e2]:
+  - generic:
+    - generic: "Skip to:"
+    - list:
+      - listitem:
+        - link "Top Bar":
+          - /url: "#_R18skj5jal9_"
+      - listitem:
+        - link "Sidebar":
+          - /url: "#_R6p4kj5jal9_"
+      - listitem:
+        - link "Main Content":
+          - /url: "#_R1ckj5jal9_"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - button "Switch sites or apps" [ref=e9] [cursor=pointer]:
+            - generic [ref=e12]: Switch sites or apps
+          - link "Go to your Jira homepage" [ref=e14] [cursor=pointer]:
+            - /url: /jira
+            - generic [ref=e15]:
+              - img [ref=e18]
+              - generic [ref=e23]: Jira
+        - button "Collapse sidebar" [ref=e25] [cursor=pointer]:
+          - generic [ref=e27]: Collapse sidebar
+      - generic [ref=e28]:
+        - button [ref=e29] [cursor=pointer]:
+          - search [ref=e30]:
+            - combobox "Search, press enter to navigate to advanced search with your text query" [ref=e33]
+        - button "Create" [ref=e36] [cursor=pointer]:
+          - generic [ref=e39]: Create
+      - navigation "Actions" [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - button "Rovo Ask Rovo" [ref=e44] [cursor=pointer]:
+              - img "Rovo" [ref=e46]:
+                - img [ref=e47]
+              - generic [ref=e52]: Ask Rovo
+          - listitem [ref=e53]:
+            - generic [ref=e55]:
+              - button "Over 9 Notifications" [ref=e56] [cursor=pointer]:
+                - generic [ref=e59]: Over 9 Notifications
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: 9+
+          - listitem [ref=e62]:
+            - button "Help" [ref=e63] [cursor=pointer]:
+              - generic [ref=e66]: Help
+          - listitem [ref=e68]:
+            - button "Settings" [ref=e69] [cursor=pointer]:
+              - generic [ref=e72]: Settings
+          - listitem [ref=e73]:
+            - button "fred.lackey@consensus.com" [ref=e74] [cursor=pointer]:
+              - img "Account" [ref=e76]
+    - navigation "Sidebar" [ref=e77]:
+      - list [ref=e81]:
+        - listitem [ref=e82]:
+          - link "For you" [ref=e84] [cursor=pointer]:
+            - /url: /jira/for-you
+            - generic [ref=e89]: For you
+        - listitem [ref=e90]:
+          - button "Recent" [ref=e92] [cursor=pointer]:
+            - generic [ref=e96]: Recent
+        - listitem [ref=e97]:
+          - button "Starred" [ref=e99] [cursor=pointer]:
+            - generic [ref=e103]: Starred
+        - listitem [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e107]:
+              - button "Apps" [expanded] [ref=e108] [cursor=pointer]:
+                - generic [ref=e112]: Apps
+              - button "More actions for Apps" [ref=e114] [cursor=pointer]:
+                - generic [ref=e117]: More actions for Apps
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - group "Your apps" [ref=e120]:
+                  - paragraph [ref=e121]: Your apps
+                  - list [ref=e123]:
+                    - listitem [ref=e124]:
+                      - generic [ref=e125]:
+                        - link "Assigned items" [ref=e126] [cursor=pointer]:
+                          - /url: /plugins/servlet/ac/com.okapya.jira.checklist/assigned-items-page?project.key=PHX&project.id=18076
+                          - generic [ref=e131]: Assigned items
+                        - generic:
+                          - generic:
+                            - img
+                        - generic:
+                          - button "More actions":
+                            - generic [ref=e134] [cursor=pointer]: More actions
+                    - listitem [ref=e135]:
+                      - generic [ref=e136]:
+                        - link "GanttTable" [ref=e137] [cursor=pointer]:
+                          - /url: /jira/apps/0d9d96c7-3a58-4444-9592-60338db004f4/cac71076-44d8-49b4-a6de-35a38177e875
+                          - generic [ref=e142]: GanttTable
+                        - generic:
+                          - generic:
+                            - img
+                        - generic:
+                          - button "More actions":
+                            - generic [ref=e145] [cursor=pointer]: More actions
+                    - listitem [ref=e146]:
+                      - generic [ref=e147]:
+                        - link "Status Time Free" [ref=e148] [cursor=pointer]:
+                          - /url: /plugins/servlet/ac/io.bloompeak.status-time-free/st-report?project.key=PHX&project.id=18076
+                          - generic [ref=e153]: Status Time Free
+                        - generic:
+                          - generic:
+                            - img
+                        - generic:
+                          - button "More actions":
+                            - generic [ref=e156] [cursor=pointer]: More actions
+                    - listitem [ref=e157]:
+                      - generic [ref=e158]:
+                        - link "Tempo" [ref=e159] [cursor=pointer]:
+                          - /url: /plugins/servlet/ac/io.tempo.jira/tempo-app#!?project.key=PHX&project.id=18076
+                          - generic [ref=e164]: Tempo
+                        - generic:
+                          - generic:
+                            - img
+                        - generic:
+                          - button "More actions":
+                            - generic [ref=e167] [cursor=pointer]: More actions
+              - listitem
+              - listitem [ref=e184]:
+                - link "Explore more apps" [ref=e186] [cursor=pointer]:
+                  - /url: /jira/marketplace/discover
+                  - generic [ref=e191]: Explore more apps
+        - listitem [ref=e192]:
+          - generic [ref=e195]:
+            - button "Plans" [ref=e196] [cursor=pointer]:
+              - generic [ref=e200]: Plans
+            - generic:
+              - button "Create plan" [ref=e201] [cursor=pointer]:
+                - generic [ref=e204]: Create plan
+              - button "More actions for Plans":
+                - generic [ref=e207] [cursor=pointer]: More actions for Plans
+        - listitem [ref=e208]:
+          - generic [ref=e211]:
+            - button "Spaces" [ref=e212] [cursor=pointer]:
+              - generic [ref=e216]: Spaces
+            - generic:
+              - button "More actions for spaces":
+                - generic [ref=e219] [cursor=pointer]: More actions for spaces
+        - listitem [ref=e220]:
+          - generic [ref=e223]:
+            - button "Filters" [ref=e224] [cursor=pointer]:
+              - generic [ref=e228]: Filters
+            - generic:
+              - button "More actions for Filters":
+                - generic [ref=e231] [cursor=pointer]: More actions for Filters
+        - listitem [ref=e232]:
+          - generic [ref=e235]:
+            - button "Dashboards" [ref=e236] [cursor=pointer]:
+              - generic [ref=e240]: Dashboards
+            - generic:
+              - button "Create dashboard" [ref=e241] [cursor=pointer]:
+                - generic [ref=e244]: Create dashboard
+              - button "More actions for Dashboards":
+                - generic [ref=e247] [cursor=pointer]: More actions for Dashboards
+        - listitem [ref=e248]:
+          - generic [ref=e251]:
+            - button "Operations" [ref=e252] [cursor=pointer]:
+              - generic [ref=e256]: Operations
+            - generic:
+              - button "More actions for Operations":
+                - generic [ref=e259] [cursor=pointer]: More actions for Operations
+        - list [ref=e262]:
+          - listitem [ref=e264]:
+            - generic [ref=e265]:
+              - link "Assets , (opens new window)" [ref=e266] [cursor=pointer]:
+                - /url: https://consensus.atlassian.net/jira/assets?xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2NzM1MjYwMjYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e271]: Assets
+                - generic [ref=e272]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - img "Open external link icon"
+          - listitem [ref=e274]:
+            - generic [ref=e275]:
+              - link "Goals , (opens new window)" [ref=e276] [cursor=pointer]:
+                - /url: https://home.atlassian.com/o/8ca082dc-a111-1932-6k6b-9b82j1k3146b/goals?cloudId=5ec350fe-c444-4610-8b8d-6d50a4b1428d&xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2NzM1MjYwMjYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e281]: Goals
+                - generic [ref=e282]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - img "Open external link icon"
+          - listitem [ref=e284]:
+            - generic [ref=e285]:
+              - link "Teams , (opens new window)" [ref=e286] [cursor=pointer]:
+                - /url: https://home.atlassian.com/o/8ca082dc-a111-1932-6k6b-9b82j1k3146b/people?cloudId=5ec350fe-c444-4610-8b8d-6d50a4b1428d&xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2NzM1MjYwMjYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e291]: Teams
+                - generic [ref=e292]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - button "open menu":
+                  - generic [ref=e295] [cursor=pointer]: open menu
+              - generic:
+                - img "Open external link icon"
+        - listitem [ref=e297]:
+          - button "Customize sidebar" [ref=e299] [cursor=pointer]:
+            - generic [ref=e303]: Customize sidebar
+    - generic [ref=e305]:
+      - slider "Resize side navigation panel" [ref=e306]: "240"
+      - text: Resize side navigation panel
+    - main [ref=e308]:
+      - iframe [ref=e315]:
+        - generic [active] [ref=f1e1]:
+          - generic [ref=f1e2]:
+            - generic [ref=f1e4]:
+              - complementary [ref=f1e5]:
+                - generic [ref=f1e6]:
+                  - button "Timesheets" [ref=f1e10] [cursor=pointer]:
+                    - img [ref=f1e12]
+                  - generic [ref=f1e20]:
+                    - navigation "Primary" [ref=f1e21]:
+                      - list [ref=f1e22]:
+                        - listitem [ref=f1e24] [cursor=pointer]:
+                          - link "My Work" [ref=f1e25]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/my-work
+                            - img [ref=f1e27]
+                        - listitem [ref=f1e31] [cursor=pointer]:
+                          - link "Projects" [ref=f1e32]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/projects
+                            - img [ref=f1e34]
+                        - listitem [ref=f1e37] [cursor=pointer]:
+                          - link "Reports" [ref=f1e38]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports
+                            - img [ref=f1e40]
+                        - listitem [ref=f1e43] [cursor=pointer]:
+                          - link "Teams" [ref=f1e44]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/teams
+                            - img [ref=f1e46]
+                        - listitem [ref=f1e49] [cursor=pointer]:
+                          - link "Accounts" [ref=f1e50]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/accounts
+                            - img [ref=f1e52]
+                    - navigation "Utility" [ref=f1e55]:
+                      - list [ref=f1e56]:
+                        - listitem [ref=f1e58] [cursor=pointer]:
+                          - link "Apps" [ref=f1e59]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/apps?tab=products
+                            - img [ref=f1e61]
+                        - listitem [ref=f1e64] [cursor=pointer]:
+                          - button "Quickstart Guide" [ref=f1e65]:
+                            - img [ref=f1e67]
+                        - listitem [ref=f1e70] [cursor=pointer]:
+                          - button "Tempo Help" [ref=f1e71]:
+                            - img [ref=f1e73]
+                        - listitem [ref=f1e76] [cursor=pointer]:
+                          - link "Settings" [ref=f1e77]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/configuration
+                            - img "Settings" [ref=f1e79]
+              - generic [ref=f1e81]:
+                - generic [ref=f1e82]:
+                  - generic [ref=f1e83]:
+                    - img "User Avatar" [ref=f1e86]
+                    - generic [ref=f1e151]:
+                      - text: Fred Lackey
+                      - img [ref=f1e153]
+                  - navigation [ref=f1e89]:
+                    - generic [ref=f1e90]:
+                      - button "Tempo Apps" [ref=f1e91] [cursor=pointer]:
+                        - generic [ref=f1e92]:
+                          - img [ref=f1e94]
+                          - generic [ref=f1e96]: Tempo Apps
+                      - generic [ref=f1e99]:
+                        - button "Submit Period 01/Jan/26" [ref=f1e100] [cursor=pointer]:
+                          - generic [ref=f1e102]: Submit Period 01/Jan/26
+                        - button "Open" [ref=f1e103] [cursor=pointer]:
+                          - img [ref=f1e107]
+                    - link "Calendar View" [ref=f1e110] [cursor=pointer]:
+                      - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/my-work/week?date=&type=TIME
+                      - text: Calendar
+                    - link "List View" [ref=f1e112] [cursor=pointer]:
+                      - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/my-work/week?date=&type=LIST
+                      - text: List
+                    - link "Timesheet View. Currently selected" [ref=f1e155] [cursor=pointer]:
+                      - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/my-work/timesheet
+                      - text: Timesheet
+                - generic [ref=f1e156]:
+                  - generic [ref=f1e158]:
+                    - button [ref=f1e159] [cursor=pointer]:
+                      - img [ref=f1e163]
+                    - button "01/Mar/26 - 31/Mar/26" [ref=f1e165] [cursor=pointer]:
+                      - generic [ref=f1e167]:
+                        - img [ref=f1e170]
+                        - text: 01/Mar/26 - 31/Mar/26
+                    - button [ref=f1e177] [cursor=pointer]:
+                      - img [ref=f1e181]
+                  - generic [ref=f1e183]:
+                    - button "Show Issue Lists" [ref=f1e190] [cursor=pointer]:
+                      - generic [ref=f1e192]:
+                        - text: Show Issue Lists
+                        - img [ref=f1e194]
+                    - generic [ref=f1e198]:
+                      - generic [ref=f1e199]: Group By
+                      - generic "Issue" [ref=f1e201]:
+                        - generic [ref=f1e202]:
+                          - strong [ref=f1e203]: "1."
+                          - text: Issue
+                      - img [ref=f1e205]
+                    - button "Days" [ref=f1e208] [cursor=pointer]:
+                      - generic [ref=f1e209]:
+                        - generic [ref=f1e210]: Days
+                        - img [ref=f1e213]
+                  - generic [ref=f1e215]:
+                    - generic [ref=f1e217]:
+                      - text: Total Hours
+                      - strong [ref=f1e218]: "77.98"
+                      - text: of
+                      - strong [ref=f1e219]: "176"
+                    - button [ref=f1e222] [cursor=pointer]:
+                      - img [ref=f1e226]
+                    - button "Log Time" [ref=f1e230] [cursor=pointer]:
+                      - generic [ref=f1e232]: Log Time
+                - generic [ref=f1e234]:
+                  - generic [ref=f1e235]:
+                    - generic [ref=f1e236]:
+                      - generic [ref=f1e237]:
+                        - generic "Sort" [ref=f1e239]:
+                          - generic [ref=f1e240]: Issue
+                          - img "Sorting Ascending Icon" [ref=f1e242]
+                        - generic "Sort by Key" [ref=f1e253]:
+                          - generic [ref=f1e254]: Key
+                        - generic "Sort by Logged Hours" [ref=f1e256]:
+                          - generic [ref=f1e257]: Logged
+                      - generic [ref=f1e258]:
+                        - generic [ref=f1e260]:
+                          - generic "01" [ref=f1e261]
+                          - generic [ref=f1e262]: Sun
+                        - generic [ref=f1e264]:
+                          - generic "02" [ref=f1e265]
+                          - generic [ref=f1e266]: Mon
+                        - generic [ref=f1e268]:
+                          - generic "03" [ref=f1e269]
+                          - generic [ref=f1e270]: Tue
+                        - generic [ref=f1e272]:
+                          - generic "04" [ref=f1e273]
+                          - generic [ref=f1e274]: Wed
+                        - generic [ref=f1e276]:
+                          - generic "05" [ref=f1e277]
+                          - generic [ref=f1e278]: Thu
+                        - generic [ref=f1e280]:
+                          - generic "06" [ref=f1e281]
+                          - generic [ref=f1e282]: Fri
+                        - generic [ref=f1e284]:
+                          - generic "07" [ref=f1e285]
+                          - generic [ref=f1e286]: Sat
+                        - generic [ref=f1e288]:
+                          - generic "08" [ref=f1e289]
+                          - generic [ref=f1e290]: Sun
+                        - generic [ref=f1e292]:
+                          - generic "09" [ref=f1e293]
+                          - generic [ref=f1e294]: Mon
+                        - generic [ref=f1e296]:
+                          - generic "10" [ref=f1e297]
+                          - generic [ref=f1e298]: Tue
+                        - generic [ref=f1e300]:
+                          - generic "11" [ref=f1e301]
+                          - generic [ref=f1e302]: Wed
+                        - generic [ref=f1e304]:
+                          - generic "12" [ref=f1e305]
+                          - generic [ref=f1e306]: Thu
+                        - generic [ref=f1e308]:
+                          - generic "13" [ref=f1e309]
+                          - generic [ref=f1e310]: Fri
+                        - generic [ref=f1e312]:
+                          - generic "14" [ref=f1e313]
+                          - generic [ref=f1e314]: Sat
+                        - generic [ref=f1e316]:
+                          - generic "15" [ref=f1e317]
+                          - generic [ref=f1e318]: Sun
+                        - generic [ref=f1e320]:
+                          - generic "16" [ref=f1e321]
+                          - generic [ref=f1e322]: Mon
+                        - generic [ref=f1e324]:
+                          - generic "17" [ref=f1e325]
+                          - generic [ref=f1e326]: Tue
+                        - generic [ref=f1e328]:
+                          - generic "18" [ref=f1e329]
+                          - generic [ref=f1e330]: Wed
+                        - generic [ref=f1e332]:
+                          - generic "19" [ref=f1e333]
+                          - generic [ref=f1e334]: Thu
+                        - generic [ref=f1e336]:
+                          - generic "20" [ref=f1e337]
+                          - generic [ref=f1e338]: Fri
+                        - generic [ref=f1e340]:
+                          - generic "21" [ref=f1e341]
+                          - generic [ref=f1e342]: Sat
+                        - generic [ref=f1e344]:
+                          - generic "22" [ref=f1e345]
+                          - generic [ref=f1e346]: Sun
+                        - generic [ref=f1e348]:
+                          - generic "23" [ref=f1e349]
+                          - generic [ref=f1e350]: Mon
+                        - generic [ref=f1e352]:
+                          - generic "24" [ref=f1e353]
+                          - generic [ref=f1e354]: Tue
+                        - generic [ref=f1e356]:
+                          - generic "25" [ref=f1e357]
+                          - generic [ref=f1e358]: Wed
+                        - generic [ref=f1e360]:
+                          - generic "26" [ref=f1e361]
+                          - generic [ref=f1e362]: Thu
+                        - generic [ref=f1e364]:
+                          - generic "27" [ref=f1e365]
+                          - generic [ref=f1e366]: Fri
+                        - generic [ref=f1e368]:
+                          - generic "28" [ref=f1e369]
+                          - generic [ref=f1e370]: Sat
+                        - generic [ref=f1e372]:
+                          - generic "29" [ref=f1e373]
+                          - generic [ref=f1e374]: Sun
+                        - generic [ref=f1e376]:
+                          - generic "30" [ref=f1e377]
+                          - generic [ref=f1e378]: Mon
+                        - generic [ref=f1e380]:
+                          - generic "31" [ref=f1e381]
+                          - generic [ref=f1e382]: Tue
+                    - generic [ref=f1e383]:
+                      - generic [ref=f1e384]:
+                        - generic [ref=f1e385]:
+                          - link "[Paywall MFE] - Integration [Paywall MFE] - Integration" [ref=f1e388] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=940415&to=2026-03-31&viewType=TIMESHEET
+                            - generic "[Paywall MFE] - Integration" [ref=f1e389]:
+                              - img "[Paywall MFE] - Integration" [ref=f1e390]
+                            - generic [ref=f1e391]: "[Paywall MFE] - Integration"
+                          - link "PHX-415" [ref=f1e395] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-415
+                          - generic "0.25" [ref=f1e399]
+                        - generic [ref=f1e419]: "0.25"
+                      - generic [ref=f1e486]:
+                        - generic [ref=f1e487]:
+                          - link "[Send Fax MFE] Implementation [Send Fax MFE] Implementation" [ref=f1e490] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=941157&to=2026-03-31&viewType=TIMESHEET
+                            - generic "[Send Fax MFE] Implementation" [ref=f1e491]:
+                              - img "[Send Fax MFE] Implementation" [ref=f1e492]
+                            - generic [ref=f1e493]: "[Send Fax MFE] Implementation"
+                          - link "PHX-447" [ref=f1e497] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-447
+                          - generic "0.5" [ref=f1e501]
+                        - generic [ref=f1e512]: "0.5"
+                      - generic [ref=f1e588]:
+                        - generic [ref=f1e589]:
+                          - link "Add tabbed filters to inbox and outbox Add tabbed filters to inbox and outbox" [ref=f1e592] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=956016&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Add tabbed filters to inbox and outbox" [ref=f1e593]:
+                              - img "Add tabbed filters to inbox and outbox" [ref=f1e594]
+                            - generic [ref=f1e595]: Add tabbed filters to inbox and outbox
+                          - link "PHX-1346" [ref=f1e599] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-1346
+                          - generic "1.08" [ref=f1e603]
+                        - generic [ref=f1e604]:
+                          - generic [ref=f1e632]: "0.25"
+                          - generic [ref=f1e636]: "0.58"
+                          - generic [ref=f1e640]: "0.25"
+                      - generic [ref=f1e692]:
+                        - generic [ref=f1e693]:
+                          - link "Contacts MFE Implementation Contacts MFE Implementation" [ref=f1e696] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=962397&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Contacts MFE Implementation" [ref=f1e697]:
+                              - img "Contacts MFE Implementation" [ref=f1e698]
+                            - generic [ref=f1e699]: Contacts MFE Implementation
+                          - link "PHX-1671" [ref=f1e703] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-1671
+                          - generic "0.27" [ref=f1e707]
+                        - generic [ref=f1e727]: "0.27"
+                      - generic [ref=f1e794]:
+                        - generic [ref=f1e795]:
+                          - link "Create paywall screens for mobile-first user view Create paywall screens for mobile-first user view" [ref=f1e798] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=954062&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Create paywall screens for mobile-first user view" [ref=f1e799]:
+                              - img "Create paywall screens for mobile-first user view" [ref=f1e800]
+                            - generic [ref=f1e801]: Create paywall screens for mobile-first user view
+                          - link "PHX-1207" [ref=f1e805] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-1207
+                          - generic "1.17" [ref=f1e809]
+                        - generic [ref=f1e810]:
+                          - generic [ref=f1e838]: "0.67"
+                          - generic [ref=f1e842]: "0.25"
+                          - generic [ref=f1e846]: "0.25"
+                      - generic [ref=f1e898]:
+                        - generic [ref=f1e899]:
+                          - link "Creation of a new portal to enable the features planned for the Phoenix project Creation of a new portal to enable the features planned for the Phoenix project" [ref=f1e902] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=921086&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Creation of a new portal to enable the features planned for the Phoenix project" [ref=f1e903]:
+                              - img "Creation of a new portal to enable the features planned for the Phoenix project" [ref=f1e904]
+                            - generic [ref=f1e905]: Creation of a new portal to enable the features planned for the Phoenix project
+                          - link "PHX-15" [ref=f1e909] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-15
+                          - generic "1" [ref=f1e913]
+                        - generic [ref=f1e914]:
+                          - generic [ref=f1e942]: "0.5"
+                          - generic [ref=f1e949]: "0.5"
+                      - generic [ref=f1e1001]:
+                        - generic [ref=f1e1002]:
+                          - link "Deployment of Portal UI via Neo Bahamut Deployment of Portal UI via Neo Bahamut" [ref=f1e1005] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=937804&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Deployment of Portal UI via Neo Bahamut" [ref=f1e1006]:
+                              - img "Deployment of Portal UI via Neo Bahamut" [ref=f1e1007]
+                            - generic [ref=f1e1008]: Deployment of Portal UI via Neo Bahamut
+                          - link "PHX-333" [ref=f1e1012] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-333
+                          - generic "20.78" [ref=f1e1016]
+                        - generic [ref=f1e1017]:
+                          - generic [ref=f1e1024]: "0.17"
+                          - generic [ref=f1e1028]: "2.17"
+                          - generic [ref=f1e1032]: "1.5"
+                          - generic [ref=f1e1036]: "5.97"
+                          - generic [ref=f1e1040]: "3.18"
+                          - generic [ref=f1e1053]: "0.67"
+                          - generic [ref=f1e1057]: "0.42"
+                          - generic [ref=f1e1061]: "4.75"
+                          - generic [ref=f1e1065]: "1.97"
+                      - generic [ref=f1e1111]:
+                        - generic [ref=f1e1112]:
+                          - link "Implement Google scripts in portal Implement Google scripts in portal" [ref=f1e1115] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=956038&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Implement Google scripts in portal" [ref=f1e1116]:
+                              - img "Implement Google scripts in portal" [ref=f1e1117]
+                            - generic [ref=f1e1118]: Implement Google scripts in portal
+                          - link "PHX-1348" [ref=f1e1122] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-1348
+                          - generic "5.3" [ref=f1e1126]
+                        - generic [ref=f1e1127]:
+                          - generic [ref=f1e1134]: "3.87"
+                          - generic [ref=f1e1138]: "0.43"
+                          - generic [ref=f1e1145]: "0.5"
+                          - generic [ref=f1e1167]: "0.5"
+                      - generic [ref=f1e1216]:
+                        - generic [ref=f1e1217]:
+                          - link "M3 - Integrate DID inventory management into Portal MFE M3 - Integrate DID inventory management into Portal MFE" [ref=f1e1220] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=940297&to=2026-03-31&viewType=TIMESHEET
+                            - generic "M3 - Integrate DID inventory management into Portal MFE" [ref=f1e1221]:
+                              - img "M3 - Integrate DID inventory management into Portal MFE" [ref=f1e1222]
+                            - generic [ref=f1e1223]: M3 - Integrate DID inventory management into Portal MFE
+                          - link "PHX-413" [ref=f1e1227] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-413
+                          - generic "1.88" [ref=f1e1231]
+                        - generic [ref=f1e1232]:
+                          - generic [ref=f1e1239]: "1.17"
+                          - generic [ref=f1e1252]: "0.72"
+                      - generic [ref=f1e1319]:
+                        - generic [ref=f1e1320]:
+                          - link "Onboarding - Alan Haghy Onboarding - Alan Haghy" [ref=f1e1323] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=956233&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Onboarding - Alan Haghy" [ref=f1e1324]:
+                              - img "Onboarding - Alan Haghy" [ref=f1e1325]
+                            - generic [ref=f1e1326]: Onboarding - Alan Haghy
+                          - link "PHX-1386" [ref=f1e1330] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-1386
+                          - generic "8.37" [ref=f1e1334]
+                        - generic [ref=f1e1335]:
+                          - generic [ref=f1e1342]: "1.03"
+                          - generic [ref=f1e1346]: "2.25"
+                          - generic [ref=f1e1356]: "0.5"
+                          - generic [ref=f1e1369]: "0.5"
+                          - generic [ref=f1e1373]: "0.67"
+                          - generic [ref=f1e1377]: "1.5"
+                          - generic [ref=f1e1381]: "1.92"
+                      - generic [ref=f1e1427]:
+                        - generic [ref=f1e1428]:
+                          - link "Portal billing functionality Portal billing functionality" [ref=f1e1431] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=936236&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Portal billing functionality" [ref=f1e1432]:
+                              - img "Portal billing functionality" [ref=f1e1433]
+                            - generic [ref=f1e1434]: Portal billing functionality
+                          - link "PHX-285" [ref=f1e1438] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-285
+                          - generic "9.75" [ref=f1e1442]
+                        - generic [ref=f1e1443]:
+                          - generic [ref=f1e1450]: "1.03"
+                          - generic [ref=f1e1454]: "1.17"
+                          - generic [ref=f1e1458]: "1"
+                          - generic [ref=f1e1465]: "0.3"
+                          - generic [ref=f1e1475]: "1.92"
+                          - generic [ref=f1e1479]: "0.95"
+                          - generic [ref=f1e1483]: "1.5"
+                          - generic [ref=f1e1487]: "0.5"
+                          - generic [ref=f1e1491]: "1.38"
+                      - generic [ref=f1e1537]:
+                        - generic [ref=f1e1538]:
+                          - link "Portal Shell — Auth0 Integration and MFE Login Flow Portal Shell — Auth0 Integration and MFE Login Flow" [ref=f1e1541] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=955817&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Portal Shell — Auth0 Integration and MFE Login Flow" [ref=f1e1542]:
+                              - img "Portal Shell — Auth0 Integration and MFE Login Flow" [ref=f1e1543]
+                            - generic [ref=f1e1544]: Portal Shell — Auth0 Integration and MFE Login Flow
+                          - link "PHX-1328" [ref=f1e1548] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-1328
+                          - generic "4.53" [ref=f1e1552]
+                        - generic [ref=f1e1553]:
+                          - generic [ref=f1e1560]: "0.5"
+                          - generic [ref=f1e1564]: "0.25"
+                          - generic [ref=f1e1574]: "0.13"
+                          - generic [ref=f1e1584]: "0.33"
+                          - generic [ref=f1e1588]: "0.5"
+                          - generic [ref=f1e1592]: "0.33"
+                          - generic [ref=f1e1596]: "0.5"
+                          - generic [ref=f1e1600]: "1.98"
+                      - generic [ref=f1e1646]:
+                        - generic [ref=f1e1647]:
+                          - link "Review and address issues identified by QA team Review and address issues identified by QA team" [ref=f1e1650] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=947629&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Review and address issues identified by QA team" [ref=f1e1651]:
+                              - img "Review and address issues identified by QA team" [ref=f1e1652]
+                            - generic [ref=f1e1653]: Review and address issues identified by QA team
+                          - link "PHX-945" [ref=f1e1657] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-945
+                          - generic "0.25" [ref=f1e1661]
+                        - generic [ref=f1e1693]: "0.25"
+                      - generic [ref=f1e1748]:
+                        - generic [ref=f1e1749]:
+                          - link "Simplify Portal Build Process Simplify Portal Build Process" [ref=f1e1752] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=954422&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Simplify Portal Build Process" [ref=f1e1753]:
+                              - img "Simplify Portal Build Process" [ref=f1e1754]
+                            - generic [ref=f1e1755]: Simplify Portal Build Process
+                          - link "PHX-1240" [ref=f1e1759] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-1240
+                          - generic "17.83" [ref=f1e1763]
+                        - generic [ref=f1e1764]:
+                          - generic [ref=f1e1774]: "1"
+                          - generic [ref=f1e1778]: "1.95"
+                          - generic [ref=f1e1782]: "2.5"
+                          - generic [ref=f1e1786]: "1.5"
+                          - generic [ref=f1e1796]: "4.25"
+                          - generic [ref=f1e1800]: "2.55"
+                          - generic [ref=f1e1804]: "3.08"
+                          - generic [ref=f1e1808]: "0.25"
+                          - generic [ref=f1e1812]: "0.75"
+                      - generic [ref=f1e1858]:
+                        - generic [ref=f1e1859]:
+                          - link "Team Coordination & Sprint Activities Team Coordination & Sprint Activities" [ref=f1e1862] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=946603&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Team Coordination & Sprint Activities" [ref=f1e1863]:
+                              - img "Team Coordination & Sprint Activities" [ref=f1e1864]
+                            - generic [ref=f1e1865]: Team Coordination & Sprint Activities
+                          - link "PHX-897" [ref=f1e1869] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-897
+                          - generic "4.52" [ref=f1e1873]
+                        - generic [ref=f1e1874]:
+                          - generic [ref=f1e1887]: "1.55"
+                          - generic [ref=f1e1891]: "2.47"
+                          - generic [ref=f1e1895]: "0.5"
+                      - generic [ref=f1e1962]:
+                        - generic [ref=f1e1963]:
+                          - link "Update Auth0 Credentials in the Portal Update Auth0 Credentials in the Portal" [ref=f1e1966] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/reports/logged-time?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&from=2026-03-01&groupBy=issue&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours&subPeriodType=WEEK&taskId=956009&to=2026-03-31&viewType=TIMESHEET
+                            - generic "Update Auth0 Credentials in the Portal" [ref=f1e1967]:
+                              - img "Update Auth0 Credentials in the Portal" [ref=f1e1968]
+                            - generic [ref=f1e1969]: Update Auth0 Credentials in the Portal
+                          - link "PHX-1345" [ref=f1e1973] [cursor=pointer]:
+                            - /url: https://consensus.atlassian.net/browse/PHX-1345
+                          - generic "0.5" [ref=f1e1977]
+                        - generic [ref=f1e1991]: "0.5"
+                  - generic [ref=f1e2064]:
+                    - generic [ref=f1e2065]:
+                      - generic [ref=f1e2067]: Total
+                      - generic "77.98" [ref=f1e2073]
+                    - generic [ref=f1e2074]:
+                      - generic "0" [ref=f1e2078]
+                      - generic "7.77" [ref=f1e2082]
+                      - generic "7.77" [ref=f1e2086]
+                      - generic "6.5" [ref=f1e2090]
+                      - generic "11.43" [ref=f1e2094]
+                      - generic "7.35" [ref=f1e2098]
+                      - generic "0" [ref=f1e2102]
+                      - generic "0" [ref=f1e2106]
+                      - generic "7.92" [ref=f1e2110]
+                      - generic "6.25" [ref=f1e2114]
+                      - generic "7" [ref=f1e2118]
+                      - generic "8" [ref=f1e2122]
+                      - generic "8" [ref=f1e2126]
+                      - generic "0" [ref=f1e2130]
+                      - generic "0" [ref=f1e2134]
+                      - generic "0" [ref=f1e2138]
+                      - generic "0" [ref=f1e2142]
+                      - generic "0" [ref=f1e2146]
+                      - generic "0" [ref=f1e2150]
+                      - generic "0" [ref=f1e2154]
+                      - generic "0" [ref=f1e2158]
+                      - generic "0" [ref=f1e2162]
+                      - generic "0" [ref=f1e2166]
+                      - generic "0" [ref=f1e2170]
+                      - generic "0" [ref=f1e2174]
+                      - generic "0" [ref=f1e2178]
+                      - generic "0" [ref=f1e2182]
+                      - generic "0" [ref=f1e2186]
+                      - generic "0" [ref=f1e2190]
+                      - generic "0" [ref=f1e2194]
+                      - generic "0" [ref=f1e2198]
+            - status [ref=f1e138]
+            - alert [ref=f1e139]
+          - button "Expand sidebar" [ref=f1e143] [cursor=pointer]:
+            - img [ref=f1e144]

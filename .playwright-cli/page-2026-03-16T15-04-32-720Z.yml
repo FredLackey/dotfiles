@@ -1,0 +1,21 @@
+- generic [ref=e6]:
+  - generic [ref=e61]:
+    - generic [ref=e64]: Google Authenticator
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - generic [ref=e69]: Enter your code
+        - generic [ref=e70]:
+          - textbox "Enter your code" [active] [ref=e71]
+          - button [ref=e73] [cursor=pointer]:
+            - img [ref=e74]
+      - button "Continue" [ref=e78] [cursor=pointer]
+  - list [ref=e30]:
+    - listitem [ref=e31]:
+      - link "Powered by OneLogin" [ref=e32] [cursor=pointer]:
+        - /url: https://www.onelogin.com
+    - listitem [ref=e33]:
+      - link "Terms" [ref=e34] [cursor=pointer]:
+        - /url: https://www.onelogin.com/terms
+    - listitem [ref=e35]:
+      - link "Privacy Policy" [ref=e36] [cursor=pointer]:
+        - /url: https://www.onelogin.com/privacy

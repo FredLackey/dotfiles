@@ -1,0 +1,63 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - menu [ref=e5]:
+      - link "company logo" [ref=e7] [cursor=pointer]:
+        - /url: /portal
+        - img "company logo" [ref=e8]
+      - list [ref=e9]:
+        - listitem [ref=e10] [cursor=pointer]:
+          - menuitem "FL Fred" [ref=e11]:
+            - generic [ref=e12]:
+              - generic [ref=e13]: FL
+              - text: Fred
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - search [ref=e17]:
+          - generic [ref=e19]:
+            - img "search icon" [ref=e20]
+            - textbox "Search" [ref=e21]
+        - generic [ref=e23]:
+          - button "Frequents" [ref=e25]
+          - 'button "Company: Everything" [ref=e27]'
+      - generic [ref=e32]:
+        - link "Launch AWS" [active] [ref=e34] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2329158981
+          - img "App icon" [ref=e36]
+          - generic [ref=e39]: AWS
+        - link "Launch CCS Fusion - PROD" [ref=e41] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2329124033
+          - img "App icon" [ref=e43]
+          - generic [ref=e46]: CCS Fusion - PROD
+        - link "Launch Consensus Slack" [ref=e48] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2329124029
+          - img "App icon" [ref=e50]
+          - generic [ref=e53]: Consensus Slack
+        - link "Launch Dialpad" [ref=e55] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2330533050
+          - img "App icon" [ref=e57]
+          - generic [ref=e60]: Dialpad
+        - link "Launch GitHub - CCSI-PTG" [ref=e62] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2413614635
+          - img "App icon" [ref=e64]
+          - generic [ref=e67]: GitHub - CCSI-PTG
+        - link "Launch GitHub Enterprise Cloud" [ref=e69] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2329158987
+          - img "App icon" [ref=e71]
+          - generic [ref=e74]: GitHub Enterprise Cloud
+        - link "Launch Google Workspace" [ref=e76] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2329124031
+          - img "App icon" [ref=e78]
+          - generic [ref=e81]: Google Workspace
+        - link "Launch ISPPower RDS" [ref=e83] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2422764388
+          - img "App icon" [ref=e85]
+          - generic [ref=e88]: ISPPower RDS
+        - link "Launch Jira Cloud (Atlassian)" [ref=e90] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2329124030
+          - img "App icon" [ref=e92]
+          - generic [ref=e95]: Jira Cloud (Atlassian)
+        - link "Launch Lattice" [ref=e97] [cursor=pointer]:
+          - /url: https://consensus.onelogin.com/client/apps/select/2329122807
+          - img "App icon" [ref=e99]
+          - generic [ref=e102]: Lattice

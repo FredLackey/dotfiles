@@ -1,0 +1,27 @@
+- generic [ref=e6]:
+  - generic [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e41]: Username
+      - generic [ref=e42]:
+        - generic [ref=e43]: Fred.Lackey
+        - button "Not you?" [ref=e44] [cursor=pointer]
+    - generic [ref=e45]:
+      - generic [ref=e47]: Password
+      - generic [ref=e48]:
+        - textbox "Password" [active] [ref=e49]
+        - button [ref=e51] [cursor=pointer]:
+          - img [ref=e52]
+    - button "Continue" [ref=e56] [cursor=pointer]
+    - list [ref=e58]:
+      - listitem [ref=e59]:
+        - button "Forgot Password" [ref=e60] [cursor=pointer]
+  - list [ref=e30]:
+    - listitem [ref=e31]:
+      - link "Powered by OneLogin" [ref=e32] [cursor=pointer]:
+        - /url: https://www.onelogin.com
+    - listitem [ref=e33]:
+      - link "Terms" [ref=e34] [cursor=pointer]:
+        - /url: https://www.onelogin.com/terms
+    - listitem [ref=e35]:
+      - link "Privacy Policy" [ref=e36] [cursor=pointer]:
+        - /url: https://www.onelogin.com/privacy

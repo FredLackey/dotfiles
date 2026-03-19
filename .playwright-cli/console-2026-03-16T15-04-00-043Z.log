@@ -1,0 +1,5 @@
+[    2749ms] [WARNING] [JavaScript Warning: "WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER." {file: "https://cdn.onelogin.com/onelogin-vigilance.min.js" line: 7}] @ https://cdn.onelogin.com/onelogin-vigilance.min.js:7
+[    2749ms] [WARNING] [JavaScript Warning: "WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER." {file: "https://cdn.onelogin.com/onelogin-vigilance.min.js" line: 7}] @ https://cdn.onelogin.com/onelogin-vigilance.min.js:7
+[    3178ms] [WARNING] Error adding rule  Error  rule was  .gCiims::-ms-clear{display:none;}  ignoring... @ https://web-login-v2-cdn.onelogin.com/login2/1.2.3/vendor.js:0
+[    3179ms] [WARNING] Error adding rule  Error  rule was  .gCiims:-ms-input-placeholder{color:#acadad;}  ignoring... @ https://web-login-v2-cdn.onelogin.com/login2/1.2.3/vendor.js:0
+[   17356ms] [WARNING] Error adding rule  Error  rule was  .hxEkIM::-ms-reveal,.hxEkIM::-ms-clear{display:none !important;}  ignoring... @ https://web-login-v2-cdn.onelogin.com/login2/1.2.3/vendor.js:0

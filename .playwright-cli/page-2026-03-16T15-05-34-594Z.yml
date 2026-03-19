@@ -1,0 +1,215 @@
+- generic [ref=e2]:
+  - generic:
+    - generic: "Skip to:"
+    - list:
+      - listitem:
+        - link "Top Bar":
+          - /url: "#_R18skj5jal9_"
+      - listitem:
+        - link "Sidebar":
+          - /url: "#_R6p4kj5jal9_"
+      - listitem:
+        - link "Main Content":
+          - /url: "#_R1ckj5jal9_"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - button "Switch sites or apps" [ref=e9] [cursor=pointer]:
+            - generic [ref=e12]: Switch sites or apps
+          - link "Go to your Jira homepage" [ref=e14] [cursor=pointer]:
+            - /url: /jira
+            - generic [ref=e15]:
+              - img [ref=e18]
+              - generic [ref=e23]: Jira
+        - button "Collapse sidebar" [ref=e25] [cursor=pointer]:
+          - generic [ref=e27]: Collapse sidebar
+      - generic [ref=e28]:
+        - button [ref=e29] [cursor=pointer]:
+          - search [ref=e30]:
+            - combobox "Search, press enter to navigate to advanced search with your text query" [ref=e33]
+        - button "Create" [ref=e36] [cursor=pointer]:
+          - generic [ref=e39]: Create
+      - navigation "Actions" [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - button "Rovo Ask Rovo" [ref=e44] [cursor=pointer]:
+              - img "Rovo" [ref=e46]:
+                - img [ref=e47]
+              - generic [ref=e52]: Ask Rovo
+          - listitem [ref=e53]:
+            - generic [ref=e55]:
+              - button "Over 9 Notifications" [ref=e56] [cursor=pointer]:
+                - generic [ref=e59]: Over 9 Notifications
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: 9+
+          - listitem [ref=e62]:
+            - button "Help" [ref=e63] [cursor=pointer]:
+              - generic [ref=e66]: Help
+          - listitem [ref=e68]:
+            - button "Settings" [ref=e69] [cursor=pointer]:
+              - generic [ref=e72]: Settings
+          - listitem [ref=e73]:
+            - button "fred.lackey@consensus.com" [ref=e74] [cursor=pointer]:
+              - img "Account" [ref=e76]
+    - navigation "Sidebar" [ref=e77]:
+      - list [ref=e81]:
+        - listitem [ref=e82]:
+          - link "For you" [ref=e84] [cursor=pointer]:
+            - /url: /jira/for-you
+            - generic [ref=e89]: For you
+        - listitem [ref=e90]:
+          - button "Recent" [ref=e92] [cursor=pointer]:
+            - generic [ref=e96]: Recent
+        - listitem [ref=e97]:
+          - button "Starred" [ref=e99] [cursor=pointer]:
+            - generic [ref=e103]: Starred
+        - listitem [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e107]:
+              - button "Apps" [expanded] [ref=e108] [cursor=pointer]:
+                - generic [ref=e112]: Apps
+              - button "More actions for Apps" [ref=e114] [cursor=pointer]:
+                - generic [ref=e117]: More actions for Apps
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - group "Your apps" [ref=e120]:
+                  - paragraph [ref=e121]: Your apps
+                  - list [ref=e123]:
+                    - listitem [ref=e124]:
+                      - generic [ref=e125]:
+                        - link "Assigned items" [ref=e126] [cursor=pointer]:
+                          - /url: /plugins/servlet/ac/com.okapya.jira.checklist/assigned-items-page?project.key=PHX&project.id=18076
+                          - generic [ref=e131]: Assigned items
+                        - generic:
+                          - generic:
+                            - img
+                        - generic:
+                          - button "More actions":
+                            - generic [ref=e134] [cursor=pointer]: More actions
+                    - listitem [ref=e135]:
+                      - generic [ref=e136]:
+                        - link "GanttTable" [ref=e137] [cursor=pointer]:
+                          - /url: /jira/apps/0d9d96c7-3a58-4444-9592-60338db004f4/cac71076-44d8-49b4-a6de-35a38177e875
+                          - generic [ref=e142]: GanttTable
+                        - generic:
+                          - generic:
+                            - img
+                        - generic:
+                          - button "More actions":
+                            - generic [ref=e145] [cursor=pointer]: More actions
+                    - listitem [ref=e146]:
+                      - generic [ref=e147]:
+                        - link "Status Time Free" [ref=e148] [cursor=pointer]:
+                          - /url: /plugins/servlet/ac/io.bloompeak.status-time-free/st-report?project.key=PHX&project.id=18076
+                          - generic [ref=e153]: Status Time Free
+                        - generic:
+                          - generic:
+                            - img
+                        - generic:
+                          - button "More actions":
+                            - generic [ref=e156] [cursor=pointer]: More actions
+                    - listitem [ref=e157]:
+                      - generic [ref=e158]:
+                        - link "Tempo" [ref=e159] [cursor=pointer]:
+                          - /url: /plugins/servlet/ac/io.tempo.jira/tempo-app#!?project.key=PHX&project.id=18076
+                          - generic [ref=e164]: Tempo
+                        - generic:
+                          - generic:
+                            - img
+                        - generic:
+                          - button "More actions":
+                            - generic [ref=e167] [cursor=pointer]: More actions
+              - listitem [ref=e168]:
+                - listitem [ref=e169]
+                - listitem [ref=e174]
+                - listitem [ref=e179]
+              - listitem [ref=e184]:
+                - link "Explore more apps" [ref=e186] [cursor=pointer]:
+                  - /url: /jira/marketplace/discover
+                  - generic [ref=e191]: Explore more apps
+        - listitem [ref=e192]:
+          - generic [ref=e195]:
+            - button "Plans" [ref=e196] [cursor=pointer]:
+              - generic [ref=e200]: Plans
+            - generic:
+              - button "Create plan" [ref=e201] [cursor=pointer]:
+                - generic [ref=e204]: Create plan
+              - button "More actions for Plans":
+                - generic [ref=e207] [cursor=pointer]: More actions for Plans
+        - listitem [ref=e208]:
+          - generic [ref=e211]:
+            - button "Spaces" [ref=e212] [cursor=pointer]:
+              - generic [ref=e216]: Spaces
+            - generic:
+              - button "More actions for spaces":
+                - generic [ref=e219] [cursor=pointer]: More actions for spaces
+        - listitem [ref=e220]:
+          - generic [ref=e223]:
+            - button "Filters" [ref=e224] [cursor=pointer]:
+              - generic [ref=e228]: Filters
+            - generic:
+              - button "More actions for Filters":
+                - generic [ref=e231] [cursor=pointer]: More actions for Filters
+        - listitem [ref=e232]:
+          - generic [ref=e235]:
+            - button "Dashboards" [ref=e236] [cursor=pointer]:
+              - generic [ref=e240]: Dashboards
+            - generic:
+              - button "Create dashboard" [ref=e241] [cursor=pointer]:
+                - generic [ref=e244]: Create dashboard
+              - button "More actions for Dashboards":
+                - generic [ref=e247] [cursor=pointer]: More actions for Dashboards
+        - listitem [ref=e248]:
+          - generic [ref=e251]:
+            - button "Operations" [ref=e252] [cursor=pointer]:
+              - generic [ref=e256]: Operations
+            - generic:
+              - button "More actions for Operations":
+                - generic [ref=e259] [cursor=pointer]: More actions for Operations
+        - list [ref=e262]:
+          - listitem [ref=e264]:
+            - generic [ref=e265]:
+              - link "Assets , (opens new window)" [ref=e266] [cursor=pointer]:
+                - /url: https://consensus.atlassian.net/jira/assets?xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2NzM1MjYwMjYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e271]: Assets
+                - generic [ref=e272]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - img "Open external link icon"
+          - listitem [ref=e274]:
+            - generic [ref=e275]:
+              - link "Goals , (opens new window)" [ref=e276] [cursor=pointer]:
+                - /url: https://home.atlassian.com/o/8ca082dc-a111-1932-6k6b-9b82j1k3146b/goals?cloudId=5ec350fe-c444-4610-8b8d-6d50a4b1428d&xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2NzM1MjYwMjYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e281]: Goals
+                - generic [ref=e282]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - img "Open external link icon"
+          - listitem [ref=e284]:
+            - generic [ref=e285]:
+              - link "Teams , (opens new window)" [ref=e286] [cursor=pointer]:
+                - /url: https://home.atlassian.com/o/8ca082dc-a111-1932-6k6b-9b82j1k3146b/people?cloudId=5ec350fe-c444-4610-8b8d-6d50a4b1428d&xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2NzM1MjYwMjYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e291]: Teams
+                - generic [ref=e292]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - button "open menu":
+                  - generic [ref=e295] [cursor=pointer]: open menu
+              - generic:
+                - img "Open external link icon"
+        - listitem [ref=e297]:
+          - button "Customize sidebar" [ref=e299] [cursor=pointer]:
+            - generic [ref=e303]: Customize sidebar
+    - generic [ref=e305]:
+      - slider "Resize side navigation panel" [ref=e306]: "240"
+      - text: Resize side navigation panel
+    - main [ref=e308]

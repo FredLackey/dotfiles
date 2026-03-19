@@ -1,0 +1,535 @@
+- generic [ref=e2]:
+  - generic:
+    - generic: "Skip to:"
+    - list:
+      - listitem:
+        - link "Top Bar":
+          - /url: "#_R18skj5jal9_"
+      - listitem:
+        - link "Sidebar":
+          - /url: "#_R6p4kj5jal9_"
+      - listitem:
+        - link "Main Content":
+          - /url: "#_R1ckj5jal9_"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - button "Switch sites or apps" [ref=e9] [cursor=pointer]:
+            - generic [ref=e12]: Switch sites or apps
+          - link "Go to your Jira homepage" [ref=e14] [cursor=pointer]:
+            - /url: /jira
+            - generic [ref=e15]:
+              - img [ref=e18]
+              - generic [ref=e23]: Jira
+        - button "Collapse sidebar" [ref=e25] [cursor=pointer]:
+          - generic [ref=e27]: Collapse sidebar
+      - generic [ref=e28]:
+        - button [ref=e29] [cursor=pointer]:
+          - search [ref=e30]:
+            - combobox "Search, press enter to navigate to advanced search with your text query" [ref=e33]
+        - button "Create" [ref=e36] [cursor=pointer]:
+          - generic [ref=e39]: Create
+      - navigation "Actions" [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - button "Rovo Ask Rovo" [ref=e44] [cursor=pointer]:
+              - img "Rovo" [ref=e46]:
+                - img [ref=e47]
+              - generic [ref=e52]: Ask Rovo
+          - listitem [ref=e53]:
+            - generic [ref=e55]:
+              - button "Over 9 Notifications" [ref=e56] [cursor=pointer]:
+                - generic [ref=e59]: Over 9 Notifications
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: 9+
+          - listitem [ref=e62]:
+            - button "Help" [ref=e63] [cursor=pointer]:
+              - generic [ref=e66]: Help
+          - listitem [ref=e68]:
+            - button "Settings" [ref=e69] [cursor=pointer]:
+              - generic [ref=e72]: Settings
+          - listitem [ref=e73]:
+            - button "fred.lackey@consensus.com" [ref=e74] [cursor=pointer]:
+              - img "Account" [ref=e76]
+    - navigation "Sidebar" [ref=e77]:
+      - list [ref=e81]:
+        - listitem [ref=e82]:
+          - link "For you" [ref=e84] [cursor=pointer]:
+            - /url: /jira/for-you
+            - generic [ref=e89]: For you
+        - listitem [ref=e90]:
+          - button "Recent" [ref=e92] [cursor=pointer]:
+            - generic [ref=e96]: Recent
+        - listitem [ref=e97]:
+          - button "Starred" [ref=e99] [cursor=pointer]:
+            - generic [ref=e103]: Starred
+        - listitem [ref=e104]:
+          - generic [ref=e107]:
+            - button "Apps" [ref=e108] [cursor=pointer]:
+              - generic [ref=e112]: Apps
+            - generic:
+              - button "More actions for Apps":
+                - generic [ref=e115] [cursor=pointer]: More actions for Apps
+        - listitem [ref=e116]:
+          - generic [ref=e119]:
+            - button "Plans" [ref=e120] [cursor=pointer]:
+              - generic [ref=e124]: Plans
+            - generic:
+              - button "Create plan" [ref=e125] [cursor=pointer]:
+                - generic [ref=e128]: Create plan
+              - button "More actions for Plans":
+                - generic [ref=e131] [cursor=pointer]: More actions for Plans
+        - listitem [ref=e132]:
+          - generic [ref=e133]:
+            - generic [ref=e135]:
+              - button "Spaces" [expanded] [ref=e136] [cursor=pointer]:
+                - generic [ref=e140]: Spaces
+              - button "More actions for spaces" [ref=e142] [cursor=pointer]:
+                - generic [ref=e145]: More actions for spaces
+            - list [ref=e146]:
+              - listitem [ref=e147]:
+                - group "Recent" [ref=e148]:
+                  - paragraph [ref=e149]: Recent
+                  - list [ref=e150]:
+                    - listitem [ref=e151]:
+                      - generic [ref=e152]:
+                        - generic [ref=e154]:
+                          - link "Phoenix" [ref=e155] [cursor=pointer]:
+                            - /url: /browse/PHX
+                            - generic [ref=e160]: Phoenix
+                          - button "Phoenix" [expanded] [ref=e162] [cursor=pointer]
+                          - generic [ref=e166]:
+                            - button "Create board" [ref=e168] [cursor=pointer]:
+                              - generic [ref=e171]: Create board
+                            - button "More actions for Phoenix" [ref=e172] [cursor=pointer]:
+                              - generic [ref=e175]: More actions for Phoenix
+                        - list [ref=e176]:
+                          - listitem [ref=e177]:
+                            - group "Recent" [ref=e178]:
+                              - paragraph [ref=e179]: Recent
+                              - list [ref=e180]:
+                                - listitem [ref=e182]:
+                                  - generic [ref=e183]:
+                                    - link "Phoenix Portal" [ref=e184] [cursor=pointer]:
+                                      - /url: /jira/software/c/projects/PHX/boards/1704
+                                      - generic [ref=e189]: Phoenix Portal
+                                    - generic:
+                                      - button "Board actions":
+                                        - generic [ref=e192] [cursor=pointer]: Board actions
+                                - listitem [ref=e194]:
+                                  - generic [ref=e195]:
+                                    - link "Phoenix Account" [ref=e196] [cursor=pointer]:
+                                      - /url: /jira/software/c/projects/PHX/boards/1718
+                                      - generic [ref=e201]: Phoenix Account
+                                    - generic:
+                                      - button "Board actions":
+                                        - generic [ref=e204] [cursor=pointer]: Board actions
+                                - listitem [ref=e206]:
+                                  - generic [ref=e207]:
+                                    - link "Phoenix Billing" [ref=e208] [cursor=pointer]:
+                                      - /url: /jira/software/c/projects/PHX/boards/1670
+                                      - generic [ref=e213]: Phoenix Billing
+                                    - generic:
+                                      - button "Board actions":
+                                        - generic [ref=e216] [cursor=pointer]: Board actions
+                                - listitem [ref=e218]:
+                                  - generic [ref=e219]:
+                                    - link "Phoenix Deployments" [ref=e220] [cursor=pointer]:
+                                      - /url: /jira/software/c/projects/PHX/boards/2969
+                                      - generic [ref=e225]: Phoenix Deployments
+                                    - generic:
+                                      - button "Board actions":
+                                        - generic [ref=e228] [cursor=pointer]: Board actions
+                                - listitem [ref=e230]:
+                                  - generic [ref=e231]:
+                                    - link "Phoenix Master Board" [ref=e232] [cursor=pointer]:
+                                      - /url: /jira/software/c/projects/PHX/boards/1706
+                                      - generic [ref=e237]: Phoenix Master Board
+                                    - generic:
+                                      - button "Board actions":
+                                        - generic [ref=e240] [cursor=pointer]: Board actions
+                          - listitem [ref=e241]:
+                            - link "View all boards" [ref=e243] [cursor=pointer]:
+                              - /url: /jira/boards?projectLocation=PHX
+                              - generic [ref=e248]: View all boards
+                    - listitem [ref=e249]:
+                      - generic [ref=e252]:
+                        - button "FaxOps" [ref=e253] [cursor=pointer]:
+                          - generic [ref=e257]: FaxOps
+                        - generic:
+                          - button "More actions for FaxOps":
+                            - generic [ref=e260] [cursor=pointer]: More actions for FaxOps
+                    - listitem [ref=e261]:
+                      - generic [ref=e264]:
+                        - button "Service Desk" [ref=e265] [cursor=pointer]:
+                          - generic [ref=e269]: Service Desk
+                        - generic:
+                          - button "More actions for Service Desk":
+                            - generic [ref=e272] [cursor=pointer]: More actions for Service Desk
+                    - listitem [ref=e273]:
+                      - generic [ref=e276]:
+                        - button "GitHub Administration" [ref=e277] [cursor=pointer]:
+                          - generic [ref=e281]: GitHub Administration
+                        - generic:
+                          - button "More actions for GitHub Administration":
+                            - generic [ref=e284] [cursor=pointer]: More actions for GitHub Administration
+                    - listitem [ref=e285]:
+                      - generic [ref=e288]:
+                        - link "Change Management" [ref=e289] [cursor=pointer]:
+                          - /url: /browse/CHANGE
+                          - generic [ref=e294]: Change Management
+                        - button "Change Management" [ref=e296] [cursor=pointer]
+                        - generic:
+                          - button "Create board" [ref=e301] [cursor=pointer]:
+                            - generic [ref=e304]: Create board
+                          - button "More actions for Change Management":
+                            - generic [ref=e307] [cursor=pointer]: More actions for Change Management
+              - listitem [ref=e308]:
+                - group [ref=e309]:
+                  - list [ref=e310]:
+                    - listitem [ref=e311]:
+                      - button "More spaces" [ref=e313] [cursor=pointer]:
+                        - generic [ref=e317]: More spaces
+        - listitem [ref=e318]:
+          - generic [ref=e321]:
+            - button "Filters" [ref=e322] [cursor=pointer]:
+              - generic [ref=e326]: Filters
+            - generic:
+              - button "More actions for Filters":
+                - generic [ref=e329] [cursor=pointer]: More actions for Filters
+        - listitem [ref=e330]:
+          - generic [ref=e333]:
+            - button "Dashboards" [ref=e334] [cursor=pointer]:
+              - generic [ref=e338]: Dashboards
+            - generic:
+              - button "Create dashboard" [ref=e339] [cursor=pointer]:
+                - generic [ref=e342]: Create dashboard
+              - button "More actions for Dashboards":
+                - generic [ref=e345] [cursor=pointer]: More actions for Dashboards
+        - list [ref=e348]:
+          - listitem [ref=e349]:
+            - generic [ref=e350]:
+              - button "Assets(loading)" [ref=e351] [cursor=pointer]:
+                - generic [ref=e355]:
+                  - text: Assets
+                  - generic "(loading)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img "(loading)"
+          - listitem [ref=e356]:
+            - generic [ref=e357]:
+              - button "Goals(loading)" [ref=e358] [cursor=pointer]:
+                - generic [ref=e362]:
+                  - text: Goals
+                  - generic "(loading)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img "(loading)"
+          - listitem [ref=e363]:
+            - generic [ref=e364]:
+              - button "Teams(loading)" [ref=e365] [cursor=pointer]:
+                - generic [ref=e369]:
+                  - text: Teams
+                  - generic "(loading)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - generic:
+                  - img "(loading)"
+        - listitem [ref=e371]:
+          - button "Customize sidebar" [ref=e373] [cursor=pointer]:
+            - generic [ref=e377]: Customize sidebar
+    - generic [ref=e379]:
+      - slider "Resize side navigation panel" [ref=e380]: "360"
+      - text: Resize side navigation panel
+    - main [ref=e382]:
+      - generic [ref=e393]:
+        - generic [ref=e395]:
+          - navigation "Work item breadcrumbs" [ref=e400]:
+            - list [ref=e401]:
+              - listitem [ref=e402]:
+                - listitem [ref=e403]:
+                  - link "Spaces" [ref=e404] [cursor=pointer]:
+                    - /url: /jira/projects
+                    - generic [ref=e405]: Spaces
+                - text: /
+              - listitem [ref=e406]:
+                - listitem [ref=e407]:
+                  - link "Phoenix Phoenix" [ref=e408] [cursor=pointer]:
+                    - /url: https://consensus.atlassian.net/browse/PHX
+                    - img "Phoenix" [ref=e412]
+                    - generic [ref=e413]: Phoenix
+                - text: /
+              - listitem [ref=e414]:
+                - button "Epic - Change parent" [ref=e416] [cursor=pointer]:
+                  - img "Epic" [ref=e418]
+                - listitem [ref=e419]:
+                  - link "PHX-15" [ref=e420] [cursor=pointer]:
+                    - /url: https://consensus.atlassian.net/browse/PHX-15
+                    - generic [ref=e421]: PHX-15
+                - text: /
+              - listitem [ref=e422]:
+                - button "Story - Change work type" [ref=e424] [cursor=pointer]:
+                  - img "Story" [ref=e426]
+                - listitem [ref=e427]:
+                  - link "PHX-1928" [ref=e428] [cursor=pointer]:
+                    - /url: /browse/PHX-1928
+                    - generic [ref=e429]: PHX-1928
+                - generic [ref=e431]:
+                  - textbox [ref=e432]
+                  - button "Copy link" [ref=e433] [cursor=pointer]:
+                    - img "Copy link" [ref=e435]
+          - generic [ref=e442]:
+            - button "Create Contacts MFE for Phoenix Portal- Summary, edit"
+            - heading "Create Contacts MFE for Phoenix Portal" [level=1] [ref=e444]
+          - generic [ref=e447]:
+            - button "Add or create work related to this Story" [ref=e449] [cursor=pointer]:
+              - generic [ref=e452]: Add or create work related to this Story
+            - button "View app actions" [ref=e453] [cursor=pointer]:
+              - generic [ref=e456]: View app actions
+          - generic [ref=e458]:
+            - heading "Collapse Key details Key details" [level=2] [ref=e459]:
+              - generic [ref=e463] [cursor=pointer]:
+                - button "Collapse Key details" [ref=e464]:
+                  - generic [ref=e467]: Collapse Key details
+                - generic [ref=e468]: Key details
+            - region "Key details section" [ref=e469]:
+              - generic [ref=e471]:
+                - tablist [ref=e472]:
+                  - tab "General" [selected] [ref=e475] [cursor=pointer]:
+                    - generic [ref=e476]: General
+                  - tab "." [ref=e479] [cursor=pointer]:
+                    - generic [ref=e480]: .
+                - tabpanel "General" [ref=e481]:
+                  - generic [ref=e482]:
+                    - generic [ref=e485]:
+                      - generic [ref=e487]:
+                        - heading "Account" [level=3] [ref=e488]
+                        - button "More information about Account" [ref=e490] [cursor=pointer]
+                      - generic [ref=e498]:
+                        - button "Edit Account, Phoenix Platform selected, edit"
+                        - generic [ref=e499]: Phoenix Platform
+                    - generic [ref=e502]:
+                      - heading "Description" [level=2] [ref=e505]
+                      - generic [ref=e511]:
+                        - button "Edit Description, edit"
+                        - paragraph [ref=e516]: Create a new Contacts MFE for the Phoenix Portal. This MFE will provide contact management functionality including address book, DID area code selection, and contacts list features.
+                    - generic [ref=e519]:
+                      - generic [ref=e520]:
+                        - heading "Environment" [level=2] [ref=e521]
+                        - button "More information about" [ref=e523] [cursor=pointer]
+                      - generic [ref=e531]:
+                        - button "Edit Environment, edit"
+                        - generic [ref=e532]: None
+          - generic [ref=e533]:
+            - generic [ref=e535]:
+              - heading "Subtasks" [level=2] [ref=e537]
+              - button "Add subtask" [ref=e539] [cursor=pointer]:
+                - generic [ref=e540]: Add subtask
+            - generic [ref=e542]:
+              - heading "Linked work items" [level=2] [ref=e544]
+              - button "Add linked work item" [ref=e546] [cursor=pointer]:
+                - generic [ref=e547]: Add linked work item
+            - heading "Tempo" [level=2] [ref=e552] [cursor=pointer]
+          - generic [ref=e558]:
+            - heading "Activity" [level=2] [ref=e560]
+            - generic [ref=e561]:
+              - generic [ref=e564]:
+                - button "Comments" [ref=e565]
+                - button "More" [ref=e566] [cursor=pointer]: More
+              - button "Newest first Newest first" [ref=e570] [cursor=pointer]:
+                - generic [ref=e571]:
+                  - img "Newest first" [ref=e572]
+                  - generic [ref=e573]: Newest first
+            - generic [ref=e578]:
+              - img "Profile image of Fred Lackey" [ref=e580]:
+                - img [ref=e582]
+              - generic [ref=e583]:
+                - generic [ref=e584]:
+                  - img [ref=e585]
+                  - generic [ref=e589]:
+                    - button "Add a comment…" [ref=e590]
+                    - group "Quick comments" [ref=e592]:
+                      - group [ref=e593]:
+                        - button "Status update..." [ref=e594] [cursor=pointer]:
+                          - generic [ref=e595]: Status update...
+                        - button "Thanks..." [ref=e596] [cursor=pointer]:
+                          - generic [ref=e597]: Thanks...
+                        - button "Agree..." [ref=e598] [cursor=pointer]:
+                          - generic [ref=e599]: Agree...
+                - generic [ref=e600]:
+                  - strong [ref=e601]: "Pro tip:"
+                  - text: press
+                  - generic [ref=e603]: M
+                  - text: to comment
+        - generic [ref=e607]:
+          - slider "Resize work item view side panel" [ref=e608]: "0.84"
+          - text: Resize work item view side panel
+        - generic [ref=e614]:
+          - group "Action items" [ref=e616]:
+            - generic [ref=e617]:
+              - 'button "Watch options: You are not watching this issue, 0 people watching" [ref=e621] [cursor=pointer]':
+                - generic [ref=e624]: "Watch options: You are not watching this issue, 0 people watching"
+              - button "Share" [ref=e626] [cursor=pointer]
+              - button "Actions" [ref=e630] [cursor=pointer]:
+                - generic [ref=e633]: Actions
+          - generic [ref=e634]:
+            - generic [ref=e637]:
+              - button "Backlog - Change status" [ref=e644] [cursor=pointer]:
+                - generic [ref=e645]: Backlog
+              - button "Automation" [ref=e650] [cursor=pointer]:
+                - generic [ref=e653]: Automation
+              - button "Improve Story" [ref=e656] [cursor=pointer]:
+                - generic [ref=e667]: Improve Story
+            - generic [ref=e669]:
+              - generic [ref=e673]:
+                - button "Details" [expanded] [ref=e677] [cursor=pointer]:
+                  - heading "Details" [level=2] [ref=e681]
+                - generic [ref=e684]:
+                  - generic [ref=e688]:
+                    - generic [ref=e690]:
+                      - heading "Priority" [level=3] [ref=e691]
+                      - button "Priority Pin to top. Only you can see pinned fields." [ref=e694] [cursor=pointer]
+                    - generic [ref=e697]:
+                      - button "Edit Priority" [ref=e698]
+                      - generic [ref=e700]: Medium
+                  - generic [ref=e703]:
+                    - generic [ref=e705]:
+                      - heading "Team" [level=3] [ref=e706]
+                      - button "Team Pin to top. Only you can see pinned fields." [ref=e708] [cursor=pointer]
+                    - generic [ref=e714]:
+                      - button "Edit, edit"
+                      - button "Click to view Phoenix:Web Developers team details" [ref=e720] [cursor=pointer]: Phoenix:Web Developers
+                  - generic [ref=e723]:
+                    - generic [ref=e725]:
+                      - heading "Assignee" [level=3] [ref=e726]
+                      - button "Assignee Pin to top. Only you can see pinned fields." [ref=e729] [cursor=pointer]
+                    - generic [ref=e732]:
+                      - button "Jean Bucad- edit Assignee" [ref=e733]
+                      - button "More information about Jean Bucad" [ref=e735]:
+                        - generic [ref=e738]:
+                          - img "Jean Bucad" [ref=e739]:
+                            - img [ref=e741]
+                          - generic [ref=e742]: Jean Bucad
+                      - button "Assign to me" [ref=e744] [cursor=pointer]
+                  - generic [ref=e747]:
+                    - generic [ref=e749]:
+                      - heading "Reporter" [level=3] [ref=e750]
+                      - button "Reporter Pin to top. Only you can see pinned fields." [ref=e753] [cursor=pointer]
+                    - generic [ref=e756]:
+                      - button "Fred Lackey- edit Reporter" [ref=e757]
+                      - button "More information about Fred Lackey" [ref=e759]:
+                        - generic [ref=e762]:
+                          - img "Fred Lackey" [ref=e763]:
+                            - img [ref=e765]
+                          - generic [ref=e766]: Fred Lackey
+                  - generic [ref=e769]:
+                    - generic [ref=e771]:
+                      - heading "Fix versions" [level=3] [ref=e772]
+                      - button "Fix versions Pin to top. Only you can see pinned fields." [ref=e774] [cursor=pointer]
+                    - generic [ref=e781]:
+                      - button "Edit Fix versions, None selected, edit"
+                      - generic [ref=e783]: None
+                  - generic [ref=e786]:
+                    - generic [ref=e788]:
+                      - heading "Components" [level=3] [ref=e789]
+                      - button "Components Pin to top. Only you can see pinned fields." [ref=e791] [cursor=pointer]
+                    - generic [ref=e798]:
+                      - button "Edit Components, Add components selected, edit"
+                      - generic [ref=e800]: Add components
+                  - generic [ref=e804]:
+                    - generic [ref=e806]:
+                      - heading "Start date" [level=3] [ref=e807]
+                      - button "Start date Pin to top. Only you can see pinned fields." [ref=e814] [cursor=pointer]
+                    - generic [ref=e817]:
+                      - button "Edit Start date" [ref=e818]
+                      - generic [ref=e819]: None
+                  - generic [ref=e823]:
+                    - generic [ref=e825]:
+                      - heading "End date" [level=3] [ref=e826]
+                      - button "End date Pin to top. Only you can see pinned fields." [ref=e829] [cursor=pointer]
+                    - generic [ref=e832]:
+                      - button "Edit End date" [ref=e833]
+                      - generic [ref=e834]: None
+                  - generic [ref=e838]:
+                    - generic [ref=e840]:
+                      - heading "Due date" [level=3] [ref=e841]
+                      - button "Due date Pin to top. Only you can see pinned fields." [ref=e844] [cursor=pointer]
+                    - generic [ref=e847]:
+                      - button "Edit Due date" [ref=e848]
+                      - generic [ref=e849]: None
+                  - generic [ref=e854]:
+                    - generic [ref=e856]:
+                      - heading "Parent" [level=3] [ref=e857]
+                      - button "Parent Pin to top. Only you can see pinned fields." [ref=e863] [cursor=pointer]
+                    - generic [ref=e866]:
+                      - button "Edit Parent" [ref=e867]
+                      - generic [ref=e868]:
+                        - img "Epic icon" [ref=e869]
+                        - link "Click to visit PHX-15 Creation of a new portal to enable the features planned for the Phoenix project" [ref=e870] [cursor=pointer]:
+                          - /url: /browse/PHX-15
+                          - text: PHX-15 Creation of a new portal to enable the features planned for the Phoenix project
+                  - generic [ref=e873]:
+                    - generic [ref=e875]:
+                      - heading "Labels" [level=3] [ref=e876]
+                      - button "Labels Pin to top. Only you can see pinned fields." [ref=e879] [cursor=pointer]
+                    - generic [ref=e882]:
+                      - button "Edit Labels" [ref=e883]
+                      - generic [ref=e884]: None
+                  - generic [ref=e887]:
+                    - generic [ref=e889]:
+                      - heading "Collaborators" [level=3] [ref=e890]
+                      - button "Collaborators Pin to top. Only you can see pinned fields." [ref=e892] [cursor=pointer]
+                    - generic [ref=e899]:
+                      - button "Edit Collaborators, None selected, edit"
+                      - generic [ref=e901]: None
+                  - generic [ref=e904]:
+                    - generic [ref=e906]:
+                      - heading "Watchers Group(s)" [level=3] [ref=e907]
+                      - button "Watchers Group(s) Pin to top. Only you can see pinned fields." [ref=e909] [cursor=pointer]
+                    - generic [ref=e916]:
+                      - button "Edit Watchers Group(s), Add groups selected, edit"
+                      - generic [ref=e918]: Add groups
+                  - generic [ref=e921]:
+                    - generic [ref=e923]:
+                      - heading "Project (PRJ)" [level=3] [ref=e924]
+                      - button "Project (PRJ) Pin to top. Only you can see pinned fields." [ref=e927] [cursor=pointer]
+                    - generic [ref=e933]:
+                      - button "Edit Project (PRJ), edit"
+              - button "Development" [ref=e944] [cursor=pointer]:
+                - heading "Development" [level=2] [ref=e948]
+              - button "More fields" [ref=e954] [cursor=pointer]:
+                - generic [ref=e957]:
+                  - heading "More fields" [level=2] [ref=e958]
+                  - generic [ref=e959]: Business Value, QA Tester(s), Reviewer, Approvals Point of Contact, Project Resources, Request participants, Epic/Theme, Story Points, Original estimate, Time tracking, Sprint, Affects versions, Team/s
+            - generic [ref=e961]:
+              - button "Automation" [ref=e967] [cursor=pointer]:
+                - generic [ref=e970]:
+                  - heading "Automation" [level=2] [ref=e971]
+                  - generic [ref=e977]: Rule executions
+              - button "Tempo" [expanded] [ref=e985] [cursor=pointer]:
+                - heading "Tempo" [level=2] [ref=e989]
+              - button "Checklist" [ref=e1003] [cursor=pointer]:
+                - generic [ref=e1006]:
+                  - heading "Checklist" [level=2] [ref=e1007]
+                  - generic [ref=e1012]: Open Checklist
+            - generic [ref=e1014]:
+              - generic [ref=e1016]:
+                - text: Created
+                - button "5 days ago" [ref=e1017] [cursor=pointer]
+              - generic [ref=e1019]:
+                - text: Updated
+                - button "5 days ago" [ref=e1020] [cursor=pointer]
+  - button "Rovo Button" [ref=e1025] [cursor=pointer]:
+    - generic [ref=e1026]: Rovo Button
+    - img [ref=e1027]

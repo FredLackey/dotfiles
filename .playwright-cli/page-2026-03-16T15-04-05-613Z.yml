@@ -1,0 +1,22 @@
+- generic [ref=e6]:
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e15]: Username
+      - textbox "Username" [active] [ref=e16]
+    - generic [ref=e18]:
+      - checkbox "Remember my username" [ref=e19] [cursor=pointer]
+      - generic [ref=e21]: Remember my username
+    - button "Continue" [ref=e24] [cursor=pointer]
+    - list [ref=e26]:
+      - listitem [ref=e27]:
+        - button "Forgot Password" [ref=e28] [cursor=pointer]
+  - list [ref=e30]:
+    - listitem [ref=e31]:
+      - link "Powered by OneLogin" [ref=e32] [cursor=pointer]:
+        - /url: https://www.onelogin.com
+    - listitem [ref=e33]:
+      - link "Terms" [ref=e34] [cursor=pointer]:
+        - /url: https://www.onelogin.com/terms
+    - listitem [ref=e35]:
+      - link "Privacy Policy" [ref=e36] [cursor=pointer]:
+        - /url: https://www.onelogin.com/privacy

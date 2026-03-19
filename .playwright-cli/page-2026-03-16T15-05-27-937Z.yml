@@ -1,0 +1,413 @@
+- generic [ref=e2]:
+  - generic:
+    - generic: "Skip to:"
+    - list:
+      - listitem:
+        - link "Top Bar":
+          - /url: "#_R18skj5jal9_"
+      - listitem:
+        - link "Sidebar":
+          - /url: "#_R6p4kj5jal9_"
+      - listitem:
+        - link "Main Content":
+          - /url: "#_R1ckj5jal9_"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - button "Switch sites or apps" [ref=e9] [cursor=pointer]:
+            - generic [ref=e12]: Switch sites or apps
+          - link "Go to your Jira homepage" [ref=e14] [cursor=pointer]:
+            - /url: /jira
+            - generic [ref=e15]:
+              - img [ref=e18]
+              - generic [ref=e23]: Jira
+        - button "Collapse sidebar" [ref=e25] [cursor=pointer]:
+          - generic [ref=e27]: Collapse sidebar
+      - generic [ref=e28]:
+        - button [ref=e29] [cursor=pointer]:
+          - search [ref=e30]:
+            - combobox "Search, press enter to navigate to advanced search with your text query" [ref=e33]
+        - button "Create" [ref=e36] [cursor=pointer]:
+          - generic [ref=e39]: Create
+      - navigation "Actions" [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - button "Rovo Ask Rovo" [ref=e44] [cursor=pointer]:
+              - img "Rovo" [ref=e46]:
+                - img [ref=e47]
+              - generic [ref=e52]: Ask Rovo
+          - listitem [ref=e53]:
+            - generic [ref=e55]:
+              - button "Over 9 Notifications" [ref=e56] [cursor=pointer]:
+                - generic [ref=e59]: Over 9 Notifications
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: 9+
+          - listitem [ref=e62]:
+            - button "Help" [ref=e63] [cursor=pointer]:
+              - generic [ref=e66]: Help
+          - listitem [ref=e68]:
+            - button "Settings" [ref=e69] [cursor=pointer]:
+              - generic [ref=e72]: Settings
+          - listitem [ref=e73]:
+            - button "fred.lackey@consensus.com" [ref=e74] [cursor=pointer]:
+              - img "Account" [ref=e76]
+    - navigation "Sidebar" [ref=e77]:
+      - list [ref=e81]:
+        - listitem [ref=e82]:
+          - link "For you" [ref=e84] [cursor=pointer]:
+            - /url: /jira/for-you
+            - generic [ref=e89]: For you
+        - listitem [ref=e90]:
+          - button "Recent" [ref=e92] [cursor=pointer]:
+            - generic [ref=e96]: Recent
+        - listitem [ref=e97]:
+          - button "Starred" [ref=e99] [cursor=pointer]:
+            - generic [ref=e103]: Starred
+        - listitem [ref=e104]:
+          - generic [ref=e107]:
+            - button "Apps" [ref=e108] [cursor=pointer]:
+              - generic [ref=e112]: Apps
+            - generic:
+              - button "More actions for Apps":
+                - generic [ref=e115] [cursor=pointer]: More actions for Apps
+        - listitem [ref=e116]:
+          - generic [ref=e119]:
+            - button "Plans" [ref=e120] [cursor=pointer]:
+              - generic [ref=e124]: Plans
+            - generic:
+              - button "Create plan" [ref=e125] [cursor=pointer]:
+                - generic [ref=e128]: Create plan
+              - button "More actions for Plans":
+                - generic [ref=e131] [cursor=pointer]: More actions for Plans
+        - listitem [ref=e132]:
+          - generic [ref=e135]:
+            - button "Spaces" [ref=e136] [cursor=pointer]:
+              - generic [ref=e140]: Spaces
+            - generic:
+              - button "More actions for spaces":
+                - generic [ref=e143] [cursor=pointer]: More actions for spaces
+        - listitem [ref=e144]:
+          - generic [ref=e147]:
+            - button "Filters" [ref=e148] [cursor=pointer]:
+              - generic [ref=e152]: Filters
+            - generic:
+              - button "More actions for Filters":
+                - generic [ref=e155] [cursor=pointer]: More actions for Filters
+        - listitem [ref=e156]:
+          - generic [ref=e159]:
+            - button "Dashboards" [ref=e160] [cursor=pointer]:
+              - generic [ref=e164]: Dashboards
+            - generic:
+              - button "Create dashboard" [ref=e165] [cursor=pointer]:
+                - generic [ref=e168]: Create dashboard
+              - button "More actions for Dashboards":
+                - generic [ref=e171] [cursor=pointer]: More actions for Dashboards
+        - listitem [ref=e172]:
+          - generic [ref=e175]:
+            - button "Operations" [ref=e176] [cursor=pointer]:
+              - generic [ref=e180]: Operations
+            - generic:
+              - button "More actions for Operations":
+                - generic [ref=e183] [cursor=pointer]: More actions for Operations
+        - list [ref=e186]:
+          - listitem [ref=e188]:
+            - generic [ref=e189]:
+              - link "Assets , (opens new window)" [ref=e190] [cursor=pointer]:
+                - /url: https://consensus.atlassian.net/jira/assets?xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2NzM1MjYwMjYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e195]: Assets
+                - generic [ref=e196]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - img "Open external link icon"
+          - listitem [ref=e198]:
+            - generic [ref=e199]:
+              - link "Goals , (opens new window)" [ref=e200] [cursor=pointer]:
+                - /url: https://home.atlassian.com/o/8ca082dc-a111-1932-6k6b-9b82j1k3146b/goals?cloudId=5ec350fe-c444-4610-8b8d-6d50a4b1428d&xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2NzM1MjYwMjYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e205]: Goals
+                - generic [ref=e206]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - img "Open external link icon"
+          - listitem [ref=e208]:
+            - generic [ref=e209]:
+              - link "Teams , (opens new window)" [ref=e210] [cursor=pointer]:
+                - /url: https://home.atlassian.com/o/8ca082dc-a111-1932-6k6b-9b82j1k3146b/people?cloudId=5ec350fe-c444-4610-8b8d-6d50a4b1428d&xpis=eyJicmlkZ2UiOiJnbG9iYWxTaG9ydGN1dHMiLCJpZCI6IjE3NzM2NzM1MjYwMjYiLCJzb3VyY2UiOiJqaXJhIn0%3D
+                - generic [ref=e215]: Teams
+                - generic [ref=e216]: ", (opens new window)"
+              - generic:
+                - generic:
+                  - img
+              - generic:
+                - button "open menu":
+                  - generic [ref=e219] [cursor=pointer]: open menu
+              - generic:
+                - img "Open external link icon"
+        - listitem [ref=e221]:
+          - button "Customize sidebar" [ref=e223] [cursor=pointer]:
+            - generic [ref=e227]: Customize sidebar
+    - generic [ref=e229]:
+      - slider "Resize side navigation panel" [ref=e230]: "240"
+      - text: Resize side navigation panel
+    - main [ref=e232]:
+      - generic [ref=e241]:
+        - heading "For you" [level=1] [ref=e245]
+        - generic [ref=e247]:
+          - generic [ref=e248]:
+            - heading "Recent spaces" [level=2] [ref=e249]
+            - link "View all spaces" [ref=e250] [cursor=pointer]:
+              - /url: /jira/projects
+          - list [ref=e253]:
+            - listitem [ref=e254]:
+              - generic [ref=e255]:
+                - link "Phoenix Company-managed software" [ref=e256] [cursor=pointer]:
+                  - /url: https://consensus.atlassian.net/jira/software/c/projects/PHX/boards/1704?useStoredSettings=true
+                  - generic [ref=e258]:
+                    - heading "Phoenix" [level=3] [ref=e260]:
+                      - generic [ref=e261]: Phoenix
+                    - paragraph [ref=e262]: Company-managed software
+                - generic [ref=e263]:
+                  - heading "Quick links" [level=4] [ref=e266]
+                  - list [ref=e267]:
+                    - listitem [ref=e268]:
+                      - link "My open work items" [ref=e270] [cursor=pointer]:
+                        - /url: /issues/?jql=assignee%20%3D%20currentUser()%20AND%20project%3D'PHX'%20AND%20statusCategory%20!%3D%203
+                        - paragraph [ref=e272]: My open work items
+                        - generic [ref=e273]: "20"
+                    - listitem [ref=e274]:
+                      - link "Done work items" [ref=e276] [cursor=pointer]:
+                        - /url: /issues/?jql=project%3D'PHX'%20AND%20statusCategory%20%3D%20Done
+                        - paragraph [ref=e278]: Done work items
+                - button "10 boards" [ref=e280] [cursor=pointer]:
+                  - paragraph [ref=e282]: 10 boards
+            - listitem [ref=e285]:
+              - generic [ref=e286]:
+                - link "FaxOps Service management" [ref=e287] [cursor=pointer]:
+                  - /url: https://consensus.atlassian.net/browse/FAX
+                  - generic [ref=e289]:
+                    - heading "FaxOps" [level=3] [ref=e291]:
+                      - generic [ref=e292]: FaxOps
+                    - paragraph [ref=e293]: Service management
+                - generic [ref=e294]:
+                  - heading "Recent queues" [level=4] [ref=e297]
+                  - list
+                - button "0 queues" [disabled] [ref=e299]:
+                  - generic:
+                    - paragraph: 0 queues
+        - generic [ref=e303]:
+          - tablist [ref=e304]:
+            - tab "Worked on" [ref=e305] [cursor=pointer]:
+              - generic [ref=e306]: Worked on
+            - tab "Viewed" [ref=e307] [cursor=pointer]:
+              - generic [ref=e308]: Viewed
+            - tab "Assigned to me 23" [selected] [ref=e309] [cursor=pointer]:
+              - generic [ref=e310]:
+                - text: Assigned to me
+                - generic [ref=e313]: "23"
+            - tab "Starred" [ref=e314] [cursor=pointer]:
+              - generic [ref=e315]: Starred
+            - tab "Boards" [ref=e316] [cursor=pointer]:
+              - generic [ref=e317]: Boards
+          - tabpanel "Assigned to me 23" [ref=e318]:
+            - generic [ref=e320]:
+              - heading "In Progress" [level=3] [ref=e322]
+              - list [ref=e323]:
+                - listitem [ref=e324]:
+                  - link "Story Simplify Portal Build Process PHX-1240·Phoenix In Progress" [ref=e325] [cursor=pointer]:
+                    - /url: /browse/PHX-1240
+                    - img "Story" [ref=e327]
+                    - generic [ref=e328]:
+                      - heading "Simplify Portal Build Process" [level=4] [ref=e329]
+                      - generic [ref=e330]: PHX-1240·Phoenix
+                    - generic [ref=e331]: In Progress
+                - listitem [ref=e332]:
+                  - link "Story Create & Deploy Initial Settings MFE for Each MFE PHX-913·Phoenix In Progress" [ref=e333] [cursor=pointer]:
+                    - /url: /browse/PHX-913
+                    - img "Story" [ref=e335]
+                    - generic [ref=e336]:
+                      - heading "Create & Deploy Initial Settings MFE for Each MFE" [level=4] [ref=e337]
+                      - generic [ref=e338]: PHX-913·Phoenix
+                    - generic [ref=e339]: In Progress
+                - listitem [ref=e340]:
+                  - link "Story Deployment of Portal UI via Neo Bahamut PHX-333·Phoenix In Progress" [ref=e341] [cursor=pointer]:
+                    - /url: /browse/PHX-333
+                    - img "Story" [ref=e343]
+                    - generic [ref=e344]:
+                      - heading "Deployment of Portal UI via Neo Bahamut" [level=4] [ref=e345]
+                      - generic [ref=e346]: PHX-333·Phoenix
+                    - generic [ref=e347]: In Progress
+                - listitem [ref=e348]:
+                  - link "Story Research Portal Shell's use of PortalProvider and plan out integration with PSRV auth server/Auth0 PHX-83·Phoenix In Progress" [ref=e349] [cursor=pointer]:
+                    - /url: /browse/PHX-83
+                    - img "Story" [ref=e351]
+                    - generic [ref=e352]:
+                      - heading "Research Portal Shell's use of PortalProvider and plan out integration with PSRV auth server/Auth0" [level=4] [ref=e353]
+                      - generic [ref=e354]: PHX-83·Phoenix
+                    - generic [ref=e355]: In Progress
+                - listitem [ref=e356]:
+                  - link "Epic Creation of a new portal to enable the features planned for the Phoenix project PHX-15·Phoenix In Progress" [ref=e357] [cursor=pointer]:
+                    - /url: /browse/PHX-15
+                    - img "Epic" [ref=e359]
+                    - generic [ref=e360]:
+                      - heading "Creation of a new portal to enable the features planned for the Phoenix project" [level=4] [ref=e361]
+                      - generic [ref=e362]: PHX-15·Phoenix
+                    - generic [ref=e363]: In Progress
+              - heading "Requires information" [level=3] [ref=e365]
+              - list [ref=e366]:
+                - listitem [ref=e367]:
+                  - link "Service Request Team Request - Integrated Portal Developers GITHUB-751·GitHub Administration Requires information" [ref=e368] [cursor=pointer]:
+                    - /url: /browse/GITHUB-751
+                    - img "Service Request" [ref=e370]
+                    - generic [ref=e371]:
+                      - heading "Team Request - Integrated Portal Developers" [level=4] [ref=e372]
+                      - generic [ref=e373]: GITHUB-751·GitHub Administration
+                    - generic [ref=e374]: Requires information
+              - heading "To Do" [level=3] [ref=e376]
+              - list [ref=e377]:
+                - listitem [ref=e378]:
+                  - link "Bug Sent Fax not showing up in Sent Folder PHX-2069·Phoenix To Do" [ref=e379] [cursor=pointer]:
+                    - /url: /browse/PHX-2069
+                    - img "Bug" [ref=e381]
+                    - generic [ref=e382]:
+                      - heading "Sent Fax not showing up in Sent Folder" [level=4] [ref=e383]
+                      - generic [ref=e384]: PHX-2069·Phoenix
+                    - generic [ref=e385]: To Do
+                - listitem [ref=e386]:
+                  - link "Bug Fax Numbers listed in Inbox drop down filter are not relevant to the Account PHX-1867·Phoenix To Do" [ref=e387] [cursor=pointer]:
+                    - /url: /browse/PHX-1867
+                    - img "Bug" [ref=e389]
+                    - generic [ref=e390]:
+                      - heading "Fax Numbers listed in Inbox drop down filter are not relevant to the Account" [level=4] [ref=e391]
+                      - generic [ref=e392]: PHX-1867·Phoenix
+                    - generic [ref=e393]: To Do
+                - listitem [ref=e394]:
+                  - link "Bug Your Fax Number drop down does not pull up correct DID's associated with account PHX-1860·Phoenix To Do" [ref=e395] [cursor=pointer]:
+                    - /url: /browse/PHX-1860
+                    - img "Bug" [ref=e397]
+                    - generic [ref=e398]:
+                      - heading "Your Fax Number drop down does not pull up correct DID's associated with account" [level=4] [ref=e399]
+                      - generic [ref=e400]: PHX-1860·Phoenix
+                    - generic [ref=e401]: To Do
+                - listitem [ref=e402]:
+                  - link "Production Support eFax - Login Degraded FMA-19116·Fax My Account To Do" [ref=e403] [cursor=pointer]:
+                    - /url: /browse/FMA-19116
+                    - img "Production Support" [ref=e405]
+                    - generic [ref=e406]:
+                      - heading "eFax - Login Degraded" [level=4] [ref=e407]
+                      - generic [ref=e408]: FMA-19116·Fax My Account
+                    - generic [ref=e409]: To Do
+              - heading "Backlog" [level=3] [ref=e411]
+              - list [ref=e412]:
+                - listitem [ref=e413]:
+                  - link "Story Validate phone number format via UI when sending a fax (As a User) PHX-2033·Phoenix Backlog" [ref=e414] [cursor=pointer]:
+                    - /url: /browse/PHX-2033
+                    - img "Story" [ref=e416]
+                    - generic [ref=e417]:
+                      - heading "Validate phone number format via UI when sending a fax (As a User)" [level=4] [ref=e418]
+                      - generic [ref=e419]: PHX-2033·Phoenix
+                    - generic [ref=e420]: Backlog
+                - listitem [ref=e421]:
+                  - link "Bug Compose Fax → Save Contact Checkbox Does Not Save Recipient to Contacts PHX-2004·Phoenix Backlog" [ref=e422] [cursor=pointer]:
+                    - /url: /browse/PHX-2004
+                    - img "Bug" [ref=e424]
+                    - generic [ref=e425]:
+                      - heading "Compose Fax → Save Contact Checkbox Does Not Save Recipient to Contacts" [level=4] [ref=e426]
+                      - generic [ref=e427]: PHX-2004·Phoenix
+                    - generic [ref=e428]: Backlog
+                - listitem [ref=e429]:
+                  - link "Bug PDF preview not working PHX-1992·Phoenix Backlog" [ref=e430] [cursor=pointer]:
+                    - /url: /browse/PHX-1992
+                    - img "Bug" [ref=e432]
+                    - generic [ref=e433]:
+                      - heading "PDF preview not working" [level=4] [ref=e434]
+                      - generic [ref=e435]: PHX-1992·Phoenix
+                    - generic [ref=e436]: Backlog
+                - listitem [ref=e437]:
+                  - link "Bug Compose Fax → Unsupported File Formats Allowed When Uploaded via Drag-and-Drop PHX-1921·Phoenix Backlog" [ref=e438] [cursor=pointer]:
+                    - /url: /browse/PHX-1921
+                    - img "Bug" [ref=e440]
+                    - generic [ref=e441]:
+                      - heading "Compose Fax → Unsupported File Formats Allowed When Uploaded via Drag-and-Drop" [level=4] [ref=e442]
+                      - generic [ref=e443]: PHX-1921·Phoenix
+                    - generic [ref=e444]: Backlog
+                - listitem [ref=e445]:
+                  - link "Bug Unable to send a fax (CORS issues?) PHX-1863·Phoenix Backlog" [ref=e446] [cursor=pointer]:
+                    - /url: /browse/PHX-1863
+                    - img "Bug" [ref=e448]
+                    - generic [ref=e449]:
+                      - heading "Unable to send a fax (CORS issues?)" [level=4] [ref=e450]
+                      - generic [ref=e451]: PHX-1863·Phoenix
+                    - generic [ref=e452]: Backlog
+                - listitem [ref=e453]:
+                  - link "Story Implement Semantic Versioning and Remove npm Scopes PHX-1427·Phoenix Backlog" [ref=e454] [cursor=pointer]:
+                    - /url: /browse/PHX-1427
+                    - img "Story" [ref=e456]
+                    - generic [ref=e457]:
+                      - heading "Implement Semantic Versioning and Remove npm Scopes" [level=4] [ref=e458]
+                      - generic [ref=e459]: PHX-1427·Phoenix
+                    - generic [ref=e460]: Backlog
+                - listitem [ref=e461]:
+                  - link "Story Implement Google scripts in portal PHX-1348·Phoenix Backlog" [ref=e462] [cursor=pointer]:
+                    - /url: /browse/PHX-1348
+                    - img "Story" [ref=e464]
+                    - generic [ref=e465]:
+                      - heading "Implement Google scripts in portal" [level=4] [ref=e466]
+                      - generic [ref=e467]: PHX-1348·Phoenix
+                    - generic [ref=e468]: Backlog
+                - listitem [ref=e469]:
+                  - link "Story Portal Shell — Auth0 Integration and MFE Login Flow PHX-1328·Phoenix Backlog" [ref=e470] [cursor=pointer]:
+                    - /url: /browse/PHX-1328
+                    - img "Story" [ref=e472]
+                    - generic [ref=e473]:
+                      - heading "Portal Shell — Auth0 Integration and MFE Login Flow" [level=4] [ref=e474]
+                      - generic [ref=e475]: PHX-1328·Phoenix
+                    - generic [ref=e476]: Backlog
+                - listitem [ref=e477]:
+                  - link "Story Create Barbican API Client Libraries for Portal PHX-1243·Phoenix Backlog" [ref=e478] [cursor=pointer]:
+                    - /url: /browse/PHX-1243
+                    - img "Story" [ref=e480]
+                    - generic [ref=e481]:
+                      - heading "Create Barbican API Client Libraries for Portal" [level=4] [ref=e482]
+                      - generic [ref=e483]: PHX-1243·Phoenix
+                    - generic [ref=e484]: Backlog
+                - listitem [ref=e485]:
+                  - link "Task Interview Activities - Candidate Screenings PHX-898·Phoenix Backlog" [ref=e486] [cursor=pointer]:
+                    - /url: /browse/PHX-898
+                    - img "Task" [ref=e488]
+                    - generic [ref=e489]:
+                      - heading "Interview Activities - Candidate Screenings" [level=4] [ref=e490]
+                      - generic [ref=e491]: PHX-898·Phoenix
+                    - generic [ref=e492]: Backlog
+                - listitem [ref=e493]:
+                  - link "Task Team Coordination & Sprint Activities PHX-897·Phoenix Backlog" [ref=e494] [cursor=pointer]:
+                    - /url: /browse/PHX-897
+                    - img "Task" [ref=e496]
+                    - generic [ref=e497]:
+                      - heading "Team Coordination & Sprint Activities" [level=4] [ref=e498]
+                      - generic [ref=e499]: PHX-897·Phoenix
+                    - generic [ref=e500]: Backlog
+                - listitem [ref=e501]:
+                  - link "Story Technical Runway PHX-362·Phoenix Backlog" [ref=e502] [cursor=pointer]:
+                    - /url: /browse/PHX-362
+                    - img "Story" [ref=e504]
+                    - generic [ref=e505]:
+                      - heading "Technical Runway" [level=4] [ref=e506]
+                      - generic [ref=e507]: PHX-362·Phoenix
+                    - generic [ref=e508]: Backlog
+                - listitem [ref=e509]:
+                  - link "Story MFE Prep (spec from Doug Lawrence) FMA-19190·Fax My Account Backlog" [ref=e510] [cursor=pointer]:
+                    - /url: /browse/FMA-19190
+                    - img "Story" [ref=e512]
+                    - generic [ref=e513]:
+                      - heading "MFE Prep (spec from Doug Lawrence)" [level=4] [ref=e514]
+                      - generic [ref=e515]: FMA-19190·Fax My Account
+                    - generic [ref=e516]: Backlog
+  - button "Rovo Button" [ref=e521] [cursor=pointer]:
+    - generic [ref=e522]: Rovo Button
+    - img [ref=e523]
