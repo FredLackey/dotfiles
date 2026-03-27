@@ -34,6 +34,9 @@ if [[ -f /usr/local/bin/brew ]]; then
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+# Claude Code
+export PATH="$HOME/.claude/bin:$PATH"
+
 # ------------------------------------------------------------------------------
 # NVM (Node Version Manager)
 # ------------------------------------------------------------------------------

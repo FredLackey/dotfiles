@@ -29,7 +29,7 @@ if [ -d "$TARGET_DIR" ] && [ -d "$TARGET_DIR/.git" ]; then
 elif [ -d "$TARGET_DIR" ]; then
     echo "Files already present in $TARGET_DIR (no git repo). Skipping download."
 else
-    if command -v git >/dev/null 2>&1; then
+    if command -v git >/dev/null 2>&1 && git --version >/dev/null 2>&1; then
         echo "Cloning dotfiles..."
         git clone "$REPO_URL" "$TARGET_DIR"
     else
