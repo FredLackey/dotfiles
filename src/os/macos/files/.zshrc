@@ -33,6 +33,9 @@ export PATH="$HOME/go/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Claude Code
+export PATH="$HOME/.claude/bin:$PATH"
+
 
 # ------------------------------------------------------------------------------
 # NVM (Node Version Manager)

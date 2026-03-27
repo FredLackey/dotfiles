@@ -4,7 +4,7 @@ set -e
 APP_NAME="Claude Code"
 
 # 1. CHECK - Skip if already installed
-if command -v claude >/dev/null 2>&1; then
+if command -v claude >/dev/null 2>&1 || [ -x "$HOME/.claude/bin/claude" ]; then
     echo "$APP_NAME is already installed."
     exit 0
 fi
@@ -19,7 +19,12 @@ fi
 echo "Installing $APP_NAME..."
 curl -fsSL https://claude.ai/install.sh | bash
 
-# 4. VERIFY - Confirm installation succeeded
+# 4. ADD TO PATH - Installer drops binary in ~/.claude/bin which may not be on PATH yet
+if ! command -v claude >/dev/null 2>&1 && [ -x "$HOME/.claude/bin/claude" ]; then
+    export PATH="$HOME/.claude/bin:$PATH"
+fi
+
+# 5. VERIFY - Confirm installation succeeded
 if command -v claude >/dev/null 2>&1; then
     echo "$APP_NAME installed successfully."
 else
