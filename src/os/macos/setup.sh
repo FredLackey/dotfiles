@@ -116,6 +116,7 @@ install_applications() {
     # 4. Core CLI Tools
     run_installer "git.sh" "DEV"
     run_installer "github-cli.sh" "DEV"
+    run_installer "acli.sh" "DEV"
     run_installer "bash-completion.sh" "UTILS"
     run_installer "wget.sh" "UTILS"
     run_installer "gpg.sh" "UTILS"
@@ -144,7 +145,10 @@ install_applications() {
     run_installer "gemini-cli.sh" "AI"
     run_installer "claude-code.sh" "AI"
     run_installer "kiro.sh" "AI"
+    run_installer "kiro-cli.sh" "AI"
     run_installer "aws-cli.sh" "DEVOPS"
+    run_installer "gcloud.sh" "DEVOPS"
+    run_installer "saml2aws.sh" "DEVOPS"
 
     # 7. Applications & GUI Tools
     run_installer "iterm2.sh" "APPS"
@@ -153,6 +157,7 @@ install_applications() {
     run_installer "sublime-text.sh" "DEV"
 
     run_installer "docker.sh" "DEVOPS"
+    run_installer "podman.sh" "DEVOPS"
     run_installer "postman.sh" "DEV"
     run_installer "dbeaver.sh" "DEV"
     run_installer "studio-3t.sh" "DEV"

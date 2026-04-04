@@ -92,6 +92,7 @@ install_applications() {
     run_installer "curl.sh" "UTILS"
     run_installer "wget.sh" "UTILS"
     run_installer "gpg.sh" "UTILS"
+    run_installer "acli.sh" "DEV"
 
     # 3. Shell Configuration (core - deploy early so PATH is set)
     run_installer "shell-config.sh" "SYSTEM"
@@ -145,11 +146,15 @@ install_applications() {
 
     # 8. Infrastructure & DevOps
     run_installer "aws-cli.sh" "DEVOPS"
+    run_installer "gcloud.sh" "DEVOPS"
+    run_installer "saml2aws.sh" "DEVOPS"
     run_installer "tfenv.sh" "DEVOPS"
     run_installer "terraform.sh" "DEVOPS"
+    run_installer "podman.sh" "DEVOPS"
 
     # 9. AI Tools
     run_installer "claude-code.sh" "AI"
+    run_installer "kiro-cli.sh" "AI"
 
     # 10. Marcus Developer Tools (td must be first — other tools reference it)
     run_installer "td.sh" "APPS"

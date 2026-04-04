@@ -62,6 +62,7 @@ install_applications() {
     # 2. Core CLI Tools
     run_installer "git.sh" "DEV"
     run_installer "github-cli.sh" "DEV"
+    run_installer "acli.sh" "DEV"
     run_installer "curl.sh" "UTILS"
     run_installer "wget.sh" "UTILS"
     run_installer "gpg.sh" "UTILS"
@@ -114,13 +115,17 @@ install_applications() {
 
     # 7. Infrastructure & DevOps
     run_installer "docker.sh" "DEVOPS"
+    run_installer "podman.sh" "DEVOPS"
     run_installer "tailscale.sh" "DEVOPS"
     run_installer "aws-cli.sh" "DEVOPS"
+    run_installer "gcloud.sh" "DEVOPS"
+    run_installer "saml2aws.sh" "DEVOPS"
     run_installer "tfenv.sh" "DEVOPS"
     run_installer "terraform.sh" "DEVOPS"
 
     # 8. AI Tools
     run_installer "claude-code.sh" "AI"
+    run_installer "kiro-cli.sh" "AI"
 
     # 9. Marcus Developer Tools (td must be first — other tools reference it)
     run_installer "td.sh" "APPS"
