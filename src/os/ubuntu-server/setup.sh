@@ -60,12 +60,13 @@ install_applications() {
     run_installer "build-essential.sh" "SYSTEM"
 
     # 2. Core CLI Tools
-    run_installer "git.sh" "DEV"
-    run_installer "github-cli.sh" "DEV"
-    run_installer "acli.sh" "DEV"
+    # Install download utilities and gpg first — subsequent installers depend on them
     run_installer "curl.sh" "UTILS"
     run_installer "wget.sh" "UTILS"
     run_installer "gpg.sh" "UTILS"
+    run_installer "git.sh" "DEV"
+    run_installer "github-cli.sh" "DEV"
+    run_installer "acli.sh" "DEV"
 
     # 3. Shell Configuration (core - deploy early so PATH is set)
     run_installer "shell-config.sh" "SYSTEM"
