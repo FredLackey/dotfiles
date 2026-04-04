@@ -15,9 +15,9 @@ if ! command -v curl >/dev/null 2>&1; then
     exit 1
 fi
 
-# 3. INSTALL - Official installer with non-interactive flag
+# 3. INSTALL - Official installer (no interactive prompts on Linux)
 echo "Installing $APP_NAME..."
-curl -fsSL https://cli.kiro.dev/install | bash -s -- --no-confirm
+curl -fsSL https://cli.kiro.dev/install | bash
 
 # 4. VERIFY - Confirm installation succeeded
 # The installer places the binary in ~/.local/bin which may not be in PATH yet
