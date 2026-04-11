@@ -78,6 +78,7 @@ _dotfiles_source "vpush.sh" "DEV"
 
 # DevOps
 _dotfiles_source "docker-clean.sh" "DEVOPS"
+_dotfiles_source "gcloud-toggle.sh" "DEVOPS"
 
 # Media
 _dotfiles_source "get-channel.sh" "MEDIA"
