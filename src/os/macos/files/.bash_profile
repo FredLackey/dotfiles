@@ -164,6 +164,8 @@ alias q="exit"
 alias e="vim --"
 alias m="man"
 alias path='printf "%b\n" "${PATH//:/\\n}"'
+alias cc="claude-danger"
+alias co="codex-danger"
 
 # ------------------------------------------------------------------------------
 # Prompt (Starship)

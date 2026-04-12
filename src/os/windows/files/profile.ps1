@@ -12,3 +12,7 @@ if (Test-Path $_functionsMain) {
     . $_functionsMain
 }
 Remove-Variable _functionsMain -ErrorAction SilentlyContinue
+
+# Aliases
+Set-Alias -Name cc -Value claude-danger
+Set-Alias -Name co -Value codex-danger

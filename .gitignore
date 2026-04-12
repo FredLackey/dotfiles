@@ -55,3 +55,4 @@ lerna-debug.log*
 .terraform.lock.hcl
 .todos/
 .sidecar/
+status/

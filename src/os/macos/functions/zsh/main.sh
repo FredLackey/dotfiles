@@ -57,6 +57,7 @@ _dotfiles_source "s.sh" "UTILS"
 
 # AI Tools
 _dotfiles_source "claude-danger.sh" "AI"
+_dotfiles_source "codex-danger.sh" "AI"
 
 # Development
 _dotfiles_source "clean-dev.sh" "DEV"
