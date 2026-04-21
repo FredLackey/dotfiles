@@ -13,6 +13,9 @@ claude-danger() {
         return 1
     fi
 
+    # Required to allow --dangerously-skip-permissions under a root account
+    export IS_SANDBOX=1
+
     # If first argument is a session UUID, resume it
     if [[ "$1" =~ ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$ ]]; then
         echo "Resuming Claude session $1 in dangerous mode..."
