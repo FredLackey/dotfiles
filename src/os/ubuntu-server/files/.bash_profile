@@ -148,6 +148,9 @@ alias ll='ls -la --color=auto'
 alias la='ls -A --color=auto'
 alias l='ls -CF --color=auto'
 alias ls='ls --color=auto'
+alias t1='tree -L 1'
+alias t2='tree -L 2'
+alias t3='tree -L 3'
 
 # Quick commands
 alias c="clear"

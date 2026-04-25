@@ -157,6 +157,9 @@ alias mkdir="mkdir -pv"
 alias ll='ls -la'
 alias la='ls -A'
 alias l='ls -CF'
+alias t1='tree -L 1'
+alias t2='tree -L 2'
+alias t3='tree -L 3'
 
 # Quick commands
 alias c="clear"
