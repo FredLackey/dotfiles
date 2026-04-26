@@ -93,3 +93,4 @@ _dotfiles_source "mkd.sh" "UTILS"
 # AI Tools
 _dotfiles_source "claude-danger.sh" "AI"
 _dotfiles_source "codex-danger.sh" "AI"
+_dotfiles_source "codex-update.sh" "AI"

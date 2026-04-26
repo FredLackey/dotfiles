@@ -1,11 +1,12 @@
 #!/bin/bash
-# codex-danger - Launch Codex CLI in full-auto mode
+# codex-danger - Launch Codex CLI in YOLO mode
 #
-# Starts Codex CLI bypassing approval prompts. Use with caution.
+# Starts Codex CLI bypassing approval prompts and sandboxing. Use with caution.
 #
 # Usage:
 #   codex-danger
-#   codex-danger "some prompt"
+#   codex-danger <session-id-or-name>
+#   codex-danger <session-id-or-name> "follow-up prompt"
 #
 # Dependencies:
 #   - codex (npm install -g @openai/codex)
@@ -18,6 +19,11 @@ codex-danger() {
         return 1
     fi
 
-    echo "Launching Codex CLI in full-auto mode (skipping approval prompts)..."
-    codex --full-auto "$@"
+    if [ "$#" -eq 0 ]; then
+        echo "Launching Codex CLI in YOLO mode..."
+        codex --yolo
+    else
+        echo "Resuming Codex CLI in YOLO mode..."
+        codex resume --yolo "$@"
+    fi
 }
