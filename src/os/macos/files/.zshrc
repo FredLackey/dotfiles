@@ -75,9 +75,10 @@ fi
 # ------------------------------------------------------------------------------
 
 # History settings
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=100000
+SAVEHIST=100000
+setopt APPEND_HISTORY         # Append history to file instead of overwriting
 setopt HIST_IGNORE_DUPS      # Don't record duplicate entries
 setopt HIST_IGNORE_SPACE     # Don't record entries starting with space
 setopt SHARE_HISTORY         # Share history between sessions

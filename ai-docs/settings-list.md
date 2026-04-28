@@ -44,6 +44,7 @@ This document catalogs all system preferences, shell settings, and environment c
 
 | Option | Command | Purpose |
 |--------|---------|---------|
+| APPEND_HISTORY | `setopt APPEND_HISTORY` | Append history to the history file instead of overwriting it |
 | HIST_IGNORE_DUPS | `setopt HIST_IGNORE_DUPS` | Don't record duplicate consecutive history entries |
 | HIST_IGNORE_SPACE | `setopt HIST_IGNORE_SPACE` | Don't record commands that start with a space |
 | SHARE_HISTORY | `setopt SHARE_HISTORY` | Share history between all active zsh sessions |
@@ -90,8 +91,8 @@ This document catalogs all system preferences, shell settings, and environment c
 | Variable | Value | Purpose |
 |----------|-------|---------|
 | HISTFILE | `~/.zsh_history` | Location of the history file |
-| HISTSIZE | `10000` | Number of history entries kept in memory |
-| SAVEHIST | `10000` | Number of entries saved to the history file |
+| HISTSIZE | `100000` | Number of history entries kept in memory |
+| SAVEHIST | `100000` | Number of entries saved to the history file |
 
 ---
 
