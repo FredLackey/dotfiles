@@ -32,6 +32,7 @@ This list contains software packages identified for software development purpose
 | **Brave Browser** | GUI | Privacy-focused web browser. |
 | **Chrome Canary** | GUI | Experimental version of Chrome for development testing. |
 | **Claude Code** | Terminal | AI-assisted coding tool. |
+| **Codex** | GUI | OpenAI desktop app for managing coding agents. |
 | **Cursor** | GUI | AI-first code editor. |
 | **DBeaver** | GUI | Universal database tool. |
 | **DbSchema** | GUI | Visual database designer and manager. |
@@ -41,6 +42,7 @@ This list contains software packages identified for software development purpose
 | **Gemini CLI** | Terminal | Command line interface for Google Gemini AI. |
 | **Git** | Terminal | Distributed version control system. |
 | **GitHub CLI** | Terminal | Command line interface for GitHub. |
+| **Ghostty** | GUI | GPU-accelerated terminal emulator. |
 | **Go** | Terminal | Programming language. |
 | **Google Chrome** | GUI | Web browser. |
 | **GPG** | Terminal | GnuPG encryption and signing tool. |

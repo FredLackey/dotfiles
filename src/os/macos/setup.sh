@@ -152,8 +152,10 @@ install_applications() {
 
     # 7. Applications & GUI Tools
     run_installer "iterm2.sh" "APPS"
+    run_installer "ghostty.sh" "TERMINAL"
     run_installer "vscode.sh" "DEV"
     run_installer "cursor.sh" "AI"
+    run_installer "codex-app.sh" "AI"
     run_installer "sublime-text.sh" "DEV"
 
     run_installer "docker.sh" "DEVOPS"
