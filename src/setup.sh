@@ -5,10 +5,7 @@ REPO_URL="https://github.com/FredLackey/dotfiles.git"
 TARBALL_URL="https://github.com/FredLackey/dotfiles/tarball/main"
 TARGET_DIR="$HOME/.dotfiles"
 
-# 1. Download & Extract (Idempotent)
-if [ -d "$TARGET_DIR" ] && [ -d "$TARGET_DIR/.git" ]; then
-    echo "Dotfiles already installed. Pulling latest updates..."
-
+ensure_git_remote_and_branch() {
     # Ensure remote origin exists and points to the correct URL
     CURRENT_REMOTE="$(git -C "$TARGET_DIR" remote get-url origin 2>/dev/null || true)"
     if [ -z "$CURRENT_REMOTE" ]; then
@@ -19,15 +16,41 @@ if [ -d "$TARGET_DIR" ] && [ -d "$TARGET_DIR/.git" ]; then
 
     # Ensure local branch is main and tracks origin/main
     LOCAL_BRANCH="$(git -C "$TARGET_DIR" branch --show-current 2>/dev/null || true)"
-    if [ "$LOCAL_BRANCH" != "main" ] && [ -n "$LOCAL_BRANCH" ]; then
-        git -C "$TARGET_DIR" branch -m "$LOCAL_BRANCH" main
+    if [ -z "$LOCAL_BRANCH" ]; then
+        git -C "$TARGET_DIR" checkout -B main
+    elif [ "$LOCAL_BRANCH" != "main" ]; then
+        git -C "$TARGET_DIR" branch -M "$LOCAL_BRANCH" main
     fi
+}
+
+# 1. Download & Extract (Idempotent)
+if [ -d "$TARGET_DIR" ] && [ -d "$TARGET_DIR/.git" ]; then
+    echo "Dotfiles already installed. Pulling latest updates..."
+
+    ensure_git_remote_and_branch
     git -C "$TARGET_DIR" fetch origin main
     git -C "$TARGET_DIR" branch --set-upstream-to=origin/main main 2>/dev/null || true
 
     git -C "$TARGET_DIR" pull --ff-only origin main || echo "Warning: git pull failed. Continuing with existing files."
 elif [ -d "$TARGET_DIR" ]; then
-    echo "Files already present in $TARGET_DIR (no git repo). Skipping download."
+    if ! command -v git >/dev/null 2>&1 || ! git --version >/dev/null 2>&1; then
+        echo "Files already present in $TARGET_DIR (no git repo, and git is unavailable). Continuing with existing files."
+    else
+        echo "Dotfiles folder exists without git repo. Initializing git and setting remote..."
+        git -C "$TARGET_DIR" init
+        ensure_git_remote_and_branch
+        git -C "$TARGET_DIR" fetch origin main
+        git -C "$TARGET_DIR" reset --hard FETCH_HEAD
+        git -C "$TARGET_DIR" branch --set-upstream-to=origin/main main
+
+        # Verify repo initialization succeeded before continuing.
+        if [ -d "$TARGET_DIR/.git" ]; then
+            echo "Dotfiles git repo initialized at $TARGET_DIR"
+        else
+            echo "Error: failed to initialize dotfiles git repo at $TARGET_DIR"
+            exit 1
+        fi
+    fi
 else
     if command -v git >/dev/null 2>&1 && git --version >/dev/null 2>&1; then
         echo "Cloning dotfiles..."
