@@ -108,7 +108,6 @@ Run-Installer "git.ps1"          "SYSTEM"
 Run-Installer "github-cli.ps1"   "DEV"
 
 # 2. Languages & Runtimes
-Run-Installer "nvm.ps1"          "LANGUAGES"
 Run-Installer "node.ps1"         "LANGUAGES"
 Run-Installer "bun.ps1"          "LANGUAGES"
 

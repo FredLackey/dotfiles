@@ -23,7 +23,7 @@ docker info
 ## Development Workflow (Fix → Test → Repeat)
 
 ```bash
-# 1. Test with local files (no need to push to GitHub)
+# 1. Test with local files copied into the container (no need to push to GitHub)
 ./testing/scripts/test.sh ubuntu-server --local
 
 # 2. If test fails:
@@ -46,7 +46,7 @@ docker info
 # Inside the container, manually run:
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/FredLackey/dotfiles/main/src/setup.sh)"
 
-# Or test local files:
+# Or test local files after copying them into ~/.dotfiles:
 ~/.dotfiles/src/setup.sh
 
 # Type 'exit' when done

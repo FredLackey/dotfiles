@@ -102,7 +102,7 @@ DOCKER_ARGS=(
 
 # Add volume mount for local mode
 if [ "$LOCAL_MODE" = true ]; then
-    DOCKER_ARGS+=("-v" "$DOTFILES_DIR:/home/testuser/.dotfiles:ro")
+    DOCKER_ARGS+=("-v" "$DOTFILES_DIR:/tmp/local-dotfiles:ro")
 fi
 
 # Add image name
@@ -123,10 +123,14 @@ if [ "$INTERACTIVE" = true ]; then
     echo ""
 
 elif [ "$LOCAL_MODE" = true ]; then
-    # Local mode - run setup.sh from mounted volume
+    # Local mode - copy the repo into a writable container directory, then run it.
     DOCKER_ARGS+=("bash" "-c" "
         echo 'Running local setup.sh...'
         echo ''
+        rm -rf ~/.dotfiles
+        mkdir -p ~/.dotfiles
+        cp -a /tmp/local-dotfiles/. ~/.dotfiles/
+        rm -rf ~/.dotfiles/.git
         cd ~/.dotfiles
         chmod +x src/setup.sh
         ./src/setup.sh

@@ -18,7 +18,7 @@ This document catalogs all system preferences, shell settings, and environment c
 7. [Completion Configuration](#completion-configuration)
 8. [Aliases](#aliases)
 9. [Git Configuration](#git-configuration)
-10. [NVM Configuration](#nvm-configuration)
+10. [Node Version Configuration](#node-version-configuration)
 11. [Custom Functions Sourcing](#custom-functions-sourcing)
 12. [macOS System Preferences (defaults write)](#macos-system-preferences-defaults-write)
 
@@ -100,9 +100,7 @@ This document catalogs all system preferences, shell settings, and environment c
 
 **Sources:** `src/os/macos/files/.bash_profile`, `src/os/macos/files/.zshrc`
 
-| Variable | Value | Purpose | Shell |
-|----------|-------|---------|-------|
-| NVM_DIR | `$HOME/.nvm` | Node Version Manager installation directory | Both |
+No Node-specific shell environment variables are configured.
 
 ---
 
@@ -214,23 +212,15 @@ These are applied as local (per-repository) git configurations.
 
 ---
 
-## NVM Configuration
+## Node Version Configuration
 
-**Sources:** `src/os/macos/files/.bash_profile`, `src/os/macos/files/.zshrc`
+**Source:** `.node-version`
 
-Both shells load NVM with a two-tier fallback:
+The repository pins the Node.js major version globally with a single file:
 
-| Priority | Condition | Source | Purpose |
-|----------|-----------|--------|---------|
-| 1 | Homebrew NVM exists | `$(brew --prefix)/opt/nvm/nvm.sh` | Load NVM installed via Homebrew |
-| 2 | Standard NVM exists | `$NVM_DIR/nvm.sh` | Load NVM installed manually |
-
-### Bash-specific NVM extras
-
-| Priority | Condition | Source | Purpose |
-|----------|-----------|--------|---------|
-| 1 | Homebrew NVM completion exists | `$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm` | NVM tab completion via Homebrew |
-| 2 | Standard NVM completion exists | `$NVM_DIR/bash_completion` | NVM tab completion via manual install |
+| File | Value | Purpose |
+|------|-------|---------|
+| `.node-version` | `26` | Native Node.js installers on macOS, Ubuntu, and Windows read this value and install the matching major version |
 
 ---
 
@@ -285,11 +275,11 @@ The dotfiles project configures the following categories of settings on macOS:
 |----------|--------------|--------------|-------|
 | Shell options | 3 shopt flags | 9 setopt flags | Navigation, globbing, history behavior |
 | History | 3 variables | 3 variables | 10k entries, deduplication, session sharing |
-| Environment | 1 export | 1 export | NVM_DIR only |
+| Environment | 0 exports | 0 exports | No Node-specific shell variables |
 | PATH | 2 conditional evals | 2 conditional evals | Homebrew (Apple Silicon + Intel) |
 | Prompt | PS1 with git branch | PROMPT with vcs_info | Cyan directory, yellow branch |
 | Completion | 2 conditional sources | compinit | Homebrew bash-completion or legacy |
 | Aliases | 3 aliases | 3 aliases | ls variants (ll, la, l) |
 | Git | 2 config values | 2 config values | Via set-git-public function |
-| NVM | 2-tier load + completion | 2-tier load | Homebrew or manual install |
+| Node version | `.node-version` file | `.node-version` file | Repo-wide Node.js major version pin |
 | macOS defaults | 2 commands | N/A | Research only, not in active scripts |

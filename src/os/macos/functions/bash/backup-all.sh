@@ -16,7 +16,7 @@ backup-all() {
         return 1
     fi
 
-    local excludes=".terraform,.android,.atom,.bash_sessions,bower_components,.cache,.cups,.dropbox,.DS_Store,.git,_gsdata_,.idea,node_modules,.next,.npm,.nvm,\$RECYCLE.BIN,System Volume Information,.TemporaryItems,.Trash,.Trashes,.tmp,.viminfo"
+    local excludes=".terraform,.android,.atom,.bash_sessions,bower_components,.cache,.cups,.dropbox,.DS_Store,.git,_gsdata_,.idea,node_modules,.next,.npm,\$RECYCLE.BIN,System Volume Information,.TemporaryItems,.Trash,.Trashes,.tmp,.viminfo"
 
     # Backup Downloads without timestamp
     local backupdir="$1"

@@ -216,7 +216,7 @@ run_installer "starship.sh"
 run_installer "starship-config.sh"
 ```
 
-4. Place them after the core CLI tools section (after `git.sh`) but before the Languages & Runtimes section. The fonts and Starship binary have no dependency on NVM/Node, so they can go early.
+4. Place them after the core CLI tools section (after `git.sh`) but before the Languages & Runtimes section. The fonts and Starship binary have no dependency on Node.js, so they can go early.
 
 ---
 

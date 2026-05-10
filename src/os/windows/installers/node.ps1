@@ -1,54 +1,67 @@
 $ErrorActionPreference = "Stop"
 
-$APP_NAME = "Node.js (LTS via NVM)"
+$NodeVersionFile = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot "..\..\..\..\.node-version"))
 
-# Reload NVM env vars and PATH from registry so nvm is reachable even if
-# it was just installed in the same session by nvm.ps1.
-$env:NVM_HOME = [System.Environment]::GetEnvironmentVariable("NVM_HOME", "User")
-if (-not $env:NVM_HOME) {
-    $env:NVM_HOME = [System.Environment]::GetEnvironmentVariable("NVM_HOME", "Machine")
+if (-not (Test-Path $NodeVersionFile)) {
+    Write-Error "Node version file not found at $NodeVersionFile."
+    exit 1
 }
-$env:NVM_SYMLINK = [System.Environment]::GetEnvironmentVariable("NVM_SYMLINK", "User")
-if (-not $env:NVM_SYMLINK) {
-    $env:NVM_SYMLINK = [System.Environment]::GetEnvironmentVariable("NVM_SYMLINK", "Machine")
+
+$NodeMajorVersion = (Get-Content $NodeVersionFile -Raw).Trim()
+$APP_NAME = "Node.js v$NodeMajorVersion"
+
+function Get-InstalledNodeMajorVersion {
+    if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
+        return $null
+    }
+
+    $version = (node --version).Trim()
+    if ($version -match '^v?([0-9]+)\.') {
+        return $Matches[1]
+    }
+
+    return $null
 }
+
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" +
             [System.Environment]::GetEnvironmentVariable("Path", "User")
 
 # 1. CHECK - Skip if already installed
-if ((Get-Command node -ErrorAction SilentlyContinue) -and (Get-Command npm -ErrorAction SilentlyContinue)) {
+if ((Get-InstalledNodeMajorVersion) -eq $NodeMajorVersion -and (Get-Command npm -ErrorAction SilentlyContinue)) {
     $nodeVersion = node --version
     Write-Host "$APP_NAME is already installed ($nodeVersion)."
     exit 0
 }
 
-# 2. DEPENDENCIES - NVM must be installed and reachable
-$nvmExe = $null
-if (Get-Command nvm -ErrorAction SilentlyContinue) {
-    $nvmExe = "nvm"
-} elseif ($env:NVM_HOME -and (Test-Path "$env:NVM_HOME\nvm.exe")) {
-    $nvmExe = "$env:NVM_HOME\nvm.exe"
-}
-
-if (-not $nvmExe) {
-    Write-Error "NVM for Windows is required to install $APP_NAME. Run nvm.ps1 first."
+# 2. DEPENDENCIES
+if (-not (Get-Command msiexec.exe -ErrorAction SilentlyContinue)) {
+    Write-Error "msiexec is required to install $APP_NAME."
     exit 1
 }
 
 # 3. INSTALL
 Write-Host "Installing $APP_NAME..."
-& $nvmExe install lts
-& $nvmExe use lts
+$nodeArch = if ([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString() -eq "Arm64") { "arm64" } else { "x64" }
+$shasumsUrl = "https://nodejs.org/dist/latest-v$NodeMajorVersion.x/SHASUMS256.txt"
+$shasums = (Invoke-WebRequest -Uri $shasumsUrl -UseBasicParsing).Content
+$installerMatch = [regex]::Match($shasums, "node-v[0-9]+\.[0-9]+\.[0-9]+-$nodeArch\.msi")
 
-# Refresh PATH so node/npm from the NVM symlink are reachable
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" +
-            [System.Environment]::GetEnvironmentVariable("Path", "User")
-if ($env:NVM_SYMLINK -and ($env:Path -notlike "*$env:NVM_SYMLINK*")) {
-    $env:Path = "$env:NVM_SYMLINK;$env:Path"
+if (-not $installerMatch.Success) {
+    Write-Error "Unable to resolve a Windows installer for Node.js v$NodeMajorVersion ($nodeArch)."
+    exit 1
 }
 
+$installerName = $installerMatch.Value
+$installerPath = Join-Path $env:TEMP $installerName
+Invoke-WebRequest -Uri "https://nodejs.org/dist/latest-v$NodeMajorVersion.x/$installerName" -OutFile $installerPath
+Start-Process -FilePath "msiexec.exe" -ArgumentList @("/i", "`"$installerPath`"", "/qn", "/norestart") -Wait -NoNewWindow
+
+# Refresh PATH so node/npm are reachable in the current session.
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" +
+            [System.Environment]::GetEnvironmentVariable("Path", "User")
+
 # 4. VERIFY
-if (Get-Command node -ErrorAction SilentlyContinue) {
+if ((Get-InstalledNodeMajorVersion) -eq $NodeMajorVersion -and (Get-Command npm -ErrorAction SilentlyContinue)) {
     $nodeVersion = node --version
     Write-Host "$APP_NAME installed successfully ($nodeVersion)."
 } else {

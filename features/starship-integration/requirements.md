@@ -26,7 +26,7 @@ The configuration should be optimized for a software developer working primarily
 
 | Module | Purpose |
 |--------|---------|
-| `[nodejs]` | Display Node.js version (triggers on `package.json`, `.nvmrc`, `.node-version`, JS/TS files) |
+| `[nodejs]` | Display Node.js version (triggers on `package.json`, `.node-version`, JS/TS files) |
 | `[package]` | Display package version from `package.json` |
 | `[git_branch]` | Display current Git branch |
 | `[git_status]` | Display staged/modified/untracked file counts |

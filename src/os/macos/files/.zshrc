@@ -38,22 +38,6 @@ export PATH="$HOME/.claude/bin:$PATH"
 
 
 # ------------------------------------------------------------------------------
-# NVM (Node Version Manager)
-# ------------------------------------------------------------------------------
-
-export NVM_DIR="$HOME/.nvm"
-
-# Load NVM (Homebrew installation)
-if [[ -s "$(brew --prefix 2>/dev/null)/opt/nvm/nvm.sh" ]]; then
-    source "$(brew --prefix)/opt/nvm/nvm.sh"
-    [[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ]] && source "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
-# Load NVM (Standard installation)
-elif [[ -s "$NVM_DIR/nvm.sh" ]]; then
-    source "$NVM_DIR/nvm.sh"
-    [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
-fi
-
-# ------------------------------------------------------------------------------
 # Terminal Color Support
 # ------------------------------------------------------------------------------
 

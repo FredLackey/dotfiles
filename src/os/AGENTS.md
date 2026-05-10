@@ -43,7 +43,7 @@ The root `setup.sh` is the single entry point that coordinates the entire OS set
 
 **Responsibilities:**
 - Call installers in correct dependency order
-- Reload shell environments after installing tools that modify PATH (e.g., Homebrew, NVM)
+- Reload shell environments after installing tools that modify PATH (e.g., Homebrew, Node.js)
 - Call preferences/setup.sh after all installers complete
 - Suppress tool-specific cleanup until the end (e.g., `HOMEBREW_NO_INSTALL_CLEANUP=1`)
 
@@ -142,7 +142,7 @@ functions/
 **Categories (for organization reference):**
 1. System prerequisites (package managers, CLI tools)
 2. Shell and prompt (shell config, starship, fonts)
-3. Language runtimes (nvm, node, go, python)
+3. Language runtimes (node, go, python)
 4. Infrastructure/DevOps (git, terraform, aws-cli, docker)
 5. CLI utilities (jq, yq, ffmpeg, imagemagick)
 6. Editors and IDEs (vscode, cursor, sublime-text)
@@ -264,4 +264,4 @@ echo "$PREF_NAME preferences applied."
 - [ ] Create `preferences/` directory
 - [ ] Create `preferences/setup.sh` orchestrator
 - [ ] Ensure all scripts follow the idempotent pattern
-- [ ] Test in a pristine VM (never test locally)
+- [ ] Test in Docker via `testing/` for Ubuntu when appropriate, and do final validation in a pristine VM. Never run setup directly against the host machine.

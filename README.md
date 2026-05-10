@@ -77,29 +77,29 @@ $env:DOTFILES_EXCLUDE="AI,MEDIA"; iex (iwr -useb "https://raw.githubusercontent.
 | Category | Contents |
 |---|---|
 | `SYSTEM` | Package manager updates, build tools, shell config |
-| `LANGUAGES` | Node.js (NVM), Go, Python |
+| `LANGUAGES` | Node.js, Go, Python |
 | `DEV` | Git, GitHub CLI, shellcheck, vim, dev utilities |
 | `DEVOPS` | AWS CLI, Terraform, TFEnv, Docker |
 | `UTILS` | curl, wget, jq, yq, tree, tmux, rsync, pandoc, htop |
 | `MEDIA` | ffmpeg, ImageMagick, yt-dlp |
 | `SECURITY` | nmap, gpg |
 | `AI` | Claude Code, Gemini CLI |
-| `APPS` | td, sidecar, and other developer tooling |
+| `APPS` | other developer tooling |
 | `DESKTOP` | GUI applications (macOS and Windows only) |
 
 ## What Gets Installed
 
 ### macOS
-Homebrew, Xcode CLI tools, Git, GitHub CLI, NVM, Node.js, Yarn, Go, Python, Starship, iTerm2, VS Code, Cursor, Docker, AWS CLI, Terraform, Claude Code, Gemini CLI, and a full suite of GUI apps (Slack, Chrome, Obsidian, etc.).
+Homebrew, Xcode CLI tools, Git, GitHub CLI, Node.js, Yarn, Go, Python, Starship, iTerm2, VS Code, Cursor, Docker, AWS CLI, Terraform, Claude Code, Gemini CLI, and a full suite of GUI apps (Slack, Chrome, Obsidian, etc.).
 
 ### Windows
-Git, GitHub CLI, NVM, Node.js, Yarn, Go, AWS CLI, Terraform, Docker Desktop, VS Code, Cursor, Claude Code, Gemini CLI, and GUI apps (Slack, Chrome, Brave, DBeaver, etc.) via winget. Also configures PowerShell profile, Starship prompt, and WSL.
+Git, GitHub CLI, Node.js, Yarn, Go, AWS CLI, Terraform, Docker Desktop, VS Code, Cursor, Claude Code, Gemini CLI, and GUI apps (Slack, Chrome, Brave, DBeaver, etc.) via winget. Also configures PowerShell profile, Starship prompt, and WSL.
 
 ### Ubuntu WSL
-Build essentials, Git, GitHub CLI, curl, wget, gpg, Starship, NVM, Node.js, Yarn, Go, Python, AWS CLI (arch-aware: x86\_64 or aarch64), Terraform, Claude Code, jq, yq, tree, shellcheck, pandoc, tmux, vim, htop, rsync, nmap, ImageMagick, ffmpeg, yt-dlp, td, sidecar. WSL-specific: configures `/etc/wsl.conf`, writes log to Windows Desktop.
+Build essentials, Git, GitHub CLI, curl, wget, gpg, Starship, Node.js, Yarn, Go, Python, AWS CLI (arch-aware: x86\_64 or aarch64), Terraform, Claude Code, jq, yq, tree, shellcheck, pandoc, tmux, vim, htop, rsync, nmap, ImageMagick, ffmpeg, yt-dlp. WSL-specific: configures `/etc/wsl.conf`, writes log to Windows Desktop.
 
 ### Ubuntu Server
-Same core CLI toolchain as WSL plus Docker, Tailscale, and nightshift. No Starship or WSL-specific configuration.
+Same core CLI toolchain as WSL plus Docker and Tailscale. No Starship or WSL-specific configuration.
 
 ## Logging
 

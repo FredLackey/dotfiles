@@ -425,7 +425,7 @@ Run these checks to confirm the implementation is complete:
 
 ## Step 7: Testing in VM
 
-Per repository rules, **do not test locally**. Push changes to GitHub and test in a pristine virtual machine.
+Per repository rules, do not run setup directly against the host machine. Docker testing in `testing/` is allowed for Ubuntu environments, but final validation should still happen in a pristine virtual machine.
 
 ### Test Matrix
 

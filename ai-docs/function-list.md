@@ -57,7 +57,6 @@ The following dependencies are for server environments only (Ubuntu Server, WSL)
 | `yt-dlp` | `brew install yt-dlp` | get-course, get-channel, get-tunes, get-video |
 | `nmap` | `brew install nmap` | ips |
 | `imagemagick` | `brew install imagemagick` | resize-image |
-| `nvm` | [See nvm repo](https://github.com/nvm-sh/nvm) | npmi |
 | `ncu` | `npm install -g npm-check-updates` | ncu-update-all |
 | `yarn` | `npm install -g yarn` | clone (optional) |
 | `claude` | `npm install -g @anthropic-ai/claude-code` | claude-danger |
@@ -477,7 +476,7 @@ clean-dev
 ---
 
 ### `npmi`
-**Purpose:** Reinstall npm dependencies after removing `node_modules` and switching to Node v18 via nvm.
+**Purpose:** Reinstall npm dependencies after removing `node_modules`.
 
 **Usage:**
 ```bash
@@ -488,7 +487,6 @@ npmi
 | Dependency | Type | Install Command |
 |------------|------|-----------------|
 | npm | CLI tool | Included with Node.js |
-| nvm | Version manager | See [nvm repo](https://github.com/nvm-sh/nvm) |
 
 ---
 
@@ -565,7 +563,7 @@ killni
 backup-source /path/to/backups/
 ```
 
-**Excludes:** `.Trash`, `.android`, `.atom`, `.bash_sessions`, `.cache`, `.cups`, `.dropbox`, `.git`, `.next`, `.npm`, `.nvm`, `.viminfo`, `bower_components`, `node_modules`, `.tmp`, `.idea`, `.DS_Store`, `.terraform`
+**Excludes:** `.Trash`, `.android`, `.atom`, `.bash_sessions`, `.cache`, `.cups`, `.dropbox`, `.git`, `.next`, `.npm`, `.viminfo`, `bower_components`, `node_modules`, `.tmp`, `.idea`, `.DS_Store`, `.terraform`
 
 **Dependencies:**
 | Dependency | Type | Install Command |
@@ -811,7 +809,6 @@ claude-danger "some prompt"
 | Tool | Used By | Install Command |
 |------|---------|-----------------|
 | `npm` | clone, npmi, install-dependencies-from | Included with Node.js |
-| `nvm` | npmi | See [nvm repo](https://github.com/nvm-sh/nvm) |
 | `ncu` | ncu-update-all | `npm install -g npm-check-updates` |
 | `yarn` | clone (optional) | `npm install -g yarn` |
 

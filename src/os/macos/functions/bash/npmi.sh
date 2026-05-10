@@ -1,14 +1,13 @@
 #!/bin/bash
-# npmi - Reinstall npm dependencies with nvm Node v18
+# npmi - Reinstall npm dependencies with the system Node.js runtime.
 #
-# Removes node_modules, switches to Node v18 via nvm, and runs npm install.
+# Removes node_modules and runs npm install.
 #
 # Usage:
 #   npmi
 #
 # Dependencies:
 #   - npm (included with Node.js)
-#   - nvm (https://github.com/nvm-sh/nvm)
 
 npmi() {
     if [ ! -f "$PWD/package.json" ]; then
@@ -27,18 +26,13 @@ npmi() {
         fi
     fi
 
-    echo "Setting Node v18 and installing..."
-
-    # Load nvm
-    export NVM_DIR=$HOME/.nvm
-    if [ -s "$NVM_DIR/nvm.sh" ]; then
-        source "$NVM_DIR/nvm.sh"
-    else
-        echo "Error: nvm not found at $NVM_DIR/nvm.sh"
+    if ! command -v npm >/dev/null 2>&1; then
+        echo "npm is not installed."
         return 1
     fi
 
-    nvm use 18 && npm i
+    echo "Installing dependencies with the system Node.js..."
+    npm i
 
     if [ -e "$PWD/node_modules" ]; then
         echo "... done."

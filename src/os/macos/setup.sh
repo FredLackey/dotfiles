@@ -79,30 +79,8 @@ install_applications() {
         fi
     fi
 
-    run_installer "nvm.sh" "LANGUAGES"
     run_installer "node.sh" "LANGUAGES"
     run_installer "bun.sh" "LANGUAGES"
-
-    # Reload NVM environment (required for npm-dependent installers)
-    if ! command -v npm >/dev/null; then
-        echo "Loading NVM environment..."
-        export NVM_DIR="$HOME/.nvm"
-        if command -v brew >/dev/null; then
-            BREW_PREFIX=$(brew --prefix)
-            if [ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ]; then
-                . "$BREW_PREFIX/opt/nvm/nvm.sh"
-            fi
-        fi
-        if [ -s "$NVM_DIR/nvm.sh" ]; then
-            . "$NVM_DIR/nvm.sh"
-        fi
-
-        if command -v npm >/dev/null; then
-            echo "NVM loaded into memory."
-        else
-            echo "Warning: Failed to load NVM into memory. npm-dependent installs may fail."
-        fi
-    fi
 
     # 2. Shell Configuration (core - always install)
     run_installer "shell-config.sh" "SYSTEM"
@@ -178,12 +156,6 @@ install_applications() {
     run_installer "utm.sh" "APPS"
     run_installer "obsidian.sh" "APPS"
     run_installer "adobe-acrobat-pro.sh" "APPS"
-
-    # 8. Marcus Developer Tools (td must be first — other tools reference it)
-    run_installer "td.sh" "APPS"
-    run_installer "sidecar.sh" "APPS"
-    run_installer "nightshift.sh" "APPS"
-
 
     # Final cleanup (runs once instead of after every install)
     echo "Running brew cleanup..."

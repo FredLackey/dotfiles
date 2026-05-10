@@ -54,7 +54,7 @@ Functions are automatically loaded when you open a new terminal session. They ar
 | Function | Description |
 |----------|-------------|
 | `clean-dev` | Remove node_modules and bower_components directories |
-| `npmi` | Reinstall npm dependencies with Node v18 |
+| `npmi` | Reinstall npm dependencies |
 | `killni` | Kill Node Inspector processes |
 | `get-dependencies` | Extract dependency names from package.json |
 | `install-dependencies-from` | Install dependencies from another package.json |

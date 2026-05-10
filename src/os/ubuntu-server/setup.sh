@@ -71,31 +71,13 @@ install_applications() {
     # 3. Shell Configuration (core - deploy early so PATH is set)
     run_installer "shell-config.sh" "SYSTEM"
 
-    # 4. Node.js (NVM + Node)
-    run_installer "nvm.sh" "LANGUAGES"
-
-    # Reload NVM environment (required for npm-dependent installers)
-    if ! command -v npm >/dev/null; then
-        echo "Loading NVM environment..."
-        export NVM_DIR="$HOME/.nvm"
-        if [ -s "$NVM_DIR/nvm.sh" ]; then
-            . "$NVM_DIR/nvm.sh"
-        fi
-
-        if command -v npm >/dev/null; then
-            echo "NVM loaded into memory."
-        else
-            echo "Warning: Failed to load NVM into memory. npm-dependent installs may fail."
-        fi
-    fi
-
+    # 4. Node.js
     run_installer "node.sh" "LANGUAGES"
     run_installer "yarn.sh" "LANGUAGES"
     run_installer "npm-packages.sh" "LANGUAGES"
 
     # 5. Languages & Runtimes
     run_installer "go.sh" "LANGUAGES"
-    run_installer "gitego.sh" "DEV"
     run_installer "python.sh" "LANGUAGES"
 
     # 6. CLI Utilities
@@ -128,12 +110,7 @@ install_applications() {
     run_installer "claude-code.sh" "AI"
     run_installer "kiro-cli.sh" "AI"
 
-    # 9. Marcus Developer Tools (td must be first — other tools reference it)
-    run_installer "td.sh" "APPS"
-    run_installer "sidecar.sh" "APPS"
-    run_installer "nightshift.sh" "APPS"
-
-    # 10. Cleanup
+    # 9. Cleanup
     run_installer "apt-cleanup.sh" "SYSTEM"
 
     echo "Application installation complete."

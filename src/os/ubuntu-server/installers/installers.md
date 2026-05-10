@@ -22,8 +22,7 @@ This document lists all available installer scripts for Ubuntu Server.
 
 | Script | Description |
 |--------|-------------|
-| `nvm.sh` | Node Version Manager |
-| `node.sh` | Node.js (via NVM, v22) |
+| `node.sh` | Node.js (native install, version from repo `.node-version`) |
 | `yarn.sh` | Yarn package manager |
 | `npm-packages.sh` | Global npm packages (npm-check-updates) |
 
@@ -32,7 +31,6 @@ This document lists all available installer scripts for Ubuntu Server.
 | Script | Description |
 |--------|-------------|
 | `go.sh` | Go programming language |
-| `gitego.sh` | Gitego Git tool (requires Go) |
 
 ## CLI Utilities
 
@@ -71,8 +69,8 @@ The `setup.sh` orchestrator runs installers in this order:
 
 1. System prerequisites (apt-update, build-essential)
 2. Core CLI tools (git, curl)
-3. Node.js stack (nvm, node, yarn, npm-packages)
-4. Languages (go, gitego)
+3. Node.js stack (node, yarn, npm-packages)
+4. Languages (go)
 5. CLI utilities (jq, tree, shellcheck, pandoc, tmux, vim)
 6. Infrastructure (docker, tailscale)
 7. AI tools (gemini-cli, claude-code)

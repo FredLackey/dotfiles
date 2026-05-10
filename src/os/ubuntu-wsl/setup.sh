@@ -101,31 +101,13 @@ install_applications() {
     run_installer "starship.sh" "SYSTEM"
     run_installer "starship-config.sh" "SYSTEM"
 
-    # 5. Node.js (NVM + Node)
-    run_installer "nvm.sh" "LANGUAGES"
-
-    # Reload NVM environment (required for npm-dependent installers)
-    if ! command -v npm >/dev/null; then
-        echo "Loading NVM environment..."
-        export NVM_DIR="$HOME/.nvm"
-        if [ -s "$NVM_DIR/nvm.sh" ]; then
-            . "$NVM_DIR/nvm.sh"
-        fi
-
-        if command -v npm >/dev/null; then
-            echo "NVM loaded into memory."
-        else
-            echo "Warning: Failed to load NVM into memory. npm-dependent installs may fail."
-        fi
-    fi
-
+    # 5. Node.js
     run_installer "node.sh" "LANGUAGES"
     run_installer "yarn.sh" "LANGUAGES"
     run_installer "npm-packages.sh" "LANGUAGES"
 
     # 6. Languages & Runtimes
     run_installer "go.sh" "LANGUAGES"
-    run_installer "gitego.sh" "DEV"
     run_installer "python.sh" "LANGUAGES"
 
     # 7. CLI Utilities
@@ -156,11 +138,7 @@ install_applications() {
     run_installer "claude-code.sh" "AI"
     run_installer "kiro-cli.sh" "AI"
 
-    # 10. Marcus Developer Tools (td must be first — other tools reference it)
-    run_installer "td.sh" "APPS"
-    run_installer "sidecar.sh" "APPS"
-
-    # 11. Cleanup
+    # 10. Cleanup
     run_installer "apt-cleanup.sh" "SYSTEM"
 
     echo "Application installation complete."

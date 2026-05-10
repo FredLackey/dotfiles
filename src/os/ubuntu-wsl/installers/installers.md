@@ -10,7 +10,6 @@ The following installers present in `ubuntu-server` are intentionally **not incl
 |-----------------|--------|
 | `docker.sh` | Docker Desktop on Windows provides Docker to WSL; Docker Engine is not installed |
 | `tailscale.sh` | Windows handles networking and VPN |
-| `nightshift.sh` | No desktop environment in WSL |
 
 ## System Prerequisites
 
@@ -42,8 +41,7 @@ The following installers present in `ubuntu-server` are intentionally **not incl
 
 | Script | Description |
 |--------|-------------|
-| `nvm.sh` | Node Version Manager |
-| `node.sh` | Node.js (via NVM, LTS) |
+| `node.sh` | Node.js (native install, version from repo `.node-version`) |
 | `yarn.sh` | Yarn package manager |
 | `npm-packages.sh` | Global npm packages (npm-check-updates) |
 
@@ -52,7 +50,6 @@ The following installers present in `ubuntu-server` are intentionally **not incl
 | Script | Description |
 |--------|-------------|
 | `go.sh` | Go programming language |
-| `gitego.sh` | Gitego Git tool (requires Go) |
 | `python.sh` | Python 3 with pip and venv |
 
 ## CLI Utilities
@@ -87,13 +84,6 @@ The following installers present in `ubuntu-server` are intentionally **not incl
 |--------|-------------|
 | `claude-code.sh` | Claude Code CLI |
 
-## Developer Tools
-
-| Script | Description |
-|--------|-------------|
-| `td.sh` | td task management CLI (marcus/td) |
-| `sidecar.sh` | Sidecar TUI (marcus/sidecar) |
-
 ## Installation Order
 
 The `setup.sh` orchestrator runs installers in this order:
@@ -101,13 +91,12 @@ The `setup.sh` orchestrator runs installers in this order:
 1. System prerequisites (apt-update, build-essential)
 2. Core CLI tools (git, github-cli, curl, wget, gpg)
 3. Shell configuration (shell-config, starship, starship-config)
-4. Node.js stack (nvm, node, yarn, npm-packages)
-5. Languages (go, gitego, python)
+4. Node.js stack (node, yarn, npm-packages)
+5. Languages (go, python)
 6. CLI utilities (jq, tree, shellcheck, pandoc, tmux, vim, htop, rsync, nmap, imagemagick, ffmpeg, bash-completion, yt-dlp)
 7. Infrastructure (aws-cli, tfenv, terraform)
 8. AI tools (claude-code)
-9. Developer tools (td, sidecar)
-10. Cleanup (apt-cleanup)
+9. Cleanup (apt-cleanup)
 
 ## Creating New Installers
 

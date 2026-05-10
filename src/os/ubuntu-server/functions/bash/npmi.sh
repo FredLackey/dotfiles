@@ -1,5 +1,5 @@
 #!/bin/bash
-# Reinstall npm dependencies after removing node_modules and setting Node v18.
+# Reinstall npm dependencies after removing node_modules.
 #
 # Usage:
 #   npmi
@@ -21,12 +21,13 @@ npmi() {
         fi
     fi
 
-    echo "Setting Node v18 and installing..."
+    if ! command -v npm >/dev/null 2>&1; then
+        echo "npm is not installed."
+        return 1
+    fi
 
-    export NVM_DIR="$HOME/.nvm"
-    . "$NVM_DIR/nvm.sh"
-
-    nvm use 18 && npm i
+    echo "Installing dependencies with the system Node.js..."
+    npm i
 
     if [ -e "$PWD/node_modules" ]; then
         echo "... done."

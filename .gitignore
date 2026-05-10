@@ -54,5 +54,4 @@ lerna-debug.log*
 *.tfplan
 .terraform.lock.hcl
 .todos/
-.sidecar/
 status/

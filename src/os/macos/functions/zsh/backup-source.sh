@@ -7,7 +7,7 @@
 #   backup-source /path/to/backups/
 #
 # Excludes: .Trash, .android, .atom, .bash_sessions, .cache, .cups, .dropbox,
-#           .git, .next, .npm, .nvm, .viminfo, bower_components, node_modules,
+#           .git, .next, .npm, .viminfo, bower_components, node_modules,
 #           .tmp, .idea, .DS_Store, .terraform
 #
 # Dependencies:
@@ -34,7 +34,6 @@ backup-source() {
         --exclude=.git \
         --exclude=.next \
         --exclude=.npm \
-        --exclude=.nvm \
         --exclude=.viminfo \
         --exclude=bower_components \
         --exclude=node_modules \

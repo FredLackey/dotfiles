@@ -48,7 +48,6 @@ This list contains software packages identified for software development purpose
 | **GPG** | Terminal | GnuPG encryption and signing tool. |
 | **JQ** | Terminal | Command-line JSON processor. |
 | **Node.js** | Terminal | JavaScript runtime environment. |
-| **NVM** | Terminal | Node Version Manager. |
 | **Oh My Zsh** | Terminal | Framework for managing Zsh configuration. |
 | **Pandoc** | Terminal | Universal document converter. |
 | **Postman** | GUI | API platform for building and using APIs. |

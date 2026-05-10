@@ -197,7 +197,7 @@ Tests the local files without pushing to GitHub:
 ./testing/scripts/test.sh ubuntu-server --local
 ```
 
-This mounts your local `~/.dotfiles` folder into the container.
+This mounts the working repository read-only into the container, copies it into a writable `~/.dotfiles` directory inside the container, and runs the setup from that staged copy.
 
 **When to use each mode:**
 - Use `--local` during development for fast iteration
