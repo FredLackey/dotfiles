@@ -11,6 +11,7 @@ fi
 
 NODE_MAJOR_VERSION="$(tr -d '[:space:]' < "$NODE_VERSION_FILE")"
 APP_NAME="Node.js v$NODE_MAJOR_VERSION"
+NPM_GLOBAL_PREFIX="$HOME/.local"
 
 get_installed_node_major_version() {
     if ! command -v node >/dev/null 2>&1; then
@@ -20,9 +21,22 @@ get_installed_node_major_version() {
     node --version | sed -E 's/^v([0-9]+).*/\1/'
 }
 
+configure_npm_global_prefix() {
+    mkdir -p "$NPM_GLOBAL_PREFIX/bin"
+    npm config set prefix "$NPM_GLOBAL_PREFIX" >/dev/null
+    export PATH="$NPM_GLOBAL_PREFIX/bin:$PATH"
+
+    CONFIGURED_PREFIX="$(npm config get prefix)"
+    if [ "$CONFIGURED_PREFIX" != "$NPM_GLOBAL_PREFIX" ]; then
+        echo "Error: npm global prefix is $CONFIGURED_PREFIX, expected $NPM_GLOBAL_PREFIX."
+        exit 1
+    fi
+}
+
 # 1. Check if already installed
 INSTALLED_NODE_MAJOR_VERSION="$(get_installed_node_major_version || true)"
 if [ "$INSTALLED_NODE_MAJOR_VERSION" = "$NODE_MAJOR_VERSION" ] && command -v npm >/dev/null 2>&1; then
+    configure_npm_global_prefix
     echo "$APP_NAME is already installed ($(node --version))."
     exit 0
 fi
@@ -55,6 +69,7 @@ sudo installer -pkg "$TMP_DIR/$PACKAGE_FILE" -target /
 # 4. Verify
 INSTALLED_NODE_MAJOR_VERSION="$(get_installed_node_major_version || true)"
 if [ "$INSTALLED_NODE_MAJOR_VERSION" = "$NODE_MAJOR_VERSION" ] && command -v npm >/dev/null 2>&1; then
+    configure_npm_global_prefix
     NODE_VERSION="$(node -v)"
     echo "$APP_NAME installed successfully ($NODE_VERSION)."
 else

@@ -34,6 +34,9 @@ if [[ -f /usr/local/bin/brew ]]; then
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
+# Local binaries
+export PATH="$HOME/.local/bin:$PATH"
+
 # Claude Code
 export PATH="$HOME/.claude/bin:$PATH"
 

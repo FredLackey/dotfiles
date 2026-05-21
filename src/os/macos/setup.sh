@@ -80,6 +80,7 @@ install_applications() {
     fi
 
     run_installer "node.sh" "LANGUAGES"
+    export PATH="$HOME/.local/bin:$PATH"
     run_installer "bun.sh" "LANGUAGES"
 
     # 2. Shell Configuration (core - always install)
