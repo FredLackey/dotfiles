@@ -1,0 +1,6 @@
+theme = Selenized Dark
+
+shell-integration = zsh
+window-inherit-working-directory = true
+tab-inherit-working-directory = true
+split-inherit-working-directory = true

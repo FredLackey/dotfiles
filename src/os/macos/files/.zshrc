@@ -145,3 +145,7 @@ fi
 # ------------------------------------------------------------------------------
 
 # Add your custom configuration below this line
+
+if [[ -n "$GHOSTTY_RESOURCES_DIR" ]]; then
+    source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
+fi
