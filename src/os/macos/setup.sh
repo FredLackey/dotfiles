@@ -123,6 +123,7 @@ install_applications() {
     run_installer "vim.sh" "DEV"
     run_installer "gemini-cli.sh" "AI"
     run_installer "claude-code.sh" "AI"
+    run_installer "herdr.sh" "AI"
     run_installer "kiro.sh" "AI"
     run_installer "kiro-cli.sh" "AI"
     run_installer "aws-cli.sh" "DEVOPS"

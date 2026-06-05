@@ -108,6 +108,7 @@ install_applications() {
 
     # 8. AI Tools
     run_installer "claude-code.sh" "AI"
+    run_installer "herdr.sh" "AI"
     run_installer "kiro-cli.sh" "AI"
 
     # 9. Cleanup

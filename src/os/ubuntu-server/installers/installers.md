@@ -56,6 +56,7 @@ This document lists all available installer scripts for Ubuntu Server.
 |--------|-------------|
 | `gemini-cli.sh` | Google Gemini CLI |
 | `claude-code.sh` | Claude Code CLI |
+| `herdr.sh` | Herdr agent-aware terminal multiplexer |
 
 ## Shell Configuration
 
@@ -73,7 +74,7 @@ The `setup.sh` orchestrator runs installers in this order:
 4. Languages (go)
 5. CLI utilities (jq, tree, shellcheck, pandoc, tmux, vim)
 6. Infrastructure (docker, tailscale)
-7. AI tools (gemini-cli, claude-code)
+7. AI tools (gemini-cli, claude-code, herdr)
 8. Shell configuration
 9. Cleanup (apt-cleanup)
 

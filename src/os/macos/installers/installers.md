@@ -46,6 +46,7 @@ This list contains software packages identified for software development purpose
 | **Go** | Terminal | Programming language. |
 | **Google Chrome** | GUI | Web browser. |
 | **GPG** | Terminal | GnuPG encryption and signing tool. |
+| **Herdr** | Terminal | Agent-aware terminal multiplexer. |
 | **JQ** | Terminal | Command-line JSON processor. |
 | **Node.js** | Terminal | JavaScript runtime environment. |
 | **Oh My Zsh** | Terminal | Framework for managing Zsh configuration. |
