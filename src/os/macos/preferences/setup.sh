@@ -61,6 +61,7 @@ run_preference "hot-corners.sh" "DESKTOP"
 run_preference "finder.sh" "DESKTOP"
 
 # 3. Input devices
+run_preference "keyboard.sh" "SYSTEM"
 run_preference "trackpad.sh" "DESKTOP"
 
 # 4. Menu bar

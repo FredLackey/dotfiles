@@ -54,6 +54,7 @@ run_preference() {
 # Apply preferences in logical order:
 # 1. System-wide settings first
 run_preference "system.sh" "SYSTEM"
+run_preference "keyboard.sh" "SYSTEM"
 
 # 2. Git configuration
 run_preference "git.sh" "DEV"
