@@ -66,33 +66,6 @@ if [ "$current_options" != "$desired_options" ]; then
     CHANGES_MADE=true
 fi
 
-if command -v localectl >/dev/null 2>&1 && localectl status >/dev/null 2>&1; then
-    current_layout=$(localectl status 2>/dev/null | awk -F: '/X11 Layout/ {gsub(/^ +/, "", $2); print $2; exit}')
-    current_model=$(localectl status 2>/dev/null | awk -F: '/X11 Model/ {gsub(/^ +/, "", $2); print $2; exit}')
-    current_variant=$(localectl status 2>/dev/null | awk -F: '/X11 Variant/ {gsub(/^ +/, "", $2); print $2; exit}')
-    current_x11_options=$(localectl status 2>/dev/null | awk -F: '/X11 Options/ {gsub(/^ +/, "", $2); print $2; exit}')
-
-    current_layout="${current_layout:-us}"
-    current_model="${current_model:-pc105}"
-    current_variant="${current_variant:-}"
-    current_x11_options=$(normalize_options "$current_x11_options")
-
-    desired_x11_options="$current_x11_options"
-    if ! option_list_has_value "$current_x11_options" "$DESIRED_OPTION"; then
-        if [ -n "$desired_x11_options" ]; then
-            desired_x11_options="$desired_x11_options,$DESIRED_OPTION"
-        else
-            desired_x11_options="$DESIRED_OPTION"
-        fi
-    fi
-
-    if [ "$current_x11_options" != "$desired_x11_options" ]; then
-        echo "Setting X11 keyboard option $DESIRED_OPTION..."
-        sudo localectl --no-convert set-x11-keymap "$current_layout" "$current_model" "$current_variant" "$desired_x11_options"
-        CHANGES_MADE=true
-    fi
-fi
-
 verified_options=$(grep -E '^XKBOPTIONS=' "$KEYBOARD_FILE" 2>/dev/null | tail -n 1 | cut -d= -f2- | tr -d '"')
 verified_options=$(normalize_options "$verified_options")
 
