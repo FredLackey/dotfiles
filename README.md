@@ -24,6 +24,18 @@ The entry point (`src/setup.sh` for Unix, `src/setup.ps1` for Windows) clones th
 
 Each OS folder is completely self-contained. No cross-references between OS folders exist by design — duplication is intentional.
 
+## Development Checkouts
+
+Local working copies should live under `~/Source/{GitHub org or user}/{repo}`.
+For example, this repository is expected at:
+
+```text
+~/Source/FredLackey/dotfiles
+```
+
+Keep `~/.dotfiles` as the deployed runtime copy created by the setup scripts;
+do not edit it directly.
+
 ## Installation
 
 ### macOS
