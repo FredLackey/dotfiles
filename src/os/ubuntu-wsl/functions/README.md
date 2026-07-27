@@ -87,6 +87,8 @@ Functions are automatically loaded when you open a new terminal session. They ar
 | Function | Description |
 |----------|-------------|
 | `claude-danger` | Launch Claude CLI bypassing permission checks |
+| `codex-danger` | Launch Codex CLI in YOLO mode |
+| `kiro-danger` | Launch Kiro CLI chat with all tools trusted |
 
 ## Adding Custom Functions
 

@@ -149,6 +149,7 @@ alias m="man"
 alias path='printf "%b\n" "${PATH//:/\\n}"'
 alias cc="claude-danger"
 alias co="codex-danger"
+alias kc="kiro-danger"
 
 # APT shortcuts
 alias apti="sudo apt-get install"
