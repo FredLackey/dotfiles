@@ -18,6 +18,13 @@ fi
 # 3. Install
 echo "Installing $APP_NAME..."
 brew tap atlassian/homebrew-acli
+
+# Newer Homebrew versions refuse to load formulae from non-official taps
+# until the tap is explicitly trusted. Older versions have no trust command.
+if brew help trust >/dev/null 2>&1; then
+    brew trust --tap atlassian/acli
+fi
+
 brew install --quiet acli
 
 # 4. Verify

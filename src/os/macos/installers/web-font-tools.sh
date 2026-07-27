@@ -18,6 +18,13 @@ fi
 # 3. Install
 echo "Installing $APP_NAME..."
 brew tap bramstein/webfonttools
+
+# Newer Homebrew versions refuse to load formulae from non-official taps
+# until the tap is explicitly trusted. Older versions have no trust command.
+if brew help trust >/dev/null 2>&1; then
+    brew trust --tap bramstein/webfonttools
+fi
+
 brew install --quiet sfnt2woff-zopfli
 brew install --quiet sfnt2woff
 brew install --quiet woff2
