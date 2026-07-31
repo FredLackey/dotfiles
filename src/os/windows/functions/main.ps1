@@ -33,6 +33,7 @@ $_entries = @(
     # AI Tools
     "AI",    "claude-danger.ps1",
     "AI",    "codex-danger.ps1",
+    "AI",    "opencode-danger.ps1",
     # Development
     "DEV",   "clean-dev.ps1",
     "DEV",   "clone.ps1",

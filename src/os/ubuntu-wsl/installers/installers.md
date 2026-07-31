@@ -83,6 +83,7 @@ The following installers present in `ubuntu-server` are intentionally **not incl
 | Script | Description |
 |--------|-------------|
 | `claude-code.sh` | Claude Code CLI |
+| `opencode-cli.sh` | OpenCode CLI |
 | `herdr.sh` | Herdr agent-aware terminal multiplexer |
 
 ## Installation Order
@@ -96,7 +97,7 @@ The `setup.sh` orchestrator runs installers in this order:
 5. Languages (go, python)
 6. CLI utilities (jq, tree, shellcheck, pandoc, tmux, vim, htop, rsync, nmap, imagemagick, ffmpeg, bash-completion, yt-dlp)
 7. Infrastructure (aws-cli, tfenv, terraform)
-8. AI tools (claude-code, herdr)
+8. AI tools (claude-code, opencode-cli, herdr)
 9. Cleanup (apt-cleanup)
 
 ## Creating New Installers

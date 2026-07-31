@@ -16,3 +16,4 @@ Remove-Variable _functionsMain -ErrorAction SilentlyContinue
 # Aliases
 Set-Alias -Name cc -Value claude-danger
 Set-Alias -Name co -Value codex-danger
+Set-Alias -Name oc -Value opencode-danger

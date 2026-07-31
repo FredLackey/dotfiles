@@ -33,6 +33,7 @@ This list contains software packages identified for software development purpose
 | **Chrome Canary** | GUI | Experimental version of Chrome for development testing. |
 | **Claude Code** | Terminal | AI-assisted coding tool. |
 | **Codex** | GUI | OpenAI desktop app for managing coding agents. |
+| **OpenCode CLI** | Terminal | Open-source AI coding agent. |
 | **Cursor** | GUI | AI-first code editor. |
 | **DBeaver** | GUI | Universal database tool. |
 | **DbSchema** | GUI | Visual database designer and manager. |

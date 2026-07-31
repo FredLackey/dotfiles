@@ -141,6 +141,7 @@ Run-Installer "aws-cli.ps1" "DEVOPS"
 # 6. AI Tools
 Run-Installer "gemini-cli.ps1" "AI"
 Run-Installer "claude-code.ps1" "AI"
+Run-Installer "opencode-cli.ps1" "AI"
 Run-Installer "cursor.ps1"     "AI"
 Run-Installer "kiro.ps1"       "AI"
 

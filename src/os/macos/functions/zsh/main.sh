@@ -59,6 +59,7 @@ _dotfiles_source "s.sh" "UTILS"
 _dotfiles_source "claude-danger.sh" "AI"
 _dotfiles_source "codex-danger.sh" "AI"
 _dotfiles_source "codex-update.sh" "AI"
+_dotfiles_source "opencode-danger.sh" "AI"
 _dotfiles_source "kiro-danger.sh" "AI"
 
 # Development
