@@ -28,18 +28,24 @@ fi
 
 echo "Running Ubuntu WSL setup..."
 
-# Check if a category is excluded via DOTFILES_EXCLUDE environment variable
+# Check if a category is retired or excluded via DOTFILES_EXCLUDE.
+# RETIRED is always excluded so obsolete installers remain documented but never run.
 # Usage: is_excluded "AI" returns 0 (true) if excluded, 1 (false) if not
 is_excluded() {
     local category="$1"
+    local category_upper
+    category_upper=$(echo "$category" | tr '[:lower:]' '[:upper:]')
+
+    if [ "$category_upper" = "RETIRED" ]; then
+        return 0
+    fi
+
     if [ -z "$DOTFILES_EXCLUDE" ]; then
         return 1
     fi
     # Convert both to uppercase for case-insensitive comparison
     local exclude_upper
     exclude_upper=$(echo "$DOTFILES_EXCLUDE" | tr '[:lower:]' '[:upper:]')
-    local category_upper
-    category_upper=$(echo "$category" | tr '[:lower:]' '[:upper:]')
     # Check if category appears in comma-separated list
     if echo ",$exclude_upper," | grep -q ",$category_upper,"; then
         return 0
@@ -80,7 +86,7 @@ run_installer() {
 install_applications() {
     echo "Starting application installation..."
 
-    # Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS
+    # Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS, RETIRED
 
     # 1. System Prerequisites
     run_installer "apt-update.sh" "SYSTEM"

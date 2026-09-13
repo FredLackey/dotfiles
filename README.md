@@ -86,6 +86,9 @@ $env:DOTFILES_EXCLUDE="AI,MEDIA"; iex (iwr -useb "https://raw.githubusercontent.
 | `AI` | Claude Code, Gemini CLI |
 | `APPS` | other developer tooling |
 | `DESKTOP` | GUI applications (macOS and Windows only) |
+| `RETIRED` | Retained installer references that are always skipped |
+
+`RETIRED` is reserved for software that should no longer be installed. Add the installer to its OS orchestrator with the `RETIRED` category to preserve the implementation as a reference. This category is skipped automatically and cannot be enabled through `DOTFILES_EXCLUDE`.
 
 ## What Gets Installed
 

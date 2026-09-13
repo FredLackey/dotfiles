@@ -10,18 +10,24 @@ echo "Running macOS setup..."
 # Suppress automatic cleanup after each brew install (runs once at the end instead)
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
-# Check if a category is excluded via DOTFILES_EXCLUDE environment variable
+# Check if a category is retired or excluded via DOTFILES_EXCLUDE.
+# RETIRED is always excluded so obsolete installers remain documented but never run.
 # Usage: is_excluded "AI" returns 0 (true) if excluded, 1 (false) if not
 is_excluded() {
     local category="$1"
+    local category_upper
+    category_upper=$(echo "$category" | tr '[:lower:]' '[:upper:]')
+
+    if [ "$category_upper" = "RETIRED" ]; then
+        return 0
+    fi
+
     if [ -z "$DOTFILES_EXCLUDE" ]; then
         return 1
     fi
     # Convert both to uppercase for case-insensitive comparison
     local exclude_upper
     exclude_upper=$(echo "$DOTFILES_EXCLUDE" | tr '[:lower:]' '[:upper:]')
-    local category_upper
-    category_upper=$(echo "$category" | tr '[:lower:]' '[:upper:]')
     # Check if category appears in comma-separated list
     if echo ",$exclude_upper," | grep -q ",$category_upper,"; then
         return 0
@@ -56,7 +62,7 @@ run_installer() {
 install_applications() {
     echo "Starting application installation..."
 
-    # Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS
+    # Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS, RETIRED
 
     # 1. Critical System Tools (Order matters)
     run_installer "xcode-command-line-tools.sh" "SYSTEM"
@@ -154,11 +160,15 @@ install_applications() {
     run_installer "beyond-compare.sh" "DEV"
     run_installer "google-chrome.sh" "APPS"
     run_installer "superwhisper.sh" "APPS"
-    run_installer "keyboard-maestro.sh" "APPS"
     run_installer "telegram.sh" "APPS"
-    run_installer "utm.sh" "APPS"
     run_installer "obsidian.sh" "APPS"
-    run_installer "adobe-acrobat-pro.sh" "APPS"
+
+    # Retired installers remain here as a reference and are always skipped.
+    run_installer "keyboard-maestro.sh" "RETIRED"
+    run_installer "adobe-acrobat-pro.sh" "RETIRED"
+    run_installer "brave-browser.sh" "RETIRED"
+    run_installer "utm.sh" "RETIRED"
+    run_installer "chrome-canary.sh" "RETIRED"
 
     # Final cleanup (runs once instead of after every install)
     echo "Running brew cleanup..."
