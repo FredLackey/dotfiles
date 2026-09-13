@@ -7,7 +7,8 @@ PREFERENCES_DIR="$SCRIPT_DIR/preferences"
 
 echo "Running macOS setup..."
 
-# Suppress automatic cleanup after each brew install (runs once at the end instead)
+# Keep Homebrew installs unattended and defer cleanup until the end.
+export HOMEBREW_NO_ASK=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # Check if a category is retired or excluded via DOTFILES_EXCLUDE.
