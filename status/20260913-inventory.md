@@ -43,9 +43,8 @@ This inventory follows the active setup orchestrators and lists software install
 - draw.io
 - Beyond Compare
 - Web Font Tools
-  - `sfnt2woff-zopfli`
-  - `sfnt2woff`
-  - `woff2`
+  - FontTools (`fonttools`, `pyftmerge`, `pyftsubset`, and `ttx`)
+  - WOFF2 (`woff2_compress`, `woff2_decompress`, and `woff2_info`)
 
 ### AI tools
 
