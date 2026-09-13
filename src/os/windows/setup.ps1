@@ -26,10 +26,12 @@ $FailedInstallers = @()
 
 Write-Host "Running Windows setup..."
 
-# Check if a category is excluded via DOTFILES_EXCLUDE environment variable
+# Check if a category is retired or excluded via DOTFILES_EXCLUDE.
+# RETIRED is always excluded so obsolete installers remain documented but never run.
 # Usage: Is-Excluded "AI" returns $true if excluded
 function Is-Excluded {
     param([string]$Category)
+    if ($Category.ToUpper() -eq "RETIRED") { return $true }
     $exclude = $env:DOTFILES_EXCLUDE
     if (-not $exclude) { return $false }
     $excludeUpper  = $exclude.ToUpper()
@@ -100,7 +102,7 @@ winget list --accept-source-agreements 2>&1 | Out-Null
 
 Write-Host "Starting application installation..."
 
-# Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS, DESKTOP
+# Categories: SYSTEM, LANGUAGES, TERMINAL, DEV, DEVOPS, UTILS, MEDIA, SECURITY, AI, APPS, DESKTOP, RETIRED
 
 # 1. Critical System Tools
 Run-Installer "wsl.ps1"          "SYSTEM"
@@ -158,11 +160,13 @@ Run-Installer "drawio.ps1"         "DEV"
 Run-Installer "beyond-compare.ps1" "DEV"
 Run-Installer "slack.ps1"          "APPS"
 Run-Installer "google-chrome.ps1"  "APPS"
-Run-Installer "brave-browser.ps1"  "APPS"
 Run-Installer "obsidian.ps1"       "APPS"
 Run-Installer "telegram.ps1"       "APPS"
 Run-Installer "termius.ps1"        "APPS"
 Run-Installer "balena-etcher.ps1"  "APPS"
+
+# Retired installers remain here as a reference and are always skipped.
+Run-Installer "brave-browser.ps1" "RETIRED"
 
 # Apply system preferences
 Apply-Preferences
